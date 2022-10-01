@@ -1,12 +1,18 @@
 bookdown::gitbook:
   css: style.css
   config:
+    edit: null
+    download: null
+    search: null
+    sharing: 
+      twitter: false
+      facebook: false
     toc:
       before: |
-        <li><a href="./">Ciência de Dados com Linguagem R</a></li>
+        <li><a href="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R/introdução.html/">Ciência de Dados com Linguagem R</a></li>
       after: |
         <li><a href="https://bigdata-r.com.br" target="blank">Big Data-R</a></li>
-  edit: https://github.com/zheage/Aulas
+  edit: https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R/introdução.html
   download: ["pdf"]
 bookdown::pdf_book:
   includes:
