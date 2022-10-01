@@ -1,7 +1,8 @@
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
-usage
-render-book
-preview-book
+fig:nice-fig
+tab:nice-tab
+eq:binom
+thm:tri
+introdução
 hello-bookdown
 a-section
 cross
@@ -19,4 +20,3 @@ sharing-your-book
 publishing
 pages
 metadata-for-sharing
-introdução
