@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <meta name="description" content="CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  
+  
+  
+
+<meta name="author" content="Richard Guilherme dos Santos" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">CIÊNCIA DE DADOS COM LINGUAGEM R</h1>
+<p class="author"><em>Richard Guilherme dos Santos</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#introdução" id="toc-introdução"><span class="toc-section-number">1</span> Introdução<span></span></a></li>
+<li><a href="#hello-bookdown" id="toc-hello-bookdown"><span class="toc-section-number">2</span> Hello bookdown<span></span></a>
+<ul>
+<li><a href="#a-section" id="toc-a-section"><span class="toc-section-number">2.1</span> A section<span></span></a>
+<ul>
+<li><a href="#an-unnumbered-section" id="toc-an-unnumbered-section">An unnumbered section<span></span></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#cross" id="toc-cross"><span class="toc-section-number">3</span> Cross-references<span></span></a>
+<ul>
+<li><a href="#chapters-and-sub-chapters" id="toc-chapters-and-sub-chapters"><span class="toc-section-number">3.1</span> Chapters and sub-chapters<span></span></a></li>
+<li><a href="#captioned-figures-and-tables" id="toc-captioned-figures-and-tables"><span class="toc-section-number">3.2</span> Captioned figures and tables<span></span></a></li>
+</ul></li>
+<li><a href="#medidas-descritivas" id="toc-medidas-descritivas"><span class="toc-section-number">4</span> Medidas Descritivas<span></span></a></li>
+<li><a href="#footnotes-and-citations" id="toc-footnotes-and-citations"><span class="toc-section-number">5</span> Footnotes and citations<span></span></a>
+<ul>
+<li><a href="#footnotes" id="toc-footnotes"><span class="toc-section-number">5.1</span> Footnotes<span></span></a></li>
+<li><a href="#citations" id="toc-citations"><span class="toc-section-number">5.2</span> Citations<span></span></a></li>
+</ul></li>
+<li><a href="#blocks" id="toc-blocks"><span class="toc-section-number">6</span> Blocks<span></span></a>
+<ul>
+<li><a href="#equations" id="toc-equations"><span class="toc-section-number">6.1</span> Equations<span></span></a></li>
+<li><a href="#theorems-and-proofs" id="toc-theorems-and-proofs"><span class="toc-section-number">6.2</span> Theorems and proofs<span></span></a></li>
+<li><a href="#callout-blocks" id="toc-callout-blocks"><span class="toc-section-number">6.3</span> Callout blocks<span></span></a></li>
+</ul></li>
+<li><a href="#sharing-your-book" id="toc-sharing-your-book"><span class="toc-section-number">7</span> Sharing your book<span></span></a>
+<ul>
+<li><a href="#publishing" id="toc-publishing"><span class="toc-section-number">7.1</span> Publishing<span></span></a></li>
+<li><a href="#pages" id="toc-pages"><span class="toc-section-number">7.2</span> 404 pages<span></span></a></li>
+<li><a href="#metadata-for-sharing" id="toc-metadata-for-sharing"><span class="toc-section-number">7.3</span> Metadata for sharing<span></span></a></li>
+</ul></li>
+<li><a href="#references" id="toc-references">References<span></span></a></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CIÊNCIA DE DADOS COM LINGUAGEM R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="introdução" class="section level1 hasAnchor" number="1">
+<h1 class="hasAnchor"><span class="header-section-number">1</span> Introdução<a href="#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--chapter:end:index.Rmd-->
+</div>
+<div id="hello-bookdown" class="section level1 hasAnchor" number="2">
+<h1 class="hasAnchor"><span class="header-section-number">2</span> Hello bookdown<a href="#hello-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (<code>#</code>) per .Rmd file.</p>
+<div id="a-section" class="section level2 hasAnchor" number="2.1">
+<h2 class="hasAnchor"><span class="header-section-number">2.1</span> A section<a href="#a-section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All chapter sections start with a second-level (<code>##</code>) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.</p>
+<div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
+<h3 class="unnumbered hasAnchor">An unnumbered section<a href="#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Chapters and sections are numbered by default. To un-number a heading, add a <code>{.unnumbered}</code> or the shorter <code>{-}</code> at the end of the heading, like in this section.</p>
+<!--chapter:end:01-intro.Rmd-->
+</div>
+</div>
+</div>
+<div id="cross" class="section level1 hasAnchor" number="3">
+<h1 class="hasAnchor"><span class="header-section-number">3</span> Cross-references<a href="#cross" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Placeholder</p>
+<div id="chapters-and-sub-chapters" class="section level2 hasAnchor" number="3.1">
+<h2 class="hasAnchor"><span class="header-section-number">3.1</span> Chapters and sub-chapters<a href="#chapters-and-sub-chapters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="captioned-figures-and-tables" class="section level2 hasAnchor" number="3.2">
+<h2 class="hasAnchor"><span class="header-section-number">3.2</span> Captioned figures and tables<a href="#captioned-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--chapter:end:02-cross-refs.Rmd-->
+</div>
+</div>
+<div id="medidas-descritivas" class="section level1 hasAnchor" number="4">
+<h1 class="hasAnchor"><span class="header-section-number">4</span> Medidas Descritivas<a href="#medidas-descritivas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><span class="math display">\[ y=x^2\]</span></p>
+<!--chapter:end:03-medidas-descritivas.Rmd-->
+</div>
+<div id="footnotes-and-citations" class="section level1 hasAnchor" number="5">
+<h1 class="hasAnchor"><span class="header-section-number">5</span> Footnotes and citations<a href="#footnotes-and-citations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="footnotes" class="section level2 hasAnchor" number="5.1">
+<h2 class="hasAnchor"><span class="header-section-number">5.1</span> Footnotes<a href="#footnotes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Footnotes are put inside the square brackets after a caret <code>^[]</code>. Like this one <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+</div>
+<div id="citations" class="section level2 hasAnchor" number="5.2">
+<h2 class="hasAnchor"><span class="header-section-number">5.2</span> Citations<a href="#citations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Reference items in your bibliography file(s) using <code>@key</code>.</p>
+<p>For example, we are using the <strong>bookdown</strong> package <span class="citation">(Xie 2022)</span> (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(Xie 2015)</span> (this citation was added manually in an external file book.bib).
+Note that the <code>.bib</code> files need to be listed in the index.Rmd with the YAML <code>bibliography</code> key.</p>
+<p>The RStudio Visual Markdown Editor can also make it easier to insert citations: <a href="https://rstudio.github.io/visual-markdown-editing/#/citations" class="uri">https://rstudio.github.io/visual-markdown-editing/#/citations</a></p>
+<!--chapter:end:04-citations.Rmd-->
+</div>
+</div>
+<div id="blocks" class="section level1 hasAnchor" number="6">
+<h1 class="hasAnchor"><span class="header-section-number">6</span> Blocks<a href="#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Placeholder</p>
+<div id="equations" class="section level2 hasAnchor" number="6.1">
+<h2 class="hasAnchor"><span class="header-section-number">6.1</span> Equations<a href="#equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="theorems-and-proofs" class="section level2 hasAnchor" number="6.2">
+<h2 class="hasAnchor"><span class="header-section-number">6.2</span> Theorems and proofs<a href="#theorems-and-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="callout-blocks" class="section level2 hasAnchor" number="6.3">
+<h2 class="hasAnchor"><span class="header-section-number">6.3</span> Callout blocks<a href="#callout-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--chapter:end:05-blocks.Rmd-->
+</div>
+</div>
+<div id="sharing-your-book" class="section level1 hasAnchor" number="7">
+<h1 class="hasAnchor"><span class="header-section-number">7</span> Sharing your book<a href="#sharing-your-book" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Placeholder</p>
+<div id="publishing" class="section level2 hasAnchor" number="7.1">
+<h2 class="hasAnchor"><span class="header-section-number">7.1</span> Publishing<a href="#publishing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="pages" class="section level2 hasAnchor" number="7.2">
+<h2 class="hasAnchor"><span class="header-section-number">7.2</span> 404 pages<a href="#pages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="metadata-for-sharing" class="section level2 hasAnchor" number="7.3">
+<h2 class="hasAnchor"><span class="header-section-number">7.3</span> Metadata for sharing<a href="#metadata-for-sharing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--chapter:end:06-share.Rmd-->
+</div>
+</div>
+<div id="references" class="section level1 unnumbered hasAnchor">
+<h1 class="unnumbered hasAnchor">References<a href="#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--chapter:end:07-references.Rmd-->
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry">
+———. 2022. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+</div>
+</div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>This is a footnote.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
