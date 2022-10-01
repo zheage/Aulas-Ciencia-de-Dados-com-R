@@ -1,0 +1,4 @@
+# Medidas Descritivas
+
+$$ y=x^2$$
+
