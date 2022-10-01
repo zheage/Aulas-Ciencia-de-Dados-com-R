@@ -6,8 +6,8 @@ bookdown::gitbook:
         <li><a href="./">Ciência de Dados com Linguagem R</a></li>
       after: |
         <li><a href="https://bigdata-r.com.br" target="blank">Big Data-R</a></li>
-    edit: https://github.com/zheage/Aulas
-    download: ["pdf"]
+  edit: https://github.com/zheage/Aulas
+  download: ["pdf"]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

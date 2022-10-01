@@ -4,9 +4,9 @@ author: "Richard Guilherme dos Santos"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-url: https://zheage.github.io/Aulas/
+# url: https://zheage.github.io/Aulas/
 # cover-image: path to the social sharing image like images/cover.jpg
-#description: |
+description: |
   #This is a minimal example of using the bookdown package to write a book.
   #The HTML output format for this example is bookdown::gitbook,
   #set in the _output.yml file.
@@ -14,4 +14,6 @@ url: https://zheage.github.io/Aulas/
 # github-repo: rstudio/bookdown-demo
 ---
 
-# Introdução
+Introdução
+
+12

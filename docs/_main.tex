@@ -110,14 +110,14 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={A Minimal Book Example},
-  pdfauthor={John Doe},
+  pdftitle={CIÊNCIA DE DADOS COM LINGUAGEM R},
+  pdfauthor={Richard Guilherme dos Santos},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{A Minimal Book Example}
-\author{John Doe}
-\date{2022-10-01}
+\title{CIÊNCIA DE DADOS COM LINGUAGEM R}
+\author{Richard Guilherme dos Santos}
+\date{}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -143,53 +143,9 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{about}{%
-\chapter{About}\label{about}}
+Introdução
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
-
-\hypertarget{usage}{%
-\section{Usage}\label{usage}}
-
-Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
-
-The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-\hypertarget{render-book}{%
-\section{Render book}\label{render-book}}
-
-You can render the HTML version of this example book without changing anything:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Find the \textbf{Build} pane in the RStudio IDE, and
-\item
-  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
-\end{enumerate}
-
-Or build the book from the R console:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
-
-\hypertarget{preview-book}{%
-\section{Preview book}\label{preview-book}}
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+12
 
 \hypertarget{hello-bookdown}{%
 \chapter{Hello bookdown}\label{hello-bookdown}}
@@ -200,6 +156,12 @@ All chapters start with a first-level heading followed by your chapter title, li
 \section{A section}\label{a-section}}
 
 All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+
+\hypertarget{divisuxe3o-de-uma-seuxe7uxe3o-em-duas}{%
+\chapter{Divisão de uma seção em duas}\label{divisuxe3o-de-uma-seuxe7uxe3o-em-duas}}
+
+\hypertarget{ou-atuxe9-mesmo-truxeas}{%
+\chapter{ou até mesmo três}\label{ou-atuxe9-mesmo-truxeas}}
 
 \hypertarget{an-unnumbered-section}{%
 \subsection*{An unnumbered section}\label{an-unnumbered-section}}
@@ -297,16 +259,10 @@ temperature & pressure\\
 \end{tabular}
 \end{table}
 
-\hypertarget{parts}{%
-\chapter{Parts}\label{parts}}
+\hypertarget{medidas-descritivas}{%
+\chapter{Medidas Descritivas}\label{medidas-descritivas}}
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
-
-Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
-
-Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
-
-Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+\[ y=x^2\]
 
 \hypertarget{footnotes-and-citations}{%
 \chapter{Footnotes and citations}\label{footnotes-and-citations}}
