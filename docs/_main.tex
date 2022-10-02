@@ -126,9 +126,6 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{introduuxe7uxe3oo-2}{%
-\chapter{Introduçãoo 2}\label{introduuxe7uxe3oo-2}}
-
 Bem vindos ao meu livro!
 
 \hypertarget{introduuxe7uxe3o}{%
@@ -644,29 +641,13 @@ Há ainda diversas maneiras de realizarmos visualizações desse conjunto no \te
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Sepal.Length)) }\SpecialCharTok{+}
   \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Boxplot Iris\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-20-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Boxplot Iris\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(),}
   \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{())}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## List of 2
-##  $ axis.text.x : list()
-##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
-##  $ axis.ticks.x: list()
-##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
-##  - attr(*, "class")= chr [1:2] "theme" "gg"
-##  - attr(*, "complete")= logi FALSE
-##  - attr(*, "validate")= logi TRUE
-\end{verbatim}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-20-1.pdf}
 
 Observamos que não há presença de outliers, além disso, como a parte debaixo do retângulo separado pela linha que representa a mediana é menor, isto indica que a distribuição dos dados é ligeiramente assimétrica, o qual é confirmado pelo histograma:
 
