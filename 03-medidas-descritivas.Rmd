@@ -236,12 +236,12 @@ Dessa maneira poderemos contatar valores errôneos no conjunto de dados, distrib
 
 Há ainda diversas maneiras de realizarmos visualizações desse conjunto no `R`, observemos o boxplot da variável Sepa.Length:
 
-```{r message = TRUE}
+```{r message = TRUE, cache = TRUE}
 boxplot(iris$Sepal.Length)
 ```
 
 
-```{r}
+```{r cache = TRUE}
 ggplot(data = iris, aes(y = Sepal.Length)) +
   geom_boxplot() +
   labs(title = 'Boxplot Iris') +
