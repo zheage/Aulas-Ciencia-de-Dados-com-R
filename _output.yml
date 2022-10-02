@@ -8,7 +8,7 @@ bookdown::gitbook:
       before: |
         <li><a>Ciência de Dados com Linguagem R</a></li>
       after: |
-        <li><a href="https://bigdata-r.com.br" target="blank">Big Data-R</a></li>
+        <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
   edit: https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R/introdução.html
   download: ["pdf"]
 bookdown::pdf_book:
