@@ -1,4 +1,16 @@
 # Medidas Descritivas
 
+## Tipos de Variáveis
+
+## Medidas de Posição
+
+## Medidas de Dispersão
+
+## Quantis Empíricos
+
+## Box Plot
+
+## Transformações
+
 $$ y=x^2$$
 
