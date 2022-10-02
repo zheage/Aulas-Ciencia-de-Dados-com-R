@@ -240,6 +240,10 @@ E os data.frames, tabelas que aceitam dados de diversos tipos:
 \hypertarget{medidas-descritivas}{%
 \chapter{Medidas Descritivas}\label{medidas-descritivas}}
 
+\begin{quote}
+\textbf{Importante:} A partir deste capítulo utilizaremos a função \texttt{kable} do pacote \texttt{knitr} para visualização de conjuntos de dados. Isto se deve apenas para visualização neste arquivo.
+\end{quote}
+
 \hypertarget{tipos-de-variuxe1veis}{%
 \section{Tipos de Variáveis}\label{tipos-de-variuxe1veis}}
 
@@ -324,39 +328,158 @@ O resumo de um conjunto de dados por uma única medida representativa de posiç�
 \begin{Highlighting}[]
 \NormalTok{nomes }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}alunoA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}alunoB\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}alunoC\textquotesingle{}}\NormalTok{,}
           \StringTok{\textquotesingle{}alunoD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}alunoE\textquotesingle{}}\NormalTok{)}
-\NormalTok{alunoA }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
-\NormalTok{alunoB }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{)}
-\NormalTok{alunoC }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{)}
-\NormalTok{alunoD }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{)}
-\NormalTok{alunoE }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{)}
-\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(alunoA, alunoB, alunoC, alunoD, alunoE)}
-\FunctionTok{row.names}\NormalTok{(df) }\OtherTok{=}\NormalTok{ nomes}
-\NormalTok{df}
+\NormalTok{notas }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}
+               \DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{,}
+               \DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{8}\NormalTok{,}
+               \DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}
+               \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{5}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{5}\NormalTok{, }\AttributeTok{byrow =}\NormalTok{ T)}
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(notas, }\AttributeTok{row.names =}\NormalTok{ nomes)}
+\FunctionTok{colnames}\NormalTok{(df) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}P1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P4\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P5\textquotesingle{}}\NormalTok{)}
+\FunctionTok{kable}\NormalTok{(df, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|c|c|c|c|c}
+\hline
+  & P1 & P2 & P3 & P4 & P5\\
+\hline
+alunoA & 3 & 4 & 5 & 6 & 7\\
+\hline
+alunoB & 1 & 3 & 5 & 7 & 9\\
+\hline
+alunoC & 2 & 5 & 5 & 5 & 8\\
+\hline
+alunoD & 3 & 5 & 5 & 5 & 7\\
+\hline
+alunoE & 0 & 0 & 5 & 10 & 10\\
+\hline
+\end{tabular}
+
+Temos as seguintes médias para os alunos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rowMeans}\NormalTok{(df)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##        alunoA alunoB alunoC alunoD alunoE
-## alunoA      3      1      5      3      3
-## alunoB      4      3      5      5      5
-## alunoC      5      5      5      5      5
-## alunoD      6      7      5      5      6
-## alunoE      7      9      5      7      6
+## alunoA alunoB alunoC alunoD alunoE 
+##      5      5      5      5      5
 \end{verbatim}
+
+Cada aluno possui a mesma média de notas, porém, isto não informa nada sobre a diferença na \textbf{variabilidade das notas.} A partir disto, são criadas medidas que sumarizam a \textbf{variabilidade} de um conjunto de observações.
+
+Em um primeiro momento podemos podemos considerar a soma da diferença dos dados em relação a média:
+
+\[
+x_1 - \overline{x} + x_2 - \overline{x} + \cdots + x_n - \overline{x}
+\]
+
+Porém, em qualquer conjunto a soma destes desvios é igual a zero. Uma alterntiva é então adicionar o valor absoluto em cada diferença:
+
+\[
+|x_1 - \overline{x}| + |x_2 - \overline{x}| + \cdots + |x_n - \overline{x}|
+\]
+
+Apesar de possuir uma boa interpretabilidade, tal métrica não possui propriedades matemáticas interessantes. Assim, trabalharemos com a diferença de quadrados de um conjunto de dados:
+
+\[
+(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2
+\]
+
+Como muitas vezes queremos comparar conjuntos de dados de diferentes tamanhos, realizamos a divisão destes valores pelo total de elementos em uma amostra:
+
+\[
+\text{var}(X) = \frac{(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2}{n}
+\]
+
+A partir disto, definimos \textbf{desvio padrão} como sendo a raiz da variância:
+
+\[
+\text{dp} = \sqrt{\text{var}(X)}
+\]
+
+Realizamos isto pois caso os dados estejam em uma certa unidade de medida, como \(cm\) , ao calcularmos a variância passamos a trabalhar com \(cm^2\), o que dificulta a interpretabilidade dos resultados.
 
 \hypertarget{quantis-empuxedricos}{%
 \section{Quantis Empíricos}\label{quantis-empuxedricos}}
 
+Tanto a \textbf{média} como o \textbf{desvio padrão} podem não ser medidas adequadas para representar um conjunto de dados, uma vez que:
+
+\begin{itemize}
+\item
+  São afetados por valores extremos;
+\item
+  Apenas os dois valores não dão informação sobre a simetria ou assimetria da distribuição dos dados
+\end{itemize}
+
+Vimos que a \textbf{mediana} é define uma divisão dos dados em duas metades. Além disto existem medidas chamadas de \textbf{quantil de ordem p} ou \textbf{p-quantil} indicado por \(q(p)\) onde \(p\) é uma proporção qualquer, \(0<p<1\) tal que \(100\%\) das observações sejam menores do que \(q(p)\).
+
+Abaixo temos alguns dos quantis mais utilizados:
+
+\begin{itemize}
+\item
+  \(q(0.25) = q_1:\) \textbf{1° Quartil} ou \textbf{25° Percentil}
+\item
+  \(q(0.50) = q_2:\) \textbf{2° Quartil}, \textbf{Mediana} ou \textbf{50° Percentil}
+\item
+  \(q(0.75) = q_3:\) \textbf{3° Quartil} ou \textbf{75° Percentil}
+\item
+  \(q(0.40) 1:\) \textbf{4° Decil}
+\item
+  \(q(0.95):\) \textbf{95° Percentil}
+\end{itemize}
+
 \hypertarget{box-plot}{%
 \section{Box Plot}\label{box-plot}}
+
+A informação contida nos quantis pode ser confusa quando estamos observando vários conjuntos de dados. A partir disto traduzimos-a em um diagrama, qual é chamado de \textbf{box plot:}
+
+Para construção dessa gráfico definimos por \textbf{intervalo interquartil} o valor:
+
+\[
+\text{IQR}(X) = q_3 - q_1
+\]
+
+Desenhamos um retângulo que parte do primeiro quartil até o terceiro, com a mediana sendo representada por uma linha em seu interior. A partir do retângulo desenhamos uma linha até o maior ponto que não exceta o valor \(q_3+1.5 \cdot \text{IQR}(X)\), chamado de limite superior. De modo análogo fazemos o mesmo procedimento até a parte inferior do retângulo considerando o valor \(q_1 + 1.5 \cdot \text{IQR}(X)\) chamado de limite interior. As observações que estiverem acima do limite superior ou abaixo do limite superior são chamados de pontos exteriores e representadas por asteriscos. Essas observações podem ser chamaas de outliers ou valores atípicos.
+
+O \textbf{box plot} dá uma ideia de posição, dispersão, assimetria dos dados.
 
 \hypertarget{transformauxe7uxf5es}{%
 \section{Transformações}\label{transformauxe7uxf5es}}
 
-\[ y=x^2\]
+Vários procedimentos estatísticos são baseados na posição que os dados possuem uma distribuição em forma de sino (oriundos de uma distribuição normal), ou que a distribuição seja mais ou menos simétrica.
+
+Se quisermos utilizar tais procedimentos podemos efetuar transformações nas observações, de modo a se obter uma distribuição mais simétrica e próxima da normal. As transformações mais frequentemente utilizadas são:
+
+\[
+x = \left\{\begin{matrix}&\sqrt{x}\\ &\ln(x) \\&\frac{1}{x}\end{matrix}\right.
+\]
+
+para cada transformação obtemos gráficos apropriados para os dados originais e transformados, de modo a escolhermos o valor mais adequado de \(p\).
 
 \hypertarget{tipos-de-distribuiuxe7uxf5es-discretas}{%
 \chapter{Tipos de Distribuições Discretas}\label{tipos-de-distribuiuxe7uxf5es-discretas}}
+
+Para atender a situações mais práticas, é necessário expandir os conceitos relacionados a probabilidade de forma que tenhamos modelos probabilísticos que representem todos os tipos de variáveis. Neste capítulo trabalharemos com variáveis quantativas discretas.
+
+\begin{quote}
+Exemplo (Bussab):
+\end{quote}
+
+Chamamos de \textbf{variável aleatória discreta} uma função \(X\) definida no espaço amostral \(\Omega\) que assume valores em um conjunto de números finito.
+
+Neste contexto vimos como associar a cada valor \(x_i\) da variável aleatória \(X\) a sua probabilidade de ocorrência. Matematicamente, escrevemos
+
+Além disso, chamamos de \textbf{função de probabilidade} da variável aleatória discreta \(X\) a função que a cada valor de \(x_i\) associa a sua probabilidade de ocorrência
+
+\[
+p(x_i) = PX=x_i) = p_i, i =1, 2, \dots
+\]
+
+\hypertarget{valor-muxe9dio-de-uma-variuxe1vel-aleatuxf3ria}{%
+\section{Valor Médio de uma Variável Aleatória}\label{valor-muxe9dio-de-uma-variuxe1vel-aleatuxf3ria}}
 
 \hypertarget{tipos-de-distribuiuxe7uxf5es-contuxednuas}{%
 \chapter{Tipos de Distribuições Contínuas}\label{tipos-de-distribuiuxe7uxf5es-contuxednuas}}

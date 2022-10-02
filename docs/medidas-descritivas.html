@@ -153,7 +153,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#box-plot"><i class="fa fa-check"></i><b>4.5</b> Box Plot</a></li>
 <li class="chapter" data-level="4.6" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#transformações"><i class="fa fa-check"></i><b>4.6</b> Transformações</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>5</b> Tipos de Distribuições Discretas</a></li>
+<li class="chapter" data-level="5" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>5</b> Tipos de Distribuições Discretas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html#valor-médio-de-uma-variável-aleatória"><i class="fa fa-check"></i><b>5.1</b> Valor Médio de uma Variável Aleatória</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>6</b> Tipos de Distribuições Contínuas</a></li>
 <li class="chapter" data-level="7" data-path="introdução-as-bibliotecas-do-r.html"><a href="introdução-as-bibliotecas-do-r.html"><i class="fa fa-check"></i><b>7</b> Introdução as bibliotecas do R</a>
 <ul>
@@ -184,6 +187,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="medidas-descritivas" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Capítulo 4</span> Medidas Descritivas<a href="medidas-descritivas.html#medidas-descritivas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p><strong>Importante:</strong> A partir deste capítulo utilizaremos a função <code>kable</code> do pacote <code>knitr</code> para visualização de conjuntos de dados. Isto se deve apenas para visualização neste arquivo.</p>
+</blockquote>
 <div id="tipos-de-variáveis" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Tipos de Variáveis<a href="medidas-descritivas.html#tipos-de-variáveis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Antes de analisarmos conjuntos de dados propriamente, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:</p>
@@ -274,30 +280,130 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>O resumo de um conjunto de dados por uma única medida representativa de posição esconde toda a informação sobre a variabilidade de um conjunto de observações. Consideremos que cinco alunos realizaram cinco provas, obtendo as seguintes notas:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="medidas-descritivas.html#cb13-1" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;alunoA&#39;</span>, <span class="st">&#39;alunoB&#39;</span>, <span class="st">&#39;alunoC&#39;</span>,</span>
 <span id="cb13-2"><a href="medidas-descritivas.html#cb13-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">&#39;alunoD&#39;</span>, <span class="st">&#39;alunoE&#39;</span>)</span>
-<span id="cb13-3"><a href="medidas-descritivas.html#cb13-3" aria-hidden="true" tabindex="-1"></a>alunoA <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
-<span id="cb13-4"><a href="medidas-descritivas.html#cb13-4" aria-hidden="true" tabindex="-1"></a>alunoB <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>)</span>
-<span id="cb13-5"><a href="medidas-descritivas.html#cb13-5" aria-hidden="true" tabindex="-1"></a>alunoC <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>)</span>
-<span id="cb13-6"><a href="medidas-descritivas.html#cb13-6" aria-hidden="true" tabindex="-1"></a>alunoD <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">7</span>)</span>
-<span id="cb13-7"><a href="medidas-descritivas.html#cb13-7" aria-hidden="true" tabindex="-1"></a>alunoE <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>)</span>
-<span id="cb13-8"><a href="medidas-descritivas.html#cb13-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(alunoA, alunoB, alunoC, alunoD, alunoE)</span>
-<span id="cb13-9"><a href="medidas-descritivas.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(df) <span class="ot">=</span> nomes</span>
-<span id="cb13-10"><a href="medidas-descritivas.html#cb13-10" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
-<pre><code>##        alunoA alunoB alunoC alunoD alunoE
-## alunoA      3      1      5      3      3
-## alunoB      4      3      5      5      5
-## alunoC      5      5      5      5      5
-## alunoD      6      7      5      5      6
-## alunoE      7      9      5      7      6</code></pre>
+<span id="cb13-3"><a href="medidas-descritivas.html#cb13-3" aria-hidden="true" tabindex="-1"></a>notas <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,</span>
+<span id="cb13-4"><a href="medidas-descritivas.html#cb13-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,</span>
+<span id="cb13-5"><a href="medidas-descritivas.html#cb13-5" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">8</span>,</span>
+<span id="cb13-6"><a href="medidas-descritivas.html#cb13-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">7</span>,</span>
+<span id="cb13-7"><a href="medidas-descritivas.html#cb13-7" aria-hidden="true" tabindex="-1"></a>               <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">byrow =</span> T)</span>
+<span id="cb13-8"><a href="medidas-descritivas.html#cb13-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(notas, <span class="at">row.names =</span> nomes)</span>
+<span id="cb13-9"><a href="medidas-descritivas.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;P1&#39;</span>, <span class="st">&#39;P2&#39;</span>, <span class="st">&#39;P3&#39;</span>, <span class="st">&#39;P4&#39;</span>, <span class="st">&#39;P5&#39;</span>)</span>
+<span id="cb13-10"><a href="medidas-descritivas.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df, <span class="at">align =</span> <span class="st">&#39;c&#39;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">P1</th>
+<th align="center">P2</th>
+<th align="center">P3</th>
+<th align="center">P4</th>
+<th align="center">P5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">alunoA</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+</tr>
+<tr class="even">
+<td align="left">alunoB</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">7</td>
+<td align="center">9</td>
+</tr>
+<tr class="odd">
+<td align="left">alunoC</td>
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">8</td>
+</tr>
+<tr class="even">
+<td align="left">alunoD</td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">7</td>
+</tr>
+<tr class="odd">
+<td align="left">alunoE</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">10</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+<p>Temos as seguintes médias para os alunos:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="medidas-descritivas.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowMeans</span>(df)</span></code></pre></div>
+<pre><code>## alunoA alunoB alunoC alunoD alunoE 
+##      5      5      5      5      5</code></pre>
+<p>Cada aluno possui a mesma média de notas, porém, isto não informa nada sobre a diferença na <strong>variabilidade das notas.</strong> A partir disto, são criadas medidas que sumarizam a <strong>variabilidade</strong> de um conjunto de observações.</p>
+<p>Em um primeiro momento podemos podemos considerar a soma da diferença dos dados em relação a média:</p>
+<p><span class="math display">\[
+x_1 - \overline{x} + x_2 - \overline{x} + \cdots + x_n - \overline{x}
+\]</span></p>
+<p>Porém, em qualquer conjunto a soma destes desvios é igual a zero. Uma alterntiva é então adicionar o valor absoluto em cada diferença:</p>
+<p><span class="math display">\[
+|x_1 - \overline{x}| + |x_2 - \overline{x}| + \cdots + |x_n - \overline{x}|
+\]</span></p>
+<p>Apesar de possuir uma boa interpretabilidade, tal métrica não possui propriedades matemáticas interessantes. Assim, trabalharemos com a diferença de quadrados de um conjunto de dados:</p>
+<p><span class="math display">\[
+(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2
+\]</span></p>
+<p>Como muitas vezes queremos comparar conjuntos de dados de diferentes tamanhos, realizamos a divisão destes valores pelo total de elementos em uma amostra:</p>
+<p><span class="math display">\[
+\text{var}(X) = \frac{(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2}{n}
+\]</span></p>
+<p>A partir disto, definimos <strong>desvio padrão</strong> como sendo a raiz da variância:</p>
+<p><span class="math display">\[
+\text{dp} = \sqrt{\text{var}(X)}
+\]</span></p>
+<p>Realizamos isto pois caso os dados estejam em uma certa unidade de medida, como <span class="math inline">\(cm\)</span> , ao calcularmos a variância passamos a trabalhar com <span class="math inline">\(cm^2\)</span>, o que dificulta a interpretabilidade dos resultados.</p>
 </div>
 <div id="quantis-empíricos" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Quantis Empíricos<a href="medidas-descritivas.html#quantis-empíricos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tanto a <strong>média</strong> como o <strong>desvio padrão</strong> podem não ser medidas adequadas para representar um conjunto de dados, uma vez que:</p>
+<ul>
+<li><p>São afetados por valores extremos;</p></li>
+<li><p>Apenas os dois valores não dão informação sobre a simetria ou assimetria da distribuição dos dados</p></li>
+</ul>
+<p>Vimos que a <strong>mediana</strong> é define uma divisão dos dados em duas metades. Além disto existem medidas chamadas de <strong>quantil de ordem p</strong> ou <strong>p-quantil</strong> indicado por <span class="math inline">\(q(p)\)</span> onde <span class="math inline">\(p\)</span> é uma proporção qualquer, <span class="math inline">\(0&lt;p&lt;1\)</span> tal que <span class="math inline">\(100\%\)</span> das observações sejam menores do que <span class="math inline">\(q(p)\)</span>.</p>
+<p>Abaixo temos alguns dos quantis mais utilizados:</p>
+<ul>
+<li><p><span class="math inline">\(q(0.25) = q_1:\)</span> <strong>1° Quartil</strong> ou <strong>25° Percentil</strong></p></li>
+<li><p><span class="math inline">\(q(0.50) = q_2:\)</span> <strong>2° Quartil</strong>, <strong>Mediana</strong> ou <strong>50° Percentil</strong></p></li>
+<li><p><span class="math inline">\(q(0.75) = q_3:\)</span> <strong>3° Quartil</strong> ou <strong>75° Percentil</strong></p></li>
+<li><p><span class="math inline">\(q(0.40) 1:\)</span> <strong>4° Decil</strong></p></li>
+<li><p><span class="math inline">\(q(0.95):\)</span> <strong>95° Percentil</strong></p></li>
+</ul>
 </div>
 <div id="box-plot" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Box Plot<a href="medidas-descritivas.html#box-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A informação contida nos quantis pode ser confusa quando estamos observando vários conjuntos de dados. A partir disto traduzimos-a em um diagrama, qual é chamado de <strong>box plot:</strong></p>
+<p>Para construção dessa gráfico definimos por <strong>intervalo interquartil</strong> o valor:</p>
+<p><span class="math display">\[
+\text{IQR}(X) = q_3 - q_1
+\]</span></p>
+<p>Desenhamos um retângulo que parte do primeiro quartil até o terceiro, com a mediana sendo representada por uma linha em seu interior. A partir do retângulo desenhamos uma linha até o maior ponto que não exceta o valor <span class="math inline">\(q_3+1.5 \cdot \text{IQR}(X)\)</span>, chamado de limite superior. De modo análogo fazemos o mesmo procedimento até a parte inferior do retângulo considerando o valor <span class="math inline">\(q_1 + 1.5 \cdot \text{IQR}(X)\)</span> chamado de limite interior. As observações que estiverem acima do limite superior ou abaixo do limite superior são chamados de pontos exteriores e representadas por asteriscos. Essas observações podem ser chamaas de outliers ou valores atípicos.</p>
+<p>O <strong>box plot</strong> dá uma ideia de posição, dispersão, assimetria dos dados.</p>
 </div>
 <div id="transformações" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Transformações<a href="medidas-descritivas.html#transformações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><span class="math display">\[ y=x^2\]</span></p>
+<p>Vários procedimentos estatísticos são baseados na posição que os dados possuem uma distribuição em forma de sino (oriundos de uma distribuição normal), ou que a distribuição seja mais ou menos simétrica.</p>
+<p>Se quisermos utilizar tais procedimentos podemos efetuar transformações nas observações, de modo a se obter uma distribuição mais simétrica e próxima da normal. As transformações mais frequentemente utilizadas são:</p>
+<p><span class="math display">\[
+x = \left\{\begin{matrix}&amp;\sqrt{x}\\ &amp;\ln(x) \\&amp;\frac{1}{x}\end{matrix}\right.
+\]</span></p>
+<p>para cada transformação obtemos gráficos apropriados para os dados originais e transformados, de modo a escolhermos o valor mais adequado de <span class="math inline">\(p\)</span>.</p>
 
 </div>
 </div>

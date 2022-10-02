@@ -5,6 +5,8 @@
 library(knitr)
 ```
 
+> **Importante:** A partir deste capítulo utilizaremos a função `kable` do pacote `knitr` para visualização de conjuntos de dados. Isto se deve apenas para visualização neste arquivo.
+
 ## Tipos de Variáveis
 
 Antes de analisarmos conjuntos de dados propriamente, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:
@@ -61,20 +63,100 @@ O resumo de um conjunto de dados por uma única medida representativa de posiç�
 ```{r}
 nomes = c('alunoA', 'alunoB', 'alunoC',
           'alunoD', 'alunoE')
-alunoA = c(3,4,5,6,7)
-alunoB = c(1,3,5,7,9)
-alunoC = c(5,5,5,5,5)
-alunoD = c(3,5,5,5,7)
-alunoE = c(3,5,5,6,6)
-df = data.frame(alunoA, alunoB, alunoC, alunoD, alunoE)
-row.names(df) = nomes
-df
+notas = matrix(c(3,4,5,6,7,
+               1,3,5,7,9,
+               2,5,5,5,8,
+               3,5,5,5,7,
+               0,0,5,10,10), nrow = 5, ncol = 5, byrow = T)
+df = data.frame(notas, row.names = nomes)
+colnames(df) = c('P1', 'P2', 'P3', 'P4', 'P5')
+kable(df, align = 'c')
 ```
+
+Temos as seguintes médias para os alunos:
+
+```{r}
+rowMeans(df)
+```
+
+Cada aluno possui a mesma média de notas, porém, isto não informa nada sobre a diferença na **variabilidade das notas.** A partir disto, são criadas medidas que sumarizam a **variabilidade** de um conjunto de observações.
+
+Em um primeiro momento podemos podemos considerar a soma da diferença dos dados em relação a média:
+
+$$
+x_1 - \overline{x} + x_2 - \overline{x} + \cdots + x_n - \overline{x}
+$$
+
+Porém, em qualquer conjunto a soma destes desvios é igual a zero. Uma alterntiva é então adicionar o valor absoluto em cada diferença:
+
+$$
+|x_1 - \overline{x}| + |x_2 - \overline{x}| + \cdots + |x_n - \overline{x}|
+$$
+
+Apesar de possuir uma boa interpretabilidade, tal métrica não possui propriedades matemáticas interessantes. Assim, trabalharemos com a diferença de quadrados de um conjunto de dados:
+
+$$
+(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2
+$$
+
+Como muitas vezes queremos comparar conjuntos de dados de diferentes tamanhos, realizamos a divisão destes valores pelo total de elementos em uma amostra:
+
+$$
+\text{var}(X) = \frac{(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2}{n}
+$$
+
+A partir disto, definimos **desvio padrão** como sendo a raiz da variância:
+
+$$
+\text{dp} = \sqrt{\text{var}(X)}
+$$
+
+Realizamos isto pois caso os dados estejam em uma certa unidade de medida, como $cm$ , ao calcularmos a variância passamos a trabalhar com $cm^2$, o que dificulta a interpretabilidade dos resultados.
 
 ## Quantis Empíricos
 
+Tanto a **média** como o **desvio padrão** podem não ser medidas adequadas para representar um conjunto de dados, uma vez que:
+
+-   São afetados por valores extremos;
+
+-   Apenas os dois valores não dão informação sobre a simetria ou assimetria da distribuição dos dados
+
+Vimos que a **mediana** é define uma divisão dos dados em duas metades. Além disto existem medidas chamadas de **quantil de ordem p** ou **p-quantil** indicado por $q(p)$ onde $p$ é uma proporção qualquer, $0<p<1$ tal que $100\%$ das observações sejam menores do que $q(p)$.
+
+Abaixo temos alguns dos quantis mais utilizados:
+
+-   $q(0.25) = q_1:$ **1° Quartil** ou **25° Percentil**
+
+-   $q(0.50) = q_2:$ **2° Quartil**, **Mediana** ou **50° Percentil**
+
+-   $q(0.75) = q_3:$ **3° Quartil** ou **75° Percentil**
+
+-   $q(0.40) 1:$ **4° Decil**
+
+-   $q(0.95):$ **95° Percentil**
+
 ## Box Plot
+
+A informação contida nos quantis pode ser confusa quando estamos observando vários conjuntos de dados. A partir disto traduzimos-a em um diagrama, qual é chamado de **box plot:**
+
+Para construção dessa gráfico definimos por **intervalo interquartil** o valor:
+
+$$
+\text{IQR}(X) = q_3 - q_1
+$$
+
+Desenhamos um retângulo que parte do primeiro quartil até o terceiro, com a mediana sendo representada por uma linha em seu interior. A partir do retângulo desenhamos uma linha até o maior ponto que não exceta o valor $q_3+1.5 \cdot \text{IQR}(X)$, chamado de limite superior. De modo análogo fazemos o mesmo procedimento até a parte inferior do retângulo considerando o valor $q_1 + 1.5 \cdot \text{IQR}(X)$ chamado de limite interior. As observações que estiverem acima do limite superior ou abaixo do limite superior são chamados de pontos exteriores e representadas por asteriscos. Essas observações podem ser chamaas de outliers ou valores atípicos.
+
+O **box plot** dá uma ideia de posição, dispersão, assimetria dos dados.
 
 ## Transformações
 
-$$ y=x^2$$
+Vários procedimentos estatísticos são baseados na posição que os dados possuem uma distribuição em forma de sino (oriundos de uma distribuição normal), ou que a distribuição seja mais ou menos simétrica.
+
+Se quisermos utilizar tais procedimentos podemos efetuar transformações nas observações, de modo a se obter uma distribuição mais simétrica e próxima da normal. As transformações mais frequentemente utilizadas são:
+
+$$
+x = \left\{\begin{matrix}&\sqrt{x}\\ &\ln(x) \\&\frac{1}{x}\end{matrix}\right.
+$$
+
+para cada transformação obtemos gráficos apropriados para os dados originais e transformados, de modo a escolhermos o valor mais adequado de $p$.
