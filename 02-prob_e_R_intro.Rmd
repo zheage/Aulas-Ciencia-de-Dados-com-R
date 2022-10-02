@@ -2,7 +2,7 @@
 
 # Introdução ao R
 
-Aqui introduziremos alguns comandos da linguagem `R`. A linguagem utiliza de funções para realizar operações que vão desde leitura e manipulação de dados a operações matemáticas.
+Aqui introduziremos alguns comandos da linguagem `R`, onde utilizamos funções para realizar operações que vão desde leitura e manipulação de dados a operações matemáticas.
 
 Comecemos criando um vetor de números:
 
@@ -34,13 +34,13 @@ mat = matrix(data = c(1,2,3,4), nrow = 2, ncol = 2,
 mat
 ```
 
-> Funções aceitam os mais diversos tipos de argumentos, para termos uma ideia de quais utilizarmos e seus atributos devemos consultar na biblioteca do `R`:
+> Funções aceitam os mais diversos tipos de argumentos. Para termos uma ideia de quais utilizarmos e seus respectivos atributos devemos fazer consultas em suas bibliotecas:
 >
 > ```{r eval = FALSE}
 > help(matrix)
 > ```
 
-E os data.frames, tabelas que aceitam dados de diversos tipos:
+Além disso, para armazenamento de dados temos os data.frames, tabelas que aceitam dados de tipos distintos:
 
 ```{r}
 nomes = c('Carol', 'Alfredo', 'Godoberto')
@@ -51,4 +51,3 @@ ICM = peso/altura^2
 df = data.frame(nomes, idade, peso, altura, ICM)
 df
 ```
-

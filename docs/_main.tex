@@ -126,7 +126,10 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-Teste
+\hypertarget{introduuxe7uxe3oo-2}{%
+\chapter{Introduçãoo 2}\label{introduuxe7uxe3oo-2}}
+
+Bem vindos ao meu livro!
 
 \hypertarget{introduuxe7uxe3o}{%
 \chapter{Introdução}\label{introduuxe7uxe3o}}
@@ -150,7 +153,7 @@ Este livro tem como objetivo servir como guia para as aulas do curso Ciência de
 \hypertarget{introduuxe7uxe3o-ao-r}{%
 \chapter{Introdução ao R}\label{introduuxe7uxe3o-ao-r}}
 
-Aqui introduziremos alguns comandos da linguagem \texttt{R}. A linguagem utiliza de funções para realizar operações que vão desde leitura e manipulação de dados a operações matemáticas.
+Aqui introduziremos alguns comandos da linguagem \texttt{R}, onde utilizamos funções para realizar operações que vão desde leitura e manipulação de dados a operações matemáticas.
 
 Comecemos criando um vetor de números:
 
@@ -209,7 +212,7 @@ Há outros tipos de objetos que podem ser criados quando trabalhamos com \texttt
 \end{verbatim}
 
 \begin{quote}
-Funções aceitam os mais diversos tipos de argumentos, para termos uma ideia de quais utilizarmos e seus atributos devemos consultar na biblioteca do \texttt{R}:
+Funções aceitam os mais diversos tipos de argumentos. Para termos uma ideia de quais utilizarmos e seus respectivos atributos devemos fazer consultas em suas bibliotecas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -218,7 +221,7 @@ Funções aceitam os mais diversos tipos de argumentos, para termos uma ideia de
 \end{Shaded}
 \end{quote}
 
-E os data.frames, tabelas que aceitam dados de diversos tipos:
+Além disso, para armazenamento de dados temos os data.frames, tabelas que aceitam dados de tipos distintos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -243,40 +246,52 @@ E os data.frames, tabelas que aceitam dados de diversos tipos:
 \chapter{Medidas Descritivas}\label{medidas-descritivas}}
 
 \begin{quote}
-\textbf{Importante:} A partir deste capítulo utilizaremos a função \texttt{kable} do pacote \texttt{knitr} para visualização de conjuntos de dados. Isto se deve apenas para visualização neste arquivo.
+\textbf{Importante:} A partir deste capítulo utilizaremos a função \texttt{kable} do pacote \texttt{knitr} para visualização de conjuntos de dados. Na prática isto não é necessário, apenas o realizamos para efeitos de visualização.
 \end{quote}
 
 \hypertarget{tipos-de-variuxe1veis}{%
 \section{Tipos de Variáveis}\label{tipos-de-variuxe1veis}}
 
-Antes de analisarmos conjuntos de dados propriamente, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:
+Antes de analisarmos conjuntos de dados, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{nome }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Guilherme\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Leon\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Nilce\textquotesingle{}}\NormalTok{)}
-\NormalTok{est\_civil }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Solteiro\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{)}
-\NormalTok{escolaridade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Ensino médio completo\textquotesingle{}}\NormalTok{,}
+\NormalTok{nome }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Djoko\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Wilson\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Jiraiya\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Leon\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Nilce\textquotesingle{}}\NormalTok{)}
+\NormalTok{est\_civil }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Solteiro\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Solteiro\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{)}
+\NormalTok{escolaridade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Pós{-}graduação\textquotesingle{}}\NormalTok{,}
+                 \StringTok{\textquotesingle{}Ensino médio completo\textquotesingle{}}\NormalTok{,}
+                 \StringTok{\textquotesingle{}Ensino médio completo\textquotesingle{}}\NormalTok{,}
                  \StringTok{\textquotesingle{}Pós{-}graduação\textquotesingle{}}\NormalTok{,}
                  \StringTok{\textquotesingle{}Superior completo\textquotesingle{}}\NormalTok{)}
-\NormalTok{n\_filhos }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{)}
-\NormalTok{salario }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1500}\NormalTok{, }\DecValTok{3000}\NormalTok{, }\DecValTok{3000}\NormalTok{)}
-\NormalTok{idade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{, }\DecValTok{39}\NormalTok{, }\DecValTok{32}\NormalTok{)}
+\NormalTok{n\_filhos }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{salario }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{4500}\NormalTok{, }\DecValTok{3000}\NormalTok{, }\DecValTok{1500}\NormalTok{, }\DecValTok{5000}\NormalTok{, }\DecValTok{5500}\NormalTok{)}
+\NormalTok{idade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{29}\NormalTok{, }\DecValTok{33}\NormalTok{, }\DecValTok{33}\NormalTok{, }\DecValTok{39}\NormalTok{, }\DecValTok{32}\NormalTok{)}
 \NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(nome, est\_civil, escolaridade, n\_filhos, salario, idade)}
-\FunctionTok{kable}\NormalTok{(df, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{) }\CommentTok{\# Melhor visualização dos dados para este PDF}
+\FunctionTok{kable}\NormalTok{(df, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{,}
+      \AttributeTok{caption =} \StringTok{\textquotesingle{}Dados sobre Youtubers.\textquotesingle{}}\NormalTok{) }\CommentTok{\# Melhor visualização dos dados para este PDF}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tabular}{c|c|c|c|c|c}
+\begin{table}
+
+\caption{\label{tab:youtubers}Dados sobre Youtubers.}
+\centering
+\begin{tabular}[t]{c|c|c|c|c|c}
 \hline
 nome & est\_civil & escolaridade & n\_filhos & salario & idade\\
 \hline
-Guilherme & Solteiro & Ensino médio completo & 1 & 1500 & 21\\
+Djoko & Solteiro & Pós-graduação & 0 & 4500 & 29\\
 \hline
-Leon & Casado & Pós-graduação & 0 & 3000 & 39\\
+Wilson & Casado & Ensino médio completo & 0 & 3000 & 33\\
 \hline
-Nilce & Casado & Superior completo & 0 & 3000 & 32\\
+Jiraiya & Solteiro & Ensino médio completo & 1 & 1500 & 33\\
+\hline
+Leon & Casado & Pós-graduação & 0 & 5000 & 39\\
+\hline
+Nilce & Casado & Superior completo & 0 & 5500 & 32\\
 \hline
 \end{tabular}
+\end{table}
 
 Variáveis como sexo, escolaridade e estado civil apresentam realizações de uma qualidade ou atributo do indivíduo pesquisado, enquanto outras como número de filhos, salário e idade apresentam números como resultados de uma contagem ou mensuração. Chamamos as do primeiro tipo de \textbf{qualitativas} e as do segundo de \textbf{quantitativas}
 
@@ -313,6 +328,37 @@ Usualmente utilizamos uma das seguintes medidas de posição (ou localização):
   \item
     Quando o número de observações for par, usa-se como mediana a média aritmética das duas observações centrais.
   \end{itemize}
+\end{itemize}
+
+Na tabela \ref{tab:youtubers} temos a seguinte mediana para uma coluna específica:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{salario)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4500
+\end{verbatim}
+
+Para todas as colunas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Aplicaremos a função median para todas as colunas:}
+\FunctionTok{apply}\NormalTok{(df, }\AttributeTok{MARGIN =} \DecValTok{2}\NormalTok{, }\AttributeTok{FUN =}\NormalTok{ median)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            nome       est_civil    escolaridade        n_filhos         salario 
+##          "Leon"        "Casado" "Pós-graduação"             "0"          "4500" 
+##           idade 
+##            "33"
+\end{verbatim}
+
+\begin{itemize}
 \item
   \textbf{Média:} soma de todos os elementos do conjunto dividida pela quantidade de elementos do conjunto
 
@@ -320,6 +366,31 @@ Usualmente utilizamos uma das seguintes medidas de posição (ou localização):
   \overline{x} = \frac{x_1+x_2 + \dots + x_n}{n}
   \]
 \end{itemize}
+
+Na tabela \ref{tab:youtubers} temos a seguinte mediana para uma coluna específica:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{salario)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3900
+\end{verbatim}
+
+Para todas as colunas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colMeans}\NormalTok{(df[, }\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}idade\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}salario\textquotesingle{}}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   idade salario 
+##    33.2  3900.0
+\end{verbatim}
 
 \hypertarget{medidas-de-dispersuxe3o}{%
 \section{Medidas de Dispersão}\label{medidas-de-dispersuxe3o}}
@@ -461,6 +532,162 @@ x = \left\{\begin{matrix}&\sqrt{x}\\ &\ln(x) \\&\frac{1}{x}\end{matrix}\right.
 
 para cada transformação obtemos gráficos apropriados para os dados originais e transformados, de modo a escolhermos o valor mais adequado de \(p\).
 
+\hypertarget{lab-01---conjunto-de-dados-iris}{%
+\section{Lab 01 - Conjunto de dados Iris}\label{lab-01---conjunto-de-dados-iris}}
+
+O conjunto de dados Iris é um dos mais utilizados quando introduzimos conceitos de ciência de dados. Este pode ser encontrado em \href{http://archive.ics.uci.edu/ml/index.php}{UCI Machine Learning Repository}. Tal conjunto consiste de 150 amostras de 4 tipos de espécies de flores distintas contendo os atributos:
+
+\begin{itemize}
+\item
+  SepalLengthCm
+\item
+  SepalWidthCm
+\item
+  PetalLengthCm
+\item
+  PetalWidthCm
+\end{itemize}
+
+Podemos acessá-lo no R sem nenhum carregamento prévio da seguinte forma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# A função head() mostra os cinco primeiros itens de data.frame:}
+\FunctionTok{head}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+\end{verbatim}
+
+Há certas boas práticas ao carregar um conjunto de dados, dentre elas temos:
+
+\begin{itemize}
+\item
+  Visualização de sua dimensão:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# O primeiro valor é a quantidade de linhas do conjunto de dados}
+\CommentTok{\# e o segundo a sua quantidade de atributos}
+\FunctionTok{dim}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 150   5
+\end{verbatim}
+\item
+  Visualização do tipo de cada atributo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(iris) }\CommentTok{\# Structure of an Arbitrary R Object}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+\end{verbatim}
+\item
+  Sumário de seus atributos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## 
+\end{verbatim}
+\end{itemize}
+
+Dessa maneira poderemos contatar valores errôneos no conjunto de dados, distribuições de variáveis categóricas e ter um melhor contato com o conjunto de dados.
+
+Há ainda diversas maneiras de realizarmos visualizações desse conjunto no \texttt{R}, observemos o boxplot da variável Sepa.Length:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Sepal.Length)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Boxplot Iris\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(),}
+  \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 2
+##  $ axis.text.x : list()
+##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
+##  $ axis.ticks.x: list()
+##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
+##  - attr(*, "class")= chr [1:2] "theme" "gg"
+##  - attr(*, "complete")= logi FALSE
+##  - attr(*, "validate")= logi TRUE
+\end{verbatim}
+
+Observamos que não há presença de outliers, além disso, como a parte debaixo do retângulo separado pela linha que representa a mediana é menor, isto indica que a distribuição dos dados é ligeiramente assimétrica, o qual é confirmado pelo histograma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length, }\AttributeTok{fill =}\NormalTok{ ..count..)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \FloatTok{0.25}\NormalTok{, }\AttributeTok{boundary =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.25}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-22-1.pdf}
+
 \hypertarget{tipos-de-distribuiuxe7uxf5es-discretas}{%
 \chapter{Tipos de Distribuições Discretas}\label{tipos-de-distribuiuxe7uxf5es-discretas}}
 
@@ -482,6 +709,18 @@ p(x_i) = PX=x_i) = p_i, i =1, 2, \dots
 
 \hypertarget{valor-muxe9dio-de-uma-variuxe1vel-aleatuxf3ria}{%
 \section{Valor Médio de uma Variável Aleatória}\label{valor-muxe9dio-de-uma-variuxe1vel-aleatuxf3ria}}
+
+Dada uma variável aleatórai \(X\) discreta, assumindo os valores \$x\_1,\textbackslash dots, x\_n\$, chamamos de valor médio ou esperança de \(X\) o valor
+
+\[
+E[X] = \sum_{i=1}^n x_i P(X=x_i) = \sum_{i=1}^n x_i p_i.
+\]
+
+Chamamos de variância da variável aleatória \(X\) o valor
+
+\[
+\text{var}[X] = \sum_{i=1}^n [x_i - E[X]]^2 p_i
+\]
 
 \hypertarget{tipos-de-distribuiuxe7uxf5es-contuxednuas}{%
 \chapter{Tipos de Distribuições Contínuas}\label{tipos-de-distribuiuxe7uxf5es-contuxednuas}}

@@ -3,25 +3,30 @@
 ```{r include = FALSE}
 # Bibliotecas
 library(knitr)
+library(ggplot2)
+library(cowplot)
 ```
 
-> **Importante:** A partir deste capítulo utilizaremos a função `kable` do pacote `knitr` para visualização de conjuntos de dados. Isto se deve apenas para visualização neste arquivo.
+> **Importante:** A partir deste capítulo utilizaremos a função `kable` do pacote `knitr` para visualização de conjuntos de dados. Na prática isto não é necessário, apenas o realizamos para efeitos de visualização.
 
 ## Tipos de Variáveis
 
-Antes de analisarmos conjuntos de dados propriamente, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:
+Antes de analisarmos conjuntos de dados, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:
 
-```{r}
-nome = c('Guilherme', 'Leon', 'Nilce')
-est_civil = c('Solteiro', 'Casado', 'Casado')
-escolaridade = c('Ensino médio completo',
+```{r youtubers}
+nome = c('Djoko','Wilson','Jiraiya', 'Leon', 'Nilce')
+est_civil = c('Solteiro','Casado','Solteiro', 'Casado', 'Casado')
+escolaridade = c('Pós-graduação',
+                 'Ensino médio completo',
+                 'Ensino médio completo',
                  'Pós-graduação',
                  'Superior completo')
-n_filhos = c(1, 0, 0)
-salario = c(1500, 3000, 3000)
-idade = c(21, 39, 32)
+n_filhos = c(0, 0, 1, 0, 0)
+salario = c(4500, 3000, 1500, 5000, 5500)
+idade = c(29, 33, 33, 39, 32)
 df = data.frame(nome, est_civil, escolaridade, n_filhos, salario, idade)
-kable(df, align = 'c') # Melhor visualização dos dados para este PDF
+kable(df, align = 'c',
+      caption = 'Dados sobre Youtubers.') # Melhor visualização dos dados para este PDF
 ```
 
 Variáveis como sexo, escolaridade e estado civil apresentam realizações de uma qualidade ou atributo do indivíduo pesquisado, enquanto outras como número de filhos, salário e idade apresentam números como resultados de uma contagem ou mensuração. Chamamos as do primeiro tipo de **qualitativas** e as do segundo de **quantitativas**
@@ -50,11 +55,36 @@ Usualmente utilizamos uma das seguintes medidas de posição (ou localização):
 
     -   Quando o número de observações for par, usa-se como mediana a média aritmética das duas observações centrais.
 
+Na tabela \@ref(tab:youtubers) temos a seguinte mediana para uma coluna específica:
+
+```{r}
+median(df$salario)
+```
+
+Para todas as colunas:
+
+```{r}
+# Aplicaremos a função median para todas as colunas:
+apply(df, MARGIN = 2, FUN = median)
+```
+
 -   **Média:** soma de todos os elementos do conjunto dividida pela quantidade de elementos do conjunto
 
     $$
     \overline{x} = \frac{x_1+x_2 + \dots + x_n}{n}
     $$
+
+Na tabela \@ref(tab:youtubers) temos a seguinte mediana para uma coluna específica:
+
+```{r}
+mean(df$salario)
+```
+
+Para todas as colunas:
+
+```{r}
+colMeans(df[, c('idade', 'salario')])
+```
 
 ## Medidas de Dispersão
 
@@ -160,3 +190,73 @@ x = \left\{\begin{matrix}&\sqrt{x}\\ &\ln(x) \\&\frac{1}{x}\end{matrix}\right.
 $$
 
 para cada transformação obtemos gráficos apropriados para os dados originais e transformados, de modo a escolhermos o valor mais adequado de $p$.
+
+## Lab 01 - Conjunto de dados Iris {.tabset}
+
+O conjunto de dados Iris é um dos mais utilizados quando introduzimos conceitos de ciência de dados. Este pode ser encontrado em [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php). Tal conjunto consiste de 150 amostras de 4 tipos de espécies de flores distintas contendo os atributos:
+
+-   SepalLengthCm
+
+-   SepalWidthCm
+
+-   PetalLengthCm
+
+-   PetalWidthCm
+
+Podemos acessá-lo no R sem nenhum carregamento prévio da seguinte forma:
+
+```{r}
+# A função head() mostra os cinco primeiros itens de data.frame:
+head(iris)
+```
+
+Há certas boas práticas ao carregar um conjunto de dados, dentre elas temos:
+
+-   Visualização de sua dimensão:
+
+    ```{r}
+    # O primeiro valor é a quantidade de linhas do conjunto de dados
+    # e o segundo a sua quantidade de atributos
+    dim(iris)
+    ```
+
+-   Visualização do tipo de cada atributo:
+
+    ```{r}
+    str(iris) # Structure of an Arbitrary R Object
+    ```
+
+-   Sumário de seus atributos:
+
+    ```{r}
+    summary(iris)
+    ```
+
+Dessa maneira poderemos contatar valores errôneos no conjunto de dados, distribuições de variáveis categóricas e ter um melhor contato com o conjunto de dados.
+
+Há ainda diversas maneiras de realizarmos visualizações desse conjunto no `R`, observemos o boxplot da variável Sepa.Length:
+
+```{r message = TRUE}
+boxplot(iris$Sepal.Length)
+```
+
+
+```{r}
+ggplot(data = iris, aes(y = Sepal.Length)) +
+  geom_boxplot() +
+  labs(title = 'Boxplot Iris') +
+  theme(axis.ticks.x = element_blank(),
+  axis.text.x = element_blank())
+```
+
+Observamos que não há presença de outliers, além disso, como a parte debaixo do retângulo separado pela linha que representa a mediana é menor, isto indica que a distribuição dos dados é ligeiramente assimétrica, o qual é confirmado pelo histograma:
+
+```{r echo = TRUE}
+hist(iris$Sepal.Length)
+```
+
+```{r}
+ggplot(data = iris, aes(x = Sepal.Length, fill = ..count..)) +
+  geom_histogram(binwidth = 0.25, boundary = 0) +
+  scale_x_continuous(breaks = seq(1, 10, by = 0.25)) 
+```

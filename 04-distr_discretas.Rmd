@@ -15,3 +15,15 @@ p(x_i) = PX=x_i) = p_i, i =1, 2, \dots
 $$
 
 ## Valor Médio de uma Variável Aleatória
+
+Dada uma variável aleatórai $X$ discreta, assumindo os valores \$x_1,\\dots, x_n\$, chamamos de valor médio ou esperança de $X$ o valor
+
+$$
+E[X] = \sum_{i=1}^n x_i P(X=x_i) = \sum_{i=1}^n x_i p_i.
+$$
+
+Chamamos de variância da variável aleatória $X$ o valor
+
+$$
+\text{var}[X] = \sum_{i=1}^n [x_i - E[X]]^2 p_i
+$$
