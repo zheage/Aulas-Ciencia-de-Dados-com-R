@@ -1,7 +1,8 @@
 # Introdução a Probabilidade
 
-oi
+
 
 # Introdução ao R
 
-Roi
+## Comandos Básicos
+
