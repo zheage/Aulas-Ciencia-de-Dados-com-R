@@ -1,0 +1,19 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    sharing: 
+      twitter: false
+      facebook: false
+    toc:
+      before: |
+        <li><a href="./>Ciência de Dados com Linguagem R</a></li>
+      after: |
+        <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
+  edit: https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R/introdução.html
+  download: ["pdf"]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
