@@ -1,8 +1,54 @@
 # Introdução a Probabilidade
 
-
-
 # Introdução ao R
 
-## Comandos Básicos
+Aqui introduziremos alguns comandos da linguagem `R`. A linguagem utiliza de funções para realizar operações que vão desde leitura e manipulação de dados a operações matemáticas.
+
+Comecemos criando um vetor de números:
+
+```{r}
+x <- c(1,3,2,5)
+# x = c(1,3,2,5) # Também podemos utilizar "=" para atribuir variáveis
+x
+```
+
+O comando acima combina os números 1,3,2 e 5 em um vetor de números e os salva em um objeto denominado x. Escrevemos x para recebermos os atributos do vetor.
+
+A partir disto podemos utilizar outras funções para calcularmos informações destes atributos, como o tamanho de um vetor:
+
+```{r}
+length(x)
+```
+
+ou sua média:
+
+```{r}
+mean(x)
+```
+
+Há outros tipos de objetos que podem ser criados quando trabalhamos com `R`. Os mais importantes para manipulação de dados são as matrizes:
+
+```{r}
+mat = matrix(data = c(1,2,3,4), nrow = 2, ncol = 2,
+           byrow = TRUE)
+mat
+```
+
+> Funções aceitam os mais diversos tipos de argumentos, para termos uma ideia de quais utilizarmos e seus atributos devemos consultar na biblioteca do `R`:
+>
+> ```{r eval = FALSE}
+> help(matrix)
+> ```
+
+E os data.frames, tabelas que aceitam dados de diversos tipos:
+
+```{r}
+nomes = c('Carol', 'Alfredo', 'Godoberto')
+idade = c(18, 23, 19)
+peso = c(69, 75, 80)
+altura = c(1.70, 1.80, 1.85)
+ICM = peso/altura^2
+df = data.frame(nomes, idade, peso, altura, ICM)
+df
+```
 

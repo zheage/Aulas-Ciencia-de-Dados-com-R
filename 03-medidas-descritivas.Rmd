@@ -1,10 +1,75 @@
 # Medidas Descritivas
 
+```{r include = FALSE}
+# Bibliotecas
+library(knitr)
+```
+
 ## Tipos de Variáveis
+
+Antes de analisarmos conjuntos de dados propriamente, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:
+
+```{r}
+nome = c('Guilherme', 'Leon', 'Nilce')
+est_civil = c('Solteiro', 'Casado', 'Casado')
+escolaridade = c('Ensino médio completo',
+                 'Pós-graduação',
+                 'Superior completo')
+n_filhos = c(1, 0, 0)
+salario = c(1500, 3000, 3000)
+idade = c(21, 39, 32)
+df = data.frame(nome, est_civil, escolaridade, n_filhos, salario, idade)
+kable(df, align = 'c') # Melhor visualização dos dados para este PDF
+```
+
+Variáveis como sexo, escolaridade e estado civil apresentam realizações de uma qualidade ou atributo do indivíduo pesquisado, enquanto outras como número de filhos, salário e idade apresentam números como resultados de uma contagem ou mensuração. Chamamos as do primeiro tipo de **qualitativas** e as do segundo de **quantitativas**
+
+Cada uma das duas ainda pode ser dividida em dois tipos:
+
+-   **Variável qualitativa nominal:** atributos não apresentam uma ordem lógica;
+
+-   **Variável qualitativa ordinal:** atributos apresentam uma ordem lógica bem estabelecida;
+
+-   **Variável quantitativa discreta:** dados de contagem, assumem apenas valores inteiros;
+
+-   **Variável quantitativa contínua:** dados que podem assumir qualquer tipo de valor.
+
+    ![](figs/tipos_de_variaveis.png)
+
+Muitas vezes queremos resumir estes dados, apresentando um ou mais valores que sejam representativos da série toda. Neste contexto entram às **medidas de posição e dispersão**.
 
 ## Medidas de Posição
 
+Usualmente utilizamos uma das seguintes medidas de posição (ou localização): **média, mediana ou moda**. Vamos as suas definições:
+
+-   **Moda:** valor mais frequente do conjunto de valores observados.
+
+-   **Mediana:** valor que ocupa a posição central das observações quando estas estão ordenadas em ordem crescente.
+
+    -   Quando o número de observações for par, usa-se como mediana a média aritmética das duas observações centrais.
+
+-   **Média:** soma de todos os elementos do conjunto dividida pela quantidade de elementos do conjunto
+
+    $$
+    \overline{x} = \frac{x_1+x_2 + \dots + x_n}{n}
+    $$
+
 ## Medidas de Dispersão
+
+O resumo de um conjunto de dados por uma única medida representativa de posição esconde toda a informação sobre a variabilidade de um conjunto de observações. Consideremos que cinco alunos realizaram cinco provas, obtendo as seguintes notas:
+
+```{r}
+nomes = c('alunoA', 'alunoB', 'alunoC',
+          'alunoD', 'alunoE')
+alunoA = c(3,4,5,6,7)
+alunoB = c(1,3,5,7,9)
+alunoC = c(5,5,5,5,5)
+alunoD = c(3,5,5,5,7)
+alunoE = c(3,5,5,6,6)
+df = data.frame(alunoA, alunoB, alunoC, alunoD, alunoE)
+row.names(df) = nomes
+df
+```
 
 ## Quantis Empíricos
 
@@ -13,4 +78,3 @@
 ## Transformações
 
 $$ y=x^2$$
-

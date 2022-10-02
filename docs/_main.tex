@@ -33,6 +33,46 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -108,11 +148,210 @@ Este livro tem como objetivo servir como guia para as aulas do curso Ciência de
 \hypertarget{introduuxe7uxe3o-ao-r}{%
 \chapter{Introdução ao R}\label{introduuxe7uxe3o-ao-r}}
 
-\hypertarget{comandos-buxe1sicos}{%
-\section{Comandos Básicos}\label{comandos-buxe1sicos}}
+Aqui introduziremos alguns comandos da linguagem \texttt{R}. A linguagem utiliza de funções para realizar operações que vão desde leitura e manipulação de dados a operações matemáticas.
+
+Comecemos criando um vetor de números:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\CommentTok{\# x = c(1,3,2,5) \# Também podemos utilizar "=" para atribuir variáveis}
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 3 2 5
+\end{verbatim}
+
+O comando acima combina os números 1,3,2 e 5 em um vetor de números e os salva em um objeto denominado x. Escrevemos x para recebermos os atributos do vetor.
+
+A partir disto podemos utilizar outras funções para calcularmos informações destes atributos, como o tamanho de um vetor:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+ou sua média:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.75
+\end{verbatim}
+
+Há outros tipos de objetos que podem ser criados quando trabalhamos com \texttt{R}. Os mais importantes para manipulação de dados são as matrizes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mat }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\AttributeTok{data =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{,}
+           \AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{mat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4
+\end{verbatim}
+
+\begin{quote}
+Funções aceitam os mais diversos tipos de argumentos, para termos uma ideia de quais utilizarmos e seus atributos devemos consultar na biblioteca do \texttt{R}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{help}\NormalTok{(matrix)}
+\end{Highlighting}
+\end{Shaded}
+\end{quote}
+
+E os data.frames, tabelas que aceitam dados de diversos tipos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nomes }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Carol\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Alfredo\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Godoberto\textquotesingle{}}\NormalTok{)}
+\NormalTok{idade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{18}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{19}\NormalTok{)}
+\NormalTok{peso }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{69}\NormalTok{, }\DecValTok{75}\NormalTok{, }\DecValTok{80}\NormalTok{)}
+\NormalTok{altura }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\FloatTok{1.70}\NormalTok{, }\FloatTok{1.80}\NormalTok{, }\FloatTok{1.85}\NormalTok{)}
+\NormalTok{ICM }\OtherTok{=}\NormalTok{ peso}\SpecialCharTok{/}\NormalTok{altura}\SpecialCharTok{\^{}}\DecValTok{2}
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(nomes, idade, peso, altura, ICM)}
+\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       nomes idade peso altura      ICM
+## 1     Carol    18   69   1.70 23.87543
+## 2   Alfredo    23   75   1.80 23.14815
+## 3 Godoberto    19   80   1.85 23.37473
+\end{verbatim}
 
 \hypertarget{medidas-descritivas}{%
 \chapter{Medidas Descritivas}\label{medidas-descritivas}}
+
+\hypertarget{tipos-de-variuxe1veis}{%
+\section{Tipos de Variáveis}\label{tipos-de-variuxe1veis}}
+
+Antes de analisarmos conjuntos de dados propriamente, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nome }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Guilherme\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Leon\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Nilce\textquotesingle{}}\NormalTok{)}
+\NormalTok{est\_civil }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Solteiro\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{)}
+\NormalTok{escolaridade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Ensino médio completo\textquotesingle{}}\NormalTok{,}
+                 \StringTok{\textquotesingle{}Pós{-}graduação\textquotesingle{}}\NormalTok{,}
+                 \StringTok{\textquotesingle{}Superior completo\textquotesingle{}}\NormalTok{)}
+\NormalTok{n\_filhos }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{salario }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1500}\NormalTok{, }\DecValTok{3000}\NormalTok{, }\DecValTok{3000}\NormalTok{)}
+\NormalTok{idade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{, }\DecValTok{39}\NormalTok{, }\DecValTok{32}\NormalTok{)}
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(nome, est\_civil, escolaridade, n\_filhos, salario, idade)}
+\FunctionTok{kable}\NormalTok{(df, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{) }\CommentTok{\# Melhor visualização dos dados para este PDF}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{c|c|c|c|c|c}
+\hline
+nome & est\_civil & escolaridade & n\_filhos & salario & idade\\
+\hline
+Guilherme & Solteiro & Ensino médio completo & 1 & 1500 & 21\\
+\hline
+Leon & Casado & Pós-graduação & 0 & 3000 & 39\\
+\hline
+Nilce & Casado & Superior completo & 0 & 3000 & 32\\
+\hline
+\end{tabular}
+
+Variáveis como sexo, escolaridade e estado civil apresentam realizações de uma qualidade ou atributo do indivíduo pesquisado, enquanto outras como número de filhos, salário e idade apresentam números como resultados de uma contagem ou mensuração. Chamamos as do primeiro tipo de \textbf{qualitativas} e as do segundo de \textbf{quantitativas}
+
+Cada uma das duas ainda pode ser dividida em dois tipos:
+
+\begin{itemize}
+\item
+  \textbf{Variável qualitativa nominal:} atributos não apresentam uma ordem lógica;
+\item
+  \textbf{Variável qualitativa ordinal:} atributos apresentam uma ordem lógica bem estabelecida;
+\item
+  \textbf{Variável quantitativa discreta:} dados de contagem, assumem apenas valores inteiros;
+\item
+  \textbf{Variável quantitativa contínua:} dados que podem assumir qualquer tipo de valor.
+
+  \includegraphics{figs/tipos_de_variaveis.png}
+\end{itemize}
+
+Muitas vezes queremos resumir estes dados, apresentando um ou mais valores que sejam representativos da série toda. Neste contexto entram às \textbf{medidas de posição e dispersão}.
+
+\hypertarget{medidas-de-posiuxe7uxe3o}{%
+\section{Medidas de Posição}\label{medidas-de-posiuxe7uxe3o}}
+
+Usualmente utilizamos uma das seguintes medidas de posição (ou localização): \textbf{média, mediana ou moda}. Vamos as suas definições:
+
+\begin{itemize}
+\item
+  \textbf{Moda:} valor mais frequente do conjunto de valores observados.
+\item
+  \textbf{Mediana:} valor que ocupa a posição central das observações quando estas estão ordenadas em ordem crescente.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Quando o número de observações for par, usa-se como mediana a média aritmética das duas observações centrais.
+  \end{itemize}
+\item
+  \textbf{Média:} soma de todos os elementos do conjunto dividida pela quantidade de elementos do conjunto
+
+  \[
+  \overline{x} = \frac{x_1+x_2 + \dots + x_n}{n}
+  \]
+\end{itemize}
+
+\hypertarget{medidas-de-dispersuxe3o}{%
+\section{Medidas de Dispersão}\label{medidas-de-dispersuxe3o}}
+
+O resumo de um conjunto de dados por uma única medida representativa de posição esconde toda a informação sobre a variabilidade de um conjunto de observações. Consideremos que cinco alunos realizaram cinco provas, obtendo as seguintes notas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nomes }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}alunoA\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}alunoB\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}alunoC\textquotesingle{}}\NormalTok{,}
+          \StringTok{\textquotesingle{}alunoD\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}alunoE\textquotesingle{}}\NormalTok{)}
+\NormalTok{alunoA }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{alunoB }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\NormalTok{alunoC }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{alunoD }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{alunoE }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(alunoA, alunoB, alunoC, alunoD, alunoE)}
+\FunctionTok{row.names}\NormalTok{(df) }\OtherTok{=}\NormalTok{ nomes}
+\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        alunoA alunoB alunoC alunoD alunoE
+## alunoA      3      1      5      3      3
+## alunoB      4      3      5      5      5
+## alunoC      5      5      5      5      5
+## alunoD      6      7      5      5      6
+## alunoE      7      9      5      7      6
+\end{verbatim}
+
+\hypertarget{quantis-empuxedricos}{%
+\section{Quantis Empíricos}\label{quantis-empuxedricos}}
+
+\hypertarget{box-plot}{%
+\section{Box Plot}\label{box-plot}}
+
+\hypertarget{transformauxe7uxf5es}{%
+\section{Transformações}\label{transformauxe7uxf5es}}
 
 \[ y=x^2\]
 
