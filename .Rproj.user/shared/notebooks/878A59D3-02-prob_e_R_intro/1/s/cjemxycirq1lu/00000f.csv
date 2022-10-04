@@ -1,5 +1,6 @@
-"0","x
-"
+"0","x <- c(1,3,2,5)"
+"0","# x = c(1,3,2,5) # Também podemos utilizar ""="" para atribuir variáveis"
+"0","x"
 "1","[1]"
 "1"," 1"
 "1"," 3"
