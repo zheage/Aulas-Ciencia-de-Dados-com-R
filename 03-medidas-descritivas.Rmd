@@ -108,6 +108,7 @@ kable(df_alunos, align = 'c')
 Temos as seguintes médias para os alunos:
 
 ```{r}
+# Podemos ver a média de cada coluna utilizando colMeans(df_alunos)
 rowMeans(df_alunos)
 ```
 
@@ -191,12 +192,11 @@ $$
 
 Desenhamos um retângulo que parte do primeiro quartil até o terceiro, com a mediana sendo representada por uma linha em seu interior. A partir do retângulo desenhamos uma linha até o maior ponto que não exceta o valor $q_3+1.5 \cdot \text{IQ}(X)$, chamado de limite superior. De modo análogo fazemos o mesmo procedimento até a parte inferior do retângulo considerando o valor $q_1 + 1.5 \cdot \text{IQ}(X)$ chamado de limite interior. As observações que estiverem acima do limite superior ou abaixo do limite superior são chamados de pontos exteriores e representadas por asteriscos. Essas observações podem ser chamaas de outliers ou valores atípicos.
 
-![](figs/boxplot.png.opdownload)
-
-modo simples de como realizar um boxplot pelo R:
+Modo simples de como realizar um boxplot pelo R:
 
 ```{r}
-boxplot(df_alunos)
+boxplot(df_alunos, xlab = "Provas", ylab = "Notas",
+        main = "Boxplot dos alunos")
 ```
 
 > O aluno mais atento pode se perguntar: porque alguns dos boxplots não possuem a linha superior e/ou inferior? Isto ocorre quando temos muitos dados em uma mesma categoria, com o primeiro ou terceiro quartil tendo o mesmo valor que o mínimo ou máximo do conjunto de dados:
@@ -208,7 +208,7 @@ apply(df_alunos, 2, quantile)
 O **box plot** dá uma ideia de posição, dispersão, assimetria dos dados.
 
 ```{r}
-hist(df_alunos$P4, breaks = seq(5, 10, 1))
+hist(df_alunos$P4, breaks = seq(5, 10, 0.5))
 ```
 
 ## Transformações
@@ -217,7 +217,7 @@ Vários procedimentos estatísticos são baseados na posição que os dados poss
 
 ```{r}
 # Simula 500 dados de uma distribuição normal
-dados_normal <- rnorm(n = 1000)
+dados_normal <- rnorm(n = 10000)
 # Gráfico de suas frequências
 hist(dados_normal)
 ```
@@ -288,14 +288,6 @@ Há ainda diversas maneiras de realizarmos visualizações desse conjunto no `R`
 boxplot(iris$Sepal.Length)
 ```
 
-```{r cache = TRUE}
-ggplot(data = iris, aes(y = Sepal.Length)) +
-  geom_boxplot() +
-  labs(title = 'Boxplot Iris') +
-  theme(axis.ticks.x = element_blank(),
-  axis.text.x = element_blank())
-```
-
 Observamos que não há presença de outliers, além disso, como a parte debaixo do retângulo separado pela linha que representa a mediana é menor, isto indica que a distribuição dos dados é ligeiramente assimétrica, o qual é confirmado pelo histograma:
 
 ```{r echo = TRUE}
@@ -310,8 +302,50 @@ ggplot(data = iris, aes(x = Sepal.Length, fill = ..count..)) +
 
 ## Lab 02 - Xadrez Brasil
 
-Em 2022 houve uma polêmica no universo de xadrez entre o campeão mundial de xadrez Magnus Carlsen e o jovem grande mestre Hanns Niemann, qual possui um histórico de trapaças e foi acusado de repetir estes atos no torneio. Magnus chegou a abandonar o torneio motivado por acreditar que seu oponente utilizava de cheating em sua partida.
+Em 2022 houve uma polêmica no universo de xadrez entre o atual campeão mundial de xadrez Magnus Carlsen e o jovem grande mestre Hanns Niemann, qual possui um histórico de trapaças e foi acusado de repetir estes atos no torneio. Magnus chegou a abandonar o torneio motivado por acreditar que seu oponente utilizava de engines em sua partida.
 
-Baseado nisso vários estatísticos se debrulharam entre as partidas de Niemann com o objetivo de encontrar evidências de uma ascensão arbitrária a sua posição atual no xadrez. Uma destas analises foi realizada pelo brasileiro Rafael do canal Xadrez Brasil, e nela podemos observar como medidas de posição e dispersão podem ser utilizadas para fortalecermos ou não as evidências de trapaça contra Niemann:
+Baseado nisso vários estatísticos se debrulharam entre as partidas de Niemann com o objetivo de encontrar evidências de sua rápida ascensão no xadrez, qual bateu recordes como grande mestre mais rápido da história.
+
+[![Rating FIDE de Hans Niemann.](figs/niemann_rating.png)](https://ratings.fide.com/profile/2093596/chart)
+
+Uma destas analises foi realizada pelo canal brasileiro de youtube Xadrez Brasil, e nela podemos observar como medidas de posição e dispersão podem ser utilizadas para fortalecer ou não a hipótese de que Niemann estava trapaçeando.
 
 -   <https://www.youtube.com/watch?v=60QPEGsOCyw>
+
+## Projeto 01 - Machine Learning from Disaster
+
+Todo mundo já assistiu, ou pelo menos ouviu falar, sobre o desastre do navio Titanic.
+
+Incrivelmente este caso também pode ser estudado utilizando aprendizado de máquina! Na verdade este é um dos primeiros desafios que trabalhamos quando estudamos nossos primeiros algoritmos. O conjunto de dados e suas informações pode ser encontrado no site [Kaggle](https://www.kaggle.com/c/titanic), um site que hospeda diversos conjuntos de dados e competições de machine learning.
+
+Na aula aprenderemos como baixamos e analisamos as observaçõs contidas nesse conjunto de dados, qual pode ser visualizado na tabela abaixo:
+
+```{r}
+library(readr)
+titanic_train <- read_csv("G:/Meu Drive/Dados/titanic_train.csv")
+kable(head(titanic_train), align = 'c')
+```
+
+O objetivo do trabalho é prever se um passageiro sobreviveu ou não no naufrágio do Titanic. Para começarmos trabalhando podemos utilizar a função `table` para observar a distribuição dos passageiros que sobreviveram ao acidente:
+
+```{r}
+table(titanic_train$Survived)
+```
+
+Observar a média de idade entre os passageiros:
+
+```{r}
+mean(titanic_train$Age, na.rm = TRUE)
+```
+
+Quais são os tipos de variáveis que eu tenho no conjunto de dados?
+
+```{r}
+str(titanic_train)
+```
+
+Por fim, vamos selecionar
+
+```{r}
+kable(summary(titanic_train), align = 'c')
+```

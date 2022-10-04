@@ -1,7 +1,7 @@
 "0","# apply: aplica uma função a um conjunto de dados"
 "0","# MARGIN = 2: 1 para aplicar a função a todas as linhas e 2 a todas as colunas"
 "0","# FUN: função a ser aplicada ao conjunto de dados"
-"0","apply(df[, c('n_filhos','salario','idade')], MARGIN = 2, FUN = median)"
+"0","apply(df_youtubers[, c('n_filhos','salario','idade')], MARGIN = 2, FUN = median)"
 "1","n_filhos "
 "1"," salario "
 "1","   idade "

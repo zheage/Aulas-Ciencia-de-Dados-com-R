@@ -40,6 +40,23 @@ mat = matrix(data = c(1,2,3,4), nrow = 2, ncol = 2,
 mat
 ```
 
+muitos devem já estar familiarizados com estas. A linguagem `R` fornece as mais diversas operações entre matrizes:
+
+```{r}
+a = matrix(data = 1:9, nrow = 3, ncol = 3)
+b = matrix(data = 1:9, nrow = 3, ncol = 3, byrow = T)
+# a + b # Soma de matrizes
+# a * b # Multiplicação dos elementos das matrizes termo a termo
+# a %*% b # Multiplicação de matrizes
+# t(a) # Transposta da matriz
+# det(a) # Determinante de uma matriz
+# solve(a) # Inversa da matriz
+sqrt(a) # Raiz quadrada dos elementos da matriz
+```
+
+
+
+
 > Funções aceitam os mais diversos tipos de argumentos. Para termos uma ideia de quais utilizarmos e seus respectivos atributos devemos fazer consultas em suas bibliotecas:
 
 ```{r eval = FALSE}

@@ -126,7 +126,13 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-Bem vindos ao meu livro!
+Bem vindo!
+
+Me chamo Richard, sou matemático e atualmente faço mestrado em estatística
+pelo programa PIPGEs.
+
+Caso queira me avisar sobre algum problema no livro, erro de digitação ou
+dúvida, aqui estão minhas redes sociais:
 
 \hypertarget{introduuxe7uxe3o}{%
 \chapter{Introdução}\label{introduuxe7uxe3o}}
@@ -143,9 +149,6 @@ Este livro tem como objetivo servir como guia para as aulas do curso Ciência de
 \item
   \textbf{Modelos de Regressão Linear:} Parte final do curso, onde o aluno aprenderá sobre diagrama de dispersão, coeficiente de correlação linear, regressão linear simples, múltipla e regressão logística, ganhando a capacidade de começar a criar modelos utilizando a linguagem R.
 \end{enumerate}
-
-\hypertarget{introduuxe7uxe3o-a-probabilidade}{%
-\chapter{Introdução a Probabilidade}\label{introduuxe7uxe3o-a-probabilidade}}
 
 \hypertarget{introduuxe7uxe3o-ao-r}{%
 \chapter{Introdução ao R}\label{introduuxe7uxe3o-ao-r}}
@@ -180,7 +183,7 @@ A partir disto podemos utilizar outras funções para calcularmos informações 
 ## [1] 4
 \end{verbatim}
 
-ou sua média:
+sua média:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -192,7 +195,21 @@ ou sua média:
 ## [1] 2.75
 \end{verbatim}
 
-Há outros tipos de objetos que podem ser criados quando trabalhamos com \texttt{R}. Os mais importantes para manipulação de dados são as matrizes:
+também podemos realizar operações entre os vetores:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{a}\SpecialCharTok{+}\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 5 7
+\end{verbatim}
+
+Há outros tipos de objetos que podem ser criados quando trabalhamos com \texttt{R}. Dentre os mais importantes para manipulação de dados estão as matrizes:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -208,15 +225,38 @@ Há outros tipos de objetos que podem ser criados quando trabalhamos com \texttt
 ## [2,]    3    4
 \end{verbatim}
 
+muitos devem já estar familiarizados com estas. A linguagem \texttt{R} fornece as mais diversas operações entre matrizes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\AttributeTok{data =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{9}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\NormalTok{b }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\AttributeTok{data =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{9}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{, }\AttributeTok{byrow =}\NormalTok{ T)}
+\CommentTok{\# a + b \# Soma de matrizes}
+\CommentTok{\# a * b \# Multiplicação dos elementos das matrizes termo a termo}
+\CommentTok{\# a \%*\% b \# Multiplicação de matrizes}
+\CommentTok{\# t(a) \# Transposta da matriz}
+\CommentTok{\# det(a) \# Determinante de uma matriz}
+\CommentTok{\# solve(a) \# Inversa da matriz}
+\FunctionTok{sqrt}\NormalTok{(a) }\CommentTok{\# Raiz quadrada dos elementos da matriz}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          [,1]     [,2]     [,3]
+## [1,] 1.000000 2.000000 2.645751
+## [2,] 1.414214 2.236068 2.828427
+## [3,] 1.732051 2.449490 3.000000
+\end{verbatim}
+
 \begin{quote}
 Funções aceitam os mais diversos tipos de argumentos. Para termos uma ideia de quais utilizarmos e seus respectivos atributos devemos fazer consultas em suas bibliotecas:
+\end{quote}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{help}\NormalTok{(matrix)}
 \end{Highlighting}
 \end{Shaded}
-\end{quote}
 
 Além disso, para armazenamento de dados temos os data.frames, tabelas que aceitam dados de tipos distintos:
 
@@ -253,18 +293,17 @@ Antes de analisarmos conjuntos de dados, é necessário termos um conhecimento s
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{nome }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Djoko\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Wilson\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Jiraiya\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Leon\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Nilce\textquotesingle{}}\NormalTok{)}
-\NormalTok{est\_civil }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Solteiro\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Solteiro\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{)}
+\NormalTok{nome }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Djoko\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Wilson\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Leon\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Nilce\textquotesingle{}}\NormalTok{)}
+\NormalTok{est\_civil }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Solteiro\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Casado\textquotesingle{}}\NormalTok{)}
 \NormalTok{escolaridade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Pós{-}graduação\textquotesingle{}}\NormalTok{,}
-                 \StringTok{\textquotesingle{}Ensino médio completo\textquotesingle{}}\NormalTok{,}
                  \StringTok{\textquotesingle{}Ensino médio completo\textquotesingle{}}\NormalTok{,}
                  \StringTok{\textquotesingle{}Pós{-}graduação\textquotesingle{}}\NormalTok{,}
                  \StringTok{\textquotesingle{}Superior completo\textquotesingle{}}\NormalTok{)}
-\NormalTok{n\_filhos }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{)}
-\NormalTok{salario }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{4500}\NormalTok{, }\DecValTok{3000}\NormalTok{, }\DecValTok{1500}\NormalTok{, }\DecValTok{5000}\NormalTok{, }\DecValTok{5500}\NormalTok{)}
-\NormalTok{idade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{29}\NormalTok{, }\DecValTok{33}\NormalTok{, }\DecValTok{33}\NormalTok{, }\DecValTok{39}\NormalTok{, }\DecValTok{32}\NormalTok{)}
-\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(nome, est\_civil, escolaridade, n\_filhos, salario, idade)}
-\FunctionTok{kable}\NormalTok{(df, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{,}
+\NormalTok{n\_filhos }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{salario }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{4500}\NormalTok{, }\DecValTok{3000}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{5500}\NormalTok{)}
+\NormalTok{idade }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{29}\NormalTok{, }\DecValTok{33}\NormalTok{, }\DecValTok{39}\NormalTok{, }\DecValTok{32}\NormalTok{)}
+\NormalTok{df\_youtubers }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(nome, est\_civil, escolaridade, n\_filhos, salario, idade)}
+\FunctionTok{kable}\NormalTok{(df\_youtubers, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{,}
       \AttributeTok{caption =} \StringTok{\textquotesingle{}Dados sobre Youtubers.\textquotesingle{}}\NormalTok{) }\CommentTok{\# Melhor visualização dos dados para este PDF}
 \end{Highlighting}
 \end{Shaded}
@@ -281,9 +320,7 @@ Djoko & Solteiro & Pós-graduação & 0 & 4500 & 29\\
 \hline
 Wilson & Casado & Ensino médio completo & 0 & 3000 & 33\\
 \hline
-Jiraiya & Solteiro & Ensino médio completo & 1 & 1500 & 33\\
-\hline
-Leon & Casado & Pós-graduação & 0 & 5000 & 39\\
+Leon & Casado & Pós-graduação & 0 & 2000 & 39\\
 \hline
 Nilce & Casado & Superior completo & 0 & 5500 & 32\\
 \hline
@@ -307,7 +344,7 @@ Cada uma das duas ainda pode ser dividida em dois tipos:
   \includegraphics{figs/tipos_de_variaveis.png}
 \end{itemize}
 
-Muitas vezes queremos resumir estes dados, apresentando um ou mais valores que sejam representativos da série toda. Neste contexto entram às \textbf{medidas de posição e dispersão}.
+Muitas vezes queremos resumir estes dados, apresentando um ou mais valores que sejam representativos da série toda. Neste contexto entram às \textbf{medidas de posição} e \textbf{dispersão}.
 
 \hypertarget{medidas-de-posiuxe7uxe3o}{%
 \section{Medidas de Posição}\label{medidas-de-posiuxe7uxe3o}}
@@ -315,6 +352,9 @@ Muitas vezes queremos resumir estes dados, apresentando um ou mais valores que s
 Usualmente utilizamos uma das seguintes medidas de posição (ou localização): \textbf{média, mediana ou moda}. Vamos as suas definições:
 
 \begin{itemize}
+\tightlist
+\item
+  A uma variável atribuiremos a letra \(X\) enquanto para seus elementos os valores \(x_1, \dots, x_n\), sendo \(n\) o seu total de elementos.
 \item
   \textbf{Moda:} valor mais frequente do conjunto de valores observados.
 \item
@@ -323,36 +363,42 @@ Usualmente utilizamos uma das seguintes medidas de posição (ou localização):
   \begin{itemize}
   \tightlist
   \item
-    Quando o número de observações for par, usa-se como mediana a média aritmética das duas observações centrais.
+    Quando o número de observações for \textbf{par}, usa-se como mediana a média aritmética das duas observações centrais.
   \end{itemize}
 \end{itemize}
 
-Na tabela \ref{tab:youtubers} temos a seguinte mediana para uma coluna específica:
+Na tabela \ref{tab:youtubers} temos a seguinte mediana para a coluna salário:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{median}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{salario)}
+\FunctionTok{median}\NormalTok{(df\_youtubers}\SpecialCharTok{$}\NormalTok{salario)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4500
+## [1] 3750
 \end{verbatim}
 
-Para todas as colunas:
+\begin{itemize}
+\tightlist
+\item
+  Matematicamente ordenamos os dados do menor para o maior: \(2000, 3000, 4500, 5500\), selecionamos as observações centrais \(3000\) e \(4500\). Por fim, calculamos a média artimética de ambas, \(\frac{3000+4500}{2}\), para obtermos a mediana.
+\end{itemize}
+
+Além disso, podemos calcular a mediana para todas as colunas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Aplicaremos a função median para todas as colunas:}
-\FunctionTok{apply}\NormalTok{(df, }\AttributeTok{MARGIN =} \DecValTok{2}\NormalTok{, }\AttributeTok{FUN =}\NormalTok{ median)}
+\CommentTok{\# apply: aplica uma função a um conjunto de dados}
+\CommentTok{\# MARGIN = 2: 1 para aplicar a função a todas as linhas e 2 a todas as colunas}
+\CommentTok{\# FUN: função a ser aplicada ao conjunto de dados}
+\FunctionTok{apply}\NormalTok{(df\_youtubers[, }\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}n\_filhos\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}salario\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}idade\textquotesingle{}}\NormalTok{)], }\AttributeTok{MARGIN =} \DecValTok{2}\NormalTok{, }\AttributeTok{FUN =}\NormalTok{ median)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-##            nome       est_civil    escolaridade        n_filhos         salario 
-##          "Leon"        "Casado" "Pós-graduação"             "0"          "4500" 
-##           idade 
-##            "33"
+## n_filhos  salario    idade 
+##      0.0   3750.0     32.5
 \end{verbatim}
 
 \begin{itemize}
@@ -364,35 +410,35 @@ Para todas as colunas:
   \]
 \end{itemize}
 
-Na tabela \ref{tab:youtubers} temos a seguinte mediana para uma coluna específica:
+Na tabela \ref{tab:youtubers} temos a seguinte média para o salário:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{salario)}
+\FunctionTok{mean}\NormalTok{(df\_youtubers}\SpecialCharTok{$}\NormalTok{salario)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3900
+## [1] 3750
 \end{verbatim}
 
-Para todas as colunas:
+Podemos calcular para todas as colunas que possuam valores numéricos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{colMeans}\NormalTok{(df[, }\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}idade\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}salario\textquotesingle{}}\NormalTok{)])}
+\FunctionTok{colMeans}\NormalTok{(df\_youtubers[, }\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}idade\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}salario\textquotesingle{}}\NormalTok{)])}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ##   idade salario 
-##    33.2  3900.0
+##   33.25 3750.00
 \end{verbatim}
 
 \hypertarget{medidas-de-dispersuxe3o}{%
 \section{Medidas de Dispersão}\label{medidas-de-dispersuxe3o}}
 
-O resumo de um conjunto de dados por uma única medida representativa de posição esconde toda a informação sobre a variabilidade de um conjunto de observações. Consideremos que cinco alunos realizaram cinco provas, obtendo as seguintes notas:
+O \textbf{resumo} de um conjunto de dados por uma única medida representativa de posição esconde toda a informação sobre a variabilidade de um conjunto de observações. Consideremos que cinco alunos realizaram cinco provas, obtendo as seguintes notas:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -403,9 +449,9 @@ O resumo de um conjunto de dados por uma única medida representativa de posiç�
                \DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{8}\NormalTok{,}
                \DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}
                \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{5}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{5}\NormalTok{, }\AttributeTok{byrow =}\NormalTok{ T)}
-\NormalTok{df }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(notas, }\AttributeTok{row.names =}\NormalTok{ nomes)}
-\FunctionTok{colnames}\NormalTok{(df) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}P1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P4\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P5\textquotesingle{}}\NormalTok{)}
-\FunctionTok{kable}\NormalTok{(df, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}
+\NormalTok{df\_alunos }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(notas, }\AttributeTok{row.names =}\NormalTok{ nomes)}
+\FunctionTok{colnames}\NormalTok{(df\_alunos) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}P1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P4\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}P5\textquotesingle{}}\NormalTok{)}
+\FunctionTok{kable}\NormalTok{(df\_alunos, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -429,7 +475,8 @@ Temos as seguintes médias para os alunos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{rowMeans}\NormalTok{(df)}
+\CommentTok{\# Podemos ver a média de cada coluna utilizando colMeans(df\_alunos)}
+\FunctionTok{rowMeans}\NormalTok{(df\_alunos)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -440,37 +487,37 @@ Temos as seguintes médias para os alunos:
 
 Cada aluno possui a mesma média de notas, porém, isto não informa nada sobre a diferença na \textbf{variabilidade das notas.} A partir disto, são criadas medidas que sumarizam a \textbf{variabilidade} de um conjunto de observações.
 
-Em um primeiro momento podemos podemos considerar a soma da diferença dos dados em relação a média:
+Uma primeira ideia é considerar a soma das diferença dos dados em relação a média:
 
 \[
 x_1 - \overline{x} + x_2 - \overline{x} + \cdots + x_n - \overline{x}
 \]
 
-Porém, em qualquer conjunto a soma destes desvios é igual a zero. Uma alterntiva é então adicionar o valor absoluto em cada diferença:
+Porém, podemos mostrar que em qualquer conjunto a soma destes desvios é igual a zero. Uma alternativa é então adicionar o valor absoluto em cada diferença:
 
 \[
 |x_1 - \overline{x}| + |x_2 - \overline{x}| + \cdots + |x_n - \overline{x}|
 \]
 
-Apesar de possuir uma boa interpretabilidade, tal métrica não possui propriedades matemáticas interessantes. Assim, trabalharemos com a diferença de quadrados de um conjunto de dados:
+Apesar de possuir uma boa interpretabilidade, tal métrica não possui propriedades matemáticas interessantes. Assim, estatísticos trabalham com a diferença dos dados em relação a média ao quadrado:
 
 \[
 (x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2
 \]
 
-Como muitas vezes queremos comparar conjuntos de dados de diferentes tamanhos, realizamos a divisão destes valores pelo total de elementos em uma amostra:
+Como muitas vezes queremos comparar conjuntos de dados de diferentes tamanhos, realizamos a divisão desta soma pelo total de elementos em uma amostra e a este número chamamos de \textbf{variância}:
 
 \[
 \text{var}(X) = \frac{(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2}{n}
 \]
 
-A partir disto, definimos \textbf{desvio padrão} como sendo a raiz da variância:
+E a partir disto, definimos \textbf{desvio padrão} como sendo a raiz da variância:
 
 \[
 \text{dp} = \sqrt{\text{var}(X)}
 \]
 
-Realizamos isto pois caso os dados estejam em uma certa unidade de medida, como \(cm\) , ao calcularmos a variância passamos a trabalhar com \(cm^2\), o que dificulta a interpretabilidade dos resultados.
+Realizamos isto pois caso os dados estejam em uma certa unidade de medida, como \(cm\) , ao calcularmos a variância passamos a trabalhar com \(cm^2\), o que dificulta a interpretabilidade dos resultados. Utilizando o valor na raiz quadrada, voltamos a trabalhar com a unidade de medida utilizada.
 
 \hypertarget{quantis-empuxedricos}{%
 \section{Quantis Empíricos}\label{quantis-empuxedricos}}
@@ -479,14 +526,14 @@ Tanto a \textbf{média} como o \textbf{desvio padrão} podem não ser medidas ad
 
 \begin{itemize}
 \item
-  São afetados por valores extremos;
+  São afetados por \textbf{valores extremos;}
 \item
-  Apenas os dois valores não dão informação sobre a simetria ou assimetria da distribuição dos dados
+  Apenas os dois valores não dão informação sobre a \textbf{simetria} ou \textbf{assimetria} da distribuição dos dados
 \end{itemize}
 
-Vimos que a \textbf{mediana} é define uma divisão dos dados em duas metades. Além disto existem medidas chamadas de \textbf{quantil de ordem p} ou \textbf{p-quantil} indicado por \(q(p)\) onde \(p\) é uma proporção qualquer, \(0<p<1\) tal que \(100\%\) das observações sejam menores do que \(q(p)\).
+Vimos que a \textbf{mediana} define uma divisão dos dados em duas metades. Além dela existem medidas chamadas de \textbf{quantil de ordem p} ou \textbf{p-quantil} indicado por \(q(p)\) onde \(p\) é uma proporção qualquer, \(0<p<1\) tal que \(100\%\) das observações sejam menores do que \(q(p)\).
 
-Abaixo temos alguns dos quantis mais utilizados:
+Abaixo temos alguns dos nomes dos quantis mais utilizados:
 
 \begin{itemize}
 \item
@@ -501,25 +548,105 @@ Abaixo temos alguns dos quantis mais utilizados:
   \(q(0.95):\) \textbf{95° Percentil}
 \end{itemize}
 
+No \texttt{R} podemos visualizar os quartis da seguinte forma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(df\_alunos}\SpecialCharTok{$}\NormalTok{P1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   0%  25%  50%  75% 100% 
+##    0    1    2    3    3
+\end{verbatim}
+
+Em várias colunas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{apply}\NormalTok{(df\_alunos, }\DecValTok{2}\NormalTok{, quantile, }\FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,.}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       P1  P2 P3   P4   P5
+## 0%   0.0 0.0  5  5.0  7.0
+## 20%  0.8 2.4  5  5.0  7.0
+## 40%  1.6 3.6  5  5.6  7.6
+## 60%  2.4 4.4  5  6.4  8.4
+## 80%  3.0 5.0  5  7.6  9.2
+## 100% 3.0 5.0  5 10.0 10.0
+\end{verbatim}
+
 \hypertarget{box-plot}{%
 \section{Box Plot}\label{box-plot}}
 
-A informação contida nos quantis pode ser confusa quando estamos observando vários conjuntos de dados. A partir disto traduzimos-a em um diagrama, qual é chamado de \textbf{box plot:}
+A informação contida nos quantis pode ser confusa quando estamos observando vários conjuntos de dados. A partir disto a traduzimos em um diagrama, qual é chamado de \textbf{box plot:}
 
 Para construção dessa gráfico definimos por \textbf{intervalo interquartil} o valor:
 
 \[
-\text{IQR}(X) = q_3 - q_1
+\text{IQ}(X) = q_3 - q_1
 \]
 
-Desenhamos um retângulo que parte do primeiro quartil até o terceiro, com a mediana sendo representada por uma linha em seu interior. A partir do retângulo desenhamos uma linha até o maior ponto que não exceta o valor \(q_3+1.5 \cdot \text{IQR}(X)\), chamado de limite superior. De modo análogo fazemos o mesmo procedimento até a parte inferior do retângulo considerando o valor \(q_1 + 1.5 \cdot \text{IQR}(X)\) chamado de limite interior. As observações que estiverem acima do limite superior ou abaixo do limite superior são chamados de pontos exteriores e representadas por asteriscos. Essas observações podem ser chamaas de outliers ou valores atípicos.
+Desenhamos um retângulo que parte do primeiro quartil até o terceiro, com a mediana sendo representada por uma linha em seu interior. A partir do retângulo desenhamos uma linha até o maior ponto que não exceta o valor \(q_3+1.5 \cdot \text{IQ}(X)\), chamado de limite superior. De modo análogo fazemos o mesmo procedimento até a parte inferior do retângulo considerando o valor \(q_1 + 1.5 \cdot \text{IQ}(X)\) chamado de limite interior. As observações que estiverem acima do limite superior ou abaixo do limite superior são chamados de pontos exteriores e representadas por asteriscos. Essas observações podem ser chamaas de outliers ou valores atípicos.
+
+Modo simples de como realizar um boxplot pelo R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(df\_alunos, }\AttributeTok{xlab =} \StringTok{"Provas"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Notas"}\NormalTok{,}
+        \AttributeTok{main =} \StringTok{"Boxplot dos alunos"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{quote}
+O aluno mais atento pode se perguntar: porque alguns dos boxplots não possuem a linha superior e/ou inferior? Isto ocorre quando temos muitos dados em uma mesma categoria, com o primeiro ou terceiro quartil tendo o mesmo valor que o mínimo ou máximo do conjunto de dados:
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{apply}\NormalTok{(df\_alunos, }\DecValTok{2}\NormalTok{, quantile)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      P1 P2 P3 P4 P5
+## 0%    0  0  5  5  7
+## 25%   1  3  5  5  7
+## 50%   2  4  5  6  8
+## 75%   3  5  5  7  9
+## 100%  3  5  5 10 10
+\end{verbatim}
 
 O \textbf{box plot} dá uma ideia de posição, dispersão, assimetria dos dados.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(df\_alunos}\SpecialCharTok{$}\NormalTok{P4, }\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-21-1.pdf}
 
 \hypertarget{transformauxe7uxf5es}{%
 \section{Transformações}\label{transformauxe7uxf5es}}
 
-Vários procedimentos estatísticos são baseados na posição que os dados possuem uma distribuição em forma de sino (oriundos de uma distribuição normal), ou que a distribuição seja mais ou menos simétrica.
+Vários procedimentos estatísticos são baseados na posição que os dados possuem uma distribuição em forma de sino (distribuição normal) ou que a distribuição seja mais ou menos simétrica:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Simula 500 dados de uma distribuição normal}
+\NormalTok{dados\_normal }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n =} \DecValTok{10000}\NormalTok{)}
+\CommentTok{\# Gráfico de suas frequências}
+\FunctionTok{hist}\NormalTok{(dados\_normal)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-22-1.pdf}
 
 Se quisermos utilizar tais procedimentos podemos efetuar transformações nas observações, de modo a se obter uma distribuição mais simétrica e próxima da normal. As transformações mais frequentemente utilizadas são:
 
@@ -528,6 +655,19 @@ x = \left\{\begin{matrix}&\sqrt{x}\\ &\ln(x) \\&\frac{1}{x}\end{matrix}\right.
 \]
 
 para cada transformação obtemos gráficos apropriados para os dados originais e transformados, de modo a escolhermos o valor mais adequado de \(p\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados\_gamma }\OtherTok{\textless{}{-}} \FunctionTok{rgamma}\NormalTok{(}\AttributeTok{n =} \DecValTok{300}\NormalTok{, }\AttributeTok{shape =} \DecValTok{1}\NormalTok{)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)) }\CommentTok{\# MultiFrame rowwise layout}
+\FunctionTok{hist}\NormalTok{(dados\_gamma)}
+\FunctionTok{hist}\NormalTok{(}\FunctionTok{sqrt}\NormalTok{(dados\_gamma))}
+\FunctionTok{hist}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{dados\_gamma)}
+\FunctionTok{hist}\NormalTok{(}\FunctionTok{log}\NormalTok{(dados\_gamma))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-23-1.pdf}
 
 \hypertarget{lab-01---conjunto-de-dados-iris}{%
 \section{Lab 01 - Conjunto de dados Iris}\label{lab-01---conjunto-de-dados-iris}}
@@ -635,19 +775,7 @@ Há ainda diversas maneiras de realizarmos visualizações desse conjunto no \te
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-19-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Sepal.Length)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Boxplot Iris\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.ticks.x =} \FunctionTok{element\_blank}\NormalTok{(),}
-  \AttributeTok{axis.text.x =} \FunctionTok{element\_blank}\NormalTok{())}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-20-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-28-1.pdf}
 
 Observamos que não há presença de outliers, além disso, como a parte debaixo do retângulo separado pela linha que representa a mediana é menor, isto indica que a distribuição dos dados é ligeiramente assimétrica, o qual é confirmado pelo histograma:
 
@@ -657,7 +785,7 @@ Observamos que não há presença de outliers, além disso, como a parte debaixo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-21-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-29-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -667,7 +795,169 @@ Observamos que não há presença de outliers, além disso, como a parte debaixo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-22-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+\hypertarget{lab-02---xadrez-brasil}{%
+\section{Lab 02 - Xadrez Brasil}\label{lab-02---xadrez-brasil}}
+
+Em 2022 houve uma polêmica no universo de xadrez entre o atual campeão mundial de xadrez Magnus Carlsen e o jovem grande mestre Hanns Niemann, qual possui um histórico de trapaças e foi acusado de repetir estes atos no torneio. Magnus chegou a abandonar o torneio motivado por acreditar que seu oponente utilizava de engines em sua partida.
+
+Baseado nisso vários estatísticos se debrulharam entre as partidas de Niemann com o objetivo de encontrar evidências de sua rápida ascensão no xadrez, qual bateu recordes como grande mestre mais rápido da história.
+
+\href{https://ratings.fide.com/profile/2093596/chart}{\includegraphics{figs/niemann_rating.png}}
+
+Uma destas analises foi realizada pelo canal brasileiro de youtube Xadrez Brasil, e nela podemos observar como medidas de posição e dispersão podem ser utilizadas para fortalecer ou não a hipótese de que Niemann estava trapaçeando.
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://www.youtube.com/watch?v=60QPEGsOCyw}
+\end{itemize}
+
+\hypertarget{projeto-01---machine-learning-from-disaster}{%
+\section{Projeto 01 - Machine Learning from Disaster}\label{projeto-01---machine-learning-from-disaster}}
+
+Todo mundo já assistiu, ou pelo menos ouviu falar, sobre o desastre do navio Titanic.
+
+Incrivelmente este caso também pode ser estudado utilizando aprendizado de máquina! Na verdade este é um dos primeiros desafios que trabalhamos quando estudamos nossos primeiros algoritmos. O conjunto de dados e suas informações pode ser encontrado no site \href{https://www.kaggle.com/c/titanic}{Kaggle}, um site que hospeda diversos conjuntos de dados e competições de machine learning.
+
+Na aula aprenderemos como baixamos e analisamos as observaçõs contidas nesse conjunto de dados, qual pode ser visualizado na tabela abaixo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+\NormalTok{titanic\_train }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"G:/Meu Drive/Dados/titanic\_train.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 891 Columns: 12
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (5): Name, Sex, Ticket, Cabin, Embarked
+## dbl (7): PassengerId, Survived, Pclass, Age, SibSp, Parch, Fare
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{kable}\NormalTok{(}\FunctionTok{head}\NormalTok{(titanic\_train), }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+\hline
+PassengerId & Survived & Pclass & Name & Sex & Age & SibSp & Parch & Ticket & Fare & Cabin & Embarked\\
+\hline
+1 & 0 & 3 & Braund, Mr. Owen Harris & male & 22 & 1 & 0 & A/5 21171 & 7.2500 & NA & S\\
+\hline
+2 & 1 & 1 & Cumings, Mrs. John Bradley (Florence Briggs Thayer) & female & 38 & 1 & 0 & PC 17599 & 71.2833 & C85 & C\\
+\hline
+3 & 1 & 3 & Heikkinen, Miss. Laina & female & 26 & 0 & 0 & STON/O2. 3101282 & 7.9250 & NA & S\\
+\hline
+4 & 1 & 1 & Futrelle, Mrs. Jacques Heath (Lily May Peel) & female & 35 & 1 & 0 & 113803 & 53.1000 & C123 & S\\
+\hline
+5 & 0 & 3 & Allen, Mr. William Henry & male & 35 & 0 & 0 & 373450 & 8.0500 & NA & S\\
+\hline
+6 & 0 & 3 & Moran, Mr. James & male & NA & 0 & 0 & 330877 & 8.4583 & NA & Q\\
+\hline
+\end{tabular}
+
+O objetivo do trabalho é prever se um passageiro sobreviveu ou não no naufrágio do Titanic. Para começarmos trabalhando podemos utilizar a função \texttt{table} para observar a distribuição dos passageiros que sobreviveram ao acidente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(titanic\_train}\SpecialCharTok{$}\NormalTok{Survived)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   0   1 
+## 549 342
+\end{verbatim}
+
+Observar a média de idade entre os passageiros:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(titanic\_train}\SpecialCharTok{$}\NormalTok{Age, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29.69912
+\end{verbatim}
+
+Quais são os tipos de variáveis que eu tenho no conjunto de dados?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(titanic\_train)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## spec_tbl_df [891 x 12] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ PassengerId: num [1:891] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Survived   : num [1:891] 0 1 1 1 0 0 0 0 1 1 ...
+##  $ Pclass     : num [1:891] 3 1 3 1 3 3 1 3 3 2 ...
+##  $ Name       : chr [1:891] "Braund, Mr. Owen Harris" "Cumings, Mrs. John Bradley (Florence Briggs Thayer)" "Heikkinen, Miss. Laina" "Futrelle, Mrs. Jacques Heath (Lily May Peel)" ...
+##  $ Sex        : chr [1:891] "male" "female" "female" "female" ...
+##  $ Age        : num [1:891] 22 38 26 35 35 NA 54 2 27 14 ...
+##  $ SibSp      : num [1:891] 1 1 0 1 0 0 0 3 0 1 ...
+##  $ Parch      : num [1:891] 0 0 0 0 0 0 0 1 2 0 ...
+##  $ Ticket     : chr [1:891] "A/5 21171" "PC 17599" "STON/O2. 3101282" "113803" ...
+##  $ Fare       : num [1:891] 7.25 71.28 7.92 53.1 8.05 ...
+##  $ Cabin      : chr [1:891] NA "C85" NA "C123" ...
+##  $ Embarked   : chr [1:891] "S" "C" "S" "S" ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   PassengerId = col_double(),
+##   ..   Survived = col_double(),
+##   ..   Pclass = col_double(),
+##   ..   Name = col_character(),
+##   ..   Sex = col_character(),
+##   ..   Age = col_double(),
+##   ..   SibSp = col_double(),
+##   ..   Parch = col_double(),
+##   ..   Ticket = col_character(),
+##   ..   Fare = col_double(),
+##   ..   Cabin = col_character(),
+##   ..   Embarked = col_character()
+##   .. )
+##  - attr(*, "problems")=<externalptr>
+\end{verbatim}
+
+Por fim, vamos selecionar
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{kable}\NormalTok{(}\FunctionTok{summary}\NormalTok{(titanic\_train), }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c|c|c}
+\hline
+  &  PassengerId &    Survived &     Pclass &     Name &     Sex &      Age &     SibSp &     Parch &    Ticket &      Fare &    Cabin &   Embarked\\
+\hline
+ & Min.   :  1.0 & Min.   :0.0000 & Min.   :1.000 & Length:891 & Length:891 & Min.   : 0.42 & Min.   :0.000 & Min.   :0.0000 & Length:891 & Min.   :  0.00 & Length:891 & Length:891\\
+\hline
+ & 1st Qu.:223.5 & 1st Qu.:0.0000 & 1st Qu.:2.000 & Class :character & Class :character & 1st Qu.:20.12 & 1st Qu.:0.000 & 1st Qu.:0.0000 & Class :character & 1st Qu.:  7.91 & Class :character & Class :character\\
+\hline
+ & Median :446.0 & Median :0.0000 & Median :3.000 & Mode  :character & Mode  :character & Median :28.00 & Median :0.000 & Median :0.0000 & Mode  :character & Median : 14.45 & Mode  :character & Mode  :character\\
+\hline
+ & Mean   :446.0 & Mean   :0.3838 & Mean   :2.309 & NA & NA & Mean   :29.70 & Mean   :0.523 & Mean   :0.3816 & NA & Mean   : 32.20 & NA & NA\\
+\hline
+ & 3rd Qu.:668.5 & 3rd Qu.:1.0000 & 3rd Qu.:3.000 & NA & NA & 3rd Qu.:38.00 & 3rd Qu.:1.000 & 3rd Qu.:0.0000 & NA & 3rd Qu.: 31.00 & NA & NA\\
+\hline
+ & Max.   :891.0 & Max.   :1.0000 & Max.   :3.000 & NA & NA & Max.   :80.00 & Max.   :8.000 & Max.   :6.0000 & NA & Max.   :512.33 & NA & NA\\
+\hline
+ & NA & NA & NA & NA & NA & NA's   :177 & NA & NA & NA & NA & NA & NA\\
+\hline
+\end{tabular}
 
 \hypertarget{tipos-de-distribuiuxe7uxf5es-discretas}{%
 \chapter{Tipos de Distribuições Discretas}\label{tipos-de-distribuiuxe7uxf5es-discretas}}

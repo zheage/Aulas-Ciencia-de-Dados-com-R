@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Projeto 01 - Machine Learning from Disaster | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
+#The HTML output format for this example is bookdown::gitbook,
+#set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Projeto 01 - Machine Learning from Disaster | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
+#The HTML output format for this example is bookdown::gitbook,
+#set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Projeto 01 - Machine Learning from Disaster | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  
+  <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
+#The HTML output format for this example is bookdown::gitbook,
+#set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Richard Guilherme dos Santos" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="medidas-descritivas.html"/>
+<link rel="next" href="tipos-de-distribuições-discretas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a>Ciência de Dados com Linguagem R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a></li>
+<li class="chapter" data-level="3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>3</b> Medidas Descritivas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#tipos-de-variáveis"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a></li>
+<li class="chapter" data-level="3.2" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-posição"><i class="fa fa-check"></i><b>3.2</b> Medidas de Posição</a></li>
+<li class="chapter" data-level="3.3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>3.3</b> Medidas de Dispersão</a></li>
+<li class="chapter" data-level="3.4" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#quantis-empíricos"><i class="fa fa-check"></i><b>3.4</b> Quantis Empíricos</a></li>
+<li class="chapter" data-level="3.5" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#box-plot"><i class="fa fa-check"></i><b>3.5</b> Box Plot</a></li>
+<li class="chapter" data-level="3.6" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#transformações"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
+<li class="chapter" data-level="3.7" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-01---conjunto-de-dados-iris"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
+<li class="chapter" data-level="3.8" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-02---xadrez-brasil"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>4</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="5" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>5</b> Tipos de Distribuições Discretas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html#valor-médio-de-uma-variável-aleatória"><i class="fa fa-check"></i><b>5.1</b> Valor Médio de uma Variável Aleatória</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>6</b> Tipos de Distribuições Contínuas</a></li>
+<li class="chapter" data-level="7" data-path="introdução-as-bibliotecas-do-r.html"><a href="introdução-as-bibliotecas-do-r.html"><i class="fa fa-check"></i><b>7</b> Introdução as bibliotecas do R</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="introdução-as-bibliotecas-do-r.html"><a href="introdução-as-bibliotecas-do-r.html#dplyr"><i class="fa fa-check"></i><b>7.1</b> Dplyr</a></li>
+<li class="chapter" data-level="7.2" data-path="introdução-as-bibliotecas-do-r.html"><a href="introdução-as-bibliotecas-do-r.html#tidyr"><i class="fa fa-check"></i><b>7.2</b> Tidyr</a></li>
+<li class="chapter" data-level="7.3" data-path="introdução-as-bibliotecas-do-r.html"><a href="introdução-as-bibliotecas-do-r.html#ggplot2"><i class="fa fa-check"></i><b>7.3</b> GGPlot2</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>8</b> Regressão Linear</a></li>
+<li class="divider"></li>
+<li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CIÊNCIA DE DADOS COM LINGUAGEM R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="projeto-01---machine-learning-from-disaster" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Projeto 01 - Machine Learning from Disaster<a href="projeto-01---machine-learning-from-disaster.html#projeto-01---machine-learning-from-disaster" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Todo mundo já assistiu, ou pelo menos ouviu falar, sobre o desastre do navio Titanic.</p>
+<p>Incrivelmente este caso também pode ser estudado utilizando aprendizado de máquina! Na verdade este é um dos primeiros desafios que trabalhamos quando estudamos nossos primeiros algoritmos. O conjunto de dados e suas informações pode ser encontrado no site <a href="https://www.kaggle.com/c/titanic">Kaggle</a>, um site que hospeda diversos conjuntos de dados e competições de machine learning.</p>
+<p>Na aula aprenderemos como baixamos e analisamos as observaçõs contidas nesse conjunto de dados, qual pode ser visualizado na tabela abaixo:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="projeto-01---machine-learning-from-disaster.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb49-2"><a href="projeto-01---machine-learning-from-disaster.html#cb49-2" aria-hidden="true" tabindex="-1"></a>titanic_train <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;G:/Meu Drive/Dados/titanic_train.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 891 Columns: 12
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (5): Name, Sex, Ticket, Cabin, Embarked
+## dbl (7): PassengerId, Survived, Pclass, Age, SibSp, Parch, Fare
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="projeto-01---machine-learning-from-disaster.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(titanic_train), <span class="at">align =</span> <span class="st">&#39;c&#39;</span>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="6%" />
+<col width="5%" />
+<col width="34%" />
+<col width="5%" />
+<col width="3%" />
+<col width="4%" />
+<col width="4%" />
+<col width="11%" />
+<col width="5%" />
+<col width="4%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">PassengerId</th>
+<th align="center">Survived</th>
+<th align="center">Pclass</th>
+<th align="center">Name</th>
+<th align="center">Sex</th>
+<th align="center">Age</th>
+<th align="center">SibSp</th>
+<th align="center">Parch</th>
+<th align="center">Ticket</th>
+<th align="center">Fare</th>
+<th align="center">Cabin</th>
+<th align="center">Embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">Braund, Mr. Owen Harris</td>
+<td align="center">male</td>
+<td align="center">22</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">A/5 21171</td>
+<td align="center">7.2500</td>
+<td align="center">NA</td>
+<td align="center">S</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">Cumings, Mrs. John Bradley (Florence Briggs Thayer)</td>
+<td align="center">female</td>
+<td align="center">38</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">PC 17599</td>
+<td align="center">71.2833</td>
+<td align="center">C85</td>
+<td align="center">C</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">Heikkinen, Miss. Laina</td>
+<td align="center">female</td>
+<td align="center">26</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">STON/O2. 3101282</td>
+<td align="center">7.9250</td>
+<td align="center">NA</td>
+<td align="center">S</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+<td align="center">female</td>
+<td align="center">35</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">113803</td>
+<td align="center">53.1000</td>
+<td align="center">C123</td>
+<td align="center">S</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">Allen, Mr. William Henry</td>
+<td align="center">male</td>
+<td align="center">35</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">373450</td>
+<td align="center">8.0500</td>
+<td align="center">NA</td>
+<td align="center">S</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">Moran, Mr. James</td>
+<td align="center">male</td>
+<td align="center">NA</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">330877</td>
+<td align="center">8.4583</td>
+<td align="center">NA</td>
+<td align="center">Q</td>
+</tr>
+</tbody>
+</table>
+<p>O objetivo do trabalho é prever se um passageiro sobreviveu ou não no naufrágio do Titanic. Para começarmos trabalhando podemos utilizar a função <code>table</code> para observar a distribuição dos passageiros que sobreviveram ao acidente:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="projeto-01---machine-learning-from-disaster.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(titanic_train<span class="sc">$</span>Survived)</span></code></pre></div>
+<pre><code>## 
+##   0   1 
+## 549 342</code></pre>
+<p>Observar a média de idade entre os passageiros:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="projeto-01---machine-learning-from-disaster.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(titanic_train<span class="sc">$</span>Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 29.69912</code></pre>
+<p>Quais são os tipos de variáveis que eu tenho no conjunto de dados?</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="projeto-01---machine-learning-from-disaster.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(titanic_train)</span></code></pre></div>
+<pre><code>## spec_tbl_df [891 × 12] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ PassengerId: num [1:891] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ Survived   : num [1:891] 0 1 1 1 0 0 0 0 1 1 ...
+##  $ Pclass     : num [1:891] 3 1 3 1 3 3 1 3 3 2 ...
+##  $ Name       : chr [1:891] &quot;Braund, Mr. Owen Harris&quot; &quot;Cumings, Mrs. John Bradley (Florence Briggs Thayer)&quot; &quot;Heikkinen, Miss. Laina&quot; &quot;Futrelle, Mrs. Jacques Heath (Lily May Peel)&quot; ...
+##  $ Sex        : chr [1:891] &quot;male&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; ...
+##  $ Age        : num [1:891] 22 38 26 35 35 NA 54 2 27 14 ...
+##  $ SibSp      : num [1:891] 1 1 0 1 0 0 0 3 0 1 ...
+##  $ Parch      : num [1:891] 0 0 0 0 0 0 0 1 2 0 ...
+##  $ Ticket     : chr [1:891] &quot;A/5 21171&quot; &quot;PC 17599&quot; &quot;STON/O2. 3101282&quot; &quot;113803&quot; ...
+##  $ Fare       : num [1:891] 7.25 71.28 7.92 53.1 8.05 ...
+##  $ Cabin      : chr [1:891] NA &quot;C85&quot; NA &quot;C123&quot; ...
+##  $ Embarked   : chr [1:891] &quot;S&quot; &quot;C&quot; &quot;S&quot; &quot;S&quot; ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   PassengerId = col_double(),
+##   ..   Survived = col_double(),
+##   ..   Pclass = col_double(),
+##   ..   Name = col_character(),
+##   ..   Sex = col_character(),
+##   ..   Age = col_double(),
+##   ..   SibSp = col_double(),
+##   ..   Parch = col_double(),
+##   ..   Ticket = col_character(),
+##   ..   Fare = col_double(),
+##   ..   Cabin = col_character(),
+##   ..   Embarked = col_character()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
+<p>Por fim, vamos selecionar</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="projeto-01---machine-learning-from-disaster.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(titanic_train), <span class="at">align =</span> <span class="st">&#39;c&#39;</span>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="1%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="8%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="7%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">PassengerId</th>
+<th align="center">Survived</th>
+<th align="center">Pclass</th>
+<th align="center">Name</th>
+<th align="center">Sex</th>
+<th align="center">Age</th>
+<th align="center">SibSp</th>
+<th align="center">Parch</th>
+<th align="center">Ticket</th>
+<th align="center">Fare</th>
+<th align="center">Cabin</th>
+<th align="center">Embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">Min. : 1.0</td>
+<td align="center">Min. :0.0000</td>
+<td align="center">Min. :1.000</td>
+<td align="center">Length:891</td>
+<td align="center">Length:891</td>
+<td align="center">Min. : 0.42</td>
+<td align="center">Min. :0.000</td>
+<td align="center">Min. :0.0000</td>
+<td align="center">Length:891</td>
+<td align="center">Min. : 0.00</td>
+<td align="center">Length:891</td>
+<td align="center">Length:891</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">1st Qu.:223.5</td>
+<td align="center">1st Qu.:0.0000</td>
+<td align="center">1st Qu.:2.000</td>
+<td align="center">Class :character</td>
+<td align="center">Class :character</td>
+<td align="center">1st Qu.:20.12</td>
+<td align="center">1st Qu.:0.000</td>
+<td align="center">1st Qu.:0.0000</td>
+<td align="center">Class :character</td>
+<td align="center">1st Qu.: 7.91</td>
+<td align="center">Class :character</td>
+<td align="center">Class :character</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">Median :446.0</td>
+<td align="center">Median :0.0000</td>
+<td align="center">Median :3.000</td>
+<td align="center">Mode :character</td>
+<td align="center">Mode :character</td>
+<td align="center">Median :28.00</td>
+<td align="center">Median :0.000</td>
+<td align="center">Median :0.0000</td>
+<td align="center">Mode :character</td>
+<td align="center">Median : 14.45</td>
+<td align="center">Mode :character</td>
+<td align="center">Mode :character</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">Mean :446.0</td>
+<td align="center">Mean :0.3838</td>
+<td align="center">Mean :2.309</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">Mean :29.70</td>
+<td align="center">Mean :0.523</td>
+<td align="center">Mean :0.3816</td>
+<td align="center">NA</td>
+<td align="center">Mean : 32.20</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">3rd Qu.:668.5</td>
+<td align="center">3rd Qu.:1.0000</td>
+<td align="center">3rd Qu.:3.000</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">3rd Qu.:38.00</td>
+<td align="center">3rd Qu.:1.000</td>
+<td align="center">3rd Qu.:0.0000</td>
+<td align="center">NA</td>
+<td align="center">3rd Qu.: 31.00</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">Max. :891.0</td>
+<td align="center">Max. :1.0000</td>
+<td align="center">Max. :3.000</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">Max. :80.00</td>
+<td align="center">Max. :8.000</td>
+<td align="center">Max. :6.0000</td>
+<td align="center">NA</td>
+<td align="center">Max. :512.33</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA’s :177</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="medidas-descritivas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tipos-de-distribuições-discretas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
