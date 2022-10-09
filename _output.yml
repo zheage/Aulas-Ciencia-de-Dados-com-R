@@ -2,14 +2,17 @@ bookdown::gitbook:
   css: style.css
   highlight: zenburn
   split_by: section
-  fontsettings:
-    theme: "night"
-    size: 2
   config:
     download: null
+    edit: null
+    info: false
+    fontsettings:
+      theme: "night"
+      size: 2
     sharing: 
       twitter: false
       facebook: false
+      weibo: false
     toc:
       before: |
         <li><a>Ciência de Dados com Linguagem R</a></li>
