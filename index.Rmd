@@ -13,6 +13,8 @@ link-citations: yes
 github-repo: https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R
 ---
 
+# Introdução {-}
+
 Bem vindo!
 
 Me chamo Richard, sou matemático e atualmente faço mestrado em estatística

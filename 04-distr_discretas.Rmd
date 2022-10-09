@@ -11,7 +11,7 @@ Neste contexto vimos como associar a cada valor $x_i$ da variável aleatória $X
 Além disso, chamamos de **função de probabilidade** da variável aleatória discreta $X$ a função que a cada valor de $x_i$ associa a sua probabilidade de ocorrência
 
 $$
-p(x_i) = PX=x_i) = p_i, i =1, 2, \dots
+p(x_i) = P(X=x_i) = p_i, i =1, 2, \dots
 $$
 
 ## Valor Médio de uma Variável Aleatória

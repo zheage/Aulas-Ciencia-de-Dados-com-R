@@ -1,7 +1,82 @@
-#  Introdução as bibliotecas do R
+# Introdução à pacotes do R e ao Tidyverse
 
-## Dplyr
+Pacotes são conjuntos de códigos criados para a linguagem `R` de forma que as mais diversas funcionalidades sejam simplificadas e padronizadas. Para isto utilizaremos pacotes do `tidyverse`, uma coleção de pacotes utilizados para manipulação de dados que compartilham uma filosofia em comum e são projetados para serem trabalhados em conjunto.
 
-## Tidyr
+<center>[![Tidyverse.](figs/tidyverse.png){width="460"}](https://medium.com/omixdata/manipulação-de-dados-uma-introdução-à-coleção-de-pacotes-tidyverse-no-r-961a69a6da4c)</center>
+
+Muitos deles não são nativos da linguagem e devem ser instalados utilizando a função `install.packages`. Neste capítulo trabalharemos com:
+
+-   **Dplyr:** Manipulação de conjunto de dados
+-   **Tidyr:** Modelagem no formato de conjuntos de dados
+-   **GGPlot2:** Visualização de conjuntos de dados
+
+Inicialmente devemos realizarmos sua intalação:
+
+```{r, eval = FALSE}
+install.packages('dplyr')
+install.packages('tidyr')
+install.packages('ggplot2')
+# install.packages('tidyverse') Instala todos os pacotes do tidyverse de uma vez
+```
+
+e em seguida carregarmos os pacotes no R quando formos utiliza-los:
+
+```{r, warning = FALSE, message = FALSE}
+library(dplyr) # Manipulação de dados
+library(tidyr) # Modificação no formato de conjuntos de dados
+library(ggplot2) # Visualização de gráficos
+library(readr) # Biblioteca para leitura de dados
+# library(tidyverse) Carrega todos os pacotes do tidyverse de uma vez,
+# não é interessante para economia de memória.
+```
+
+```{r, include = FALSE}
+library(rmarkdown)
+library(knitr) # Tabelas para markdown
+```
+
+Também podemos carregar vários em uma linha de código utilizando a biblioteca `easypackages`:
+
+```{r, eval = FALSE}
+install.packages('easypackages') # Instalar a biblioteca
+library(easypackages) # Carrega o pacote
+libraries('dplyr', 'tidyr', 'ggplot2')
+```
+
+Trabalharemos especialmente com **Data Munging**, processo de preparar conjuntos de dados para relatórios e análises. Esta parte incorpora todas as etapas anteriores à análise, incluindo estruturação de dados, limpeza, enriquecimento e validação.
+
+## Dados utilizados
+
+Antes de utilizarmos as bibliotecas comentemos um pouco sobre os conjuntos de dados a serem utilizados nos processos.
+
+### Motor Trend Car Road Test (mtcars)
+
+Conjunto de dados nativo do R extraído da revista Motor Trend US de 1974. Possui diversos atributos de veículos dessa época e não precisa ser carregado de forma externa, estes já são salvos na variável `mtcars`.
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(mtcars,
+            options = list(rows.print = 6))
+```
+
+### Pokémons Dataset
+
+Presente em animações, jogos, filmes, séries e em toda a cultura nerd, Pokémon é uma série contendo os nossos monstrinhos favoritos! Utilizaremos aqui o conjunto com uma lista com todos os pokémons até então presente nos jogos, com seus nomes, tipos, status, classificação em lendário dentre outros atributos. Podemos encontrar o conjunto no site [Kaggle](https://www.kaggle.com/datasets/alopez247/pokemon).
+
+```{r, message = FALSE}
+pokemon_stats <- read_csv("G:/Meu Drive/Dados/pokemon_stats.csv")
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(pokemon_stats,
+            options = list(rows.print = 6))
+```
+
+## Dplyr & Tidyr
+
+Dplyr e Tidyr são pacotes que se complementam na manipulação de dados. O primeiro foca na realização de manipulação enquanto o segundo na modificação de seu formato. Aqui utilizaremos como referência a [folha de referência de ambas as bibliotecas](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/87d0d3cd-9abc-4b61-bf00-dc9ce48cdd20/04.16._Folha_de_Referencia_dplyr_e_tidy.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T165407Z&X-Amz-Expires=86400&X-Amz-Signature=b78994192312f13c9140b99a68be9c23018194c06ff7eaae4250b51cea84eef9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Dplyr%2520e%2520Tidy.pdf%22&x-id=GetObject). Além disso recomendo a consulta do site [Rdocumentation](https://www.rdocumentation.org/packages/dplyr/versions/1.0.10) para visualização de todas as funções dos pacotes e até mesmo o próprio site do [Dplyr](https://dplyr.tidyverse.org) e [Tidyr](https://tidyr.tidyverse.org).
 
 ## GGPlot2
+
+## Projeto 01 - Machine Learning from Disaster
+
+Vamos utilizar o que aprendemos até então para trabalharmos com o conjunto de dados do Titanic:
