@@ -1,5 +1,5 @@
 tab:youtubers
-introdução-1
+introdução
 introdução-ao-r
 medidas-descritivas
 tipos-de-variáveis

@@ -1,8 +1,10 @@
 bookdown::gitbook:
   css: style.css
-  fontsettings:
-    theme: night
+  highlight: zenburn
   split_by: section
+  fontsettings:
+    theme: "night"
+    size: 2
   config:
     download: null
     sharing: 

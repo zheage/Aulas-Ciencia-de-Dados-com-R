@@ -13,12 +13,6 @@ link-citations: yes
 github-repo: https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R
 ---
 
-# Introdução {-}
+# Sobre o autor {-}
 
 Bem vindo!
-
-Me chamo Richard, sou matemático e atualmente faço mestrado em estatística
-pelo programa PIPGEs.
-
-Caso queira me avisar sobre algum problema no livro, erro de digitação ou
-dúvida, aqui estão minhas redes sociais:
