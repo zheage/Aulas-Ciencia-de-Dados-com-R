@@ -2,31 +2,33 @@ h1:introdução-à-pacotes-do-r-e-ao-tidyverse Introdução à pacotes do R e ao
 h2:dados-utilizados Dados utilizados
 h3:motor-trend-car-road-test-mtcars Motor Trend Car Road Test (mtcars)
 h3:pokémons-dataset Pokémons Dataset
-h2:dplyr-tidyr Dplyr & Tidyr
-h3:extração-de-observações-linhas Extração de Observações (Linhas)
-h4:filter filter
-h4:distinct distinct
-h4:o-operador-pipe O Operador Pipe
-h4:sample_frac sample_frac
-h4:slice slice
-h3:extração-de-variáveis-colunas Extração de Variáveis (Colunas)
-h3:resumir-dados Resumir dados
-h4:summarise summarise
-h4:summarise_each summarise_each
-h4:count count
-h3:criação-de-novas-variáveis Criação de Novas Variáveis
+h3:fifa-2022-player-dataset Fifa 2022 Player Dataset
+h2:introdução-a-fatores Introdução a fatores
+h2:trabalhando-com-datas Trabalhando com Datas
+h1:dplyr-tidyr Dplyr & Tidyr
+h2:extração-de-observações-linhas Extração de Observações (Linhas)
+h3:filter filter
+h3:distinct distinct
+h3:o-operador-pipe O Operador Pipe
+h3:sample_frac sample_frac
+h3:slice slice
+h2:extração-de-variáveis-colunas Extração de Variáveis (Colunas)
+h2:resumir-dados Resumir dados
+h3:summarise summarise
+h3:summarise_each summarise_each
+h3:count count
+h2:criação-de-novas-variáveis Criação de Novas Variáveis
 h3:mutate mutate
 h3:transmute transmute
-h3:remodelando-dados Remodelando Dados
-h3:combinar-conjuntos-de-dados Combinar Conjuntos de Dados
-h3:agrupar-dados Agrupar Dados
-h2:ggplot2 GGPlot2
-h3:gráficos-de-barras Gráficos de Barras
-h3:gráficos-de-linha Gráficos de Linha
-h3:gráficos-de-ponto Gráficos de ponto
-h3:anotações Anotações
-h3:eixos Eixos
-h3:controlando-a-aparência-do-gráfico Controlando a Aparência do Gráfico
-h3:facets Facets
+h2:combinar-conjuntos-de-dados Combinar Conjuntos de Dados
+h3:left_join left_join
+h3:inner_join inner_join
+h3:full_join full_join
+h2:agrupar-dados-group_by Agrupar Dados (group_by)
+h2:remodelando-dados Remodelando Dados
+h3:arrange arrange
+h3:rename rename
+h3:separate separate
+h3:unite unite
 h2:projeto-01---machine-learning-from-disaster Projeto 01 - Machine Learning from Disaster
 

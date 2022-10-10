@@ -55,21 +55,48 @@ Conjunto de dados nativo do R extraído da revista Motor Trend US de 1974. Possu
 
 ```{r, echo = FALSE, layout="l-body-outset"}
 paged_table(mtcars,
-            options = list(rows.print = 6))
+            options = list(rows.print = 6,
+                           max.print = 100))
 ```
 
 ### Pokémons Dataset
 
 Presente em animações, jogos, filmes, séries e em toda a cultura nerd, Pokémon é uma série contendo os nossos monstrinhos favoritos! Utilizaremos aqui o conjunto com uma lista com todos os pokémons até então presente nos jogos, com seus nomes, tipos, status, classificação em lendário dentre outros atributos. Podemos encontrar o conjunto no site [Kaggle](https://www.kaggle.com/datasets/alopez247/pokemon).
 
-```{r, message = FALSE}
+```{r}
 pokemon_stats <- read_csv("G:/Meu Drive/Dados/pokemon_stats.csv")
 ```
 
 ```{r, echo = FALSE, layout="l-body-outset"}
 paged_table(pokemon_stats,
-            options = list(rows.print = 6))
+            options = list(rows.print = 6,
+                           max.print = 100))
 ```
+
+### Fifa 2022 Player Dataset
+
+FIFA é uma das principais franquias, se não a principal, de jogos de futebol, onde se concentra a maioria dos times e jogadores do esporte. Nos jogos cada jogador possui diferentes atributos e características que influenciam umas nas outras. Aqui consideraremos o conjunto de dados destes jogadores no jogo [FIFA 22](https://www.kaggle.com/datasets/minhnguyen147/fifa-22-players-dataset?select=basic_info.csv). As informações estão divididas em dois conjuntos e serão destaque quando trabalharmos sobre união e intersecção de conjuntos de dados.
+
+```{r, message = FALSE}
+fifa_basic <- read_csv("G:/Meu Drive/Dados/fifa_basic_info.csv")
+fifa_detailed <- read_csv("G:/Meu Drive/Dados/fifa_detailed_info.csv")
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(fifa_basic,
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(fifa_detailed,
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+## Introdução a fatores
+
+## Trabalhando com Datas
 
 # Dplyr & Tidyr
 
@@ -147,6 +174,8 @@ A ideia do operador pipe, `%>%` é bem simples, usar o valor resultante da expre
 mtcars %>%
   filter((mtcars$cyl == 4) & (mtcars$hp > 100))
 ```
+
+Também podemos passar a expressão do lado esquerdo como um certo parâmetro de u margumento da função, evidenciando por `.` no parâmetro que queremos.
 
 Isto ajuda a tornar o código mais legível quando analisado por outras pessoas (ou nós mesmos em outros dias). A partir daqui sempre utilizaremos o operador pipe!
 
@@ -289,27 +318,61 @@ paged_table(pokemon_stats %>%
             options = list(rows.print = 6))
 ```
 
-## Remodelando Dados
-
-### arrange
-
-### rename
-
-### separate
-
-### unite
-
 ## Combinar Conjuntos de Dados
 
-Muitas vezes queremos trabalhar com dados que estão em arquivos distintos.
+Muitas vezes queremos trabalhar com dados que estão em arquivos distintos. Isto é comum em bancos de dados, onde várias informações são guardadas em diferentes arquivos. Nos exemplos abaixo iremos trabalhar com os dados do conjunto FIFA, que apresentam a variável `ID` como indicação de jogadores.
+
+Quem já trabalhou com conjuntos no Ensino Médio ou até mesmo teve um primeiro contato com a linguagem `SQL` já ouviu falar sobre tipos de join. Estes são formas de unir tabelas a partir de uma certa ordem e se dividem em quatro tipos: **left, right, inner** e **full**:
+
+<center>![Tipos de Join.](figs/sql_join.png){width="366"}</center>
+
+A diferença entre eles é qual conjunto de dados será utilizado como referência para a união de ambos.
 
 ### left_join
 
+A primeira tabela é utilizada como referência na hora de combinar ambos os conjuntos. Assim todas as linhas do primeiro parâmetro serão combinadas com a utilizada como segundo:
+
+```{r eval = FALSE}
+# No parâmetro "by" passamos por a variável que queremos realizar o agrupamento
+left_join(fifa_detailed, fifa_basic, by = 'ID')
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(left_join(fifa_detailed, fifa_basic, by = 'ID'),
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+A lógica do `right_join` é análoga, sendo o conjunto de dados do segundo parâmetro como fixo:
+
+```{r eval = FALSE}
+# No parâmetro "by" passamos por a variável que queremos realizar o agrupamento
+right_join(fifa_detailed, fifa_basic, by = 'ID')
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(right_join(fifa_detailed, fifa_basic, by = 'ID'),
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+> Ambos os resultados não são iguais: O primeiro código retorna um conjunto de dados com 14705 observações enquanto o segundo com 19825 observações!
+
+### inner_join
+
+Une ambos os conjuntos, porém apenas linhas presentes em ambos são consideradas:
+
+```{r eval = FALSE}
+inner_join(fifa_detailed, fifa_basic, by = 'ID')
+```
+
 ### full_join
 
-### intersect
+Une os dados mantendo todos os valores e todas as linhas. Valores faltantes são atribuídos a `NA`
 
-### bind_rows
+```{r eval = FALSE}
+fifa_merged <- full_join(inner_join(fifa_detailed, fifa_basic, by = 'ID'), fifa_basic, by = 'ID')
+```
 
 ## Agrupar Dados (group_by)
 
@@ -327,3 +390,85 @@ paged_table(pokemon_stats %>%
   summarise(Tot_mean = mean(Total)),
             options = list(rows.print = 6))
 ```
+
+## Remodelando Dados
+
+Mudar o formato e configuração dos dados permite separar variáveis que estão em uma coluna em mais de uma ou unir várias colunas em uma. Além disso podemos mudar o nome de colunas ou até mesmo ordenar seus valores de forma crescente. A biblioteca `tidyr` é perfeita para para isto, imagine-se trabalhando com a variável mês e dia em um conjunto de dados. Em vários algoritmos é interessante considerarmos o mês e o dia como atributos separados, assim cada um é alocado a uma coluna do conjunto de dados para que possamos realizar o ajuste dos algoritmos.
+
+### arrange
+
+Ordena linhas pelos valores de uma coluna (menor para o maior). Vamos utilizar como exemplo a ordenação da média dos atributos do pokémon por tipo:
+
+```{r eval = FALSE}
+pokemon_stats %>%  
+  group_by(Type_1) %>% # Agrupa por Tipo
+  summarise(Tot_mean = mean(Total)) %>%
+  arrange(Tot_mean)
+```
+
+Caso estejamos interessados em ordenar os valores do maior para o menor utilizamos a função `desc` para a coluna dentro da função `arange`:
+
+```{r eval = FALSE}
+pokemon_stats %>%  
+  group_by(Type_1) %>% # Agrupa por Tipo
+  summarise(Tot_mean = mean(Total)) %>%
+  arrange(desc(Tot_mean))
+```
+
+### rename
+
+Renomeia colunas do conjunto de dados
+
+```{r eval = FALSE}
+pokemon_stats %>%
+  rename(Nome = Name, Tipo_I = Type_1, Tipo_2 = Type_2)
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(pokemon_stats %>%
+  rename(Nome = Name, Tipo_I = Type_1, Tipo_2 = Type_2),
+            options = list(rows.print = 6,
+                           max.print = 25))
+```
+
+### separate
+
+Para as próximas funções utilizaremos os dados de `fifa_deitaled`, em particular a coluna `Work Rate`. A função `separate` separa uma coluna em uma ou mais linhas
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(fifa_detailed %>%
+    select(`Work rate`),
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+```{r eval = FALSE}
+fifa_separate <- fifa_detailed %>%
+  separate(col = `Work rate`,
+           into = c("Work1", "Work2"),
+           sep = "/")
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(fifa_detailed %>%
+  separate(col = `Work rate`,
+           into = c("Work1", "Work2"),
+           sep = "/") %>%
+    select(Work1:Work2),
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+### unite
+
+Une várias colunas em uma. Vamos considerar a coluna Work1 e Work2 que separamos anteriormente. Poderíamos retorná-las ao estado anterior da seguinte forma:
+
+```{r eval = FALSE}
+fifa_separate %>%
+  unite(col = "Work rate", c(Work1, Work2), sep = "-") %>%
+  select("Work rate")
+```
+
+## Projeto 01 - Machine Learning from Disaster
+
+Projeto será trabalhado em aula por um script.

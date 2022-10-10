@@ -1,3 +1,5 @@
+# (PART) Análise de Dados {-}
+
 # Introdução ao R
 
 Aqui introduziremos alguns comandos da linguagem `R`, onde utilizamos funções para realizar operações que vão desde leitura e manipulação de dados a operações matemáticas.

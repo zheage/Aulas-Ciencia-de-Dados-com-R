@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.5 Remodelando Dados | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <title>5.7 Remodelando Dados | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
   <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
 #set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.5 Remodelando Dados | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:title" content="5.7 Remodelando Dados | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@
   <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.5 Remodelando Dados | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="twitter:title" content="5.7 Remodelando Dados | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   
   <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
@@ -35,8 +35,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="criação-de-novas-variáveis.html"/>
-<link rel="next" href="combinar-conjuntos-de-dados.html"/>
+<link rel="prev" href="agrupar-dados-group_by.html"/>
+<link rel="next" href="projeto-01---machine-learning-from-disaster-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -139,11 +139,12 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
       <nav role="navigation">
 
 <ul class="summary">
-<li><a>Ciência de Dados com Linguagem R</a></li>
+<li><a>Dicionário dos Dados</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
 <li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="part"><span><b>I Análise de Dados</b></span></li>
 <li class="chapter" data-level="2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a></li>
 <li class="chapter" data-level="3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>3</b> Medidas Descritivas</a>
 <ul>
@@ -157,69 +158,79 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
 <li class="chapter" data-level="3.9" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>3.9</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>4</b> Tipos de Distribuições Discretas</a>
+<li class="chapter" data-level="4" data-path="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução à pacotes do R e ao Tidyverse</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="valor-médio-de-uma-variável-aleatória.html"><a href="valor-médio-de-uma-variável-aleatória.html"><i class="fa fa-check"></i><b>4.1</b> Valor Médio de uma Variável Aleatória</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>5</b> Tipos de Distribuições Contínuas</a></li>
-<li class="chapter" data-level="6" data-path="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><i class="fa fa-check"></i><b>6</b> Introdução à pacotes do R e ao Tidyverse</a>
+<li class="chapter" data-level="4.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>4.1</b> Dados utilizados</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>6.1</b> Dados utilizados</a>
+<li class="chapter" data-level="4.1.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>4.1.1</b> Motor Trend Car Road Test (mtcars)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>4.1.2</b> Pokémons Dataset</a></li>
+<li class="chapter" data-level="4.1.3" data-path="dados-utilizados.html"><a href="dados-utilizados.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>4.1.3</b> Fifa 2022 Player Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="introdução-a-fatores.html"><a href="introdução-a-fatores.html"><i class="fa fa-check"></i><b>4.2</b> Introdução a fatores</a></li>
+<li class="chapter" data-level="4.3" data-path="trabalhando-com-datas.html"><a href="trabalhando-com-datas.html"><i class="fa fa-check"></i><b>4.3</b> Trabalhando com Datas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>5</b> Dplyr &amp; Tidyr</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>6.1.1</b> Motor Trend Car Road Test (mtcars)</a></li>
-<li class="chapter" data-level="6.1.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>6.1.2</b> Pokémons Dataset</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>7</b> Dplyr &amp; Tidyr</a>
+<li class="chapter" data-level="5.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html"><i class="fa fa-check"></i><b>5.1</b> Extração de Observações (Linhas)</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html"><i class="fa fa-check"></i><b>7.1</b> Extração de Observações (Linhas)</a>
+<li class="chapter" data-level="5.1.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#filter"><i class="fa fa-check"></i><b>5.1.1</b> filter</a></li>
+<li class="chapter" data-level="5.1.2" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#distinct"><i class="fa fa-check"></i><b>5.1.2</b> distinct</a></li>
+<li class="chapter" data-level="5.1.3" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#o-operador-pipe"><i class="fa fa-check"></i><b>5.1.3</b> O Operador Pipe</a></li>
+<li class="chapter" data-level="5.1.4" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#sample_frac"><i class="fa fa-check"></i><b>5.1.4</b> sample_frac</a></li>
+<li class="chapter" data-level="5.1.5" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#slice"><i class="fa fa-check"></i><b>5.1.5</b> slice</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="extração-de-variáveis-colunas.html"><a href="extração-de-variáveis-colunas.html"><i class="fa fa-check"></i><b>5.2</b> Extração de Variáveis (Colunas)</a></li>
+<li class="chapter" data-level="5.3" data-path="resumir-dados.html"><a href="resumir-dados.html"><i class="fa fa-check"></i><b>5.3</b> Resumir dados</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#filter"><i class="fa fa-check"></i><b>7.1.1</b> filter</a></li>
-<li class="chapter" data-level="7.1.2" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#distinct"><i class="fa fa-check"></i><b>7.1.2</b> distinct</a></li>
-<li class="chapter" data-level="7.1.3" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#o-operador-pipe"><i class="fa fa-check"></i><b>7.1.3</b> O Operador Pipe</a></li>
-<li class="chapter" data-level="7.1.4" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#sample_frac"><i class="fa fa-check"></i><b>7.1.4</b> sample_frac</a></li>
-<li class="chapter" data-level="7.1.5" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#slice"><i class="fa fa-check"></i><b>7.1.5</b> slice</a></li>
+<li class="chapter" data-level="5.3.1" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise"><i class="fa fa-check"></i><b>5.3.1</b> summarise</a></li>
+<li class="chapter" data-level="5.3.2" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise_each"><i class="fa fa-check"></i><b>5.3.2</b> summarise_each</a></li>
+<li class="chapter" data-level="5.3.3" data-path="resumir-dados.html"><a href="resumir-dados.html#count"><i class="fa fa-check"></i><b>5.3.3</b> count</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="extração-de-variáveis-colunas.html"><a href="extração-de-variáveis-colunas.html"><i class="fa fa-check"></i><b>7.2</b> Extração de Variáveis (Colunas)</a></li>
-<li class="chapter" data-level="7.3" data-path="resumir-dados.html"><a href="resumir-dados.html"><i class="fa fa-check"></i><b>7.3</b> Resumir dados</a>
+<li class="chapter" data-level="5.4" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html"><i class="fa fa-check"></i><b>5.4</b> Criação de Novas Variáveis</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise"><i class="fa fa-check"></i><b>7.3.1</b> summarise</a></li>
-<li class="chapter" data-level="7.3.2" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise_each"><i class="fa fa-check"></i><b>7.3.2</b> summarise_each</a></li>
-<li class="chapter" data-level="7.3.3" data-path="resumir-dados.html"><a href="resumir-dados.html#count"><i class="fa fa-check"></i><b>7.3.3</b> count</a></li>
+<li class="chapter" data-level="5.4.1" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#mutate"><i class="fa fa-check"></i><b>5.4.1</b> mutate</a></li>
+<li class="chapter" data-level="5.4.2" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#transmute"><i class="fa fa-check"></i><b>5.4.2</b> transmute</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html"><i class="fa fa-check"></i><b>7.4</b> Criação de Novas Variáveis</a>
+<li class="chapter" data-level="5.5" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html"><i class="fa fa-check"></i><b>5.5</b> Combinar Conjuntos de Dados</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#mutate"><i class="fa fa-check"></i><b>7.4.1</b> mutate</a></li>
-<li class="chapter" data-level="7.4.2" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#transmute"><i class="fa fa-check"></i><b>7.4.2</b> transmute</a></li>
+<li class="chapter" data-level="5.5.1" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#left_join"><i class="fa fa-check"></i><b>5.5.1</b> left_join</a></li>
+<li class="chapter" data-level="5.5.2" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#inner_join"><i class="fa fa-check"></i><b>5.5.2</b> inner_join</a></li>
+<li class="chapter" data-level="5.5.3" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#full_join"><i class="fa fa-check"></i><b>5.5.3</b> full_join</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="remodelando-dados.html"><a href="remodelando-dados.html"><i class="fa fa-check"></i><b>7.5</b> Remodelando Dados</a>
+<li class="chapter" data-level="5.6" data-path="agrupar-dados-group_by.html"><a href="agrupar-dados-group_by.html"><i class="fa fa-check"></i><b>5.6</b> Agrupar Dados (group_by)</a></li>
+<li class="chapter" data-level="5.7" data-path="remodelando-dados.html"><a href="remodelando-dados.html"><i class="fa fa-check"></i><b>5.7</b> Remodelando Dados</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="remodelando-dados.html"><a href="remodelando-dados.html#arrange"><i class="fa fa-check"></i><b>7.5.1</b> arrange</a></li>
-<li class="chapter" data-level="7.5.2" data-path="remodelando-dados.html"><a href="remodelando-dados.html#rename"><i class="fa fa-check"></i><b>7.5.2</b> rename</a></li>
-<li class="chapter" data-level="7.5.3" data-path="remodelando-dados.html"><a href="remodelando-dados.html#separate"><i class="fa fa-check"></i><b>7.5.3</b> separate</a></li>
-<li class="chapter" data-level="7.5.4" data-path="remodelando-dados.html"><a href="remodelando-dados.html#unite"><i class="fa fa-check"></i><b>7.5.4</b> unite</a></li>
+<li class="chapter" data-level="5.7.1" data-path="remodelando-dados.html"><a href="remodelando-dados.html#arrange"><i class="fa fa-check"></i><b>5.7.1</b> arrange</a></li>
+<li class="chapter" data-level="5.7.2" data-path="remodelando-dados.html"><a href="remodelando-dados.html#rename"><i class="fa fa-check"></i><b>5.7.2</b> rename</a></li>
+<li class="chapter" data-level="5.7.3" data-path="remodelando-dados.html"><a href="remodelando-dados.html#separate"><i class="fa fa-check"></i><b>5.7.3</b> separate</a></li>
+<li class="chapter" data-level="5.7.4" data-path="remodelando-dados.html"><a href="remodelando-dados.html#unite"><i class="fa fa-check"></i><b>5.7.4</b> unite</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html"><i class="fa fa-check"></i><b>7.6</b> Combinar Conjuntos de Dados</a>
+<li class="chapter" data-level="5.8" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>5.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>6</b> GGPlot2</a>
 <ul>
-<li class="chapter" data-level="7.6.1" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#left_join"><i class="fa fa-check"></i><b>7.6.1</b> left_join</a></li>
-<li class="chapter" data-level="7.6.2" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#full_join"><i class="fa fa-check"></i><b>7.6.2</b> full_join</a></li>
-<li class="chapter" data-level="7.6.3" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#intersect"><i class="fa fa-check"></i><b>7.6.3</b> intersect</a></li>
-<li class="chapter" data-level="7.6.4" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#bind_rows"><i class="fa fa-check"></i><b>7.6.4</b> bind_rows</a></li>
+<li class="chapter" data-level="6.1" data-path="gráficos-de-barras.html"><a href="gráficos-de-barras.html"><i class="fa fa-check"></i><b>6.1</b> Gráficos de Barras</a></li>
+<li class="chapter" data-level="6.2" data-path="gráficos-de-linha.html"><a href="gráficos-de-linha.html"><i class="fa fa-check"></i><b>6.2</b> Gráficos de Linha</a></li>
+<li class="chapter" data-level="6.3" data-path="gráficos-de-ponto.html"><a href="gráficos-de-ponto.html"><i class="fa fa-check"></i><b>6.3</b> Gráficos de ponto</a></li>
+<li class="chapter" data-level="6.4" data-path="anotações.html"><a href="anotações.html"><i class="fa fa-check"></i><b>6.4</b> Anotações</a></li>
+<li class="chapter" data-level="6.5" data-path="eixos.html"><a href="eixos.html"><i class="fa fa-check"></i><b>6.5</b> Eixos</a></li>
+<li class="chapter" data-level="6.6" data-path="controlando-a-aparência-do-gráfico.html"><a href="controlando-a-aparência-do-gráfico.html"><i class="fa fa-check"></i><b>6.6</b> Controlando a Aparência do Gráfico</a></li>
+<li class="chapter" data-level="6.7" data-path="facets.html"><a href="facets.html"><i class="fa fa-check"></i><b>6.7</b> Facets</a></li>
+<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster-2.html"><a href="projeto-01---machine-learning-from-disaster-2.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="agrupar-dados-group_by.html"><a href="agrupar-dados-group_by.html"><i class="fa fa-check"></i><b>7.7</b> Agrupar Dados (group_by)</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>8</b> GGPlot2</a>
+<li class="chapter" data-level="7" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>7</b> Stringr</a></li>
+<li class="chapter" data-level="8" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>8</b> Regressão Linear</a></li>
+<li class="part"><span><b>II Probabilidade</b></span></li>
+<li class="chapter" data-level="9" data-path="introdução-à-probabilidade.html"><a href="introdução-à-probabilidade.html"><i class="fa fa-check"></i><b>9</b> Introdução à Probabilidade</a></li>
+<li class="chapter" data-level="10" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>10</b> Tipos de Distribuições Discretas</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="gráficos-de-barras.html"><a href="gráficos-de-barras.html"><i class="fa fa-check"></i><b>8.1</b> Gráficos de Barras</a></li>
-<li class="chapter" data-level="8.2" data-path="gráficos-de-linha.html"><a href="gráficos-de-linha.html"><i class="fa fa-check"></i><b>8.2</b> Gráficos de Linha</a></li>
-<li class="chapter" data-level="8.3" data-path="gráficos-de-ponto.html"><a href="gráficos-de-ponto.html"><i class="fa fa-check"></i><b>8.3</b> Gráficos de ponto</a></li>
-<li class="chapter" data-level="8.4" data-path="anotações.html"><a href="anotações.html"><i class="fa fa-check"></i><b>8.4</b> Anotações</a></li>
-<li class="chapter" data-level="8.5" data-path="eixos.html"><a href="eixos.html"><i class="fa fa-check"></i><b>8.5</b> Eixos</a></li>
-<li class="chapter" data-level="8.6" data-path="controlando-a-aparência-do-gráfico.html"><a href="controlando-a-aparência-do-gráfico.html"><i class="fa fa-check"></i><b>8.6</b> Controlando a Aparência do Gráfico</a></li>
-<li class="chapter" data-level="8.7" data-path="facets.html"><a href="facets.html"><i class="fa fa-check"></i><b>8.7</b> Facets</a></li>
-<li class="chapter" data-level="8.8" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>8.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="10.1" data-path="valor-médio-de-uma-variável-aleatória.html"><a href="valor-médio-de-uma-variável-aleatória.html"><i class="fa fa-check"></i><b>10.1</b> Valor Médio de uma Variável Aleatória</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>9</b> Regressão Linear</a></li>
+<li class="chapter" data-level="11" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>11</b> Tipos de Distribuições Contínuas</a></li>
+<li class="part"><span><b>III Inferência Estatística</b></span></li>
+<li class="chapter" data-level="12" data-path="introdução-à-inferência.html"><a href="introdução-à-inferência.html"><i class="fa fa-check"></i><b>12</b> Introdução à Inferência</a></li>
+<li class="part"><span><b>IV Machine Learning</b></span></li>
+<li class="chapter" data-level="13" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>13</b> Introdução ao Machine Learning</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -239,19 +250,57 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="remodelando-dados" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Remodelando Dados<a href="remodelando-dados.html#remodelando-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="arrange" class="section level3 hasAnchor" number="7.5.1">
-<h3><span class="header-section-number">7.5.1</span> arrange<a href="remodelando-dados.html#arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="remodelando-dados" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Remodelando Dados<a href="remodelando-dados.html#remodelando-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mudar o formato e configuração dos dados permite separar variáveis que estão em uma coluna em mais de uma ou unir várias colunas em uma. Além disso podemos mudar o nome de colunas ou até mesmo ordenar seus valores de forma crescente. A biblioteca <code>tidyr</code> é perfeita para para isto, imagine-se trabalhando com a variável mês e dia em um conjunto de dados. Em vários algoritmos é interessante considerarmos o mês e o dia como atributos separados, assim cada um é alocado a uma coluna do conjunto de dados para que possamos realizar o ajuste dos algoritmos.</p>
+<div id="arrange" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> arrange<a href="remodelando-dados.html#arrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ordena linhas pelos valores de uma coluna (menor para o maior). Vamos utilizar como exemplo a ordenação da média dos atributos do pokémon por tipo:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="remodelando-dados.html#cb92-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span>  </span>
+<span id="cb92-2"><a href="remodelando-dados.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Type_1) <span class="sc">%&gt;%</span> <span class="co"># Agrupa por Tipo</span></span>
+<span id="cb92-3"><a href="remodelando-dados.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Tot_mean =</span> <span class="fu">mean</span>(Total)) <span class="sc">%&gt;%</span></span>
+<span id="cb92-4"><a href="remodelando-dados.html#cb92-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Tot_mean)</span></code></pre></div>
+<p>Caso estejamos interessados em ordenar os valores do maior para o menor utilizamos a função <code>desc</code> para a coluna dentro da função <code>arange</code>:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="remodelando-dados.html#cb93-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span>  </span>
+<span id="cb93-2"><a href="remodelando-dados.html#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Type_1) <span class="sc">%&gt;%</span> <span class="co"># Agrupa por Tipo</span></span>
+<span id="cb93-3"><a href="remodelando-dados.html#cb93-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Tot_mean =</span> <span class="fu">mean</span>(Total)) <span class="sc">%&gt;%</span></span>
+<span id="cb93-4"><a href="remodelando-dados.html#cb93-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Tot_mean))</span></code></pre></div>
 </div>
-<div id="rename" class="section level3 hasAnchor" number="7.5.2">
-<h3><span class="header-section-number">7.5.2</span> rename<a href="remodelando-dados.html#rename" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="rename" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> rename<a href="remodelando-dados.html#rename" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Renomeia colunas do conjunto de dados</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="remodelando-dados.html#cb94-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span></span>
+<span id="cb94-2"><a href="remodelando-dados.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Nome =</span> Name, <span class="at">Tipo_I =</span> Type_1, <span class="at">Tipo_2 =</span> Type_2)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Number"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Nome"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Tipo_I"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Tipo_2"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Total"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["HP"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Attack"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Defense"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Sp_Atk"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Sp_Def"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Speed"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Generation"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["isLegendary"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["Color"],"name":[14],"type":["chr"],"align":["left"]},{"label":["hasGender"],"name":[15],"type":["lgl"],"align":["right"]},{"label":["Pr_Male"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["Egg_Group_1"],"name":[17],"type":["chr"],"align":["left"]},{"label":["Egg_Group_2"],"name":[18],"type":["chr"],"align":["left"]},{"label":["hasMegaEvolution"],"name":[19],"type":["lgl"],"align":["right"]},{"label":["Height_m"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["Weight_kg"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["Catch_Rate"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["Body_Style"],"name":[23],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"Bulbasaur","3":"Grass","4":"Poison","5":"318","6":"45","7":"49","8":"49","9":"65","10":"65","11":"45","12":"1","13":"FALSE","14":"Green","15":"TRUE","16":"0.875","17":"Monster","18":"Grass","19":"FALSE","20":"0.71","21":"6.9","22":"45","23":"quadruped"},{"1":"2","2":"Ivysaur","3":"Grass","4":"Poison","5":"405","6":"60","7":"62","8":"63","9":"80","10":"80","11":"60","12":"1","13":"FALSE","14":"Green","15":"TRUE","16":"0.875","17":"Monster","18":"Grass","19":"FALSE","20":"0.99","21":"13.0","22":"45","23":"quadruped"},{"1":"3","2":"Venusaur","3":"Grass","4":"Poison","5":"525","6":"80","7":"82","8":"83","9":"100","10":"100","11":"80","12":"1","13":"FALSE","14":"Green","15":"TRUE","16":"0.875","17":"Monster","18":"Grass","19":"TRUE","20":"2.01","21":"100.0","22":"45","23":"quadruped"},{"1":"4","2":"Charmander","3":"Fire","4":"NA","5":"309","6":"39","7":"52","8":"43","9":"60","10":"50","11":"65","12":"1","13":"FALSE","14":"Red","15":"TRUE","16":"0.875","17":"Monster","18":"Dragon","19":"FALSE","20":"0.61","21":"8.5","22":"45","23":"bipedal_tailed"},{"1":"5","2":"Charmeleon","3":"Fire","4":"NA","5":"405","6":"58","7":"64","8":"58","9":"80","10":"65","11":"80","12":"1","13":"FALSE","14":"Red","15":"TRUE","16":"0.875","17":"Monster","18":"Dragon","19":"FALSE","20":"1.09","21":"19.0","22":"45","23":"bipedal_tailed"},{"1":"6","2":"Charizard","3":"Fire","4":"Flying","5":"534","6":"78","7":"84","8":"78","9":"109","10":"85","11":"100","12":"1","13":"FALSE","14":"Red","15":"TRUE","16":"0.875","17":"Monster","18":"Dragon","19":"TRUE","20":"1.70","21":"90.5","22":"45","23":"bipedal_tailed"},{"1":"7","2":"Squirtle","3":"Water","4":"NA","5":"314","6":"44","7":"48","8":"65","9":"50","10":"64","11":"43","12":"1","13":"FALSE","14":"Blue","15":"TRUE","16":"0.875","17":"Monster","18":"Water_1","19":"FALSE","20":"0.51","21":"9.0","22":"45","23":"bipedal_tailed"},{"1":"8","2":"Wartortle","3":"Water","4":"NA","5":"405","6":"59","7":"63","8":"80","9":"65","10":"80","11":"58","12":"1","13":"FALSE","14":"Blue","15":"TRUE","16":"0.875","17":"Monster","18":"Water_1","19":"FALSE","20":"0.99","21":"22.5","22":"45","23":"bipedal_tailed"},{"1":"9","2":"Blastoise","3":"Water","4":"NA","5":"530","6":"79","7":"83","8":"100","9":"85","10":"105","11":"78","12":"1","13":"FALSE","14":"Blue","15":"TRUE","16":"0.875","17":"Monster","18":"Water_1","19":"TRUE","20":"1.60","21":"85.5","22":"45","23":"bipedal_tailed"},{"1":"10","2":"Caterpie","3":"Bug","4":"NA","5":"195","6":"45","7":"30","8":"35","9":"20","10":"20","11":"45","12":"1","13":"FALSE","14":"Green","15":"TRUE","16":"0.500","17":"Bug","18":"NA","19":"FALSE","20":"0.30","21":"2.9","22":"255","23":"insectoid"},{"1":"11","2":"Metapod","3":"Bug","4":"NA","5":"205","6":"50","7":"20","8":"55","9":"25","10":"25","11":"30","12":"1","13":"FALSE","14":"Green","15":"TRUE","16":"0.500","17":"Bug","18":"NA","19":"FALSE","20":"0.71","21":"9.9","22":"120","23":"serpentine_body"},{"1":"12","2":"Butterfree","3":"Bug","4":"Flying","5":"395","6":"60","7":"45","8":"50","9":"90","10":"80","11":"70","12":"1","13":"FALSE","14":"White","15":"TRUE","16":"0.500","17":"Bug","18":"NA","19":"FALSE","20":"1.09","21":"32.0","22":"45","23":"four_wings"},{"1":"13","2":"Weedle","3":"Bug","4":"Poison","5":"195","6":"40","7":"35","8":"30","9":"20","10":"20","11":"50","12":"1","13":"FALSE","14":"Brown","15":"TRUE","16":"0.500","17":"Bug","18":"NA","19":"FALSE","20":"0.30","21":"3.2","22":"255","23":"serpentine_body"},{"1":"14","2":"Kakuna","3":"Bug","4":"Poison","5":"205","6":"45","7":"25","8":"50","9":"25","10":"25","11":"35","12":"1","13":"FALSE","14":"Yellow","15":"TRUE","16":"0.500","17":"Bug","18":"NA","19":"FALSE","20":"0.61","21":"10.0","22":"120","23":"serpentine_body"},{"1":"15","2":"Beedrill","3":"Bug","4":"Poison","5":"395","6":"65","7":"90","8":"40","9":"45","10":"80","11":"75","12":"1","13":"FALSE","14":"Yellow","15":"TRUE","16":"0.500","17":"Bug","18":"NA","19":"TRUE","20":"0.99","21":"29.5","22":"45","23":"four_wings"},{"1":"16","2":"Pidgey","3":"Normal","4":"Flying","5":"251","6":"40","7":"45","8":"40","9":"35","10":"35","11":"56","12":"1","13":"FALSE","14":"Brown","15":"TRUE","16":"0.500","17":"Flying","18":"NA","19":"FALSE","20":"0.30","21":"1.8","22":"255","23":"two_wings"},{"1":"17","2":"Pidgeotto","3":"Normal","4":"Flying","5":"349","6":"63","7":"60","8":"55","9":"50","10":"50","11":"71","12":"1","13":"FALSE","14":"Brown","15":"TRUE","16":"0.500","17":"Flying","18":"NA","19":"FALSE","20":"1.09","21":"30.0","22":"120","23":"two_wings"},{"1":"18","2":"Pidgeot","3":"Normal","4":"Flying","5":"479","6":"83","7":"80","8":"75","9":"70","10":"70","11":"101","12":"1","13":"FALSE","14":"Brown","15":"TRUE","16":"0.500","17":"Flying","18":"NA","19":"TRUE","20":"1.50","21":"39.5","22":"45","23":"two_wings"},{"1":"19","2":"Rattata","3":"Normal","4":"NA","5":"253","6":"30","7":"56","8":"35","9":"25","10":"35","11":"72","12":"1","13":"FALSE","14":"Purple","15":"TRUE","16":"0.500","17":"Field","18":"NA","19":"FALSE","20":"0.30","21":"3.5","22":"255","23":"quadruped"},{"1":"20","2":"Raticate","3":"Normal","4":"NA","5":"413","6":"55","7":"81","8":"60","9":"50","10":"70","11":"97","12":"1","13":"FALSE","14":"Brown","15":"TRUE","16":"0.500","17":"Field","18":"NA","19":"FALSE","20":"0.71","21":"18.5","22":"127","23":"quadruped"},{"1":"21","2":"Spearow","3":"Normal","4":"Flying","5":"262","6":"40","7":"60","8":"30","9":"31","10":"31","11":"70","12":"1","13":"FALSE","14":"Brown","15":"TRUE","16":"0.500","17":"Flying","18":"NA","19":"FALSE","20":"0.30","21":"2.0","22":"255","23":"two_wings"},{"1":"22","2":"Fearow","3":"Normal","4":"Flying","5":"442","6":"65","7":"90","8":"65","9":"61","10":"61","11":"100","12":"1","13":"FALSE","14":"Brown","15":"TRUE","16":"0.500","17":"Flying","18":"NA","19":"FALSE","20":"1.19","21":"38.0","22":"90","23":"two_wings"},{"1":"23","2":"Ekans","3":"Poison","4":"NA","5":"288","6":"35","7":"60","8":"44","9":"40","10":"54","11":"55","12":"1","13":"FALSE","14":"Purple","15":"TRUE","16":"0.500","17":"Field","18":"Dragon","19":"FALSE","20":"2.01","21":"6.9","22":"255","23":"serpentine_body"},{"1":"24","2":"Arbok","3":"Poison","4":"NA","5":"438","6":"60","7":"85","8":"69","9":"65","10":"79","11":"80","12":"1","13":"FALSE","14":"Purple","15":"TRUE","16":"0.500","17":"Field","18":"Dragon","19":"FALSE","20":"3.51","21":"65.0","22":"90","23":"serpentine_body"},{"1":"25","2":"Pikachu","3":"Electric","4":"NA","5":"320","6":"35","7":"55","8":"40","9":"50","10":"50","11":"90","12":"1","13":"FALSE","14":"Yellow","15":"TRUE","16":"0.500","17":"Field","18":"Fairy","19":"FALSE","20":"0.41","21":"6.0","22":"190","23":"quadruped"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[6],"max":[6]},"pages":{}}}
+  </script>
 </div>
-<div id="separate" class="section level3 hasAnchor" number="7.5.3">
-<h3><span class="header-section-number">7.5.3</span> separate<a href="remodelando-dados.html#separate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="unite" class="section level3 hasAnchor" number="7.5.4">
-<h3><span class="header-section-number">7.5.4</span> unite<a href="remodelando-dados.html#unite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="separate" class="section level3 hasAnchor" number="5.7.3">
+<h3><span class="header-section-number">5.7.3</span> separate<a href="remodelando-dados.html#separate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para as próximas funções utilizaremos os dados de <code>fifa_deitaled</code>, em particular a coluna <code>Work Rate</code>. A função <code>separate</code> separa uma coluna em uma ou mais linhas</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Work rate"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"High/Medium"},{"1":"Medium/Medium"},{"1":"Medium/Low"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"Medium/High"},{"1":"High/High"},{"1":"High/High"},{"1":"Low/High"},{"1":"Medium/High"},{"1":"High/Medium"},{"1":"Medium/Medium"},{"1":"High/Medium"},{"1":"Medium/Medium"},{"1":"Medium/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"Medium/Medium"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"High/Medium"},{"1":"High/High"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"Medium/Medium"},{"1":"High/High"},{"1":"High/High"},{"1":"Medium/High"},{"1":"High/Medium"},{"1":"High/Low"},{"1":"High/High"},{"1":"High/High"},{"1":"Medium/High"},{"1":"High/High"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"High/High"},{"1":"High/Medium"},{"1":"Low/Low"},{"1":"Medium/High"},{"1":"High/Medium"},{"1":"Medium/Medium"},{"1":"Medium/High"},{"1":"Medium/Medium"},{"1":"High/High"},{"1":"High/High"},{"1":"Medium/Medium"},{"1":"Medium/High"},{"1":"High/Low"},{"1":"High/High"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"Medium/High"},{"1":"Medium/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/High"},{"1":"High/High"},{"1":"High/High"},{"1":"Medium/Medium"},{"1":"Medium/High"},{"1":"Medium/Medium"},{"1":"High/High"},{"1":"Medium/Medium"},{"1":"High/High"},{"1":"Medium/Medium"},{"1":"Medium/High"},{"1":"Medium/Medium"},{"1":"Medium/High"},{"1":"High/Low"},{"1":"High/High"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/Low"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"Medium/Medium"},{"1":"High/Medium"},{"1":"Medium/High"},{"1":"Medium/Medium"},{"1":"High/Medium"},{"1":"High/High"},{"1":"Medium/Low"},{"1":"High/Medium"},{"1":"High/Medium"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[6],"max":[6]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="remodelando-dados.html#cb95-1" aria-hidden="true" tabindex="-1"></a>fifa_separate <span class="ot">&lt;-</span> fifa_detailed <span class="sc">%&gt;%</span></span>
+<span id="cb95-2"><a href="remodelando-dados.html#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="at">col =</span> <span class="st">`</span><span class="at">Work rate</span><span class="st">`</span>,</span>
+<span id="cb95-3"><a href="remodelando-dados.html#cb95-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;Work1&quot;</span>, <span class="st">&quot;Work2&quot;</span>),</span>
+<span id="cb95-4"><a href="remodelando-dados.html#cb95-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">&quot;/&quot;</span>)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Work1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Work2"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"High","2":"Medium"},{"1":"Medium","2":"Medium"},{"1":"Medium","2":"Low"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"Medium","2":"High"},{"1":"High","2":"High"},{"1":"High","2":"High"},{"1":"Low","2":"High"},{"1":"Medium","2":"High"},{"1":"High","2":"Medium"},{"1":"Medium","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"Medium"},{"1":"Medium","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"High","2":"Medium"},{"1":"High","2":"High"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"Medium"},{"1":"High","2":"High"},{"1":"High","2":"High"},{"1":"Medium","2":"High"},{"1":"High","2":"Medium"},{"1":"High","2":"Low"},{"1":"High","2":"High"},{"1":"High","2":"High"},{"1":"Medium","2":"High"},{"1":"High","2":"High"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"High","2":"High"},{"1":"High","2":"Medium"},{"1":"Low","2":"Low"},{"1":"Medium","2":"High"},{"1":"High","2":"Medium"},{"1":"Medium","2":"Medium"},{"1":"Medium","2":"High"},{"1":"Medium","2":"Medium"},{"1":"High","2":"High"},{"1":"High","2":"High"},{"1":"Medium","2":"Medium"},{"1":"Medium","2":"High"},{"1":"High","2":"Low"},{"1":"High","2":"High"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"Medium","2":"High"},{"1":"Medium","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"High"},{"1":"High","2":"High"},{"1":"High","2":"High"},{"1":"Medium","2":"Medium"},{"1":"Medium","2":"High"},{"1":"Medium","2":"Medium"},{"1":"High","2":"High"},{"1":"Medium","2":"Medium"},{"1":"High","2":"High"},{"1":"Medium","2":"Medium"},{"1":"Medium","2":"High"},{"1":"Medium","2":"Medium"},{"1":"Medium","2":"High"},{"1":"High","2":"Low"},{"1":"High","2":"High"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Low"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"Medium","2":"Medium"},{"1":"High","2":"Medium"},{"1":"Medium","2":"High"},{"1":"Medium","2":"Medium"},{"1":"High","2":"Medium"},{"1":"High","2":"High"},{"1":"Medium","2":"Low"},{"1":"High","2":"Medium"},{"1":"High","2":"Medium"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[6],"max":[6]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="unite" class="section level3 hasAnchor" number="5.7.4">
+<h3><span class="header-section-number">5.7.4</span> unite<a href="remodelando-dados.html#unite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Une várias colunas em uma. Vamos considerar a coluna Work1 e Work2 que separamos anteriormente. Poderíamos retorná-las ao estado anterior da seguinte forma:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="remodelando-dados.html#cb96-1" aria-hidden="true" tabindex="-1"></a>fifa_separate <span class="sc">%&gt;%</span></span>
+<span id="cb96-2"><a href="remodelando-dados.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="at">col =</span> <span class="st">&quot;Work rate&quot;</span>, <span class="fu">c</span>(Work1, Work2), <span class="at">sep =</span> <span class="st">&quot;-&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb96-3"><a href="remodelando-dados.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">&quot;Work rate&quot;</span>)</span></code></pre></div>
 </div>
 </div>
             </section>
@@ -259,8 +308,8 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           </div>
         </div>
       </div>
-<a href="criação-de-novas-variáveis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="combinar-conjuntos-de-dados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="agrupar-dados-group_by.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="projeto-01---machine-learning-from-disaster-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
