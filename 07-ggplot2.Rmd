@@ -1,0 +1,66 @@
+# GGPlot2
+
+Pacote para criação de gráficos baseado no livro [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl), que destrincha todas as componentes de um gráfico estatístico em partes individuais.
+
+<center>![Grammar of Graphics.](figs/grammar_of_graphics.png){width="566"}</center>
+
+Vamos aos componentes eu a biblioteca se baseia:
+
+-   **Data:** Dados que serão utilizados para visualização;
+
+-   **Aesthetic (Estética):** Argumentos para realizar a visualização dos dados;
+
+    -   `x`, `y:` variável em cada eixo;
+
+    -   `colour:` variável para colorir objetos geométricos ;
+
+    -   `fill:` variável para colorir dentro de objetos geométricos;
+
+    -   `group:` forma em que os dados podem ser agrupados;
+
+    -   `shape:` formato dos pontos;
+
+    -   `linetype:` tipo de linha a ser utilizado;
+
+    -   `size:` escala utilizada para pontos, retângulos;
+
+    -   `alpha:` transparência dos objetos geométricos.
+
+-   **Objetos geométricos:** determinam o tipo de gráfico;
+
+-   **Facets:** para múltiplos gráficos diferindo por grupos;
+
+-   **Statistics:** Informações estatísticas como médias, quantidade de ocorrências;
+
+-   **Cordenadas:** Tipo de coordenada, pode ser cartesiana, polar e de projeção;
+
+-   **Temas:** Fonte, cores, tamanho, formato dos objetos do gráfico.
+
+Observemos então como `ggplot2` utiliza desta teoria na prática. Caso o leitor queira se aprofundar nos conceitos trabalhados aqui ou busque por algum gráfico em específico recomendamos [R Graphics Cookbook, 2nd edition](https://r-graphics.org).
+
+Inicialmente devemos carregar os nossos dados, podendo ou não já atribuirmos uma estética a ele:
+
+```{r}
+# A variável Type_1 será considerada para o eixo x, enquanto a y ainda não foi definida:
+ggplot(data = mtcars, aes(x = wt, y = mpg))
+# ggplot(data = mtcars) também é uma opção válida!
+# Porém aqui os eixos não serão criados.
+```
+
+## Gráficos de Barras
+
+## Gráficos de Linha
+
+## Gráficos de ponto
+
+## Anotações
+
+## Eixos
+
+## Controlando a Aparência do Gráfico
+
+## Facets
+
+## Projeto 01 - Machine Learning from Disaster
+
+Vamos utilizar o que aprendemos até então para trabalharmos com o conjunto de dados do Titanic:

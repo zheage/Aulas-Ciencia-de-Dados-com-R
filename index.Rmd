@@ -1,4 +1,4 @@
---- 
+---
 title: "CIÊNCIA DE DADOS COM LINGUAGEM R"
 author: "Richard Guilherme dos Santos"
 site: bookdown::bookdown_site
@@ -13,6 +13,13 @@ link-citations: yes
 github-repo: https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R
 ---
 
-# Sobre o autor {-}
+# Sobre o autor {.unnumbered}
 
 Bem vindo!
+
+```{r include = FALSE}
+library(knitr)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+------------------------------------------------------------------------

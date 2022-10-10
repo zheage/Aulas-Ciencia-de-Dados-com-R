@@ -71,12 +71,259 @@ paged_table(pokemon_stats,
             options = list(rows.print = 6))
 ```
 
-## Dplyr & Tidyr
+# Dplyr & Tidyr
 
 Dplyr e Tidyr são pacotes que se complementam na manipulação de dados. O primeiro foca na realização de manipulação enquanto o segundo na modificação de seu formato. Aqui utilizaremos como referência a [folha de referência de ambas as bibliotecas](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/87d0d3cd-9abc-4b61-bf00-dc9ce48cdd20/04.16._Folha_de_Referencia_dplyr_e_tidy.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T165407Z&X-Amz-Expires=86400&X-Amz-Signature=b78994192312f13c9140b99a68be9c23018194c06ff7eaae4250b51cea84eef9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Dplyr%2520e%2520Tidy.pdf%22&x-id=GetObject). Além disso recomendo a consulta do site [Rdocumentation](https://www.rdocumentation.org/packages/dplyr/versions/1.0.10) para visualização de todas as funções dos pacotes e até mesmo o próprio site do [Dplyr](https://dplyr.tidyverse.org) e [Tidyr](https://tidyr.tidyverse.org).
 
-## GGPlot2
+Vamos então aos principais recursos das bibliotecas.
 
-## Projeto 01 - Machine Learning from Disaster
+## Extração de Observações (Linhas)
 
-Vamos utilizar o que aprendemos até então para trabalharmos com o conjunto de dados do Titanic:
+### filter
+
+Muitas vezes queremos selecionar algumas linhas que satisfaçam um critério lógico. Consideremos o conjunto `mtcars`, o número de cilindros de cada carro varia entre 4, 6 e 8
+
+```{r, echo = FALSE}
+kable(table(mtcars$cyl), align = 'c',
+      col.names = c("Cyl", "Freq"))
+```
+
+Caso estejamos interessados em selecionar apenas os carros com 4 cilindros primeiro utilizamos o operador lógico `==` para verificarmos a igualdade de um vetor em relação a um valor. Caso na n-ésima linha a condição seja satisfeita, a n-ésima posição do vetor será retornada como `TRUE`. Caso contrário teremos um `FALSE` nesta posição.
+
+```{r}
+condic_logica <- mtcars$cyl == 4
+condic_logica 
+```
+
+Após isto podemos então utilizar a função filter. O primeiro parâmetro são os dados a serem filtrados enquanto o segundo é a condição lógica utilizada.
+
+```{r eval = FALSE}
+filter(.data = mtcars, condic_logica)
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(filter(.data = mtcars, condic_logica),
+            options = list(rows.print = 6))
+```
+
+Podemos aplicar mais de uma condição lógica de duas formas. A primeira é passarmos múltiplos argumentos através da função `filter`. A segunda é utilizarmos os operadores lógicos "e" (`&`) e "ou" (`|`).
+
+-   `&:` Ambas as condições precisam ser satisfeitas;
+
+-   `|:` Apenas uma das condições precisa ser satisfeita.
+
+Caso queiramos selecionar os carros com 4 cilindros **e** mais do que 100 cavalos de potência:
+
+```{r eval = FALSE}
+filter(.data = mtcars, mtcars$cyl == 4, mtcars$hp > 100)
+# Também podemos realizar
+#filter(.data = mtcars, mtcars$cyl == 4 & mtcars$hp > 100)
+```
+
+Caso queiramos selecionar os carros com 4 cilindros **ou** mais do que 100 cavalos de potência:
+
+```{r eval = FALSE}
+filter(.data = mtcars, mtcars$cyl == 4 | mtcars$hp > 100)
+```
+
+Há uma diferença clara entre os operadores. No primeiro queremos que ambas as condições sejam satisfeitas enquanto no segundo, queremos qualquer linha que tenha uma delas satisfeita.
+
+### distinct
+
+Remove linhas duplicadas do conjunto de dados.
+
+```{r}
+alunos = data.frame(Alunos = c("Gabriel", 
+                               "Gabriel", 
+                               "Renato"))
+distinct(alunos)
+```
+
+### O Operador Pipe
+
+A ideia do operador pipe, `%>%` é bem simples, usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.
+
+```{r}
+mtcars %>%
+  filter((mtcars$cyl == 4) & (mtcars$hp > 100))
+```
+
+Isto ajuda a tornar o código mais legível quando analisado por outras pessoas (ou nós mesmos em outros dias). A partir daqui sempre utilizaremos o operador pipe!
+
+### sample_frac
+
+Seleciona uma fração das linhas do conjunto de dados aleatoriamente
+
+```{r eval = FALSE}
+mtcars %>%
+  sample_frac(0.7, replace = FALSE)
+# Se replace = TRUE então uma mesma linha pode ser selecionada múltiplas vezes
+```
+
+### slice
+
+Seleciona linhas pela posição
+
+```{r eval = FALSE}
+# Vamos selecionar as linhas 10, 12, 14, 16, 18 e 20:
+mtcars %>% 
+  slice(seq(10, 20, 2))
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(mtcars %>%  slice(seq(10, 20, 2)),
+            options = list(rows.print = 6))
+```
+
+## Extração de Variáveis (Colunas)
+
+A seleção de colunas é feita sxclusivamente com a função `select`. Nela passamos todas as colunas que queremos selecionar em um conjunto de dados:
+
+```{r, eval = FALSE}
+mtcars %>%
+  select(mpg, cyl, hp)
+```
+
+Leitores mais atentos podem estar se perguntando a vantagem de se utilizar `select` comparado aos métodos nativos da própria linguagem `R`. A mais óbvia é por sua legibilidade no conjunto de dados, mas esta não é a única. Podemos utilizar de funções auxiliares para seleção de colunas. Isto pode não ser necessário quando trabalhamos com conjunto de dados pequenos, mas imagine trabalhando bom dados que possuem mais do que 500 colunas, o que é bem comum quando trabalhamos com `Big Data`.
+
+Vamos a alguns exemplos:
+
+```{r eval = FALSE}
+# Seleciona as cinco primeiras colunas
+mtcars %>% select(1:5)
+# Seleciona colunas cujo nome contém alguma string:
+mtcars %>% select(contains("a"))
+# Seleciona todas as colunas entre hp e gear:
+mtcars %>% select(hp:gear)
+# Seleciona todas as colunas, menos hp
+mtcars %>% select(-hp)
+```
+
+## Resumir dados
+
+Resumo de dados consiste na utilização de métricas como média, mediana ou variância para termos melhor informações dos nossos dados. Dentre estas podemos utilizar:
+
+-   **min:** menor valor de um vetor;
+
+-   **max:** maior valor de um vetor;
+
+-   **mean:** média de um vetor;
+
+-   **median:** mediana de um vetor;
+
+-   **var:** variância de um vetor;
+
+-   **sd:** desvio padrão de um vetor.
+
+Podemos aplicar estas funções em múltiplas colunas ou aplicarmos várias em colunas distintas. Vamos aos exemplos.
+
+### summarise
+
+Resume os dados em uma única linha de valores
+
+```{r}
+pokemon_stats %>%
+  summarise(tot_mean = mean(Total),
+            tot_std = sd(Total))
+```
+
+É melhor utilizado quando trabalhamos com a função `group_by`.
+
+### summarise_each
+
+Aplica a função em cada coluna dos dados:
+
+```{r}
+pokemon_stats %>%
+  select(Total:Speed) %>% # Vamos selecionar apenas algumas colunas de atributos numéricos dos dados
+  summarise_each(mean)
+```
+
+### count
+
+Conta o número de linhas com cada valor único de uma variável
+
+```{r}
+count(mtcars, cyl) # Similar ao table()
+```
+
+## Criação de Novas Variáveis
+
+Criação de novas colunas nos conjunstos de dados.
+
+### mutate
+
+Calcula e acrescenta uma ou mais colunas
+
+```{r eval = FALSE}
+# Vamos criar uma coluna retornando TRUE se o pokémon tiver Speed > 100
+# e Attack ou Sp_Atk maior que 100:
+pokemon_stats %>%
+  mutate(Atacante = ifelse((Attack > 100 & Speed > 100) |
+                           (Sp_Atk > 100 & Speed > 100), TRUE, FALSE)) 
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(pokemon_stats %>%
+  mutate(Atacante = ifelse((Attack > 100 & Speed > 100) |
+                           (Sp_Atk > 100 & Speed > 100), TRUE, FALSE)),
+            options = list(rows.print = 6))
+```
+
+### transmute
+
+Calcula uma ou mais novas colunas, removendo as originais. Útil quando queremos transformar todas as colunas de um conjunto de dados, removendo as colunas originais. Vamos supor que só estamos interessados apenas no nome, tipo de corpo e IMC de cada pokémon:
+
+```{r eval = FALSE}
+pokemon_stats %>% 
+  transmute(Nome = Name,
+            Body_Style = Body_Style,
+            IMC = round(Weight_kg / Height_m^2,2))
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(pokemon_stats %>% 
+  transmute(Nome = Name,
+            Body_Style = Body_Style,
+            IMC = round(Weight_kg / Height_m^2,2)),
+            options = list(rows.print = 6))
+```
+
+## Remodelando Dados
+
+### arrange
+
+### rename
+
+### separate
+
+### unite
+
+## Combinar Conjuntos de Dados
+
+Muitas vezes queremos trabalhar com dados que estão em arquivos distintos.
+
+### left_join
+
+### full_join
+
+### intersect
+
+### bind_rows
+
+## Agrupar Dados (group_by)
+
+Agrupa variáveis de acordo com um ou mais categoria. A função em si não modifica o conjunto, mas as próximas serão modificadas pela forma que os dados estão agrupados. Vamos calcular a média de status de pokémons pelos seus primeiros tipos:
+
+```{r eval = FALSE}
+pokemon_stats %>%  
+  group_by(Type_1) %>% # Agrupa por Tipo
+  summarise(Tot_mean = mean(Total))
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(pokemon_stats %>%  
+  group_by(Type_1) %>% # Agrupa por Tipo
+  summarise(Tot_mean = mean(Total)),
+            options = list(rows.print = 6))
+```
