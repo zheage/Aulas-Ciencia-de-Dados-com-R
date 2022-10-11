@@ -1,0 +1,111 @@
+# Regressão Linear
+
+```{r include = FALSE}
+library(ggplot2)
+```
+
+Em problemas de aprendizagem supervisionada regressão linear é o algoritmo mais simples que podemos utilizar. A muito tempo é tema de diversos livros e, apesar de parecer descartável com algoritmos mais modernos, ainda é uma ferramente muito útil para diversos processos estatísticos.
+
+## Regressão Linear Simples
+
+Maneira mais direta de prever uma resposta $Y$ através de uma variável preditora $X$. Assume que exista uma relação linear entre $X$ e $Y$, qual pode ser escrita da seguinte forma
+
+$$
+Y \approx \beta_0 + \beta_1 X.
+$$
+
+Onde $\approx$ significa que $Y$ é aproximadamente uma soma linear de \$X\$. No conjunto mtcars $Y$ pode ser a variável `mpg` enquanto $X$ a variável `hp`.
+
+$$
+\text{mpg} \approx \beta_0 + \beta_1 \text{hp}.
+$$
+
+Nestas equações os parâmetros $\beta_0$ e $\beta_1$ são duas constantes desconhecidas que representam o intercepto e o coeficiente angular de uma curva. Chamamos estes de coeficientes ou parâmetros do modelo de regressão linear.
+
+Uma vez que tenhamos utilizados os dados de treino para estimar os parâmetros, os denotamos com um chapéu em cima, indicando que são os parâmetros estimados através dos dados. Podemos então prever novos dados por meio da equação:
+
+$$
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}x,
+$$
+
+onde $\hat{y}$ é a predição realizada pelo algoritmo para a variável $X=x$.
+
+## Estimando os Coeficientes
+
+Na prática os parâmetros do modelo são desconhecidos. Para estíma-los vamos considerar que temos um conjunto de dados com $n$ linhas:
+
+$$
+(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)
+$$
+
+Cada um representando um valor para $X$ e \$Y\$. Temos como objetivo estimar $\beta_0$ e $\beta_1$ de modo que o modelo linear realize boas previsões, isto é
+
+$$
+y_i \approx \hat{\beta_0} + \hat{\beta_1}x_i, i=1,\dots, n
+$$
+
+Isto significa que queremos encontrar uma reta que esteja o mais próximo possível de todos os pontos. Tanto visualmente, tanto computacionalmente, a linguagem `R` já possui boas ferramentas para isto. Tanto para visualização:
+
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x,method = 'lm', se = FALSE) +
+  labs(title = 'Regressão linear no conjunto mtcars')
+```
+
+Tanto para criarmos um objeto que represente o modelo de regressão com a função `lm`:
+
+```{r}
+mtcars_lm <- lm(mpg ~ hp, data = mtcars)
+mtcars_lm
+```
+
+Existem diversas maneiras de calcular o quanto uma reta está próxima de um conjunto de pontos. Aqui focaremos na **minimização dos mínimos quadrados**.
+
+Seja a previsão de $Y$ para o i-ésimo valor de \$X\$. O erro cometido entre o valor real de $y_i$ e sua previsão é $e_i=y_i-\hat{y_i}$, qual chamamos de i-ésimo resíduo. Definimos como soma dos quadrados dos resíduos o valor
+
+$$
+\text{RSS} = e_1^2+e_2^2+\dots + e_n,
+$$
+
+ou equivalentemente
+
+$$
+\text{RSS} = (y_1- \beta_0-\hat{\beta_1}x_1)^2 + (y_2- \beta_0-\hat{\beta_1}x_2)^2 +\cdots + (y_n- \beta_0-\hat{\beta_1}x_n)^2
+$$
+
+O método consiste na escolha de $\hat{\beta_0}$ e $\hat{\beta_1}$ que minimizam esta soma. Com conceitos do cálculo, podemos demonstrar que
+
+$$
+\hat{\beta_1} = \dfrac{\sum_{i=1}^n (x_i - \overline{x})(y_i- \overline{y})}{\sum_{i=1}^n (x_i-\overline{x})^2}, \quad \hat{\beta_0}=\overline{y} - \hat{\beta_1}\overline{x}.
+$$
+
+são os valores de $\hat{\beta_0}$ e $\hat{\beta_1}$ que minimizam a soma dos quadrados dos resíduos.
+
+Elaboremos uma função que realize o cálculo desses coeficientes:
+
+```{r}
+linear_regression <- function(X, Y){
+  numerador = sum((X - mean(X)) * (Y - mean(Y)))
+  denominador = sum((X - mean(X))**2) 
+  beta_1 = numerador/denominador
+  beta_0 = mean(Y) - beta_1 * mean(X)
+  return(data.frame('beta_0' = beta_0,
+                    'beta_1' = beta_1))
+}
+
+linear_regression(X = mtcars$hp, Y = mtcars$mpg)
+```
+
+## Acurácia da Estimativa dos Coeficientes
+
+
+## Regressão Linear Múltipla
+
+
+## Questões Importantes Sobre o Modelo Linear
+
+
+
+
+

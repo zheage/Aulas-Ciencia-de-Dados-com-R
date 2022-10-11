@@ -1,33 +1,37 @@
 # Introdução à pacotes do R e ao Tidyverse
 
-Pacotes são conjuntos de códigos criados para a linguagem `R` de forma que as mais diversas funcionalidades sejam simplificadas e padronizadas. Para isto utilizaremos pacotes do `tidyverse`, uma coleção de pacotes utilizados para manipulação de dados que compartilham uma filosofia em comum e são projetados para serem trabalhados em conjunto.
+Pacotes são conjuntos de códigos criados para a linguagem `R` de forma que as mais diversas funcionalidades sejam simplificadas e padronizadas. Para trabalharmos com análise de dados utilizaremos pacotes do `tidyverse`, uma coleção de pacotes utilizados para manipulação de dados que [compartilham uma filosofia em comum](https://tidyverse.tidyverse.org/articles/manifesto.html) e são projetados para serem trabalhados em conjunto.
 
 <center>[![Tidyverse.](figs/tidyverse.png){width="460"}](https://medium.com/omixdata/manipulação-de-dados-uma-introdução-à-coleção-de-pacotes-tidyverse-no-r-961a69a6da4c)</center>
 
 Muitos deles não são nativos da linguagem e devem ser instalados utilizando a função `install.packages`. Neste capítulo trabalharemos com:
 
--   **Dplyr:** Manipulação de conjunto de dados
--   **Tidyr:** Modelagem no formato de conjuntos de dados
--   **GGPlot2:** Visualização de conjuntos de dados
+-   [Dplyr:](https://dplyr.tidyverse.org) Manipulação de conjunto de dados
+-   [Tidyr:](https://tidyr.tidyverse.org) Modelagem no formato de conjuntos de dados
+-   [GGPlot2:](https://tidyr.tidyverse.org) Visualização de conjuntos de dados
+-   [Stringr:](https://stringr.tidyverse.org) Manipulação de texto
+-   [Forcats:](https://forcats.tidyverse.org) Manipulação de fatores
 
-Inicialmente devemos realizarmos sua intalação:
+Inicialmente devemos realizarmos a intalação dos pacotes:
 
 ```{r, eval = FALSE}
 install.packages('dplyr')
 install.packages('tidyr')
 install.packages('ggplot2')
+install.packages('stringr')
+install.packages('forcats')
 # install.packages('tidyverse') Instala todos os pacotes do tidyverse de uma vez
 ```
 
-e em seguida carregarmos os pacotes no R quando formos utiliza-los:
+e em seguida podemos carregar os pacotes no `R`:
 
 ```{r, warning = FALSE, message = FALSE}
 library(dplyr) # Manipulação de dados
 library(tidyr) # Modificação no formato de conjuntos de dados
 library(ggplot2) # Visualização de gráficos
+library(stringr)
+library(forcats)
 library(readr) # Biblioteca para leitura de dados
-# library(tidyverse) Carrega todos os pacotes do tidyverse de uma vez,
-# não é interessante para economia de memória.
 ```
 
 ```{r, include = FALSE}
@@ -40,10 +44,10 @@ Também podemos carregar vários em uma linha de código utilizando a biblioteca
 ```{r, eval = FALSE}
 install.packages('easypackages') # Instalar a biblioteca
 library(easypackages) # Carrega o pacote
-libraries('dplyr', 'tidyr', 'ggplot2')
+libraries('dplyr', 'tidyr', 'ggplot2', 'stringr', 'forcats', 'readr')
 ```
 
-Trabalharemos especialmente com **Data Munging**, processo de preparar conjuntos de dados para relatórios e análises. Esta parte incorpora todas as etapas anteriores à análise, incluindo estruturação de dados, limpeza, enriquecimento e validação.
+Trabalharemos especialmente com [Data Munging](https://www.astera.com/pt/type/blog/what-is-data-munging/), processo de preparar conjuntos de dados para relatórios e análises. Esta parte incorpora todas as etapas anteriores à análise, incluindo estruturação de dados, limpeza, enriquecimento e validação.
 
 ## Dados utilizados
 
@@ -63,7 +67,7 @@ paged_table(mtcars,
 
 Presente em animações, jogos, filmes, séries e em toda a cultura nerd, Pokémon é uma série contendo os nossos monstrinhos favoritos! Utilizaremos aqui o conjunto com uma lista com todos os pokémons até então presente nos jogos, com seus nomes, tipos, status, classificação em lendário dentre outros atributos. Podemos encontrar o conjunto no site [Kaggle](https://www.kaggle.com/datasets/alopez247/pokemon).
 
-```{r}
+```{r, message = FALSE}
 pokemon_stats <- read_csv("G:/Meu Drive/Dados/pokemon_stats.csv")
 ```
 
@@ -96,11 +100,41 @@ paged_table(fifa_detailed,
 
 ## Introdução a fatores
 
+Fatores são objetos para armazenamento de dados categóricos no `R`. A grande maioria dos algoritmos de aprendizado de máquina não trabalha com textos, mas sim com valores numéricos - transformar dados que estão armazenados como texto em fatores é um fator primordial para que os algoritmos os interpretem como dados categóricos.
+
+No conjunto de dados sobre pokémons, o Tipo de cada pokémon é armazenado por uma string (texto):
+
+```{r}
+str(pokemon_stats['Type_1'])
+```
+
+Se quisermos trabalhar de forma a utilizarmos essa coluna em algoritmos, ou até mesmo para certos pacotes que trabalham com dados categóricos, como `ggplot2` para criação de certos gráficos, o ideal é realizar a transformação para fator:
+
+```{r}
+pokemon_stats$Type_1 = as.factor(pokemon_stats$Type_1)
+class(pokemon_stats$Type_1) # Classe dessa coluna passa a ser do tipo fator
+```
+
+Podemos transformar várias colunas em fatores utilizando a função `apply`:
+
+```{r}
+colunas = c('Type_1', 'Type_2')
+pokemon_stats[colunas] = lapply(pokemon_stats[colunas], factor)
+```
+
+> A diferença entre as funções da família apply é sútil. Estas variam com o tipo de dado esperado como entrada das funções e seu resultado, recomendo o post de [Fernando Gama no medium](https://medium.com/@fernando.gama/família-apply-fugindo-um-pouco-dos-loops-convencionais-43ff6ba96013) sobre o assunto.
+
 ## Trabalhando com Datas
+
+<https://www.r-bloggers.com/2013/08/date-formats-in-r/>
+
+```{r eval = FALSE}
+as.POSIXct(fifa_detailed$DOB, format = "%h %d, %Y")
+```
 
 # Dplyr & Tidyr
 
-Dplyr e Tidyr são pacotes que se complementam na manipulação de dados. O primeiro foca na realização de manipulação enquanto o segundo na modificação de seu formato. Aqui utilizaremos como referência a [folha de referência de ambas as bibliotecas](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/87d0d3cd-9abc-4b61-bf00-dc9ce48cdd20/04.16._Folha_de_Referencia_dplyr_e_tidy.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T165407Z&X-Amz-Expires=86400&X-Amz-Signature=b78994192312f13c9140b99a68be9c23018194c06ff7eaae4250b51cea84eef9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Dplyr%2520e%2520Tidy.pdf%22&x-id=GetObject). Além disso recomendo a consulta do site [Rdocumentation](https://www.rdocumentation.org/packages/dplyr/versions/1.0.10) para visualização de todas as funções dos pacotes e até mesmo o próprio site do [Dplyr](https://dplyr.tidyverse.org) e [Tidyr](https://tidyr.tidyverse.org).
+Dplyr e Tidyr são pacotes que se complementam na manipulação de dados. O primeiro foca na realização de manipulação enquanto o segundo na modificação de seu formato. Aqui utilizaremos como referência a [folha de referência de ambas as bibliotecas](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/87d0d3cd-9abc-4b61-bf00-dc9ce48cdd20/04.16._Folha_de_Referencia_dplyr_e_tidy.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T165407Z&X-Amz-Expires=86400&X-Amz-Signature=b78994192312f13c9140b99a68be9c23018194c06ff7eaae4250b51cea84eef9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Dplyr%2520e%2520Tidy.pdf%22&x-id=GetObject). Além disso recomendo a consulta do site [Rdocumentation](https://www.rdocumentation.org/packages/dplyr/versions/1.0.10) para visualização de todas as funções dos pacotes.
 
 Vamos então aos principais recursos das bibliotecas.
 
@@ -468,7 +502,3 @@ fifa_separate %>%
   unite(col = "Work rate", c(Work1, Work2), sep = "-") %>%
   select("Work rate")
 ```
-
-## Projeto 01 - Machine Learning from Disaster
-
-Projeto será trabalhado em aula por um script.

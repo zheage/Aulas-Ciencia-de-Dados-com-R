@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.2 Introdução a fatores | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <title>15.2 Estimando os Coeficientes | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
   <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
 #set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.2 Introdução a fatores | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:title" content="15.2 Estimando os Coeficientes | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@
   <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.2 Introdução a fatores | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="twitter:title" content="15.2 Estimando os Coeficientes | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   
   <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
@@ -35,8 +35,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="dados-utilizados.html"/>
-<link rel="next" href="trabalhando-com-datas.html"/>
+<link rel="prev" href="regressão-linear-simples.html"/>
+<link rel="next" href="acurácia-da-estimativa-dos-coeficientes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,31 +260,67 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introdução-a-fatores" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Introdução a fatores<a href="introdução-a-fatores.html#introdução-a-fatores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Fatores são objetos para armazenamento de dados categóricos no <code>R</code>. A grande maioria dos algoritmos de aprendizado de máquina não trabalha com textos, mas sim com valores numéricos - transformar dados que estão armazenados como texto em fatores é um fator primordial para que os algoritmos os interpretem como dados categóricos.</p>
-<p>No conjunto de dados sobre pokémons, o Tipo de cada pokémon é armazenado por uma string (texto):</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="introdução-a-fatores.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pokemon_stats[<span class="st">&#39;Type_1&#39;</span>])</span></code></pre></div>
-<pre><code>## tibble [721 × 1] (S3: tbl_df/tbl/data.frame)
-##  $ Type_1: chr [1:721] &quot;Grass&quot; &quot;Grass&quot; &quot;Grass&quot; &quot;Fire&quot; ...</code></pre>
-<p>Se quisermos trabalhar de forma a utilizarmos essa coluna em algoritmos, ou até mesmo para certos pacotes que trabalham com dados categóricos, como <code>ggplot2</code> para criação de certos gráficos, o ideal é realizar a transformação para fator:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="introdução-a-fatores.html#cb66-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats<span class="sc">$</span>Type_1 <span class="ot">=</span> <span class="fu">as.factor</span>(pokemon_stats<span class="sc">$</span>Type_1)</span>
-<span id="cb66-2"><a href="introdução-a-fatores.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pokemon_stats<span class="sc">$</span>Type_1) <span class="co"># Classe dessa coluna passa a ser do tipo fator</span></span></code></pre></div>
-<pre><code>## [1] &quot;factor&quot;</code></pre>
-<p>Podemos transformar várias colunas em fatores utilizando a função <code>apply</code>:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="introdução-a-fatores.html#cb68-1" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Type_1&#39;</span>, <span class="st">&#39;Type_2&#39;</span>)</span>
-<span id="cb68-2"><a href="introdução-a-fatores.html#cb68-2" aria-hidden="true" tabindex="-1"></a>pokemon_stats[colunas] <span class="ot">=</span> <span class="fu">lapply</span>(pokemon_stats[colunas], factor)</span></code></pre></div>
-<blockquote>
-<p>A diferença entre as funções da família apply é sútil. Estas variam com o tipo de dado esperado como entrada das funções e seu resultado, recomendo o post de <a href="https://medium.com/@fernando.gama/família-apply-fugindo-um-pouco-dos-loops-convencionais-43ff6ba96013">Fernando Gama no medium</a> sobre o assunto.</p>
-</blockquote>
+<div id="estimando-os-coeficientes" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Estimando os Coeficientes<a href="estimando-os-coeficientes.html#estimando-os-coeficientes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Na prática os parâmetros do modelo são desconhecidos. Para estíma-los vamos considerar que temos um conjunto de dados com <span class="math inline">\(n\)</span> linhas:</p>
+<p><span class="math display">\[
+(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)
+\]</span></p>
+<p>Cada um representando um valor para <span class="math inline">\(X\)</span> e $Y$. Temos como objetivo estimar <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> de modo que o modelo linear realize boas previsões, isto é</p>
+<p><span class="math display">\[
+y_i \approx \hat{\beta_0} + \hat{\beta_1}x_i, i=1,\dots, n
+\]</span></p>
+<p>Isto significa que queremos encontrar uma reta que esteja o mais próximo possível de todos os pontos. Tanto visualmente, tanto computacionalmente, a linguagem <code>R</code> já possui boas ferramentas para isto. Tanto para visualização:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="estimando-os-coeficientes.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> hp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb104-2"><a href="estimando-os-coeficientes.html#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb104-3"><a href="estimando-os-coeficientes.html#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x,<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb104-4"><a href="estimando-os-coeficientes.html#cb104-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Regressão linear no conjunto mtcars&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-89-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Tanto para criarmos um objeto que represente o modelo de regressão com a função <code>lm</code>:</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="estimando-os-coeficientes.html#cb105-1" aria-hidden="true" tabindex="-1"></a>mtcars_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb105-2"><a href="estimando-os-coeficientes.html#cb105-2" aria-hidden="true" tabindex="-1"></a>mtcars_lm</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ hp, data = mtcars)
+## 
+## Coefficients:
+## (Intercept)           hp  
+##    30.09886     -0.06823</code></pre>
+<p>Existem diversas maneiras de calcular o quanto uma reta está próxima de um conjunto de pontos. Aqui focaremos na <strong>minimização dos mínimos quadrados</strong>.</p>
+<p>Seja a previsão de <span class="math inline">\(Y\)</span> para o i-ésimo valor de $X$. O erro cometido entre o valor real de <span class="math inline">\(y_i\)</span> e sua previsão é <span class="math inline">\(e_i=y_i-\hat{y_i}\)</span>, qual chamamos de i-ésimo resíduo. Definimos como soma dos quadrados dos resíduos o valor</p>
+<p><span class="math display">\[
+\text{RSS} = e_1^2+e_2^2+\dots + e_n,
+\]</span></p>
+<p>ou equivalentemente</p>
+<p><span class="math display">\[
+\text{RSS} = (y_1- \beta_0-\hat{\beta_1}x_1)^2 + (y_2- \beta_0-\hat{\beta_1}x_2)^2 +\cdots + (y_n- \beta_0-\hat{\beta_1}x_n)^2
+\]</span></p>
+<p>O método consiste na escolha de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que minimizam esta soma. Com conceitos do cálculo, podemos demonstrar que</p>
+<p><span class="math display">\[
+\hat{\beta_1} = \dfrac{\sum_{i=1}^n (x_i - \overline{x})(y_i- \overline{y})}{\sum_{i=1}^n (x_i-\overline{x})^2}, \quad \hat{\beta_0}=\overline{y} - \hat{\beta_1}\overline{x}.
+\]</span></p>
+<p>são os valores de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que minimizam a soma dos quadrados dos resíduos.</p>
+<p>Elaboremos uma função que realize o cálculo desses coeficientes:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="estimando-os-coeficientes.html#cb107-1" aria-hidden="true" tabindex="-1"></a>linear_regression <span class="ot">&lt;-</span> <span class="cf">function</span>(X, Y){</span>
+<span id="cb107-2"><a href="estimando-os-coeficientes.html#cb107-2" aria-hidden="true" tabindex="-1"></a>  numerador <span class="ot">=</span> <span class="fu">sum</span>((X <span class="sc">-</span> <span class="fu">mean</span>(X)) <span class="sc">*</span> (Y <span class="sc">-</span> <span class="fu">mean</span>(Y)))</span>
+<span id="cb107-3"><a href="estimando-os-coeficientes.html#cb107-3" aria-hidden="true" tabindex="-1"></a>  denominador <span class="ot">=</span> <span class="fu">sum</span>((X <span class="sc">-</span> <span class="fu">mean</span>(X))<span class="sc">**</span><span class="dv">2</span>) </span>
+<span id="cb107-4"><a href="estimando-os-coeficientes.html#cb107-4" aria-hidden="true" tabindex="-1"></a>  beta_1 <span class="ot">=</span> numerador<span class="sc">/</span>denominador</span>
+<span id="cb107-5"><a href="estimando-os-coeficientes.html#cb107-5" aria-hidden="true" tabindex="-1"></a>  beta_0 <span class="ot">=</span> <span class="fu">mean</span>(Y) <span class="sc">-</span> beta_1 <span class="sc">*</span> <span class="fu">mean</span>(X)</span>
+<span id="cb107-6"><a href="estimando-os-coeficientes.html#cb107-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="st">&#39;beta_0&#39;</span> <span class="ot">=</span> beta_0,</span>
+<span id="cb107-7"><a href="estimando-os-coeficientes.html#cb107-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&#39;beta_1&#39;</span> <span class="ot">=</span> beta_1))</span>
+<span id="cb107-8"><a href="estimando-os-coeficientes.html#cb107-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb107-9"><a href="estimando-os-coeficientes.html#cb107-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-10"><a href="estimando-os-coeficientes.html#cb107-10" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_regression</span>(<span class="at">X =</span> mtcars<span class="sc">$</span>hp, <span class="at">Y =</span> mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<pre><code>##     beta_0      beta_1
+## 1 30.09886 -0.06822828</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dados-utilizados.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="trabalhando-com-datas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="regressão-linear-simples.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="acurácia-da-estimativa-dos-coeficientes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

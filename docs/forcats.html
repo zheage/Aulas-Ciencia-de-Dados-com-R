@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.2 Introdução a fatores | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <title>Capítulo 8 Forcats | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
   <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
 #set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.2 Introdução a fatores | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:title" content="Capítulo 8 Forcats | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@
   <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.2 Introdução a fatores | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="twitter:title" content="Capítulo 8 Forcats | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   
   <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
@@ -35,8 +35,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="dados-utilizados.html"/>
-<link rel="next" href="trabalhando-com-datas.html"/>
+<link rel="prev" href="stringr.html"/>
+<link rel="next" href="web-scraping.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -260,31 +260,17 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introdução-a-fatores" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Introdução a fatores<a href="introdução-a-fatores.html#introdução-a-fatores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Fatores são objetos para armazenamento de dados categóricos no <code>R</code>. A grande maioria dos algoritmos de aprendizado de máquina não trabalha com textos, mas sim com valores numéricos - transformar dados que estão armazenados como texto em fatores é um fator primordial para que os algoritmos os interpretem como dados categóricos.</p>
-<p>No conjunto de dados sobre pokémons, o Tipo de cada pokémon é armazenado por uma string (texto):</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="introdução-a-fatores.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pokemon_stats[<span class="st">&#39;Type_1&#39;</span>])</span></code></pre></div>
-<pre><code>## tibble [721 × 1] (S3: tbl_df/tbl/data.frame)
-##  $ Type_1: chr [1:721] &quot;Grass&quot; &quot;Grass&quot; &quot;Grass&quot; &quot;Fire&quot; ...</code></pre>
-<p>Se quisermos trabalhar de forma a utilizarmos essa coluna em algoritmos, ou até mesmo para certos pacotes que trabalham com dados categóricos, como <code>ggplot2</code> para criação de certos gráficos, o ideal é realizar a transformação para fator:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="introdução-a-fatores.html#cb66-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats<span class="sc">$</span>Type_1 <span class="ot">=</span> <span class="fu">as.factor</span>(pokemon_stats<span class="sc">$</span>Type_1)</span>
-<span id="cb66-2"><a href="introdução-a-fatores.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pokemon_stats<span class="sc">$</span>Type_1) <span class="co"># Classe dessa coluna passa a ser do tipo fator</span></span></code></pre></div>
-<pre><code>## [1] &quot;factor&quot;</code></pre>
-<p>Podemos transformar várias colunas em fatores utilizando a função <code>apply</code>:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="introdução-a-fatores.html#cb68-1" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Type_1&#39;</span>, <span class="st">&#39;Type_2&#39;</span>)</span>
-<span id="cb68-2"><a href="introdução-a-fatores.html#cb68-2" aria-hidden="true" tabindex="-1"></a>pokemon_stats[colunas] <span class="ot">=</span> <span class="fu">lapply</span>(pokemon_stats[colunas], factor)</span></code></pre></div>
-<blockquote>
-<p>A diferença entre as funções da família apply é sútil. Estas variam com o tipo de dado esperado como entrada das funções e seu resultado, recomendo o post de <a href="https://medium.com/@fernando.gama/família-apply-fugindo-um-pouco-dos-loops-convencionais-43ff6ba96013">Fernando Gama no medium</a> sobre o assunto.</p>
-</blockquote>
+<div id="forcats" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Capítulo 8</span> Forcats<a href="forcats.html#forcats" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dados-utilizados.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="trabalhando-com-datas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="stringr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="web-scraping.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

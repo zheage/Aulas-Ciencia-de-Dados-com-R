@@ -51,7 +51,7 @@ ggplot(data = mtcars, aes(x = wt, y = mpg))
 
 ## Gráficos de Linha
 
-## Gráficos de ponto
+## Gráficos de Dispersão
 
 ## Anotações
 
