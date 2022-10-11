@@ -35,7 +35,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="projeto-01---machine-learning-from-disaster.html"/>
+<link rel="prev" href="lab-02---xadrez-brasil.html"/>
 <link rel="next" href="dados-utilizados.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -139,7 +139,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
       <nav role="navigation">
 
 <ul class="summary">
-<li><a>Dicionário dos Dados</a></li>
+<li><a>Ciência de Dados com R</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
@@ -156,7 +156,6 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.6" data-path="transformações.html"><a href="transformações.html"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
 <li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
 <li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
-<li class="chapter" data-level="3.9" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>3.9</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução à pacotes do R e ao Tidyverse</a>
 <ul>
@@ -215,7 +214,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="6.5" data-path="eixos.html"><a href="eixos.html"><i class="fa fa-check"></i><b>6.5</b> Eixos</a></li>
 <li class="chapter" data-level="6.6" data-path="controlando-a-aparência-do-gráfico.html"><a href="controlando-a-aparência-do-gráfico.html"><i class="fa fa-check"></i><b>6.6</b> Controlando a Aparência do Gráfico</a></li>
 <li class="chapter" data-level="6.7" data-path="facets.html"><a href="facets.html"><i class="fa fa-check"></i><b>6.7</b> Facets</a></li>
-<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>7</b> Stringr</a></li>
 <li class="chapter" data-level="8" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>8</b> Forcats</a></li>
@@ -240,7 +239,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="15.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>15.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
 </ul></li>
 <li class="part"><span><b>V Projetos</b></span></li>
-<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-2.html"><a href="projeto-01---machine-learning-from-disaster-2.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -275,23 +274,23 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li><a href="https://forcats.tidyverse.org">Forcats:</a> Manipulação de fatores</li>
 </ul>
 <p>Inicialmente devemos realizarmos a intalação dos pacotes:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;dplyr&#39;</span>)</span>
-<span id="cb59-2"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidyr&#39;</span>)</span>
-<span id="cb59-3"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ggplot2&#39;</span>)</span>
-<span id="cb59-4"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;stringr&#39;</span>)</span>
-<span id="cb59-5"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;forcats&#39;</span>)</span>
-<span id="cb59-6"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;tidyverse&#39;) Instala todos os pacotes do tidyverse de uma vez</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;dplyr&#39;</span>)</span>
+<span id="cb49-2"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidyr&#39;</span>)</span>
+<span id="cb49-3"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ggplot2&#39;</span>)</span>
+<span id="cb49-4"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;stringr&#39;</span>)</span>
+<span id="cb49-5"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;forcats&#39;</span>)</span>
+<span id="cb49-6"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;tidyverse&#39;) Instala todos os pacotes do tidyverse de uma vez</span></span></code></pre></div>
 <p>e em seguida podemos carregar os pacotes no <code>R</code>:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># Manipulação de dados</span></span>
-<span id="cb60-2"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) <span class="co"># Modificação no formato de conjuntos de dados</span></span>
-<span id="cb60-3"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Visualização de gráficos</span></span>
-<span id="cb60-4"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb60-5"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
-<span id="cb60-6"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co"># Biblioteca para leitura de dados</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># Manipulação de dados</span></span>
+<span id="cb50-2"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) <span class="co"># Modificação no formato de conjuntos de dados</span></span>
+<span id="cb50-3"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Visualização de gráficos</span></span>
+<span id="cb50-4"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb50-5"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb50-6"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co"># Biblioteca para leitura de dados</span></span></code></pre></div>
 <p>Também podemos carregar vários em uma linha de código utilizando a biblioteca <code>easypackages</code>:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;easypackages&#39;</span>) <span class="co"># Instalar a biblioteca</span></span>
-<span id="cb61-2"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easypackages) <span class="co"># Carrega o pacote</span></span>
-<span id="cb61-3"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">libraries</span>(<span class="st">&#39;dplyr&#39;</span>, <span class="st">&#39;tidyr&#39;</span>, <span class="st">&#39;ggplot2&#39;</span>, <span class="st">&#39;stringr&#39;</span>, <span class="st">&#39;forcats&#39;</span>, <span class="st">&#39;readr&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;easypackages&#39;</span>) <span class="co"># Instalar a biblioteca</span></span>
+<span id="cb51-2"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easypackages) <span class="co"># Carrega o pacote</span></span>
+<span id="cb51-3"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">libraries</span>(<span class="st">&#39;dplyr&#39;</span>, <span class="st">&#39;tidyr&#39;</span>, <span class="st">&#39;ggplot2&#39;</span>, <span class="st">&#39;stringr&#39;</span>, <span class="st">&#39;forcats&#39;</span>, <span class="st">&#39;readr&#39;</span>)</span></code></pre></div>
 <p>Trabalharemos especialmente com <a href="https://www.astera.com/pt/type/blog/what-is-data-munging/">Data Munging</a>, processo de preparar conjuntos de dados para relatórios e análises. Esta parte incorpora todas as etapas anteriores à análise, incluindo estruturação de dados, limpeza, enriquecimento e validação.</p>
 </div>
             </section>
@@ -299,7 +298,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           </div>
         </div>
       </div>
-<a href="projeto-01---machine-learning-from-disaster.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab-02---xadrez-brasil.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="dados-utilizados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -339,7 +338,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

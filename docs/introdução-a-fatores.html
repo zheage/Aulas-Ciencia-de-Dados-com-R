@@ -139,7 +139,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
       <nav role="navigation">
 
 <ul class="summary">
-<li><a>Dicionário dos Dados</a></li>
+<li><a>Ciência de Dados com R</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
@@ -156,7 +156,6 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.6" data-path="transformações.html"><a href="transformações.html"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
 <li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
 <li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
-<li class="chapter" data-level="3.9" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>3.9</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução à pacotes do R e ao Tidyverse</a>
 <ul>
@@ -215,7 +214,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="6.5" data-path="eixos.html"><a href="eixos.html"><i class="fa fa-check"></i><b>6.5</b> Eixos</a></li>
 <li class="chapter" data-level="6.6" data-path="controlando-a-aparência-do-gráfico.html"><a href="controlando-a-aparência-do-gráfico.html"><i class="fa fa-check"></i><b>6.6</b> Controlando a Aparência do Gráfico</a></li>
 <li class="chapter" data-level="6.7" data-path="facets.html"><a href="facets.html"><i class="fa fa-check"></i><b>6.7</b> Facets</a></li>
-<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>7</b> Stringr</a></li>
 <li class="chapter" data-level="8" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>8</b> Forcats</a></li>
@@ -240,7 +239,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="15.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>15.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
 </ul></li>
 <li class="part"><span><b>V Projetos</b></span></li>
-<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-2.html"><a href="projeto-01---machine-learning-from-disaster-2.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -264,16 +263,16 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <h2><span class="header-section-number">4.2</span> Introdução a fatores<a href="introdução-a-fatores.html#introdução-a-fatores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Fatores são objetos para armazenamento de dados categóricos no <code>R</code>. A grande maioria dos algoritmos de aprendizado de máquina não trabalha com textos, mas sim com valores numéricos - transformar dados que estão armazenados como texto em fatores é um fator primordial para que os algoritmos os interpretem como dados categóricos.</p>
 <p>No conjunto de dados sobre pokémons, o Tipo de cada pokémon é armazenado por uma string (texto):</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="introdução-a-fatores.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pokemon_stats[<span class="st">&#39;Type_1&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="introdução-a-fatores.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pokemon_stats[<span class="st">&#39;Type_1&#39;</span>])</span></code></pre></div>
 <pre><code>## tibble [721 × 1] (S3: tbl_df/tbl/data.frame)
 ##  $ Type_1: chr [1:721] &quot;Grass&quot; &quot;Grass&quot; &quot;Grass&quot; &quot;Fire&quot; ...</code></pre>
 <p>Se quisermos trabalhar de forma a utilizarmos essa coluna em algoritmos, ou até mesmo para certos pacotes que trabalham com dados categóricos, como <code>ggplot2</code> para criação de certos gráficos, o ideal é realizar a transformação para fator:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="introdução-a-fatores.html#cb66-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats<span class="sc">$</span>Type_1 <span class="ot">=</span> <span class="fu">as.factor</span>(pokemon_stats<span class="sc">$</span>Type_1)</span>
-<span id="cb66-2"><a href="introdução-a-fatores.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pokemon_stats<span class="sc">$</span>Type_1) <span class="co"># Classe dessa coluna passa a ser do tipo fator</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="introdução-a-fatores.html#cb56-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats<span class="sc">$</span>Type_1 <span class="ot">=</span> <span class="fu">as.factor</span>(pokemon_stats<span class="sc">$</span>Type_1)</span>
+<span id="cb56-2"><a href="introdução-a-fatores.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pokemon_stats<span class="sc">$</span>Type_1) <span class="co"># Classe dessa coluna passa a ser do tipo fator</span></span></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
 <p>Podemos transformar várias colunas em fatores utilizando a função <code>apply</code>:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="introdução-a-fatores.html#cb68-1" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Type_1&#39;</span>, <span class="st">&#39;Type_2&#39;</span>)</span>
-<span id="cb68-2"><a href="introdução-a-fatores.html#cb68-2" aria-hidden="true" tabindex="-1"></a>pokemon_stats[colunas] <span class="ot">=</span> <span class="fu">lapply</span>(pokemon_stats[colunas], factor)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="introdução-a-fatores.html#cb58-1" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Type_1&#39;</span>, <span class="st">&#39;Type_2&#39;</span>)</span>
+<span id="cb58-2"><a href="introdução-a-fatores.html#cb58-2" aria-hidden="true" tabindex="-1"></a>pokemon_stats[colunas] <span class="ot">=</span> <span class="fu">lapply</span>(pokemon_stats[colunas], factor)</span></code></pre></div>
 <blockquote>
 <p>A diferença entre as funções da família apply é sútil. Estas variam com o tipo de dado esperado como entrada das funções e seu resultado, recomendo o post de <a href="https://medium.com/@fernando.gama/família-apply-fugindo-um-pouco-dos-loops-convencionais-43ff6ba96013">Fernando Gama no medium</a> sobre o assunto.</p>
 </blockquote>
@@ -323,7 +322,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

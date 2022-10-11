@@ -139,7 +139,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
       <nav role="navigation">
 
 <ul class="summary">
-<li><a>Dicionário dos Dados</a></li>
+<li><a>Ciência de Dados com R</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
@@ -156,7 +156,6 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.6" data-path="transformações.html"><a href="transformações.html"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
 <li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
 <li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
-<li class="chapter" data-level="3.9" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>3.9</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução à pacotes do R e ao Tidyverse</a>
 <ul>
@@ -215,7 +214,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="6.5" data-path="eixos.html"><a href="eixos.html"><i class="fa fa-check"></i><b>6.5</b> Eixos</a></li>
 <li class="chapter" data-level="6.6" data-path="controlando-a-aparência-do-gráfico.html"><a href="controlando-a-aparência-do-gráfico.html"><i class="fa fa-check"></i><b>6.6</b> Controlando a Aparência do Gráfico</a></li>
 <li class="chapter" data-level="6.7" data-path="facets.html"><a href="facets.html"><i class="fa fa-check"></i><b>6.7</b> Facets</a></li>
-<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>7</b> Stringr</a></li>
 <li class="chapter" data-level="8" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>8</b> Forcats</a></li>
@@ -240,7 +239,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="15.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>15.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
 </ul></li>
 <li class="part"><span><b>V Projetos</b></span></li>
-<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-2.html"><a href="projeto-01---machine-learning-from-disaster-2.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -263,9 +262,9 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <div id="agrupar-dados-group_by" class="section level2 hasAnchor" number="5.6">
 <h2><span class="header-section-number">5.6</span> Agrupar Dados (group_by)<a href="agrupar-dados-group_by.html#agrupar-dados-group_by" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Agrupa variáveis de acordo com um ou mais categoria. A função em si não modifica o conjunto, mas as próximas serão modificadas pela forma que os dados estão agrupados. Vamos calcular a média de status de pokémons pelos seus primeiros tipos:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="agrupar-dados-group_by.html#cb96-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span>  </span>
-<span id="cb96-2"><a href="agrupar-dados-group_by.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Type_1) <span class="sc">%&gt;%</span> <span class="co"># Agrupa por Tipo</span></span>
-<span id="cb96-3"><a href="agrupar-dados-group_by.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Tot_mean =</span> <span class="fu">mean</span>(Total))</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="agrupar-dados-group_by.html#cb86-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span>  </span>
+<span id="cb86-2"><a href="agrupar-dados-group_by.html#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Type_1) <span class="sc">%&gt;%</span> <span class="co"># Agrupa por Tipo</span></span>
+<span id="cb86-3"><a href="agrupar-dados-group_by.html#cb86-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Tot_mean =</span> <span class="fu">mean</span>(Total))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Type_1"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Tot_mean"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Bug","2":"365.1270"},{"1":"Dark","2":"434.7500"},{"1":"Dragon","2":"501.9583"},{"1":"Electric","2":"420.6944"},{"1":"Fairy","2":"413.1765"},{"1":"Fighting","2":"404.3600"},{"1":"Fire","2":"443.0213"},{"1":"Flying","2":"453.3333"},{"1":"Ghost","2":"423.6522"},{"1":"Grass","2":"409.5606"},{"1":"Ground","2":"421.0000"},{"1":"Ice","2":"427.0870"},{"1":"Normal","2":"392.1613"},{"1":"Poison","2":"399.1429"},{"1":"Psychic","2":"442.4894"},{"1":"Rock","2":"437.8049"},{"1":"Steel","2":"464.9091"},{"1":"Water","2":"417.2000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[6],"max":[6]},"pages":{}}}
@@ -317,7 +316,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

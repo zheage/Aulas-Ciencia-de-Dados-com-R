@@ -1,3 +1,135 @@
-# (PART) Projetos {-}
+# (PART) Projetos {.unnumbered}
+
+```{r message = FALSE}
+library(rmarkdown)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+```
 
 # Projeto 01 - Machine Learning from Disaster
+
+Todo mundo já assistiu, ou pelo menos ouviu falar, sobre o desastre do navio Titanic.
+
+<center>
+
+![](figs/titanic.jpg){width="468"}
+
+</center>
+
+Incrivelmente este caso também pode ser estudado utilizando aprendizado de máquina! Na verdade este é um dos primeiros desafios que trabalhamos quando estudamos nossos primeiros algoritmos. O conjunto de dados e suas informações pode ser encontrado no site [Kaggle](https://www.kaggle.com/c/titanic), um site que hospeda diversos conjuntos de dados e competições de machine learning.
+
+Na aula aprenderemos como baixamos e analisamos as observaçõs contidas nesse conjunto de dados, qual pode ser visualizado na tabela abaixo:
+
+```{r message = FALSE}
+library(readr)
+titanic_train <- read_csv("G:/Meu Drive/Dados/titanic_train.csv")
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(titanic_train,
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+O objetivo do trabalho é prever se um passageiro sobreviveu ou não ao naufrágio do Titanic. Para começarmos trabalharemos com a função `str` para observarmos os tipos de variáveis presentes na tabela:
+
+```{r}
+str(titanic_train)
+```
+
+Temos dados do tipo texto e numéricos. Inicialmente excluíremos do conjunto de dados os nomes, por representarem atributos que não são relevantes para previsões:
+
+```{r}
+titanic_train <- titanic_train %>% 
+  select(-c(PassengerId, Name, Ticket, Cabin))
+```
+
+Além disto, vamos transformar os dados categóricos em fatores:
+
+```{r}
+cols <- c('Survived', 'Pclass', 'Embarked')
+titanic_train[cols] = lapply(titanic_train[cols], factor)
+```
+
+Observemos agora se nosso conjunto de dados possui valores faltantes:
+
+```{r}
+summary(titanic_train)
+```
+
+A coluna de idade apresenta 177 valores faltantes, ou seja aproximadamente $20\%$ dos dados não estão com o atributo idade. Existem diversas formas, com as mais diversas teorias para lidarmos com estes valores, aqui vão algumas:
+
+-   Se a quantidade de valores faltantes é muito grande, retiramos a coluna do conjunto de dados;
+
+-   Se a quantidade é muito pequena, retiramos a linha do conjunto de dados;
+
+-   Completar estes valores com a média da coluna para valores numéricos ou com a moda para valores categóricos.
+
+O que é uma quantidade muito grande ou pequena de valores faltantes? Isto depende do problema! Temos 2 valores faltantes na coluna `Embarked` que, ao serem retirados, provavelmente não causem nenhum impacto no modelo final. Aqui é importante utilizarmos o nosso bom senso, além de testarmos as mais diversas possibilidades, uma vez que alguns modelos podem ser fortemente por outiliers, por exemplo.
+
+Vamos então excluir os valores faltantes de `Embarked` e completar a coluna `Age` com a média da coluna:
+
+```{r}
+titanic_train <- titanic_train %>% 
+  drop_na(Embarked)
+```
+
+E completar os valores da idade com a média:
+
+```{r}
+titanic_train$Age <- titanic_train$Age %>%
+  replace_na(mean(titanic_train$Age, na.rm = T))
+```
+
+Dessa realizamos um preparo inicial para o conjunto de dados!
+
+A criação do algoritmo de regressão logística é simples:
+
+```{r}
+titanic_reg <- glm(Survived ~ ., data = titanic_train,
+                   family = binomial(link = 'logit'))
+```
+
+Para carregarmos o conjunto de teste e então realizarmos previsões:
+
+```{r message = FALSE}
+titanic_test <- read_csv("G:/Meu Drive/Dados/titanic_test.csv")
+```
+
+Lembrando que as colunas do conjunto de teste, qual queremos realizar as previsões deve estar de acordo com o de treinamento!
+
+```{r}
+titanic_test <- titanic_test %>% 
+  select(-c(PassengerId, Name, Ticket, Cabin))
+
+cols <- c('Pclass', 'Embarked')
+titanic_test[cols] = lapply(titanic_test[cols], factor)
+
+titanic_test$Age <- titanic_test$Age %>%
+  replace_na(mean(titanic_test$Age, na.rm = T))
+
+# A coluna Fare apresenta um valor NA e este será atribuído a média:
+titanic_test$Fare <- titanic_test$Fare %>%
+  replace_na(mean(titanic_test$Fare, na.rm = T))
+```
+
+Para porfim realizarmos as previsões:
+
+```{r}
+probabilidades <- predict(titanic_reg, titanic_test, type = "response")
+classes_prev <- ifelse(probabilidades > 0.5, 1, 0)
+```
+
+Por fim, criemos o conjunto de dados para ser enviado ao Kaggle:
+
+```{r}
+kaggle_titanic <- data.frame(PassengerId = 892:1309,
+           Survived = classes_prev)
+```
+
+Por fim, salvemos o nosso `data.frame` em um arquivo csv:
+
+```{r eval = FALSE}
+write.csv(kaggle_titanic,"kaggle_test.csv", row.names = FALSE)
+```

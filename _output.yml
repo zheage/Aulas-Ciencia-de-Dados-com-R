@@ -3,10 +3,10 @@ bookdown::gitbook:
   highlight: zenburn
   split_by: section
   config:
-    download: null
+    download: FALSE
     edit: null
     info: false
-    fontsettings:
+    fontsettings: 
       theme: "night"
       size: 2
     sharing: 
@@ -15,6 +15,6 @@ bookdown::gitbook:
       weibo: false
     toc:
       before: |
-        <li><a>Dicionário dos Dados</a></li>
+        <li><a>Ciência de Dados com R</a></li>
       after: |
         <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>

@@ -10,7 +10,6 @@ box-plot
 transformações
 lab-01---conjunto-de-dados-iris
 lab-02---xadrez-brasil
-projeto-01---machine-learning-from-disaster
 introdução-à-pacotes-do-r-e-ao-tidyverse
 dados-utilizados
 motor-trend-car-road-test-mtcars
@@ -51,7 +50,7 @@ anotações
 eixos
 controlando-a-aparência-do-gráfico
 facets
-projeto-01---machine-learning-from-disaster-1
+projeto-01---machine-learning-from-disaster
 stringr
 forcats
 web-scraping
@@ -67,4 +66,4 @@ estimando-os-coeficientes
 acurácia-da-estimativa-dos-coeficientes
 regressão-linear-múltipla
 questões-importantes-sobre-o-modelo-linear
-projeto-01---machine-learning-from-disaster-2
+projeto-01---machine-learning-from-disaster-1

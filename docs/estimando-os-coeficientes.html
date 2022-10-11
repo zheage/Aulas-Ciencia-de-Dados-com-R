@@ -139,7 +139,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
       <nav role="navigation">
 
 <ul class="summary">
-<li><a>Dicionário dos Dados</a></li>
+<li><a>Ciência de Dados com R</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
@@ -156,7 +156,6 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.6" data-path="transformações.html"><a href="transformações.html"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
 <li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
 <li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
-<li class="chapter" data-level="3.9" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>3.9</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução à pacotes do R e ao Tidyverse</a>
 <ul>
@@ -215,7 +214,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="6.5" data-path="eixos.html"><a href="eixos.html"><i class="fa fa-check"></i><b>6.5</b> Eixos</a></li>
 <li class="chapter" data-level="6.6" data-path="controlando-a-aparência-do-gráfico.html"><a href="controlando-a-aparência-do-gráfico.html"><i class="fa fa-check"></i><b>6.6</b> Controlando a Aparência do Gráfico</a></li>
 <li class="chapter" data-level="6.7" data-path="facets.html"><a href="facets.html"><i class="fa fa-check"></i><b>6.7</b> Facets</a></li>
-<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="6.8" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>6.8</b> Projeto 01 - Machine Learning from Disaster</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>7</b> Stringr</a></li>
 <li class="chapter" data-level="8" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>8</b> Forcats</a></li>
@@ -240,7 +239,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="15.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>15.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
 </ul></li>
 <li class="part"><span><b>V Projetos</b></span></li>
-<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-2.html"><a href="projeto-01---machine-learning-from-disaster-2.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="16" data-path="projeto-01---machine-learning-from-disaster-1.html"><a href="projeto-01---machine-learning-from-disaster-1.html"><i class="fa fa-check"></i><b>16</b> Projeto 01 - Machine Learning from Disaster</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -271,14 +270,14 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 y_i \approx \hat{\beta_0} + \hat{\beta_1}x_i, i=1,\dots, n
 \]</span></p>
 <p>Isto significa que queremos encontrar uma reta que esteja o mais próximo possível de todos os pontos. Tanto visualmente, tanto computacionalmente, a linguagem <code>R</code> já possui boas ferramentas para isto. Tanto para visualização:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="estimando-os-coeficientes.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> hp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb104-2"><a href="estimando-os-coeficientes.html#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb104-3"><a href="estimando-os-coeficientes.html#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x,<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb104-4"><a href="estimando-os-coeficientes.html#cb104-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Regressão linear no conjunto mtcars&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-89-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="estimando-os-coeficientes.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> hp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb94-2"><a href="estimando-os-coeficientes.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb94-3"><a href="estimando-os-coeficientes.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x,<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb94-4"><a href="estimando-os-coeficientes.html#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Regressão linear no conjunto mtcars&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Tanto para criarmos um objeto que represente o modelo de regressão com a função <code>lm</code>:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="estimando-os-coeficientes.html#cb105-1" aria-hidden="true" tabindex="-1"></a>mtcars_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb105-2"><a href="estimando-os-coeficientes.html#cb105-2" aria-hidden="true" tabindex="-1"></a>mtcars_lm</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="estimando-os-coeficientes.html#cb95-1" aria-hidden="true" tabindex="-1"></a>mtcars_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb95-2"><a href="estimando-os-coeficientes.html#cb95-2" aria-hidden="true" tabindex="-1"></a>mtcars_lm</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ hp, data = mtcars)
@@ -301,16 +300,16 @@ y_i \approx \hat{\beta_0} + \hat{\beta_1}x_i, i=1,\dots, n
 \]</span></p>
 <p>são os valores de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que minimizam a soma dos quadrados dos resíduos.</p>
 <p>Elaboremos uma função que realize o cálculo desses coeficientes:</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="estimando-os-coeficientes.html#cb107-1" aria-hidden="true" tabindex="-1"></a>linear_regression <span class="ot">&lt;-</span> <span class="cf">function</span>(X, Y){</span>
-<span id="cb107-2"><a href="estimando-os-coeficientes.html#cb107-2" aria-hidden="true" tabindex="-1"></a>  numerador <span class="ot">=</span> <span class="fu">sum</span>((X <span class="sc">-</span> <span class="fu">mean</span>(X)) <span class="sc">*</span> (Y <span class="sc">-</span> <span class="fu">mean</span>(Y)))</span>
-<span id="cb107-3"><a href="estimando-os-coeficientes.html#cb107-3" aria-hidden="true" tabindex="-1"></a>  denominador <span class="ot">=</span> <span class="fu">sum</span>((X <span class="sc">-</span> <span class="fu">mean</span>(X))<span class="sc">**</span><span class="dv">2</span>) </span>
-<span id="cb107-4"><a href="estimando-os-coeficientes.html#cb107-4" aria-hidden="true" tabindex="-1"></a>  beta_1 <span class="ot">=</span> numerador<span class="sc">/</span>denominador</span>
-<span id="cb107-5"><a href="estimando-os-coeficientes.html#cb107-5" aria-hidden="true" tabindex="-1"></a>  beta_0 <span class="ot">=</span> <span class="fu">mean</span>(Y) <span class="sc">-</span> beta_1 <span class="sc">*</span> <span class="fu">mean</span>(X)</span>
-<span id="cb107-6"><a href="estimando-os-coeficientes.html#cb107-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="st">&#39;beta_0&#39;</span> <span class="ot">=</span> beta_0,</span>
-<span id="cb107-7"><a href="estimando-os-coeficientes.html#cb107-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&#39;beta_1&#39;</span> <span class="ot">=</span> beta_1))</span>
-<span id="cb107-8"><a href="estimando-os-coeficientes.html#cb107-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb107-9"><a href="estimando-os-coeficientes.html#cb107-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb107-10"><a href="estimando-os-coeficientes.html#cb107-10" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_regression</span>(<span class="at">X =</span> mtcars<span class="sc">$</span>hp, <span class="at">Y =</span> mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="estimando-os-coeficientes.html#cb97-1" aria-hidden="true" tabindex="-1"></a>linear_regression <span class="ot">&lt;-</span> <span class="cf">function</span>(X, Y){</span>
+<span id="cb97-2"><a href="estimando-os-coeficientes.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  numerador <span class="ot">=</span> <span class="fu">sum</span>((X <span class="sc">-</span> <span class="fu">mean</span>(X)) <span class="sc">*</span> (Y <span class="sc">-</span> <span class="fu">mean</span>(Y)))</span>
+<span id="cb97-3"><a href="estimando-os-coeficientes.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  denominador <span class="ot">=</span> <span class="fu">sum</span>((X <span class="sc">-</span> <span class="fu">mean</span>(X))<span class="sc">**</span><span class="dv">2</span>) </span>
+<span id="cb97-4"><a href="estimando-os-coeficientes.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  beta_1 <span class="ot">=</span> numerador<span class="sc">/</span>denominador</span>
+<span id="cb97-5"><a href="estimando-os-coeficientes.html#cb97-5" aria-hidden="true" tabindex="-1"></a>  beta_0 <span class="ot">=</span> <span class="fu">mean</span>(Y) <span class="sc">-</span> beta_1 <span class="sc">*</span> <span class="fu">mean</span>(X)</span>
+<span id="cb97-6"><a href="estimando-os-coeficientes.html#cb97-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="st">&#39;beta_0&#39;</span> <span class="ot">=</span> beta_0,</span>
+<span id="cb97-7"><a href="estimando-os-coeficientes.html#cb97-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&#39;beta_1&#39;</span> <span class="ot">=</span> beta_1))</span>
+<span id="cb97-8"><a href="estimando-os-coeficientes.html#cb97-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb97-9"><a href="estimando-os-coeficientes.html#cb97-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-10"><a href="estimando-os-coeficientes.html#cb97-10" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_regression</span>(<span class="at">X =</span> mtcars<span class="sc">$</span>hp, <span class="at">Y =</span> mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
 <pre><code>##     beta_0      beta_1
 ## 1 30.09886 -0.06822828</code></pre>
 </div>
@@ -359,7 +358,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
