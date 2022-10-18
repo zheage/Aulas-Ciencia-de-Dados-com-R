@@ -1,4 +1,6 @@
-# Introdução à pacotes do R e ao Tidyverse
+# (PART) Tidyverse {.unnumbered}
+
+# Introdução ao Tidyverse
 
 Pacotes são conjuntos de códigos criados para a linguagem `R` de forma que as mais diversas funcionalidades sejam simplificadas e padronizadas. Para trabalharmos com análise de dados utilizaremos pacotes do `tidyverse`, uma coleção de pacotes utilizados para manipulação de dados que [compartilham uma filosofia em comum](https://tidyverse.tidyverse.org/articles/manifesto.html) e são projetados para serem trabalhados em conjunto.
 
@@ -124,13 +126,7 @@ pokemon_stats[colunas] = lapply(pokemon_stats[colunas], factor)
 
 > A diferença entre as funções da família apply é sútil. Estas variam com o tipo de dado esperado como entrada das funções e seu resultado, recomendo o post de [Fernando Gama no medium](https://medium.com/@fernando.gama/família-apply-fugindo-um-pouco-dos-loops-convencionais-43ff6ba96013) sobre o assunto.
 
-## Trabalhando com Datas
-
-<https://www.r-bloggers.com/2013/08/date-formats-in-r/>
-
-```{r eval = FALSE}
-as.POSIXct(fifa_detailed$DOB, format = "%h %d, %Y")
-```
+# Readr
 
 # Dplyr & Tidyr
 

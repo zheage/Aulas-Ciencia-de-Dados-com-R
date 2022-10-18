@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 10 Introdução à Probabilidade | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <title>Capítulo 11 Introdução à Probabilidade | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
   <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
 #set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 10 Introdução à Probabilidade | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:title" content="Capítulo 11 Introdução à Probabilidade | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@
   <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 10 Introdução à Probabilidade | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="twitter:title" content="Capítulo 11 Introdução à Probabilidade | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   
   <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
@@ -35,7 +35,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="web-scraping.html"/>
+<link rel="prev" href="lubridate.html"/>
 <link rel="next" href="tipos-de-distribuições-discretas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -145,7 +145,11 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
 <li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
 <li class="part"><span><b>I Análise de Dados</b></span></li>
-<li class="chapter" data-level="2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a></li>
+<li class="chapter" data-level="2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introdução-a-fatores.html"><a href="introdução-a-fatores.html"><i class="fa fa-check"></i><b>2.1</b> Introdução a Fatores</a></li>
+<li class="chapter" data-level="2.2" data-path="trabalhando-com-datas.html"><a href="trabalhando-com-datas.html"><i class="fa fa-check"></i><b>2.2</b> Trabalhando com Datas</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>3</b> Medidas Descritivas</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="tipos-de-variáveis.html"><a href="tipos-de-variáveis.html"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a></li>
@@ -157,7 +161,8 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
 <li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><a href="introdução-à-pacotes-do-r-e-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução à pacotes do R e ao Tidyverse</a>
+<li class="part"><span><b>II Tidyverse</b></span></li>
+<li class="chapter" data-level="4" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução ao Tidyverse</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>4.1</b> Dados utilizados</a>
 <ul>
@@ -165,77 +170,88 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="4.1.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>4.1.2</b> Pokémons Dataset</a></li>
 <li class="chapter" data-level="4.1.3" data-path="dados-utilizados.html"><a href="dados-utilizados.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>4.1.3</b> Fifa 2022 Player Dataset</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="introdução-a-fatores.html"><a href="introdução-a-fatores.html"><i class="fa fa-check"></i><b>4.2</b> Introdução a fatores</a></li>
-<li class="chapter" data-level="4.3" data-path="trabalhando-com-datas.html"><a href="trabalhando-com-datas.html"><i class="fa fa-check"></i><b>4.3</b> Trabalhando com Datas</a></li>
+<li class="chapter" data-level="4.2" data-path="introdução-a-fatores-1.html"><a href="introdução-a-fatores-1.html"><i class="fa fa-check"></i><b>4.2</b> Introdução a fatores</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>5</b> Dplyr &amp; Tidyr</a>
+<li class="chapter" data-level="5" data-path="readr.html"><a href="readr.html"><i class="fa fa-check"></i><b>5</b> Readr</a></li>
+<li class="chapter" data-level="6" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>6</b> Dplyr &amp; Tidyr</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html"><i class="fa fa-check"></i><b>5.1</b> Extração de Observações (Linhas)</a>
+<li class="chapter" data-level="6.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html"><i class="fa fa-check"></i><b>6.1</b> Extração de Observações (Linhas)</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#filter"><i class="fa fa-check"></i><b>5.1.1</b> filter</a></li>
-<li class="chapter" data-level="5.1.2" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#distinct"><i class="fa fa-check"></i><b>5.1.2</b> distinct</a></li>
-<li class="chapter" data-level="5.1.3" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#o-operador-pipe"><i class="fa fa-check"></i><b>5.1.3</b> O Operador Pipe</a></li>
-<li class="chapter" data-level="5.1.4" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#sample_frac"><i class="fa fa-check"></i><b>5.1.4</b> sample_frac</a></li>
-<li class="chapter" data-level="5.1.5" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#slice"><i class="fa fa-check"></i><b>5.1.5</b> slice</a></li>
+<li class="chapter" data-level="6.1.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#filter"><i class="fa fa-check"></i><b>6.1.1</b> filter</a></li>
+<li class="chapter" data-level="6.1.2" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#distinct"><i class="fa fa-check"></i><b>6.1.2</b> distinct</a></li>
+<li class="chapter" data-level="6.1.3" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#o-operador-pipe"><i class="fa fa-check"></i><b>6.1.3</b> O Operador Pipe</a></li>
+<li class="chapter" data-level="6.1.4" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#sample_frac"><i class="fa fa-check"></i><b>6.1.4</b> sample_frac</a></li>
+<li class="chapter" data-level="6.1.5" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#slice"><i class="fa fa-check"></i><b>6.1.5</b> slice</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="extração-de-variáveis-colunas.html"><a href="extração-de-variáveis-colunas.html"><i class="fa fa-check"></i><b>5.2</b> Extração de Variáveis (Colunas)</a></li>
-<li class="chapter" data-level="5.3" data-path="resumir-dados.html"><a href="resumir-dados.html"><i class="fa fa-check"></i><b>5.3</b> Resumir dados</a>
+<li class="chapter" data-level="6.2" data-path="extração-de-variáveis-colunas.html"><a href="extração-de-variáveis-colunas.html"><i class="fa fa-check"></i><b>6.2</b> Extração de Variáveis (Colunas)</a></li>
+<li class="chapter" data-level="6.3" data-path="resumir-dados.html"><a href="resumir-dados.html"><i class="fa fa-check"></i><b>6.3</b> Resumir dados</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise"><i class="fa fa-check"></i><b>5.3.1</b> summarise</a></li>
-<li class="chapter" data-level="5.3.2" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise_each"><i class="fa fa-check"></i><b>5.3.2</b> summarise_each</a></li>
-<li class="chapter" data-level="5.3.3" data-path="resumir-dados.html"><a href="resumir-dados.html#count"><i class="fa fa-check"></i><b>5.3.3</b> count</a></li>
+<li class="chapter" data-level="6.3.1" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise"><i class="fa fa-check"></i><b>6.3.1</b> summarise</a></li>
+<li class="chapter" data-level="6.3.2" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise_each"><i class="fa fa-check"></i><b>6.3.2</b> summarise_each</a></li>
+<li class="chapter" data-level="6.3.3" data-path="resumir-dados.html"><a href="resumir-dados.html#count"><i class="fa fa-check"></i><b>6.3.3</b> count</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html"><i class="fa fa-check"></i><b>5.4</b> Criação de Novas Variáveis</a>
+<li class="chapter" data-level="6.4" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html"><i class="fa fa-check"></i><b>6.4</b> Criação de Novas Variáveis</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#mutate"><i class="fa fa-check"></i><b>5.4.1</b> mutate</a></li>
-<li class="chapter" data-level="5.4.2" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#transmute"><i class="fa fa-check"></i><b>5.4.2</b> transmute</a></li>
+<li class="chapter" data-level="6.4.1" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#mutate"><i class="fa fa-check"></i><b>6.4.1</b> mutate</a></li>
+<li class="chapter" data-level="6.4.2" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#transmute"><i class="fa fa-check"></i><b>6.4.2</b> transmute</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html"><i class="fa fa-check"></i><b>5.5</b> Combinar Conjuntos de Dados</a>
+<li class="chapter" data-level="6.5" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html"><i class="fa fa-check"></i><b>6.5</b> Combinar Conjuntos de Dados</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#left_join"><i class="fa fa-check"></i><b>5.5.1</b> left_join</a></li>
-<li class="chapter" data-level="5.5.2" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#inner_join"><i class="fa fa-check"></i><b>5.5.2</b> inner_join</a></li>
-<li class="chapter" data-level="5.5.3" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#full_join"><i class="fa fa-check"></i><b>5.5.3</b> full_join</a></li>
+<li class="chapter" data-level="6.5.1" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#left_join"><i class="fa fa-check"></i><b>6.5.1</b> left_join</a></li>
+<li class="chapter" data-level="6.5.2" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#inner_join"><i class="fa fa-check"></i><b>6.5.2</b> inner_join</a></li>
+<li class="chapter" data-level="6.5.3" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#full_join"><i class="fa fa-check"></i><b>6.5.3</b> full_join</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="agrupar-dados-group_by.html"><a href="agrupar-dados-group_by.html"><i class="fa fa-check"></i><b>5.6</b> Agrupar Dados (group_by)</a></li>
-<li class="chapter" data-level="5.7" data-path="remodelando-dados.html"><a href="remodelando-dados.html"><i class="fa fa-check"></i><b>5.7</b> Remodelando Dados</a>
+<li class="chapter" data-level="6.6" data-path="agrupar-dados-group_by.html"><a href="agrupar-dados-group_by.html"><i class="fa fa-check"></i><b>6.6</b> Agrupar Dados (group_by)</a></li>
+<li class="chapter" data-level="6.7" data-path="remodelando-dados.html"><a href="remodelando-dados.html"><i class="fa fa-check"></i><b>6.7</b> Remodelando Dados</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="remodelando-dados.html"><a href="remodelando-dados.html#arrange"><i class="fa fa-check"></i><b>5.7.1</b> arrange</a></li>
-<li class="chapter" data-level="5.7.2" data-path="remodelando-dados.html"><a href="remodelando-dados.html#rename"><i class="fa fa-check"></i><b>5.7.2</b> rename</a></li>
-<li class="chapter" data-level="5.7.3" data-path="remodelando-dados.html"><a href="remodelando-dados.html#separate"><i class="fa fa-check"></i><b>5.7.3</b> separate</a></li>
-<li class="chapter" data-level="5.7.4" data-path="remodelando-dados.html"><a href="remodelando-dados.html#unite"><i class="fa fa-check"></i><b>5.7.4</b> unite</a></li>
+<li class="chapter" data-level="6.7.1" data-path="remodelando-dados.html"><a href="remodelando-dados.html#arrange"><i class="fa fa-check"></i><b>6.7.1</b> arrange</a></li>
+<li class="chapter" data-level="6.7.2" data-path="remodelando-dados.html"><a href="remodelando-dados.html#rename"><i class="fa fa-check"></i><b>6.7.2</b> rename</a></li>
+<li class="chapter" data-level="6.7.3" data-path="remodelando-dados.html"><a href="remodelando-dados.html#separate"><i class="fa fa-check"></i><b>6.7.3</b> separate</a></li>
+<li class="chapter" data-level="6.7.4" data-path="remodelando-dados.html"><a href="remodelando-dados.html#unite"><i class="fa fa-check"></i><b>6.7.4</b> unite</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>6</b> GGPlot2</a>
+<li class="chapter" data-level="7" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>7</b> GGPlot2</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="diagrama-de-dispersão.html"><a href="diagrama-de-dispersão.html"><i class="fa fa-check"></i><b>6.1</b> Diagrama de Dispersão</a></li>
-<li class="chapter" data-level="6.2" data-path="gráficos-de-barras-geom_bar-e-geom_col.html"><a href="gráficos-de-barras-geom_bar-e-geom_col.html"><i class="fa fa-check"></i><b>6.2</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
-<li class="chapter" data-level="6.3" data-path="gráficos-de-linhas.html"><a href="gráficos-de-linhas.html"><i class="fa fa-check"></i><b>6.3</b> Gráficos de Linhas</a></li>
-<li class="chapter" data-level="6.4" data-path="histogramas.html"><a href="histogramas.html"><i class="fa fa-check"></i><b>6.4</b> Histogramas</a></li>
-<li class="chapter" data-level="6.5" data-path="boxplots.html"><a href="boxplots.html"><i class="fa fa-check"></i><b>6.5</b> Boxplots</a></li>
-<li class="chapter" data-level="6.6" data-path="facets-facet_grid.html"><a href="facets-facet_grid.html"><i class="fa fa-check"></i><b>6.6</b> Facets (facet_grid)</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>7</b> Stringr</a></li>
-<li class="chapter" data-level="8" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>8</b> Forcats</a></li>
-<li class="chapter" data-level="9" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>9</b> Web Scraping</a></li>
-<li class="part"><span><b>II Probabilidade</b></span></li>
-<li class="chapter" data-level="10" data-path="introdução-à-probabilidade.html"><a href="introdução-à-probabilidade.html"><i class="fa fa-check"></i><b>10</b> Introdução à Probabilidade</a></li>
-<li class="chapter" data-level="11" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>11</b> Tipos de Distribuições Discretas</a>
+<li class="chapter" data-level="7.1" data-path="diagrama-de-dispersão-geom_point.html"><a href="diagrama-de-dispersão-geom_point.html"><i class="fa fa-check"></i><b>7.1</b> Diagrama de Dispersão (geom_point)</a></li>
+<li class="chapter" data-level="7.2" data-path="centralizando-o-título-de-gráficos.html"><a href="centralizando-o-título-de-gráficos.html"><i class="fa fa-check"></i><b>7.2</b> Centralizando o Título de Gráficos</a></li>
+<li class="chapter" data-level="7.3" data-path="gráficos-de-barras-geom_bar-e-geom_col.html"><a href="gráficos-de-barras-geom_bar-e-geom_col.html"><i class="fa fa-check"></i><b>7.3</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
+<li class="chapter" data-level="7.4" data-path="gráficos-de-linhas-geom_line.html"><a href="gráficos-de-linhas-geom_line.html"><i class="fa fa-check"></i><b>7.4</b> Gráficos de Linhas (geom_line)</a></li>
+<li class="chapter" data-level="7.5" data-path="gráfico-de-funções-stat_function.html"><a href="gráfico-de-funções-stat_function.html"><i class="fa fa-check"></i><b>7.5</b> Gráfico de Funções (stat_function)</a></li>
+<li class="chapter" data-level="7.6" data-path="histogramas-geom_histogram.html"><a href="histogramas-geom_histogram.html"><i class="fa fa-check"></i><b>7.6</b> Histogramas (geom_histogram)</a></li>
+<li class="chapter" data-level="7.7" data-path="boxplots-geom_boxplot.html"><a href="boxplots-geom_boxplot.html"><i class="fa fa-check"></i><b>7.7</b> Boxplots (geom_boxplot)</a></li>
+<li class="chapter" data-level="7.8" data-path="facets-facet_grid.html"><a href="facets-facet_grid.html"><i class="fa fa-check"></i><b>7.8</b> Facets (facet_grid)</a></li>
+<li class="chapter" data-level="7.9" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html"><i class="fa fa-check"></i><b>7.9</b> Bibliotecas Auxiliares</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="valor-médio-de-uma-variável-aleatória.html"><a href="valor-médio-de-uma-variável-aleatória.html"><i class="fa fa-check"></i><b>11.1</b> Valor Médio de uma Variável Aleatória</a></li>
+<li class="chapter" data-level="7.9.1" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#cowplot"><i class="fa fa-check"></i><b>7.9.1</b> cowplot</a></li>
+<li class="chapter" data-level="7.9.2" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#ggally"><i class="fa fa-check"></i><b>7.9.2</b> GGally</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>12</b> Tipos de Distribuições Contínuas</a></li>
-<li class="part"><span><b>III Machine Learning</b></span></li>
-<li class="chapter" data-level="13" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>13</b> Introdução ao Machine Learning</a></li>
-<li class="chapter" data-level="14" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>14</b> Regressão Linear</a>
+</ul></li>
+<li class="chapter" data-level="8" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>8</b> Stringr</a></li>
+<li class="chapter" data-level="9" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>9</b> Forcats</a></li>
+<li class="chapter" data-level="10" data-path="lubridate.html"><a href="lubridate.html"><i class="fa fa-check"></i><b>10</b> Lubridate</a></li>
+<li class="part"><span><b>III Probabilidade</b></span></li>
+<li class="chapter" data-level="11" data-path="introdução-à-probabilidade.html"><a href="introdução-à-probabilidade.html"><i class="fa fa-check"></i><b>11</b> Introdução à Probabilidade</a></li>
+<li class="chapter" data-level="12" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>12</b> Tipos de Distribuições Discretas</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>14.1</b> Regressão Linear Simples</a></li>
-<li class="chapter" data-level="14.2" data-path="estimando-os-coeficientes.html"><a href="estimando-os-coeficientes.html"><i class="fa fa-check"></i><b>14.2</b> Estimando os Coeficientes</a></li>
-<li class="chapter" data-level="14.3" data-path="acurácia-da-estimativa-dos-coeficientes.html"><a href="acurácia-da-estimativa-dos-coeficientes.html"><i class="fa fa-check"></i><b>14.3</b> Acurácia da Estimativa dos Coeficientes</a></li>
-<li class="chapter" data-level="14.4" data-path="regressão-linear-múltipla.html"><a href="regressão-linear-múltipla.html"><i class="fa fa-check"></i><b>14.4</b> Regressão Linear Múltipla</a></li>
-<li class="chapter" data-level="14.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>14.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
+<li class="chapter" data-level="12.1" data-path="valor-médio-de-uma-variável-aleatória.html"><a href="valor-médio-de-uma-variável-aleatória.html"><i class="fa fa-check"></i><b>12.1</b> Valor Médio de uma Variável Aleatória</a></li>
 </ul></li>
-<li class="part"><span><b>IV Projetos</b></span></li>
-<li class="chapter" data-level="15" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>15</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="13" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>13</b> Tipos de Distribuições Contínuas</a></li>
+<li class="chapter" data-level="14" data-path="variáveis-aleatórias-multidimensionais.html"><a href="variáveis-aleatórias-multidimensionais.html"><i class="fa fa-check"></i><b>14</b> Variáveis Aleatórias Multidimensionais</a></li>
+<li class="chapter" data-level="15" data-path="introdução-à-inferência-estatística.html"><a href="introdução-à-inferência-estatística.html"><i class="fa fa-check"></i><b>15</b> Introdução à Inferência Estatística</a></li>
+<li class="chapter" data-level="16" data-path="estimação.html"><a href="estimação.html"><i class="fa fa-check"></i><b>16</b> Estimação</a></li>
+<li class="chapter" data-level="17" data-path="testes-de-hipóteses.html"><a href="testes-de-hipóteses.html"><i class="fa fa-check"></i><b>17</b> Testes de Hipóteses</a></li>
+<li class="part"><span><b>IV Machine Learning</b></span></li>
+<li class="chapter" data-level="18" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>18</b> Introdução ao Machine Learning</a></li>
+<li class="chapter" data-level="19" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>19</b> Regressão Linear</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>19.1</b> Regressão Linear Simples</a></li>
+<li class="chapter" data-level="19.2" data-path="estimando-os-coeficientes.html"><a href="estimando-os-coeficientes.html"><i class="fa fa-check"></i><b>19.2</b> Estimando os Coeficientes</a></li>
+<li class="chapter" data-level="19.3" data-path="acurácia-da-estimativa-dos-coeficientes.html"><a href="acurácia-da-estimativa-dos-coeficientes.html"><i class="fa fa-check"></i><b>19.3</b> Acurácia da Estimativa dos Coeficientes</a></li>
+<li class="chapter" data-level="19.4" data-path="regressão-linear-múltipla.html"><a href="regressão-linear-múltipla.html"><i class="fa fa-check"></i><b>19.4</b> Regressão Linear Múltipla</a></li>
+<li class="chapter" data-level="19.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>19.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
+</ul></li>
+<li class="part"><span><b>V Projetos</b></span></li>
+<li class="chapter" data-level="20" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>20</b> Projeto 01 - Machine Learning from Disaster</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -255,8 +271,8 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introdução-à-probabilidade" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">Capítulo 10</span> Introdução à Probabilidade<a href="introdução-à-probabilidade.html#introdução-à-probabilidade" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introdução-à-probabilidade" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Capítulo 11</span> Introdução à Probabilidade<a href="introdução-à-probabilidade.html#introdução-à-probabilidade" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 </div>
             </section>
@@ -264,7 +280,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           </div>
         </div>
       </div>
-<a href="web-scraping.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lubridate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="tipos-de-distribuições-discretas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

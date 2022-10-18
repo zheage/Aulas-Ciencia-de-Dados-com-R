@@ -1,10 +1,11 @@
-h1:introdução-à-pacotes-do-r-e-ao-tidyverse Introdução à pacotes do R e ao Tidyverse
+h1:part-tidyverse (PART) Tidyverse
+h1:introdução-ao-tidyverse Introdução ao Tidyverse
 h2:dados-utilizados Dados utilizados
 h3:motor-trend-car-road-test-mtcars Motor Trend Car Road Test (mtcars)
 h3:pokémons-dataset Pokémons Dataset
 h3:fifa-2022-player-dataset Fifa 2022 Player Dataset
 h2:introdução-a-fatores Introdução a fatores
-h2:trabalhando-com-datas Trabalhando com Datas
+h1:readr Readr
 h1:dplyr-tidyr Dplyr & Tidyr
 h2:extração-de-observações-linhas Extração de Observações (Linhas)
 h3:filter filter

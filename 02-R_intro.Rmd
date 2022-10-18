@@ -56,9 +56,6 @@ b = matrix(data = 1:9, nrow = 3, ncol = 3, byrow = T)
 sqrt(a) # Raiz quadrada dos elementos da matriz
 ```
 
-
-
-
 > Funções aceitam os mais diversos tipos de argumentos. Para termos uma ideia de quais utilizarmos e seus respectivos atributos devemos fazer consultas em suas bibliotecas:
 
 ```{r eval = FALSE}
@@ -76,3 +73,9 @@ ICM = peso/altura^2
 df = data.frame(nomes, idade, peso, altura, ICM)
 df
 ```
+
+
+## Introdução a Fatores
+
+
+## Trabalhando com Datas
