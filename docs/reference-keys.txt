@@ -43,14 +43,12 @@ rename
 separate
 unite
 ggplot2
-gráficos-de-barras
-gráficos-de-linha
-gráficos-de-dispersão
-anotações
-eixos
-controlando-a-aparência-do-gráfico
-facets
-projeto-01---machine-learning-from-disaster
+diagrama-de-dispersão
+gráficos-de-barras-geom_bar-e-geom_col
+gráficos-de-linhas
+histogramas
+boxplots
+facets-facet_grid
 stringr
 forcats
 web-scraping
@@ -58,7 +56,6 @@ introdução-à-probabilidade
 tipos-de-distribuições-discretas
 valor-médio-de-uma-variável-aleatória
 tipos-de-distribuições-contínuas
-introdução-à-inferência
 introdução-ao-machine-learning
 regressão-linear
 regressão-linear-simples
@@ -66,4 +63,4 @@ estimando-os-coeficientes
 acurácia-da-estimativa-dos-coeficientes
 regressão-linear-múltipla
 questões-importantes-sobre-o-modelo-linear
-projeto-01---machine-learning-from-disaster-1
+projeto-01---machine-learning-from-disaster

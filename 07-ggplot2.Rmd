@@ -1,5 +1,22 @@
 # GGPlot2
 
+```{r include = FALSE}
+library(dplyr) # Manipulação de dados
+library(tidyr) # Modificação no formato de conjuntos de dados
+library(ggplot2) # Visualização de gráficos
+library(stringr)
+library(forcats)
+library(readr) # Biblioteca para leitura de dados
+library(rmarkdown)
+library(knitr)
+library(forcats)
+
+pokemon_stats <- read_csv("G:/Meu Drive/Dados/pokemon_stats.csv")
+fifa_basic <- read_csv("G:/Meu Drive/Dados/fifa_basic_info.csv")
+fifa_detailed <- read_csv("G:/Meu Drive/Dados/fifa_detailed_info.csv")
+```
+
+
 Pacote para criação de gráficos baseado no livro [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl), que destrincha todas as componentes de um gráfico estatístico em partes individuais.
 
 <center>![Grammar of Graphics.](figs/grammar_of_graphics.png){width="566"}</center>
@@ -38,29 +55,189 @@ Vamos aos componentes eu a biblioteca se baseia:
 
 Observemos então como `ggplot2` utiliza desta teoria na prática. Caso o leitor queira se aprofundar nos conceitos trabalhados aqui ou busque por algum gráfico em específico recomendamos [R Graphics Cookbook, 2nd edition](https://r-graphics.org).
 
-Inicialmente devemos carregar os nossos dados, podendo ou não já atribuirmos uma estética a ele:
+## Diagrama de Dispersão
+
+Inicialmente devemos carregar os nossos dados, podendo ou não já atribuir uma estética a ele:
 
 ```{r}
-# A variável Type_1 será considerada para o eixo x, enquanto a y ainda não foi definida:
+# A variável wt será considerada para o eixo x
+# enquanto consideraremos mpg para o eixo y
 ggplot(data = mtcars, aes(x = wt, y = mpg))
 # ggplot(data = mtcars) também é uma opção válida!
 # Porém aqui os eixos não serão criados.
 ```
 
-## Gráficos de Barras
+Note que apesar de termos um título, os eixos do gráfico ainda não temos nenhuma informação! Isto acontece pois precisamos escolher o tipo de gráfico que queremos utilizar. De forma análoga à biblioteca `dplyr`, a biblioteca `ggplot2` também possui uma forma de concatenar funções, sendo esta o operador de soma `+`.
 
-## Gráficos de Linha
+Vamos criar um diagrama de dispersão, também conhecido como gráfico de pontos ou _scatter plot_:
 
-## Gráficos de Dispersão
+```{r}
+ggplot(data = mtcars, aes(x = wt, y = mpg)) +
+  geom_point()
+```
 
-## Anotações
+Uma das vantagens da biblioteca é a fácil customização de seus gráficos:
 
-## Eixos
+```{r warning = FALSE}
+# Pacote com algumas paletas de cores:
+library(RColorBrewer)
+# https://r-graph-gallery.com/38-rcolorbrewers-palettes.html
+# Algumas propriedades do aesthetic se dão melhor trabalhando com fatores:
+mtcars$cyl <- as.factor(mtcars$cyl)
+ggplot(data = mtcars, aes(x = wt,
+                          y = mpg,
+                          size = cyl,
+                          color = cyl)) +
+  geom_point() +
+# O R já vem com diversos temas já prontos:
+# https://ggplot2.tidyverse.org/reference/ggtheme.html
+  theme_bw() +
+  labs(title = 'Diagrama de Dispersão') +
+  theme(plot.title = element_text(hjust = 0.5)) +  # Centraliza o título
+#scale_colour_brewer(palette = 'Dark2')
+  scale_color_manual(values = c('#EB2E23', '#29E2F2', '#313FDB')) 
+# Dica para construir paleta de cores:
+# https://color.adobe.com/pt/create/color-wheel
+  
+```
 
-## Controlando a Aparência do Gráfico
 
-## Facets
+## Gráficos de Barras (geom_bar e geom_col)
 
-## Projeto 01 - Machine Learning from Disaster
+Na biblioteca `ggplot2` temos dois tipos de gráficos de barras. O primeiro, `geom_bar`, é utilizado quando queremos que o eixo $y$ seja a frequência de alguma categoria ou grupo, enquanto o segundo, `geom_col`, quando o eixo $y$ for uma coluna do conjunto de dados. Vamos a exemplos:
 
-Vamos utilizar o que aprendemos até então para trabalharmos com o conjunto de dados do Titanic:
+```{r}
+ggplot(data = pokemon_stats, aes(x = Type_1,
+                                 fill = Type_1)) + 
+  geom_bar() + #+
+  theme(legend.position = 'none') +
+  geom_text(aes(label = ..count..), stat = "count",
+            color = 'black', vjust = -1) +
+  ylim(0,110)
+```
+
+Além disso, podemos utilizar dados obtidos por operações no `dplyr` como entrada para os gráficos do `ggplot2`
+
+```{r}
+pokemon_stats %>%
+  select(Type_1, Total) %>%
+  group_by(Type_1) %>% 
+  summarise(tot_mean = mean(Total)) %>%
+  arrange(tot_mean) %>% # Parte de manipulação acaba aqui!
+ggplot(aes(x = Type_1, y = tot_mean, fill = Type_1)) +
+  geom_col() +
+  theme(legend.position = 'none') +
+  geom_text(aes(label = round(tot_mean)),
+            color = 'black', vjust = -.5) +
+  ylim(0,515)
+```
+
+
+> **DESAFIO:** Cada tipo de pokémon é favorável a um tipo de status. Em relação ao status ofensivo, um tipo é mais favorável ao Ataque ou Ataque Especial? O gráfico abaixo mostra uma análise inicial para isto! Execute cada linha do código abaixo separadamente e tente reproduzir os resultados, será muito importante para sua formação!
+
+```{r}
+theme_update(plot.title = element_text(hjust = 0.5))
+pokemon_stats %>% select(Type_1, Attack, Sp_Atk) %>%
+  group_by(Type_1) %>%
+  summarise(atk_minus_sp = mean(Attack) - mean(Sp_Atk)) %>%
+  mutate(pos = (atk_minus_sp > 0)) %>%
+ggplot(aes(x = Type_1, y = atk_minus_sp, fill = pos)) +
+  geom_col() + # Ajuste das cores para que elas tenham mais sentido
+  # azul normalmente é frio e vermelho quente, por isso 
+  # aumentos representamos com vermelho
+  scale_fill_manual(values = c("#02031a", "#ff0841"), guide = 'none') +
+  labs(y = 'Atk - Sp_Atk', x = 'Tipo I', title = 'Qual tipo é favorável a seu tipo de ataque?') +
+  geom_text(aes(label = round(atk_minus_sp),
+                y = round(atk_minus_sp) +
+                  ifelse(round(atk_minus_sp) >= 0, 3, -3)),
+            position = position_dodge(width = 0.9),
+            colour = 'black') +
+  ylim(-33, 50)
+```
+
+## Gráficos de Linhas (geom_line)
+
+Muitas vezes queremos visualizar como uma ou mais categoria varia em relação ao tempo ou algum outro tipo de informação. Para isto, utilizamos gráficos de linhas quais podem ser chamados com a função `geom_line` utilizando um conjunto de séries temporais:
+
+```{r}
+vendas <- read_csv("G:/Meu Drive/Dados/vendas.csv")
+str(vendas)
+vendas$date <- as.Date(vendas$date, format = '%d/%m/%y')
+```
+Para então criarmos o gráfico:
+
+```{r}
+ggplot(vendas, aes(x = date, y = units)) +
+  geom_line() +
+  geom_point(size = 3)
+```
+
+Caso estejamos interessados na área embaixo do gráfico podemos utilizar o geom
+`geom_area`:
+
+```{r}
+ggplot(vendas, aes(x = date, y = units)) +
+  geom_area(fill = 'blue', alpha = .3) +
+  geom_point(size = 2)
+```
+
+
+## Gráfico de Funções (stat_function)
+Além de visualizar gráficos, podemos utilizar a função `geom_line` para visualização de funções:
+
+```{r}
+ggplot(data.frame(x = c(0, 20)), aes(x = x)) +
+  stat_function(fun = sin, geom = 'line', size = 1)
+```
+
+
+## Histogramas (geom_histogram)
+
+Histogramas são bem úteis para decidir se uma determinada variável ou não possui distribuição normal de forma intuitiva. Vamos observar estes gráficos no R:
+
+```{r}
+ggplot(data = pokemon_stats, aes(x = Total)) +
+  geom_histogram(binwidth = 50, color = 'black') +
+  scale_x_continuous(breaks = seq(150, 700, 50)) 
+```
+
+
+## Boxplots (geom_boxplot)
+
+Boxplots são gráficos bastante importantes e podem ser melhorados utilizando a biblioteca:
+
+```{r}
+ggplot(pokemon_stats, aes(x = Type_1, 
+                          y = Total,
+                          fill = Type_1)) + 
+  geom_boxplot()
+```
+
+
+## Facets (facet_grid)
+
+Facets são a forma que a biblioteca `ggplot2` utiliza para realizar vários tipos de mesmo gráfico de acordo com variações em categorias. Os gráficos são criados normalmente e chamamos a função `facet_grid` utilizando uma fórmula de formação para definir quais tipos de dados serão utilizados para cada linha ou coluna.
+
+```{r}
+ggplot(data = pokemon_stats, aes(x = Speed, y = Attack, 
+                           color = isLegendary)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, col = "black",
+              formula = y ~ x) +
+  facet_grid(isLegendary~.) +
+  theme(legend.position = "top")
+```
+
+```{r}
+ggplot(data = pokemon_stats, aes(x = Speed, y = Attack, 
+                           color = isLegendary)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, col = "black",
+              formula = y ~ x) +
+  facet_grid(.~isLegendary) +
+  theme(legend.position = "top")
+```
+
+
+Além disso, há diversas bibliotecas que interagem com a `ggplot2` para a criação de gráficos. Vamos há algumas e seus exemplos:
+
