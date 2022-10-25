@@ -1,5 +1,9 @@
 # Introdução
 
+Bem vindo!
+
+Sou formado em Matemática pela UNESP e atualmente faço mestrado em estatística pelo programa PIPGEs. Já me perguntei diversas vezes em como toda a teoria de probabilidade, estatística, inferência e de aprendizado de máquina é utilizada na prática, para resolver problemas que me deixavam curioso ou até mesmo competições de programação. Este livro vem para resolver este tipo de problema que chamou tanto minha atenção no passado.
+
 Este livro tem como objetivo servir como guia para as aulas do curso Ciência de Dados com R. Nele apresentaremos os conceitos de:
 
 1.  **Estatística Básica:** Nesta parte do curso abordaremos conceitos de estatística como variáveis, tipos de distribuições discretas e contínuas, medidas descritivas e distribuição normal.
@@ -7,6 +11,69 @@ Este livro tem como objetivo servir como guia para as aulas do curso Ciência de
 3.  **Modelos de Regressão Linear:** Parte final do curso, onde o aluno aprenderá sobre diagrama de dispersão, coeficiente de correlação linear, regressão linear simples, múltipla e regressão logística, ganhando a capacidade de começar a criar modelos utilizando a linguagem R.
 
 ```{r, include = FALSE}
-library(knitr)
-kable(head(mtcars), align = 'c')
+library(dplyr) # Manipulação de dados
+library(tidyr) # Modificação no formato de conjuntos de dados
+library(ggplot2) # Visualização de gráficos
+library(stringr)
+library(forcats)
+library(readr) # Biblioteca para leitura de dados
+library(rmarkdown)
+library(knitr) # Tabelas para markdown
+library(gridExtra) # Plots lado a lado de forma fácil
+theme_update(plot.title = element_text(hjust = 0.5))
+```
+
+# Dados Utilizados
+
+Neste livro trabalharemos com diversos conjuntos de dados, nas próximas seções comentaremos brevemente sobre estes e a sua utilização.
+
+```{r, include = FALSE}
+# Conjunto de dados onde Y = X^2
+regressao_nao_linear <- read_csv("G:/Meu Drive/Dados/regressao_nao_linear.csv")
+cat_lm <- read_csv("G:/Meu Drive/Dados/cat_simple_linear_regression.csv")
+```
+
+## Motor Trend Car Road Test (mtcars)
+
+Conjunto de dados nativo do R extraído da revista Motor Trend US de 1974. Possui diversos atributos de veículos dessa época e não precisa ser carregado de forma externa, estes já são salvos na variável `mtcars`.
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(mtcars,
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+## Pokémons Dataset
+
+Presente em animações, jogos, filmes, séries e em toda a cultura nerd, Pokémon é uma série contendo os nossos monstrinhos favoritos! Utilizaremos aqui o conjunto com uma lista com todos os pokémons até então presente nos jogos, com seus nomes, tipos, status, classificação em lendário dentre outros atributos. Podemos encontrar o conjunto no site [Kaggle](https://www.kaggle.com/datasets/alopez247/pokemon).
+
+```{r, message = FALSE}
+pokemon_stats <- read_csv("G:/Meu Drive/Dados/pokemon_stats.csv")
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(pokemon_stats,
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+## Fifa 2022 Player Dataset
+
+FIFA é uma das principais franquias, se não a principal, de jogos de futebol, onde se concentra a maioria dos times e jogadores do esporte. Nos jogos cada jogador possui diferentes atributos e características que influenciam umas nas outras. Aqui consideraremos o conjunto de dados destes jogadores no jogo [FIFA 22](https://www.kaggle.com/datasets/minhnguyen147/fifa-22-players-dataset?select=basic_info.csv). As informações estão divididas em dois conjuntos e serão destaque quando trabalharmos sobre união e intersecção de conjuntos de dados.
+
+```{r, message = FALSE}
+fifa_basic <- read_csv("G:/Meu Drive/Dados/fifa_basic_info.csv")
+fifa_detailed <- read_csv("G:/Meu Drive/Dados/fifa_detailed_info.csv")
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(fifa_basic,
+            options = list(rows.print = 6,
+                           max.print = 100))
+```
+
+```{r, echo = FALSE, layout="l-body-outset"}
+paged_table(fifa_detailed,
+            options = list(rows.print = 6,
+                           max.print = 100))
 ```

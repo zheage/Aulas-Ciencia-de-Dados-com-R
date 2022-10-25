@@ -13,12 +13,6 @@ link-citations: yes
 github-repo: https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R
 ---
 
-# Sobre o autor {.unnumbered}
-
-Bem vindo!
-
-Sou formado em Matemática pela UNESP e atualmente faço mestrado em estatística pelo programa PIPGEs. Já me perguntei diversas vezes em como toda a teoria de probabilidade, estatística, inferência e de aprendizado de máquina é utilizada na prática, para resolver problemas que me deixavam curioso ou até mesmo competições de programação. Este livro vem para resolver este tipo de problema que chamou tanto minha atenção no passado.
-
 ```{r include = FALSE}
 library(knitr)
 knitr::opts_chunk$set(fig.align = "center",

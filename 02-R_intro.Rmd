@@ -77,5 +77,29 @@ df
 
 ## Introdução a Fatores
 
+Fatores são objetos para armazenamento de dados categóricos no `R`. A grande maioria dos algoritmos de aprendizado de máquina não trabalha com textos, mas sim com valores numéricos - transformar dados que estão armazenados como texto em fatores é um fator primordial para que os algoritmos os interpretem como dados categóricos.
+
+No conjunto de dados sobre pokémons, o Tipo de cada pokémon é armazenado por uma string (texto):
+
+```{r}
+str(pokemon_stats['Type_1'])
+```
+
+Se quisermos trabalhar de forma a utilizarmos essa coluna em algoritmos, ou até mesmo para certos pacotes que trabalham com dados categóricos, como `ggplot2` para criação de certos gráficos, o ideal é realizar a transformação para fator:
+
+```{r}
+pokemon_stats$Type_1 = as.factor(pokemon_stats$Type_1)
+class(pokemon_stats$Type_1) # Classe dessa coluna passa a ser do tipo fator
+```
+
+Podemos transformar várias colunas em fatores utilizando a função `apply`:
+
+```{r}
+colunas = c('Type_1', 'Type_2')
+pokemon_stats[colunas] = lapply(pokemon_stats[colunas], factor)
+```
+
+> A diferença entre as funções da família apply é sútil. Estas variam com o tipo de dado esperado como entrada das funções e seu resultado, recomendo o post de [Fernando Gama no medium](https://medium.com/@fernando.gama/família-apply-fugindo-um-pouco-dos-loops-convencionais-43ff6ba96013) sobre o assunto.
+
 
 ## Trabalhando com Datas

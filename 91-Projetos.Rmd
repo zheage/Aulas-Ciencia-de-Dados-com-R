@@ -7,7 +7,7 @@ library(tidyr)
 library(dplyr)
 ```
 
-# Projeto 01 - Machine Learning from Disaster
+# Machine Learning from Disaster
 
 Todo mundo já assistiu, ou pelo menos ouviu falar, sobre o desastre do navio Titanic.
 

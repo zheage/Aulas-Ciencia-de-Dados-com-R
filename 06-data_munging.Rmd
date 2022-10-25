@@ -51,84 +51,17 @@ libraries('dplyr', 'tidyr', 'ggplot2', 'stringr', 'forcats', 'readr')
 
 Trabalharemos especialmente com [Data Munging](https://www.astera.com/pt/type/blog/what-is-data-munging/), processo de preparar conjuntos de dados para relatórios e análises. Esta parte incorpora todas as etapas anteriores à análise, incluindo estruturação de dados, limpeza, enriquecimento e validação.
 
-## Dados utilizados
-
-Antes de utilizarmos as bibliotecas comentemos um pouco sobre os conjuntos de dados a serem utilizados nos processos.
-
-### Motor Trend Car Road Test (mtcars)
-
-Conjunto de dados nativo do R extraído da revista Motor Trend US de 1974. Possui diversos atributos de veículos dessa época e não precisa ser carregado de forma externa, estes já são salvos na variável `mtcars`.
-
-```{r, echo = FALSE, layout="l-body-outset"}
-paged_table(mtcars,
-            options = list(rows.print = 6,
-                           max.print = 100))
-```
-
-### Pokémons Dataset
-
-Presente em animações, jogos, filmes, séries e em toda a cultura nerd, Pokémon é uma série contendo os nossos monstrinhos favoritos! Utilizaremos aqui o conjunto com uma lista com todos os pokémons até então presente nos jogos, com seus nomes, tipos, status, classificação em lendário dentre outros atributos. Podemos encontrar o conjunto no site [Kaggle](https://www.kaggle.com/datasets/alopez247/pokemon).
-
-```{r, message = FALSE}
-pokemon_stats <- read_csv("G:/Meu Drive/Dados/pokemon_stats.csv")
-```
-
-```{r, echo = FALSE, layout="l-body-outset"}
-paged_table(pokemon_stats,
-            options = list(rows.print = 6,
-                           max.print = 100))
-```
-
-### Fifa 2022 Player Dataset
-
-FIFA é uma das principais franquias, se não a principal, de jogos de futebol, onde se concentra a maioria dos times e jogadores do esporte. Nos jogos cada jogador possui diferentes atributos e características que influenciam umas nas outras. Aqui consideraremos o conjunto de dados destes jogadores no jogo [FIFA 22](https://www.kaggle.com/datasets/minhnguyen147/fifa-22-players-dataset?select=basic_info.csv). As informações estão divididas em dois conjuntos e serão destaque quando trabalharmos sobre união e intersecção de conjuntos de dados.
-
-```{r, message = FALSE}
-fifa_basic <- read_csv("G:/Meu Drive/Dados/fifa_basic_info.csv")
-fifa_detailed <- read_csv("G:/Meu Drive/Dados/fifa_detailed_info.csv")
-```
-
-```{r, echo = FALSE, layout="l-body-outset"}
-paged_table(fifa_basic,
-            options = list(rows.print = 6,
-                           max.print = 100))
-```
-
-```{r, echo = FALSE, layout="l-body-outset"}
-paged_table(fifa_detailed,
-            options = list(rows.print = 6,
-                           max.print = 100))
-```
-
-## Introdução a fatores
-
-Fatores são objetos para armazenamento de dados categóricos no `R`. A grande maioria dos algoritmos de aprendizado de máquina não trabalha com textos, mas sim com valores numéricos - transformar dados que estão armazenados como texto em fatores é um fator primordial para que os algoritmos os interpretem como dados categóricos.
-
-No conjunto de dados sobre pokémons, o Tipo de cada pokémon é armazenado por uma string (texto):
-
-```{r}
-str(pokemon_stats['Type_1'])
-```
-
-Se quisermos trabalhar de forma a utilizarmos essa coluna em algoritmos, ou até mesmo para certos pacotes que trabalham com dados categóricos, como `ggplot2` para criação de certos gráficos, o ideal é realizar a transformação para fator:
-
-```{r}
-pokemon_stats$Type_1 = as.factor(pokemon_stats$Type_1)
-class(pokemon_stats$Type_1) # Classe dessa coluna passa a ser do tipo fator
-```
-
-Podemos transformar várias colunas em fatores utilizando a função `apply`:
-
-```{r}
-colunas = c('Type_1', 'Type_2')
-pokemon_stats[colunas] = lapply(pokemon_stats[colunas], factor)
-```
-
-> A diferença entre as funções da família apply é sútil. Estas variam com o tipo de dado esperado como entrada das funções e seu resultado, recomendo o post de [Fernando Gama no medium](https://medium.com/@fernando.gama/família-apply-fugindo-um-pouco-dos-loops-convencionais-43ff6ba96013) sobre o assunto.
-
 # Readr
 
+<center>
+
+![](figs/readr_logo.png)
+
+</center>
+
 # Dplyr & Tidyr
+
+<center>![](figs/dplyr_logo.png)</center>
 
 Dplyr e Tidyr são pacotes que se complementam na manipulação de dados. O primeiro foca na realização de manipulação enquanto o segundo na modificação de seu formato. Aqui utilizaremos como referência a [folha de referência de ambas as bibliotecas](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/87d0d3cd-9abc-4b61-bf00-dc9ce48cdd20/04.16._Folha_de_Referencia_dplyr_e_tidy.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T165407Z&X-Amz-Expires=86400&X-Amz-Signature=b78994192312f13c9140b99a68be9c23018194c06ff7eaae4250b51cea84eef9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Dplyr%2520e%2520Tidy.pdf%22&x-id=GetObject). Além disso recomendo a consulta do site [Rdocumentation](https://www.rdocumentation.org/packages/dplyr/versions/1.0.10) para visualização de todas as funções dos pacotes.
 
@@ -196,7 +129,13 @@ alunos = data.frame(Alunos = c("Gabriel",
 distinct(alunos)
 ```
 
-### O Operador Pipe
+### Operador Pipe
+
+<center>
+
+![](figs/operador_pipe.png)
+
+</center>
 
 A ideia do operador pipe, `%>%` é bem simples, usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.
 
@@ -422,6 +361,12 @@ paged_table(pokemon_stats %>%
 ```
 
 ## Remodelando Dados
+
+<center>
+
+![](figs/tidy_logo.png)
+
+</center>
 
 Mudar o formato e configuração dos dados permite separar variáveis que estão em uma coluna em mais de uma ou unir várias colunas em uma. Além disso podemos mudar o nome de colunas ou até mesmo ordenar seus valores de forma crescente. A biblioteca `tidyr` é perfeita para para isto, imagine-se trabalhando com a variável mês e dia em um conjunto de dados. Em vários algoritmos é interessante considerarmos o mês e o dia como atributos separados, assim cada um é alocado a uma coluna do conjunto de dados para que possamos realizar o ajuste dos algoritmos.
 

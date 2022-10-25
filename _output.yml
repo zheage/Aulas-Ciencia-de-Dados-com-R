@@ -1,7 +1,6 @@
 bookdown::gitbook:
   css: style.css
   highlight: zenburn
-  split_by: section
   config:
     download: FALSE
     edit: null

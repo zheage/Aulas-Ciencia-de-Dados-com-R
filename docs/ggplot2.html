@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 7 GGPlot2 | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <title>Capítulo 8 GGPlot2 | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
   <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
 #set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 7 GGPlot2 | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:title" content="Capítulo 8 GGPlot2 | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@
   <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 7 GGPlot2 | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="twitter:title" content="Capítulo 8 GGPlot2 | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   
   <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
@@ -35,8 +35,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="remodelando-dados.html"/>
-<link rel="next" href="diagrama-de-dispersão-geom_point.html"/>
+<link rel="prev" href="dplyr-tidyr.html"/>
+<link rel="next" href="introdução-ao-machine-learning.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -142,116 +142,102 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li><a>Ciência de Dados com R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
 <li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
-<li class="part"><span><b>I Análise de Dados</b></span></li>
-<li class="chapter" data-level="2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a>
+<li class="chapter" data-level="2" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>2</b> Dados Utilizados</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introdução-a-fatores.html"><a href="introdução-a-fatores.html"><i class="fa fa-check"></i><b>2.1</b> Introdução a Fatores</a></li>
-<li class="chapter" data-level="2.2" data-path="trabalhando-com-datas.html"><a href="trabalhando-com-datas.html"><i class="fa fa-check"></i><b>2.2</b> Trabalhando com Datas</a></li>
+<li class="chapter" data-level="2.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>2.1</b> Motor Trend Car Road Test (mtcars)</a></li>
+<li class="chapter" data-level="2.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>2.2</b> Pokémons Dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="dados-utilizados.html"><a href="dados-utilizados.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>2.3</b> Fifa 2022 Player Dataset</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>3</b> Medidas Descritivas</a>
+<li class="part"><span><b>I Análise de Dados</b></span></li>
+<li class="chapter" data-level="3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>3</b> Introdução ao R</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tipos-de-variáveis.html"><a href="tipos-de-variáveis.html"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a></li>
-<li class="chapter" data-level="3.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html"><i class="fa fa-check"></i><b>3.2</b> Medidas de Posição</a></li>
-<li class="chapter" data-level="3.3" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html"><i class="fa fa-check"></i><b>3.3</b> Medidas de Dispersão</a></li>
-<li class="chapter" data-level="3.4" data-path="quantis-empíricos.html"><a href="quantis-empíricos.html"><i class="fa fa-check"></i><b>3.4</b> Quantis Empíricos</a></li>
-<li class="chapter" data-level="3.5" data-path="box-plot.html"><a href="box-plot.html"><i class="fa fa-check"></i><b>3.5</b> Box Plot</a></li>
-<li class="chapter" data-level="3.6" data-path="transformações.html"><a href="transformações.html"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
-<li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
-<li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
+<li class="chapter" data-level="3.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#introdução-a-fatores"><i class="fa fa-check"></i><b>3.1</b> Introdução a Fatores</a></li>
+<li class="chapter" data-level="3.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#trabalhando-com-datas"><i class="fa fa-check"></i><b>3.2</b> Trabalhando com Datas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>4</b> Medidas Descritivas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#tipos-de-variáveis"><i class="fa fa-check"></i><b>4.1</b> Tipos de Variáveis</a></li>
+<li class="chapter" data-level="4.2" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-posição"><i class="fa fa-check"></i><b>4.2</b> Medidas de Posição</a></li>
+<li class="chapter" data-level="4.3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>4.3</b> Medidas de Dispersão</a></li>
+<li class="chapter" data-level="4.4" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#quantis-empíricos"><i class="fa fa-check"></i><b>4.4</b> Quantis Empíricos</a></li>
+<li class="chapter" data-level="4.5" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#box-plot"><i class="fa fa-check"></i><b>4.5</b> Box Plot</a></li>
+<li class="chapter" data-level="4.6" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#transformações"><i class="fa fa-check"></i><b>4.6</b> Transformações</a></li>
+<li class="chapter" data-level="4.7" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-01---conjunto-de-dados-iris"><i class="fa fa-check"></i><b>4.7</b> Lab 01 - Conjunto de dados Iris</a></li>
+<li class="chapter" data-level="4.8" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-02---xadrez-brasil"><i class="fa fa-check"></i><b>4.8</b> Lab 02 - Xadrez Brasil</a></li>
 </ul></li>
 <li class="part"><span><b>II Tidyverse</b></span></li>
-<li class="chapter" data-level="4" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução ao Tidyverse</a>
+<li class="chapter" data-level="5" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html"><i class="fa fa-check"></i><b>5</b> Introdução ao Tidyverse</a></li>
+<li class="chapter" data-level="6" data-path="readr.html"><a href="readr.html"><i class="fa fa-check"></i><b>6</b> Readr</a></li>
+<li class="chapter" data-level="7" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>7</b> Dplyr &amp; Tidyr</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>4.1</b> Dados utilizados</a>
+<li class="chapter" data-level="7.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#extração-de-observações-linhas"><i class="fa fa-check"></i><b>7.1</b> Extração de Observações (Linhas)</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>4.1.1</b> Motor Trend Car Road Test (mtcars)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>4.1.2</b> Pokémons Dataset</a></li>
-<li class="chapter" data-level="4.1.3" data-path="dados-utilizados.html"><a href="dados-utilizados.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>4.1.3</b> Fifa 2022 Player Dataset</a></li>
+<li class="chapter" data-level="7.1.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#filter"><i class="fa fa-check"></i><b>7.1.1</b> filter</a></li>
+<li class="chapter" data-level="7.1.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#distinct"><i class="fa fa-check"></i><b>7.1.2</b> distinct</a></li>
+<li class="chapter" data-level="7.1.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#operador-pipe"><i class="fa fa-check"></i><b>7.1.3</b> Operador Pipe</a></li>
+<li class="chapter" data-level="7.1.4" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#sample_frac"><i class="fa fa-check"></i><b>7.1.4</b> sample_frac</a></li>
+<li class="chapter" data-level="7.1.5" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#slice"><i class="fa fa-check"></i><b>7.1.5</b> slice</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="introdução-a-fatores-1.html"><a href="introdução-a-fatores-1.html"><i class="fa fa-check"></i><b>4.2</b> Introdução a fatores</a></li>
+<li class="chapter" data-level="7.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#extração-de-variáveis-colunas"><i class="fa fa-check"></i><b>7.2</b> Extração de Variáveis (Colunas)</a></li>
+<li class="chapter" data-level="7.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#resumir-dados"><i class="fa fa-check"></i><b>7.3</b> Resumir dados</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#summarise"><i class="fa fa-check"></i><b>7.3.1</b> summarise</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#summarise_each"><i class="fa fa-check"></i><b>7.3.2</b> summarise_each</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#count"><i class="fa fa-check"></i><b>7.3.3</b> count</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="readr.html"><a href="readr.html"><i class="fa fa-check"></i><b>5</b> Readr</a></li>
-<li class="chapter" data-level="6" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>6</b> Dplyr &amp; Tidyr</a>
+<li class="chapter" data-level="7.4" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#criação-de-novas-variáveis"><i class="fa fa-check"></i><b>7.4</b> Criação de Novas Variáveis</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html"><i class="fa fa-check"></i><b>6.1</b> Extração de Observações (Linhas)</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#filter"><i class="fa fa-check"></i><b>6.1.1</b> filter</a></li>
-<li class="chapter" data-level="6.1.2" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#distinct"><i class="fa fa-check"></i><b>6.1.2</b> distinct</a></li>
-<li class="chapter" data-level="6.1.3" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#o-operador-pipe"><i class="fa fa-check"></i><b>6.1.3</b> O Operador Pipe</a></li>
-<li class="chapter" data-level="6.1.4" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#sample_frac"><i class="fa fa-check"></i><b>6.1.4</b> sample_frac</a></li>
-<li class="chapter" data-level="6.1.5" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#slice"><i class="fa fa-check"></i><b>6.1.5</b> slice</a></li>
+<li class="chapter" data-level="7.4.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#mutate"><i class="fa fa-check"></i><b>7.4.1</b> mutate</a></li>
+<li class="chapter" data-level="7.4.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#transmute"><i class="fa fa-check"></i><b>7.4.2</b> transmute</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="extração-de-variáveis-colunas.html"><a href="extração-de-variáveis-colunas.html"><i class="fa fa-check"></i><b>6.2</b> Extração de Variáveis (Colunas)</a></li>
-<li class="chapter" data-level="6.3" data-path="resumir-dados.html"><a href="resumir-dados.html"><i class="fa fa-check"></i><b>6.3</b> Resumir dados</a>
+<li class="chapter" data-level="7.5" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#combinar-conjuntos-de-dados"><i class="fa fa-check"></i><b>7.5</b> Combinar Conjuntos de Dados</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise"><i class="fa fa-check"></i><b>6.3.1</b> summarise</a></li>
-<li class="chapter" data-level="6.3.2" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise_each"><i class="fa fa-check"></i><b>6.3.2</b> summarise_each</a></li>
-<li class="chapter" data-level="6.3.3" data-path="resumir-dados.html"><a href="resumir-dados.html#count"><i class="fa fa-check"></i><b>6.3.3</b> count</a></li>
+<li class="chapter" data-level="7.5.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#left_join"><i class="fa fa-check"></i><b>7.5.1</b> left_join</a></li>
+<li class="chapter" data-level="7.5.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#inner_join"><i class="fa fa-check"></i><b>7.5.2</b> inner_join</a></li>
+<li class="chapter" data-level="7.5.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#full_join"><i class="fa fa-check"></i><b>7.5.3</b> full_join</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html"><i class="fa fa-check"></i><b>6.4</b> Criação de Novas Variáveis</a>
+<li class="chapter" data-level="7.6" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#agrupar-dados-group_by"><i class="fa fa-check"></i><b>7.6</b> Agrupar Dados (group_by)</a></li>
+<li class="chapter" data-level="7.7" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#remodelando-dados"><i class="fa fa-check"></i><b>7.7</b> Remodelando Dados</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#mutate"><i class="fa fa-check"></i><b>6.4.1</b> mutate</a></li>
-<li class="chapter" data-level="6.4.2" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#transmute"><i class="fa fa-check"></i><b>6.4.2</b> transmute</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html"><i class="fa fa-check"></i><b>6.5</b> Combinar Conjuntos de Dados</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#left_join"><i class="fa fa-check"></i><b>6.5.1</b> left_join</a></li>
-<li class="chapter" data-level="6.5.2" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#inner_join"><i class="fa fa-check"></i><b>6.5.2</b> inner_join</a></li>
-<li class="chapter" data-level="6.5.3" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#full_join"><i class="fa fa-check"></i><b>6.5.3</b> full_join</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="agrupar-dados-group_by.html"><a href="agrupar-dados-group_by.html"><i class="fa fa-check"></i><b>6.6</b> Agrupar Dados (group_by)</a></li>
-<li class="chapter" data-level="6.7" data-path="remodelando-dados.html"><a href="remodelando-dados.html"><i class="fa fa-check"></i><b>6.7</b> Remodelando Dados</a>
-<ul>
-<li class="chapter" data-level="6.7.1" data-path="remodelando-dados.html"><a href="remodelando-dados.html#arrange"><i class="fa fa-check"></i><b>6.7.1</b> arrange</a></li>
-<li class="chapter" data-level="6.7.2" data-path="remodelando-dados.html"><a href="remodelando-dados.html#rename"><i class="fa fa-check"></i><b>6.7.2</b> rename</a></li>
-<li class="chapter" data-level="6.7.3" data-path="remodelando-dados.html"><a href="remodelando-dados.html#separate"><i class="fa fa-check"></i><b>6.7.3</b> separate</a></li>
-<li class="chapter" data-level="6.7.4" data-path="remodelando-dados.html"><a href="remodelando-dados.html#unite"><i class="fa fa-check"></i><b>6.7.4</b> unite</a></li>
+<li class="chapter" data-level="7.7.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#arrange"><i class="fa fa-check"></i><b>7.7.1</b> arrange</a></li>
+<li class="chapter" data-level="7.7.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#rename"><i class="fa fa-check"></i><b>7.7.2</b> rename</a></li>
+<li class="chapter" data-level="7.7.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#separate"><i class="fa fa-check"></i><b>7.7.3</b> separate</a></li>
+<li class="chapter" data-level="7.7.4" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#unite"><i class="fa fa-check"></i><b>7.7.4</b> unite</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>7</b> GGPlot2</a>
+<li class="chapter" data-level="8" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>8</b> GGPlot2</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="diagrama-de-dispersão-geom_point.html"><a href="diagrama-de-dispersão-geom_point.html"><i class="fa fa-check"></i><b>7.1</b> Diagrama de Dispersão (geom_point)</a></li>
-<li class="chapter" data-level="7.2" data-path="centralizando-o-título-de-gráficos.html"><a href="centralizando-o-título-de-gráficos.html"><i class="fa fa-check"></i><b>7.2</b> Centralizando o Título de Gráficos</a></li>
-<li class="chapter" data-level="7.3" data-path="gráficos-de-barras-geom_bar-e-geom_col.html"><a href="gráficos-de-barras-geom_bar-e-geom_col.html"><i class="fa fa-check"></i><b>7.3</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
-<li class="chapter" data-level="7.4" data-path="gráficos-de-linhas-geom_line.html"><a href="gráficos-de-linhas-geom_line.html"><i class="fa fa-check"></i><b>7.4</b> Gráficos de Linhas (geom_line)</a></li>
-<li class="chapter" data-level="7.5" data-path="gráfico-de-funções-stat_function.html"><a href="gráfico-de-funções-stat_function.html"><i class="fa fa-check"></i><b>7.5</b> Gráfico de Funções (stat_function)</a></li>
-<li class="chapter" data-level="7.6" data-path="histogramas-geom_histogram.html"><a href="histogramas-geom_histogram.html"><i class="fa fa-check"></i><b>7.6</b> Histogramas (geom_histogram)</a></li>
-<li class="chapter" data-level="7.7" data-path="boxplots-geom_boxplot.html"><a href="boxplots-geom_boxplot.html"><i class="fa fa-check"></i><b>7.7</b> Boxplots (geom_boxplot)</a></li>
-<li class="chapter" data-level="7.8" data-path="facets-facet_grid.html"><a href="facets-facet_grid.html"><i class="fa fa-check"></i><b>7.8</b> Facets (facet_grid)</a></li>
-<li class="chapter" data-level="7.9" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html"><i class="fa fa-check"></i><b>7.9</b> Bibliotecas Auxiliares</a>
+<li class="chapter" data-level="8.1" data-path="ggplot2.html"><a href="ggplot2.html#diagrama-de-dispersão-geom_point"><i class="fa fa-check"></i><b>8.1</b> Diagrama de Dispersão (geom_point)</a></li>
+<li class="chapter" data-level="8.2" data-path="ggplot2.html"><a href="ggplot2.html#centralizando-o-título-de-gráficos"><i class="fa fa-check"></i><b>8.2</b> Centralizando o Título de Gráficos</a></li>
+<li class="chapter" data-level="8.3" data-path="ggplot2.html"><a href="ggplot2.html#gráficos-de-barras-geom_bar-e-geom_col"><i class="fa fa-check"></i><b>8.3</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
+<li class="chapter" data-level="8.4" data-path="ggplot2.html"><a href="ggplot2.html#gráficos-de-linhas-geom_line"><i class="fa fa-check"></i><b>8.4</b> Gráficos de Linhas (geom_line)</a></li>
+<li class="chapter" data-level="8.5" data-path="ggplot2.html"><a href="ggplot2.html#gráfico-de-funções-stat_function"><i class="fa fa-check"></i><b>8.5</b> Gráfico de Funções (stat_function)</a></li>
+<li class="chapter" data-level="8.6" data-path="ggplot2.html"><a href="ggplot2.html#histogramas-geom_histogram"><i class="fa fa-check"></i><b>8.6</b> Histogramas (geom_histogram)</a></li>
+<li class="chapter" data-level="8.7" data-path="ggplot2.html"><a href="ggplot2.html#boxplots-geom_boxplot"><i class="fa fa-check"></i><b>8.7</b> Boxplots (geom_boxplot)</a></li>
+<li class="chapter" data-level="8.8" data-path="ggplot2.html"><a href="ggplot2.html#facets-facet_grid"><i class="fa fa-check"></i><b>8.8</b> Facets (facet_grid)</a></li>
+<li class="chapter" data-level="8.9" data-path="ggplot2.html"><a href="ggplot2.html#bibliotecas-auxiliares"><i class="fa fa-check"></i><b>8.9</b> Bibliotecas Auxiliares</a>
 <ul>
-<li class="chapter" data-level="7.9.1" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#cowplot"><i class="fa fa-check"></i><b>7.9.1</b> cowplot</a></li>
-<li class="chapter" data-level="7.9.2" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#ggally"><i class="fa fa-check"></i><b>7.9.2</b> GGally</a></li>
+<li class="chapter" data-level="8.9.1" data-path="ggplot2.html"><a href="ggplot2.html#cowplot"><i class="fa fa-check"></i><b>8.9.1</b> cowplot</a></li>
+<li class="chapter" data-level="8.9.2" data-path="ggplot2.html"><a href="ggplot2.html#ggally"><i class="fa fa-check"></i><b>8.9.2</b> GGally</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>8</b> Stringr</a></li>
-<li class="chapter" data-level="9" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>9</b> Forcats</a></li>
-<li class="chapter" data-level="10" data-path="lubridate.html"><a href="lubridate.html"><i class="fa fa-check"></i><b>10</b> Lubridate</a></li>
-<li class="part"><span><b>III Probabilidade</b></span></li>
-<li class="chapter" data-level="11" data-path="introdução-à-probabilidade.html"><a href="introdução-à-probabilidade.html"><i class="fa fa-check"></i><b>11</b> Introdução à Probabilidade</a></li>
-<li class="chapter" data-level="12" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>12</b> Tipos de Distribuições Discretas</a>
+<li class="part"><span><b>III Machine Learning</b></span></li>
+<li class="chapter" data-level="9" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>9</b> Introdução ao Machine Learning</a></li>
+<li class="chapter" data-level="10" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>10</b> Regressão Linear Simples</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="valor-médio-de-uma-variável-aleatória.html"><a href="valor-médio-de-uma-variável-aleatória.html"><i class="fa fa-check"></i><b>12.1</b> Valor Médio de uma Variável Aleatória</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>13</b> Tipos de Distribuições Contínuas</a></li>
-<li class="chapter" data-level="14" data-path="variáveis-aleatórias-multidimensionais.html"><a href="variáveis-aleatórias-multidimensionais.html"><i class="fa fa-check"></i><b>14</b> Variáveis Aleatórias Multidimensionais</a></li>
-<li class="chapter" data-level="15" data-path="introdução-à-inferência-estatística.html"><a href="introdução-à-inferência-estatística.html"><i class="fa fa-check"></i><b>15</b> Introdução à Inferência Estatística</a></li>
-<li class="chapter" data-level="16" data-path="estimação.html"><a href="estimação.html"><i class="fa fa-check"></i><b>16</b> Estimação</a></li>
-<li class="chapter" data-level="17" data-path="testes-de-hipóteses.html"><a href="testes-de-hipóteses.html"><i class="fa fa-check"></i><b>17</b> Testes de Hipóteses</a></li>
-<li class="part"><span><b>IV Machine Learning</b></span></li>
-<li class="chapter" data-level="18" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>18</b> Introdução ao Machine Learning</a></li>
-<li class="chapter" data-level="19" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>19</b> Regressão Linear</a>
+<li class="chapter" data-level="10.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#criando-o-modelo-estimando-seus-coeficientes"><i class="fa fa-check"></i><b>10.1</b> Criando o Modelo &amp; Estimando Seus Coeficientes</a></li>
+<li class="chapter" data-level="10.2" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#a-poeira-debaixo-do-tapete"><i class="fa fa-check"></i><b>10.2</b> A Poeira Debaixo do Tapete</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>19.1</b> Regressão Linear Simples</a></li>
-<li class="chapter" data-level="19.2" data-path="estimando-os-coeficientes.html"><a href="estimando-os-coeficientes.html"><i class="fa fa-check"></i><b>19.2</b> Estimando os Coeficientes</a></li>
-<li class="chapter" data-level="19.3" data-path="acurácia-da-estimativa-dos-coeficientes.html"><a href="acurácia-da-estimativa-dos-coeficientes.html"><i class="fa fa-check"></i><b>19.3</b> Acurácia da Estimativa dos Coeficientes</a></li>
-<li class="chapter" data-level="19.4" data-path="regressão-linear-múltipla.html"><a href="regressão-linear-múltipla.html"><i class="fa fa-check"></i><b>19.4</b> Regressão Linear Múltipla</a></li>
-<li class="chapter" data-level="19.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>19.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
+<li class="chapter" data-level="10.2.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#linearidade-nos-dados"><i class="fa fa-check"></i><b>10.2.1</b> Linearidade nos Dados</a></li>
+<li class="chapter" data-level="10.2.2" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#normalidade-dos-erros"><i class="fa fa-check"></i><b>10.2.2</b> Normalidade dos Erros</a></li>
 </ul></li>
-<li class="part"><span><b>V Projetos</b></span></li>
-<li class="chapter" data-level="20" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>20</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="10.3" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#boas-práticas-para-modelagem"><i class="fa fa-check"></i><b>10.3</b> Boas Práticas Para Modelagem</a></li>
+<li class="chapter" data-level="10.4" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#lidando-com-dados-categóricos"><i class="fa fa-check"></i><b>10.4</b> Lidando com Dados Categóricos</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="regressão-logística.html"><a href="regressão-logística.html"><i class="fa fa-check"></i><b>11</b> Regressão Logística</a></li>
+<li class="part"><span><b>IV Projetos</b></span></li>
+<li class="chapter" data-level="12" data-path="machine-learning-from-disaster.html"><a href="machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>12</b> Machine Learning from Disaster</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -271,8 +257,8 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ggplot2" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Capítulo 7</span> GGPlot2<a href="ggplot2.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ggplot2" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Capítulo 8</span> GGPlot2<a href="ggplot2.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Pacote para criação de gráficos baseado no livro <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448/ref=as_li_ss_tl">The Grammar of Graphics</a>, que destrincha todas as componentes de um gráfico estatístico em partes individuais.</p>
 <center>
 <div class="figure">
@@ -301,14 +287,317 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li><p><strong>Temas:</strong> Fonte, cores, tamanho, formato dos objetos do gráfico.</p></li>
 </ul>
 <p>Observemos então como <code>ggplot2</code> utiliza desta teoria na prática. Caso o leitor queira se aprofundar nos conceitos trabalhados aqui ou busque por algum gráfico em específico recomendamos <a href="https://r-graphics.org">R Graphics Cookbook, 2nd edition</a>.</p>
+<div id="diagrama-de-dispersão-geom_point" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Diagrama de Dispersão (geom_point)<a href="ggplot2.html#diagrama-de-dispersão-geom_point" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Inicialmente devemos carregar os dados ao gráfico pela função <code>ggplot</code>, podendo ou não já atribuir uma estética:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="ggplot2.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A variável wt será considerada para o eixo x</span></span>
+<span id="cb91-2"><a href="ggplot2.html#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A variável mpg será considerada para o eixo y</span></span>
+<span id="cb91-3"><a href="ggplot2.html#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-83-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="ggplot2.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(data = mtcars) também é uma opção válida!</span></span>
+<span id="cb92-2"><a href="ggplot2.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Porém aqui os eixos não serão criados</span></span></code></pre></div>
+<p>Note que apesar de termos um título e os eixos do gráfico, ainda não temos nenhuma informação! Isto acontece pois precisamos escolher o tipo de gráfico que queremos utilizar. Para isto, utilizamos o análogo da biblioteca <code>dplyr</code>, para a concatenação de funções na biblioteca <code>ggplot2</code>: o operador de soma <code>+</code></p>
+<p>Criemos então um diagrama de dispersão, também conhecido como gráfico de pontos ou <em>scatter plot</em>:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="ggplot2.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb93-2"><a href="ggplot2.html#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Uma das vantagens da biblioteca é a fácil customização de seus gráficos. Abaixo observamos o gráfico anterior, mas agora trazendo a informação de quantidade de cilindros nas cores e tamanho dos pontos:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="ggplot2.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pacote com algumas paletas de cores:</span></span>
+<span id="cb94-2"><a href="ggplot2.html#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb94-3"><a href="ggplot2.html#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="co"># https://r-graph-gallery.com/38-rcolorbrewers-palettes.html</span></span>
+<span id="cb94-4"><a href="ggplot2.html#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Algumas propriedades do aesthetic se dão melhor trabalhando com fatores:</span></span>
+<span id="cb94-5"><a href="ggplot2.html#cb94-5" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb94-6"><a href="ggplot2.html#cb94-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos então a criação do gráfico em si</span></span>
+<span id="cb94-7"><a href="ggplot2.html#cb94-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt,</span>
+<span id="cb94-8"><a href="ggplot2.html#cb94-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> mpg,</span>
+<span id="cb94-9"><a href="ggplot2.html#cb94-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">size =</span> cyl,</span>
+<span id="cb94-10"><a href="ggplot2.html#cb94-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb94-11"><a href="ggplot2.html#cb94-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb94-12"><a href="ggplot2.html#cb94-12" aria-hidden="true" tabindex="-1"></a><span class="co"># O R já vem com diversos temas já prontos, podemos visualizá-los em:</span></span>
+<span id="cb94-13"><a href="ggplot2.html#cb94-13" aria-hidden="true" tabindex="-1"></a><span class="co"># https://ggplot2.tidyverse.org/reference/ggtheme.html</span></span>
+<span id="cb94-14"><a href="ggplot2.html#cb94-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb94-15"><a href="ggplot2.html#cb94-15" aria-hidden="true" tabindex="-1"></a><span class="co"># labs é uma função padrão para mudar o nome do título ou de eixos do gráfico:</span></span>
+<span id="cb94-16"><a href="ggplot2.html#cb94-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Diagrama de Dispersão&#39;</span>) <span class="sc">+</span></span>
+<span id="cb94-17"><a href="ggplot2.html#cb94-17" aria-hidden="true" tabindex="-1"></a><span class="co"># theme modifica diversas propriedades estéticas nos gráficos, aqui estamos interessados em centralizar nosso título:</span></span>
+<span id="cb94-18"><a href="ggplot2.html#cb94-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span> </span>
+<span id="cb94-19"><a href="ggplot2.html#cb94-19" aria-hidden="true" tabindex="-1"></a><span class="co"># A biblioteca RColorBrewer traz diversas opções para modificar a paletta</span></span>
+<span id="cb94-20"><a href="ggplot2.html#cb94-20" aria-hidden="true" tabindex="-1"></a><span class="co"># de cores dos gráficos.</span></span>
+<span id="cb94-21"><a href="ggplot2.html#cb94-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Esta pode ser de forma automática:</span></span>
+<span id="cb94-22"><a href="ggplot2.html#cb94-22" aria-hidden="true" tabindex="-1"></a><span class="co">#scale_colour_brewer(palette = &#39;Dark2&#39;)</span></span>
+<span id="cb94-23"><a href="ggplot2.html#cb94-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Ou de forma manual:</span></span>
+<span id="cb94-24"><a href="ggplot2.html#cb94-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&#39;#EB2E23&#39;</span>, <span class="st">&#39;#29E2F2&#39;</span>, <span class="st">&#39;#313FDB&#39;</span>)) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="ggplot2.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A escolha de paletas de cores dá uma aula por si só!</span></span>
+<span id="cb95-2"><a href="ggplot2.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="co"># É importante estar atento a algumas considerações:</span></span>
+<span id="cb95-3"><a href="ggplot2.html#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Trabalhar com a mesma paleta o projeto inteiro</span></span>
+<span id="cb95-4"><a href="ggplot2.html#cb95-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. A paleta precisa fazer sentido para o projeto/tipo</span></span>
+<span id="cb95-5"><a href="ggplot2.html#cb95-5" aria-hidden="true" tabindex="-1"></a><span class="co"># de propriedade que está informando</span></span>
+<span id="cb95-6"><a href="ggplot2.html#cb95-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. As cores não podem ser muito saturadas ou de difícil visualização</span></span>
+<span id="cb95-7"><a href="ggplot2.html#cb95-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Abaixo temos dois sites que utilizo bastante para criação de paletas de cores:</span></span>
+<span id="cb95-8"><a href="ggplot2.html#cb95-8" aria-hidden="true" tabindex="-1"></a><span class="co"># https://color.adobe.com/pt/create/color-wheel</span></span>
+<span id="cb95-9"><a href="ggplot2.html#cb95-9" aria-hidden="true" tabindex="-1"></a><span class="co"># https://paletadecores.com</span></span></code></pre></div>
 </div>
+<div id="centralizando-o-título-de-gráficos" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Centralizando o Título de Gráficos<a href="ggplot2.html#centralizando-o-título-de-gráficos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A visualização de gráficos pode causar certa estranheza quando este está desalinhado ou mal formatado. Uma das configurações iniciais que recomendo ao realizarmos a construção é a execução do código abaixo:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ggplot2.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_update</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p>A função <code>theme_update</code> altera as configurações de gráfico padrões nos próximos gráficos realizados. <code>plot.title</code> altera configurações em relação a posição do título, enquanto <code>element_text(hjust = 0.5)</code> informa que queremos os títulos centralizados no centro dos gráficos. Por padrão os gráficos de <code>ggplot2</code> não tem títulos centralizados e, por questões estéticas, recomendo deixá-los alinhados ao centro. Outras configurações podem ser adicionadas como padrão quando estivermos trabalhando, mas começaremos com esta.</p>
+</div>
+<div id="gráficos-de-barras-geom_bar-e-geom_col" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Gráficos de Barras (geom_bar e geom_col)<a href="ggplot2.html#gráficos-de-barras-geom_bar-e-geom_col" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Na biblioteca <code>ggplot2</code> temos dois tipos de gráficos de barras. O primeiro, <code>geom_bar</code>, é utilizado quando queremos que o eixo <span class="math inline">\(y\)</span> seja a frequência de alguma categoria ou grupo, enquanto o segundo, <code>geom_col</code>, quando o eixo <span class="math inline">\(y\)</span> for uma coluna do conjunto de dados.</p>
+<p>Vamos utilizar a função <code>geom_bar</code> para visualizar a frequência de Tipos de pokémon no conjunto <code>pokemon_stats</code>:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="ggplot2.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pokemon_stats, <span class="fu">aes</span>(<span class="at">x =</span> Type_1)) <span class="sc">+</span> </span>
+<span id="cb97-2"><a href="ggplot2.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-87-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Na prática queremos de um pouco mais de vida nos nossos gráficos, vamos formatá-lo para que este fique visualmente mais atrativo:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="ggplot2.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos atribuir cores a cada atributo utilizando `fill` na estética:</span></span>
+<span id="cb98-2"><a href="ggplot2.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pokemon_stats, <span class="fu">aes</span>(<span class="at">x =</span> Type_1,</span>
+<span id="cb98-3"><a href="ggplot2.html#cb98-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">fill =</span> Type_1)) <span class="sc">+</span> </span>
+<span id="cb98-4"><a href="ggplot2.html#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
+<span id="cb98-5"><a href="ggplot2.html#cb98-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Como cada barra é um atributo diferente, a legenda não faz muito sentido </span></span>
+<span id="cb98-6"><a href="ggplot2.html#cb98-6" aria-hidden="true" tabindex="-1"></a><span class="co"># e dessa forma será retirada:</span></span>
+<span id="cb98-7"><a href="ggplot2.html#cb98-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>) <span class="sc">+</span></span>
+<span id="cb98-8"><a href="ggplot2.html#cb98-8" aria-hidden="true" tabindex="-1"></a><span class="co"># É difícil visualizar a quantidade exata de cada barra no gráfico anterior</span></span>
+<span id="cb98-9"><a href="ggplot2.html#cb98-9" aria-hidden="true" tabindex="-1"></a><span class="co"># por isso vamos atribuir a quantidade de cada categoria em cima de cada barra:</span></span>
+<span id="cb98-10"><a href="ggplot2.html#cb98-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> ..count..), <span class="at">stat =</span> <span class="st">&quot;count&quot;</span>,</span>
+<span id="cb98-11"><a href="ggplot2.html#cb98-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&#39;black&#39;</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb98-12"><a href="ggplot2.html#cb98-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Alterar o eixo y para que o texto anterior não fique cortado:</span></span>
+<span id="cb98-13"><a href="ggplot2.html#cb98-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">110</span>) <span class="sc">+</span></span>
+<span id="cb98-14"><a href="ggplot2.html#cb98-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Por fim, vamos retirar os valores do eixo y:</span></span>
+<span id="cb98-15"><a href="ggplot2.html#cb98-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb98-16"><a href="ggplot2.html#cb98-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb98-17"><a href="ggplot2.html#cb98-17" aria-hidden="true" tabindex="-1"></a><span class="co"># e formatar o nome dos eixos e título:  </span></span>
+<span id="cb98-18"><a href="ggplot2.html#cb98-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Tipo Primario&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb98-19"><a href="ggplot2.html#cb98-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Quantidade&#39;</span>) <span class="sc">+</span></span>
+<span id="cb98-20"><a href="ggplot2.html#cb98-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Quantidade de Pokemons por Tipo&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-88-1.png" width="672" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p>Alunos mais ansiosos podem estar pensando:</p>
+<p><strong>MEU DEUS! COMO EU VOU LEMBRAR DE TODAS ESSAS CONFIGURAÇÕES?!</strong></p>
+<p>Na realidade nós não lembramos de todas elas de cara. Grande parte das funções acabamos por decorar pela experiência com a linguagem, enquanto outras apenas realizamos uma busca rápida para resolver nosso problema.</p>
+</blockquote>
+<p>Além disso, podemos utilizar dados obtidos por operações no <code>dplyr</code> como entrada para os gráficos do <code>ggplot2</code>. Aqui vamos criar um conjunto de dados com a média de cada Tipo de pokémon e então criar um gráfico de barras com a função <code>geom_col</code> com o valor para cada barra:</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="ggplot2.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pré-processamento dos dados. Aqui utilizaremos a biblioteca dplyr</span></span>
+<span id="cb99-2"><a href="ggplot2.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="co"># do capítulo anterior para termos um conjunto com a média do total</span></span>
+<span id="cb99-3"><a href="ggplot2.html#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="co"># de status de pokémons por tipo:</span></span>
+<span id="cb99-4"><a href="ggplot2.html#cb99-4" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span></span>
+<span id="cb99-5"><a href="ggplot2.html#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Type_1, Total) <span class="sc">%&gt;%</span></span>
+<span id="cb99-6"><a href="ggplot2.html#cb99-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Type_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb99-7"><a href="ggplot2.html#cb99-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">tot_mean =</span> <span class="fu">mean</span>(Total)) <span class="sc">%&gt;%</span></span>
+<span id="cb99-8"><a href="ggplot2.html#cb99-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(tot_mean) <span class="sc">%&gt;%</span></span>
+<span id="cb99-9"><a href="ggplot2.html#cb99-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Aqui a função pipe, %&gt;%, também pode ser utilizada para informar que o conjunto de dados da esquerda será o input para a função da direita!</span></span>
+<span id="cb99-10"><a href="ggplot2.html#cb99-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Type_1, <span class="at">y =</span> tot_mean)) <span class="sc">+</span></span>
+<span id="cb99-11"><a href="ggplot2.html#cb99-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-89-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Novamente, podemos melhorar e muito este gráfico!</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="ggplot2.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pré-processamento dos dados</span></span>
+<span id="cb100-2"><a href="ggplot2.html#cb100-2" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span></span>
+<span id="cb100-3"><a href="ggplot2.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Type_1, Total) <span class="sc">%&gt;%</span></span>
+<span id="cb100-4"><a href="ggplot2.html#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Type_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb100-5"><a href="ggplot2.html#cb100-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">tot_mean =</span> <span class="fu">mean</span>(Total)) <span class="sc">%&gt;%</span></span>
+<span id="cb100-6"><a href="ggplot2.html#cb100-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(tot_mean) <span class="sc">%&gt;%</span></span>
+<span id="cb100-7"><a href="ggplot2.html#cb100-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Type_1, <span class="at">y =</span> tot_mean, <span class="at">fill =</span> Type_1)) <span class="sc">+</span></span>
+<span id="cb100-8"><a href="ggplot2.html#cb100-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb100-9"><a href="ggplot2.html#cb100-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Retirada da legenda</span></span>
+<span id="cb100-10"><a href="ggplot2.html#cb100-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>) <span class="sc">+</span></span>
+<span id="cb100-11"><a href="ggplot2.html#cb100-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Adiciona os valores de cada barra</span></span>
+<span id="cb100-12"><a href="ggplot2.html#cb100-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(tot_mean)),</span>
+<span id="cb100-13"><a href="ggplot2.html#cb100-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&#39;black&#39;</span>, <span class="at">vjust =</span> <span class="sc">-</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb100-14"><a href="ggplot2.html#cb100-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Retirada dos valores do eixo y</span></span>
+<span id="cb100-15"><a href="ggplot2.html#cb100-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb100-16"><a href="ggplot2.html#cb100-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb100-17"><a href="ggplot2.html#cb100-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Aumentar o alcance do eixo y para que os valores não fiquem cortados</span></span>
+<span id="cb100-18"><a href="ggplot2.html#cb100-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">515</span>) <span class="sc">+</span></span>
+<span id="cb100-19"><a href="ggplot2.html#cb100-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Mudar o nome de cada eixo e adicionar um título:</span></span>
+<span id="cb100-20"><a href="ggplot2.html#cb100-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Tipo Primario&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb100-21"><a href="ggplot2.html#cb100-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Media&#39;</span>) <span class="sc">+</span></span>
+<span id="cb100-22"><a href="ggplot2.html#cb100-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Media do Total de Atributos por Tipo de Pokemon&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-90-1.png" width="672" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p><strong>DESAFIO:</strong> Cada tipo de pokémon é favorável a um tipo de status. Em relação ao status ofensivo, temos a seguinte pergunta: um tipo é mais favorável ao Ataque ou Ataque Especial? No gráfico abaixo temos uma análise inicial para isto! Execute cada linha do código abaixo separadamente e tente reproduzir e comentar os resultados!</p>
+</blockquote>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="ggplot2.html#cb101-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span> <span class="fu">select</span>(Type_1, Attack, Sp_Atk) <span class="sc">%&gt;%</span></span>
+<span id="cb101-2"><a href="ggplot2.html#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Type_1) <span class="sc">%&gt;%</span></span>
+<span id="cb101-3"><a href="ggplot2.html#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">atk_minus_sp =</span> <span class="fu">mean</span>(Attack) <span class="sc">-</span> <span class="fu">mean</span>(Sp_Atk)) <span class="sc">%&gt;%</span></span>
+<span id="cb101-4"><a href="ggplot2.html#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pos =</span> (atk_minus_sp <span class="sc">&gt;</span> <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb101-5"><a href="ggplot2.html#cb101-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Type_1, <span class="at">y =</span> atk_minus_sp, <span class="at">fill =</span> pos)) <span class="sc">+</span></span>
+<span id="cb101-6"><a href="ggplot2.html#cb101-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb101-7"><a href="ggplot2.html#cb101-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#ff0841&quot;</span>, <span class="st">&quot;#02031a&quot;</span>), <span class="at">guide =</span> <span class="st">&#39;none&#39;</span>) <span class="sc">+</span></span>
+<span id="cb101-8"><a href="ggplot2.html#cb101-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Atk - Sp_Atk&#39;</span>,</span>
+<span id="cb101-9"><a href="ggplot2.html#cb101-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&#39;Tipo I&#39;</span>,</span>
+<span id="cb101-10"><a href="ggplot2.html#cb101-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Qual é a Preferência Ofensiva de um Tipo de Pokémon?&#39;</span>) <span class="sc">+</span></span>
+<span id="cb101-11"><a href="ggplot2.html#cb101-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(atk_minus_sp),</span>
+<span id="cb101-12"><a href="ggplot2.html#cb101-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="fu">round</span>(atk_minus_sp) <span class="sc">+</span></span>
+<span id="cb101-13"><a href="ggplot2.html#cb101-13" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">ifelse</span>(<span class="fu">round</span>(atk_minus_sp) <span class="sc">&gt;=</span> <span class="dv">0</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">3</span>)),</span>
+<span id="cb101-14"><a href="ggplot2.html#cb101-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>),</span>
+<span id="cb101-15"><a href="ggplot2.html#cb101-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb101-16"><a href="ggplot2.html#cb101-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="dv">33</span>, <span class="dv">50</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-91-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráficos-de-linhas-geom_line" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Gráficos de Linhas (geom_line)<a href="ggplot2.html#gráficos-de-linhas-geom_line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Muitas vezes queremos visualizar como uma ou mais variáveis se alteram em relação ao tempo ou algum outra informação. Para isto podemos utilizar gráficos de linhas pela função <code>geom_line</code>. Para isto utilizaremos um conjunto de dados de vendas em razão do tempo:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="ggplot2.html#cb102-1" aria-hidden="true" tabindex="-1"></a>vendas <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;G:/Meu Drive/Dados/vendas.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 31 Columns: 2
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (1): date
+## dbl (1): units
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ggplot2.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A data dos dados não está no formato padrão do R</span></span>
+<span id="cb104-2"><a href="ggplot2.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(vendas)</span></code></pre></div>
+<pre><code>## spec_tbl_df [31 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ date : chr [1:31] &quot;01/01/2010&quot; &quot;02/01/2010&quot; &quot;03/01/2010&quot; &quot;04/01/2010&quot; ...
+##  $ units: num [1:31] 5064 6115 5305 3185 4182 ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   date = col_character(),
+##   ..   units = col_double()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="ggplot2.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Podemos transformar a data pela função as.Date</span></span>
+<span id="cb106-2"><a href="ggplot2.html#cb106-2" aria-hidden="true" tabindex="-1"></a>vendas<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(vendas<span class="sc">$</span>date, <span class="at">format =</span> <span class="st">&#39;%d/%m/%y&#39;</span>)</span>
+<span id="cb106-3"><a href="ggplot2.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela com todos os formatos possíveis:</span></span>
+<span id="cb106-4"><a href="ggplot2.html#cb106-4" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.r-bloggers.com/2013/08/date-formats-in-r/</span></span></code></pre></div>
+<p>Com os dados tratados podemos então elaborar o gráfico:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="ggplot2.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(vendas, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> units)) <span class="sc">+</span></span>
+<span id="cb107-2"><a href="ggplot2.html#cb107-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-93-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Podemos alterar o formato da linha, adicionar pontos a cada informação observada dentre outras alterações:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ggplot2.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(vendas, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> units)) <span class="sc">+</span></span>
+<span id="cb108-2"><a href="ggplot2.html#cb108-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&#39;dashed&#39;</span>) <span class="sc">+</span></span>
+<span id="cb108-3"><a href="ggplot2.html#cb108-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráfico-de-funções-stat_function" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Gráfico de Funções (stat_function)<a href="ggplot2.html#gráfico-de-funções-stat_function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Além de visualizar gráficos, podemos utilizar a função <code>geom_line</code> para visualização de funções:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="ggplot2.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb109-2"><a href="ggplot2.html#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> cos, <span class="at">geom =</span> <span class="st">&#39;line&#39;</span>,</span>
+<span id="cb109-3"><a href="ggplot2.html#cb109-3" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&#39;cos&#39;</span>),</span>
+<span id="cb109-4"><a href="ggplot2.html#cb109-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb109-5"><a href="ggplot2.html#cb109-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> sin, <span class="at">geom =</span> <span class="st">&#39;line&#39;</span>,</span>
+<span id="cb109-6"><a href="ggplot2.html#cb109-6" aria-hidden="true" tabindex="-1"></a>                <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&#39;sin&#39;</span>),</span>
+<span id="cb109-7"><a href="ggplot2.html#cb109-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb109-8"><a href="ggplot2.html#cb109-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;top&#39;</span>) <span class="sc">+</span></span>
+<span id="cb109-9"><a href="ggplot2.html#cb109-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Gráfico de Funções&#39;</span>,</span>
+<span id="cb109-10"><a href="ggplot2.html#cb109-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">&#39;Legenda&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="histogramas-geom_histogram" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Histogramas (geom_histogram)<a href="ggplot2.html#histogramas-geom_histogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Histogramas são bem úteis para termos uma intuição sobre a distribuição dos dados, principalmente se uma determinada variável possui ou não distribuição normal. Para criarmos basta chamarmos a função <code>geom_histogram</code>:</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="ggplot2.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pokemon_stats, <span class="fu">aes</span>(<span class="at">x =</span> Total)) <span class="sc">+</span></span>
+<span id="cb110-2"><a href="ggplot2.html#cb110-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">50</span>, </span>
+<span id="cb110-3"><a href="ggplot2.html#cb110-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&#39;black&#39;</span>,</span>
+<span id="cb110-4"><a href="ggplot2.html#cb110-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&#39;blue&#39;</span>,</span>
+<span id="cb110-5"><a href="ggplot2.html#cb110-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> .<span class="dv">3</span>,) <span class="sc">+</span></span>
+<span id="cb110-6"><a href="ggplot2.html#cb110-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Facilita a visualização da variável no eixo x:</span></span>
+<span id="cb110-7"><a href="ggplot2.html#cb110-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">150</span>, <span class="dv">700</span>, <span class="dv">50</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-96-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Há duas formas de criarmos um histograma: fornecendo uma quantidade de <code>bins</code>, os retângulos do gráfico, ou estabelecendo um tamanho a cada retângulo com o parâmetro <code>binwidth</code>.</p>
+</div>
+<div id="boxplots-geom_boxplot" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> Boxplots (geom_boxplot)<a href="ggplot2.html#boxplots-geom_boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Boxplots são gráficos que resumem a distribuição do nosso conjunto de dados, além de indicar possíveis outliers:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="ggplot2.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pokemon_stats, <span class="fu">aes</span>(<span class="at">x =</span> Type_1, </span>
+<span id="cb111-2"><a href="ggplot2.html#cb111-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> Total,</span>
+<span id="cb111-3"><a href="ggplot2.html#cb111-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">fill =</span> Type_1)) <span class="sc">+</span> </span>
+<span id="cb111-4"><a href="ggplot2.html#cb111-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb111-5"><a href="ggplot2.html#cb111-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="facets-facet_grid" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">8.8</span> Facets (facet_grid)<a href="ggplot2.html#facets-facet_grid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Facets são a forma que a biblioteca <code>ggplot2</code> utiliza para realizar vários tipos de mesmo gráfico de acordo com variações em grupos. Os gráficos são criados normalmente e chamamos a função <code>facet_grid</code> para definir quais tipos de dados serão utilizados para cada linha ou coluna.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ggplot2.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pokemon_stats, <span class="fu">aes</span>(<span class="at">x =</span> Speed, <span class="at">y =</span> Attack, </span>
+<span id="cb112-2"><a href="ggplot2.html#cb112-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> isLegendary)) <span class="sc">+</span></span>
+<span id="cb112-3"><a href="ggplot2.html#cb112-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb112-4"><a href="ggplot2.html#cb112-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb112-5"><a href="ggplot2.html#cb112-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb112-6"><a href="ggplot2.html#cb112-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(isLegendary<span class="sc">~</span>.) <span class="sc">+</span></span>
+<span id="cb112-7"><a href="ggplot2.html#cb112-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="ggplot2.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pokemon_stats, <span class="fu">aes</span>(<span class="at">x =</span> Speed, <span class="at">y =</span> Attack, </span>
+<span id="cb113-2"><a href="ggplot2.html#cb113-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> isLegendary)) <span class="sc">+</span></span>
+<span id="cb113-3"><a href="ggplot2.html#cb113-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb113-4"><a href="ggplot2.html#cb113-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb113-5"><a href="ggplot2.html#cb113-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb113-6"><a href="ggplot2.html#cb113-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span>isLegendary) <span class="sc">+</span></span>
+<span id="cb113-7"><a href="ggplot2.html#cb113-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-99-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bibliotecas-auxiliares" class="section level2 hasAnchor" number="8.9">
+<h2><span class="header-section-number">8.9</span> Bibliotecas Auxiliares<a href="ggplot2.html#bibliotecas-auxiliares" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Além disso, há diversas bibliotecas que interagem com a <code>ggplot2</code> para a criação de gráficos. Vamos há algumas e seus exemplos:</p>
+<div id="cowplot" class="section level3 hasAnchor" number="8.9.1">
+<h3><span class="header-section-number">8.9.1</span> cowplot<a href="ggplot2.html#cowplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Biblioteca que facilita a criação de vários gráficos em uma mesma figura:</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="ggplot2.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
+<span id="cb114-2"><a href="ggplot2.html#cb114-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-3"><a href="ggplot2.html#cb114-3" aria-hidden="true" tabindex="-1"></a>poke1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> pokemon_stats, <span class="fu">aes</span>(<span class="at">x =</span> Type_1,</span>
+<span id="cb114-4"><a href="ggplot2.html#cb114-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">fill =</span> Type_1)) <span class="sc">+</span> </span>
+<span id="cb114-5"><a href="ggplot2.html#cb114-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
+<span id="cb114-6"><a href="ggplot2.html#cb114-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>) <span class="sc">+</span></span>
+<span id="cb114-7"><a href="ggplot2.html#cb114-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> ..count..), <span class="at">stat =</span> <span class="st">&quot;count&quot;</span>,</span>
+<span id="cb114-8"><a href="ggplot2.html#cb114-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&#39;black&#39;</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb114-9"><a href="ggplot2.html#cb114-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">110</span>) <span class="sc">+</span></span>
+<span id="cb114-10"><a href="ggplot2.html#cb114-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb114-11"><a href="ggplot2.html#cb114-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb114-12"><a href="ggplot2.html#cb114-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Tipo Primario&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb114-13"><a href="ggplot2.html#cb114-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Quantidade&#39;</span>) <span class="sc">+</span></span>
+<span id="cb114-14"><a href="ggplot2.html#cb114-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Quantidade de Pokemons por Tipo&#39;</span>)</span>
+<span id="cb114-15"><a href="ggplot2.html#cb114-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-16"><a href="ggplot2.html#cb114-16" aria-hidden="true" tabindex="-1"></a>poke2 <span class="ot">&lt;-</span> pokemon_stats <span class="sc">%&gt;%</span> drop_na <span class="sc">%&gt;%</span></span>
+<span id="cb114-17"><a href="ggplot2.html#cb114-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Type_2, <span class="at">fill =</span> Type_2)) <span class="sc">+</span> </span>
+<span id="cb114-18"><a href="ggplot2.html#cb114-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span> </span>
+<span id="cb114-19"><a href="ggplot2.html#cb114-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>) <span class="sc">+</span></span>
+<span id="cb114-20"><a href="ggplot2.html#cb114-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> ..count..), <span class="at">stat =</span> <span class="st">&quot;count&quot;</span>,</span>
+<span id="cb114-21"><a href="ggplot2.html#cb114-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&#39;black&#39;</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb114-22"><a href="ggplot2.html#cb114-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">110</span>) <span class="sc">+</span></span>
+<span id="cb114-23"><a href="ggplot2.html#cb114-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb114-24"><a href="ggplot2.html#cb114-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb114-25"><a href="ggplot2.html#cb114-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Tipo Secundário&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb114-26"><a href="ggplot2.html#cb114-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Quantidade&#39;</span>) <span class="sc">+</span></span>
+<span id="cb114-27"><a href="ggplot2.html#cb114-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Quantidade de Pokemons por Tipo&#39;</span>)</span>
+<span id="cb114-28"><a href="ggplot2.html#cb114-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-29"><a href="ggplot2.html#cb114-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdraw</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb114-30"><a href="ggplot2.html#cb114-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(poke2, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">height =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb114-31"><a href="ggplot2.html#cb114-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(poke1, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">height =</span> <span class="dv">1</span>) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-100-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ggally" class="section level3 hasAnchor" number="8.9.2">
+<h3><span class="header-section-number">8.9.2</span> GGally<a href="ggplot2.html#ggally" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A biblioteca <code>GGally</code> adiciona diversas funções ao <code>ggplot2</code> principalmente relacionadas a reduzir a complexidade na hora de criar vários gráficos de uma vez:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="ggplot2.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code></pre></div>
+<pre><code>## Registered S3 method overwritten by &#39;GGally&#39;:
+##   method from   
+##   +.gg   ggplot2</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="ggplot2.html#cb117-1" aria-hidden="true" tabindex="-1"></a>pokemon_stats <span class="sc">%&gt;%</span></span>
+<span id="cb117-2"><a href="ggplot2.html#cb117-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Total, Attack, Defense, Sp_Atk, Sp_Def, Speed) <span class="sc">%&gt;%</span></span>
+<span id="cb117-3"><a href="ggplot2.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggpairs</span>(<span class="at">diag =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">&#39;barDiag&#39;</span>,</span>
+<span id="cb117-4"><a href="ggplot2.html#cb117-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">binwidth =</span> <span class="dv">50</span>,</span>
+<span id="cb117-5"><a href="ggplot2.html#cb117-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">fill =</span> <span class="st">&#39;blue&#39;</span>,</span>
+<span id="cb117-6"><a href="ggplot2.html#cb117-6" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">alpha =</span> <span class="fl">0.2</span>)),</span>
+<span id="cb117-7"><a href="ggplot2.html#cb117-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">progress =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-101-1.png" width="672" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="remodelando-dados.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="diagrama-de-dispersão-geom_point.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dplyr-tidyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introdução-ao-machine-learning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

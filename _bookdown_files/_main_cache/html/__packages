@@ -1,3 +1,9 @@
 knitr
 ggplot2
 cowplot
+dplyr
+tidyr
+stringr
+forcats
+readr
+rmarkdown

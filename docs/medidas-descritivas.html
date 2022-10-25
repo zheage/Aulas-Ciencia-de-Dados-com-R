@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Medidas Descritivas | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <title>Capítulo 4 Medidas Descritivas | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
   <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
 #set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Medidas Descritivas | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:title" content="Capítulo 4 Medidas Descritivas | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@
   <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Medidas Descritivas | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="twitter:title" content="Capítulo 4 Medidas Descritivas | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   
   <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
@@ -35,8 +35,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="trabalhando-com-datas.html"/>
-<link rel="next" href="tipos-de-variáveis.html"/>
+<link rel="prev" href="introdução-ao-r.html"/>
+<link rel="next" href="introdução-ao-tidyverse.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -142,116 +142,102 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
 <li><a>Ciência de Dados com R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
 <li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
-<li class="part"><span><b>I Análise de Dados</b></span></li>
-<li class="chapter" data-level="2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a>
+<li class="chapter" data-level="2" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>2</b> Dados Utilizados</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introdução-a-fatores.html"><a href="introdução-a-fatores.html"><i class="fa fa-check"></i><b>2.1</b> Introdução a Fatores</a></li>
-<li class="chapter" data-level="2.2" data-path="trabalhando-com-datas.html"><a href="trabalhando-com-datas.html"><i class="fa fa-check"></i><b>2.2</b> Trabalhando com Datas</a></li>
+<li class="chapter" data-level="2.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>2.1</b> Motor Trend Car Road Test (mtcars)</a></li>
+<li class="chapter" data-level="2.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>2.2</b> Pokémons Dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="dados-utilizados.html"><a href="dados-utilizados.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>2.3</b> Fifa 2022 Player Dataset</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>3</b> Medidas Descritivas</a>
+<li class="part"><span><b>I Análise de Dados</b></span></li>
+<li class="chapter" data-level="3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>3</b> Introdução ao R</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tipos-de-variáveis.html"><a href="tipos-de-variáveis.html"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a></li>
-<li class="chapter" data-level="3.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html"><i class="fa fa-check"></i><b>3.2</b> Medidas de Posição</a></li>
-<li class="chapter" data-level="3.3" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html"><i class="fa fa-check"></i><b>3.3</b> Medidas de Dispersão</a></li>
-<li class="chapter" data-level="3.4" data-path="quantis-empíricos.html"><a href="quantis-empíricos.html"><i class="fa fa-check"></i><b>3.4</b> Quantis Empíricos</a></li>
-<li class="chapter" data-level="3.5" data-path="box-plot.html"><a href="box-plot.html"><i class="fa fa-check"></i><b>3.5</b> Box Plot</a></li>
-<li class="chapter" data-level="3.6" data-path="transformações.html"><a href="transformações.html"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
-<li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
-<li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
+<li class="chapter" data-level="3.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#introdução-a-fatores"><i class="fa fa-check"></i><b>3.1</b> Introdução a Fatores</a></li>
+<li class="chapter" data-level="3.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#trabalhando-com-datas"><i class="fa fa-check"></i><b>3.2</b> Trabalhando com Datas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>4</b> Medidas Descritivas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#tipos-de-variáveis"><i class="fa fa-check"></i><b>4.1</b> Tipos de Variáveis</a></li>
+<li class="chapter" data-level="4.2" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-posição"><i class="fa fa-check"></i><b>4.2</b> Medidas de Posição</a></li>
+<li class="chapter" data-level="4.3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>4.3</b> Medidas de Dispersão</a></li>
+<li class="chapter" data-level="4.4" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#quantis-empíricos"><i class="fa fa-check"></i><b>4.4</b> Quantis Empíricos</a></li>
+<li class="chapter" data-level="4.5" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#box-plot"><i class="fa fa-check"></i><b>4.5</b> Box Plot</a></li>
+<li class="chapter" data-level="4.6" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#transformações"><i class="fa fa-check"></i><b>4.6</b> Transformações</a></li>
+<li class="chapter" data-level="4.7" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-01---conjunto-de-dados-iris"><i class="fa fa-check"></i><b>4.7</b> Lab 01 - Conjunto de dados Iris</a></li>
+<li class="chapter" data-level="4.8" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-02---xadrez-brasil"><i class="fa fa-check"></i><b>4.8</b> Lab 02 - Xadrez Brasil</a></li>
 </ul></li>
 <li class="part"><span><b>II Tidyverse</b></span></li>
-<li class="chapter" data-level="4" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução ao Tidyverse</a>
+<li class="chapter" data-level="5" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html"><i class="fa fa-check"></i><b>5</b> Introdução ao Tidyverse</a></li>
+<li class="chapter" data-level="6" data-path="readr.html"><a href="readr.html"><i class="fa fa-check"></i><b>6</b> Readr</a></li>
+<li class="chapter" data-level="7" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>7</b> Dplyr &amp; Tidyr</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>4.1</b> Dados utilizados</a>
+<li class="chapter" data-level="7.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#extração-de-observações-linhas"><i class="fa fa-check"></i><b>7.1</b> Extração de Observações (Linhas)</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>4.1.1</b> Motor Trend Car Road Test (mtcars)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>4.1.2</b> Pokémons Dataset</a></li>
-<li class="chapter" data-level="4.1.3" data-path="dados-utilizados.html"><a href="dados-utilizados.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>4.1.3</b> Fifa 2022 Player Dataset</a></li>
+<li class="chapter" data-level="7.1.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#filter"><i class="fa fa-check"></i><b>7.1.1</b> filter</a></li>
+<li class="chapter" data-level="7.1.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#distinct"><i class="fa fa-check"></i><b>7.1.2</b> distinct</a></li>
+<li class="chapter" data-level="7.1.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#operador-pipe"><i class="fa fa-check"></i><b>7.1.3</b> Operador Pipe</a></li>
+<li class="chapter" data-level="7.1.4" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#sample_frac"><i class="fa fa-check"></i><b>7.1.4</b> sample_frac</a></li>
+<li class="chapter" data-level="7.1.5" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#slice"><i class="fa fa-check"></i><b>7.1.5</b> slice</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="introdução-a-fatores-1.html"><a href="introdução-a-fatores-1.html"><i class="fa fa-check"></i><b>4.2</b> Introdução a fatores</a></li>
+<li class="chapter" data-level="7.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#extração-de-variáveis-colunas"><i class="fa fa-check"></i><b>7.2</b> Extração de Variáveis (Colunas)</a></li>
+<li class="chapter" data-level="7.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#resumir-dados"><i class="fa fa-check"></i><b>7.3</b> Resumir dados</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#summarise"><i class="fa fa-check"></i><b>7.3.1</b> summarise</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#summarise_each"><i class="fa fa-check"></i><b>7.3.2</b> summarise_each</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#count"><i class="fa fa-check"></i><b>7.3.3</b> count</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="readr.html"><a href="readr.html"><i class="fa fa-check"></i><b>5</b> Readr</a></li>
-<li class="chapter" data-level="6" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>6</b> Dplyr &amp; Tidyr</a>
+<li class="chapter" data-level="7.4" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#criação-de-novas-variáveis"><i class="fa fa-check"></i><b>7.4</b> Criação de Novas Variáveis</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html"><i class="fa fa-check"></i><b>6.1</b> Extração de Observações (Linhas)</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#filter"><i class="fa fa-check"></i><b>6.1.1</b> filter</a></li>
-<li class="chapter" data-level="6.1.2" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#distinct"><i class="fa fa-check"></i><b>6.1.2</b> distinct</a></li>
-<li class="chapter" data-level="6.1.3" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#o-operador-pipe"><i class="fa fa-check"></i><b>6.1.3</b> O Operador Pipe</a></li>
-<li class="chapter" data-level="6.1.4" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#sample_frac"><i class="fa fa-check"></i><b>6.1.4</b> sample_frac</a></li>
-<li class="chapter" data-level="6.1.5" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#slice"><i class="fa fa-check"></i><b>6.1.5</b> slice</a></li>
+<li class="chapter" data-level="7.4.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#mutate"><i class="fa fa-check"></i><b>7.4.1</b> mutate</a></li>
+<li class="chapter" data-level="7.4.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#transmute"><i class="fa fa-check"></i><b>7.4.2</b> transmute</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="extração-de-variáveis-colunas.html"><a href="extração-de-variáveis-colunas.html"><i class="fa fa-check"></i><b>6.2</b> Extração de Variáveis (Colunas)</a></li>
-<li class="chapter" data-level="6.3" data-path="resumir-dados.html"><a href="resumir-dados.html"><i class="fa fa-check"></i><b>6.3</b> Resumir dados</a>
+<li class="chapter" data-level="7.5" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#combinar-conjuntos-de-dados"><i class="fa fa-check"></i><b>7.5</b> Combinar Conjuntos de Dados</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise"><i class="fa fa-check"></i><b>6.3.1</b> summarise</a></li>
-<li class="chapter" data-level="6.3.2" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise_each"><i class="fa fa-check"></i><b>6.3.2</b> summarise_each</a></li>
-<li class="chapter" data-level="6.3.3" data-path="resumir-dados.html"><a href="resumir-dados.html#count"><i class="fa fa-check"></i><b>6.3.3</b> count</a></li>
+<li class="chapter" data-level="7.5.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#left_join"><i class="fa fa-check"></i><b>7.5.1</b> left_join</a></li>
+<li class="chapter" data-level="7.5.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#inner_join"><i class="fa fa-check"></i><b>7.5.2</b> inner_join</a></li>
+<li class="chapter" data-level="7.5.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#full_join"><i class="fa fa-check"></i><b>7.5.3</b> full_join</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html"><i class="fa fa-check"></i><b>6.4</b> Criação de Novas Variáveis</a>
+<li class="chapter" data-level="7.6" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#agrupar-dados-group_by"><i class="fa fa-check"></i><b>7.6</b> Agrupar Dados (group_by)</a></li>
+<li class="chapter" data-level="7.7" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#remodelando-dados"><i class="fa fa-check"></i><b>7.7</b> Remodelando Dados</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#mutate"><i class="fa fa-check"></i><b>6.4.1</b> mutate</a></li>
-<li class="chapter" data-level="6.4.2" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#transmute"><i class="fa fa-check"></i><b>6.4.2</b> transmute</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html"><i class="fa fa-check"></i><b>6.5</b> Combinar Conjuntos de Dados</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#left_join"><i class="fa fa-check"></i><b>6.5.1</b> left_join</a></li>
-<li class="chapter" data-level="6.5.2" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#inner_join"><i class="fa fa-check"></i><b>6.5.2</b> inner_join</a></li>
-<li class="chapter" data-level="6.5.3" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#full_join"><i class="fa fa-check"></i><b>6.5.3</b> full_join</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="agrupar-dados-group_by.html"><a href="agrupar-dados-group_by.html"><i class="fa fa-check"></i><b>6.6</b> Agrupar Dados (group_by)</a></li>
-<li class="chapter" data-level="6.7" data-path="remodelando-dados.html"><a href="remodelando-dados.html"><i class="fa fa-check"></i><b>6.7</b> Remodelando Dados</a>
-<ul>
-<li class="chapter" data-level="6.7.1" data-path="remodelando-dados.html"><a href="remodelando-dados.html#arrange"><i class="fa fa-check"></i><b>6.7.1</b> arrange</a></li>
-<li class="chapter" data-level="6.7.2" data-path="remodelando-dados.html"><a href="remodelando-dados.html#rename"><i class="fa fa-check"></i><b>6.7.2</b> rename</a></li>
-<li class="chapter" data-level="6.7.3" data-path="remodelando-dados.html"><a href="remodelando-dados.html#separate"><i class="fa fa-check"></i><b>6.7.3</b> separate</a></li>
-<li class="chapter" data-level="6.7.4" data-path="remodelando-dados.html"><a href="remodelando-dados.html#unite"><i class="fa fa-check"></i><b>6.7.4</b> unite</a></li>
+<li class="chapter" data-level="7.7.1" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#arrange"><i class="fa fa-check"></i><b>7.7.1</b> arrange</a></li>
+<li class="chapter" data-level="7.7.2" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#rename"><i class="fa fa-check"></i><b>7.7.2</b> rename</a></li>
+<li class="chapter" data-level="7.7.3" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#separate"><i class="fa fa-check"></i><b>7.7.3</b> separate</a></li>
+<li class="chapter" data-level="7.7.4" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html#unite"><i class="fa fa-check"></i><b>7.7.4</b> unite</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>7</b> GGPlot2</a>
+<li class="chapter" data-level="8" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>8</b> GGPlot2</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="diagrama-de-dispersão-geom_point.html"><a href="diagrama-de-dispersão-geom_point.html"><i class="fa fa-check"></i><b>7.1</b> Diagrama de Dispersão (geom_point)</a></li>
-<li class="chapter" data-level="7.2" data-path="centralizando-o-título-de-gráficos.html"><a href="centralizando-o-título-de-gráficos.html"><i class="fa fa-check"></i><b>7.2</b> Centralizando o Título de Gráficos</a></li>
-<li class="chapter" data-level="7.3" data-path="gráficos-de-barras-geom_bar-e-geom_col.html"><a href="gráficos-de-barras-geom_bar-e-geom_col.html"><i class="fa fa-check"></i><b>7.3</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
-<li class="chapter" data-level="7.4" data-path="gráficos-de-linhas-geom_line.html"><a href="gráficos-de-linhas-geom_line.html"><i class="fa fa-check"></i><b>7.4</b> Gráficos de Linhas (geom_line)</a></li>
-<li class="chapter" data-level="7.5" data-path="gráfico-de-funções-stat_function.html"><a href="gráfico-de-funções-stat_function.html"><i class="fa fa-check"></i><b>7.5</b> Gráfico de Funções (stat_function)</a></li>
-<li class="chapter" data-level="7.6" data-path="histogramas-geom_histogram.html"><a href="histogramas-geom_histogram.html"><i class="fa fa-check"></i><b>7.6</b> Histogramas (geom_histogram)</a></li>
-<li class="chapter" data-level="7.7" data-path="boxplots-geom_boxplot.html"><a href="boxplots-geom_boxplot.html"><i class="fa fa-check"></i><b>7.7</b> Boxplots (geom_boxplot)</a></li>
-<li class="chapter" data-level="7.8" data-path="facets-facet_grid.html"><a href="facets-facet_grid.html"><i class="fa fa-check"></i><b>7.8</b> Facets (facet_grid)</a></li>
-<li class="chapter" data-level="7.9" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html"><i class="fa fa-check"></i><b>7.9</b> Bibliotecas Auxiliares</a>
+<li class="chapter" data-level="8.1" data-path="ggplot2.html"><a href="ggplot2.html#diagrama-de-dispersão-geom_point"><i class="fa fa-check"></i><b>8.1</b> Diagrama de Dispersão (geom_point)</a></li>
+<li class="chapter" data-level="8.2" data-path="ggplot2.html"><a href="ggplot2.html#centralizando-o-título-de-gráficos"><i class="fa fa-check"></i><b>8.2</b> Centralizando o Título de Gráficos</a></li>
+<li class="chapter" data-level="8.3" data-path="ggplot2.html"><a href="ggplot2.html#gráficos-de-barras-geom_bar-e-geom_col"><i class="fa fa-check"></i><b>8.3</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
+<li class="chapter" data-level="8.4" data-path="ggplot2.html"><a href="ggplot2.html#gráficos-de-linhas-geom_line"><i class="fa fa-check"></i><b>8.4</b> Gráficos de Linhas (geom_line)</a></li>
+<li class="chapter" data-level="8.5" data-path="ggplot2.html"><a href="ggplot2.html#gráfico-de-funções-stat_function"><i class="fa fa-check"></i><b>8.5</b> Gráfico de Funções (stat_function)</a></li>
+<li class="chapter" data-level="8.6" data-path="ggplot2.html"><a href="ggplot2.html#histogramas-geom_histogram"><i class="fa fa-check"></i><b>8.6</b> Histogramas (geom_histogram)</a></li>
+<li class="chapter" data-level="8.7" data-path="ggplot2.html"><a href="ggplot2.html#boxplots-geom_boxplot"><i class="fa fa-check"></i><b>8.7</b> Boxplots (geom_boxplot)</a></li>
+<li class="chapter" data-level="8.8" data-path="ggplot2.html"><a href="ggplot2.html#facets-facet_grid"><i class="fa fa-check"></i><b>8.8</b> Facets (facet_grid)</a></li>
+<li class="chapter" data-level="8.9" data-path="ggplot2.html"><a href="ggplot2.html#bibliotecas-auxiliares"><i class="fa fa-check"></i><b>8.9</b> Bibliotecas Auxiliares</a>
 <ul>
-<li class="chapter" data-level="7.9.1" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#cowplot"><i class="fa fa-check"></i><b>7.9.1</b> cowplot</a></li>
-<li class="chapter" data-level="7.9.2" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#ggally"><i class="fa fa-check"></i><b>7.9.2</b> GGally</a></li>
+<li class="chapter" data-level="8.9.1" data-path="ggplot2.html"><a href="ggplot2.html#cowplot"><i class="fa fa-check"></i><b>8.9.1</b> cowplot</a></li>
+<li class="chapter" data-level="8.9.2" data-path="ggplot2.html"><a href="ggplot2.html#ggally"><i class="fa fa-check"></i><b>8.9.2</b> GGally</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>8</b> Stringr</a></li>
-<li class="chapter" data-level="9" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>9</b> Forcats</a></li>
-<li class="chapter" data-level="10" data-path="lubridate.html"><a href="lubridate.html"><i class="fa fa-check"></i><b>10</b> Lubridate</a></li>
-<li class="part"><span><b>III Probabilidade</b></span></li>
-<li class="chapter" data-level="11" data-path="introdução-à-probabilidade.html"><a href="introdução-à-probabilidade.html"><i class="fa fa-check"></i><b>11</b> Introdução à Probabilidade</a></li>
-<li class="chapter" data-level="12" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>12</b> Tipos de Distribuições Discretas</a>
+<li class="part"><span><b>III Machine Learning</b></span></li>
+<li class="chapter" data-level="9" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>9</b> Introdução ao Machine Learning</a></li>
+<li class="chapter" data-level="10" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>10</b> Regressão Linear Simples</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="valor-médio-de-uma-variável-aleatória.html"><a href="valor-médio-de-uma-variável-aleatória.html"><i class="fa fa-check"></i><b>12.1</b> Valor Médio de uma Variável Aleatória</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>13</b> Tipos de Distribuições Contínuas</a></li>
-<li class="chapter" data-level="14" data-path="variáveis-aleatórias-multidimensionais.html"><a href="variáveis-aleatórias-multidimensionais.html"><i class="fa fa-check"></i><b>14</b> Variáveis Aleatórias Multidimensionais</a></li>
-<li class="chapter" data-level="15" data-path="introdução-à-inferência-estatística.html"><a href="introdução-à-inferência-estatística.html"><i class="fa fa-check"></i><b>15</b> Introdução à Inferência Estatística</a></li>
-<li class="chapter" data-level="16" data-path="estimação.html"><a href="estimação.html"><i class="fa fa-check"></i><b>16</b> Estimação</a></li>
-<li class="chapter" data-level="17" data-path="testes-de-hipóteses.html"><a href="testes-de-hipóteses.html"><i class="fa fa-check"></i><b>17</b> Testes de Hipóteses</a></li>
-<li class="part"><span><b>IV Machine Learning</b></span></li>
-<li class="chapter" data-level="18" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>18</b> Introdução ao Machine Learning</a></li>
-<li class="chapter" data-level="19" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>19</b> Regressão Linear</a>
+<li class="chapter" data-level="10.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#criando-o-modelo-estimando-seus-coeficientes"><i class="fa fa-check"></i><b>10.1</b> Criando o Modelo &amp; Estimando Seus Coeficientes</a></li>
+<li class="chapter" data-level="10.2" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#a-poeira-debaixo-do-tapete"><i class="fa fa-check"></i><b>10.2</b> A Poeira Debaixo do Tapete</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>19.1</b> Regressão Linear Simples</a></li>
-<li class="chapter" data-level="19.2" data-path="estimando-os-coeficientes.html"><a href="estimando-os-coeficientes.html"><i class="fa fa-check"></i><b>19.2</b> Estimando os Coeficientes</a></li>
-<li class="chapter" data-level="19.3" data-path="acurácia-da-estimativa-dos-coeficientes.html"><a href="acurácia-da-estimativa-dos-coeficientes.html"><i class="fa fa-check"></i><b>19.3</b> Acurácia da Estimativa dos Coeficientes</a></li>
-<li class="chapter" data-level="19.4" data-path="regressão-linear-múltipla.html"><a href="regressão-linear-múltipla.html"><i class="fa fa-check"></i><b>19.4</b> Regressão Linear Múltipla</a></li>
-<li class="chapter" data-level="19.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>19.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
+<li class="chapter" data-level="10.2.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#linearidade-nos-dados"><i class="fa fa-check"></i><b>10.2.1</b> Linearidade nos Dados</a></li>
+<li class="chapter" data-level="10.2.2" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#normalidade-dos-erros"><i class="fa fa-check"></i><b>10.2.2</b> Normalidade dos Erros</a></li>
 </ul></li>
-<li class="part"><span><b>V Projetos</b></span></li>
-<li class="chapter" data-level="20" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>20</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="10.3" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#boas-práticas-para-modelagem"><i class="fa fa-check"></i><b>10.3</b> Boas Práticas Para Modelagem</a></li>
+<li class="chapter" data-level="10.4" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#lidando-com-dados-categóricos"><i class="fa fa-check"></i><b>10.4</b> Lidando com Dados Categóricos</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="regressão-logística.html"><a href="regressão-logística.html"><i class="fa fa-check"></i><b>11</b> Regressão Logística</a></li>
+<li class="part"><span><b>IV Projetos</b></span></li>
+<li class="chapter" data-level="12" data-path="machine-learning-from-disaster.html"><a href="machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>12</b> Machine Learning from Disaster</a></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -271,19 +257,387 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="medidas-descritivas" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Capítulo 3</span> Medidas Descritivas<a href="medidas-descritivas.html#medidas-descritivas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="medidas-descritivas" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Medidas Descritivas<a href="medidas-descritivas.html#medidas-descritivas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <blockquote>
 <p><strong>Importante:</strong> A partir deste capítulo utilizaremos a função <code>kable</code> do pacote <code>knitr</code> para visualização de conjuntos de dados. Na prática isto não é necessário, apenas o realizamos para efeitos de visualização.</p>
 </blockquote>
+<div id="tipos-de-variáveis" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Tipos de Variáveis<a href="medidas-descritivas.html#tipos-de-variáveis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Antes de analisarmos conjuntos de dados, é necessário termos um conhecimento sobre tipos de variáveis. Para isto, consideremos a seguinte tabela:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="medidas-descritivas.html#cb23-1" aria-hidden="true" tabindex="-1"></a>nome <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Djoko&#39;</span>,<span class="st">&#39;Wilson&#39;</span>,<span class="st">&#39;Leon&#39;</span>, <span class="st">&#39;Nilce&#39;</span>)</span>
+<span id="cb23-2"><a href="medidas-descritivas.html#cb23-2" aria-hidden="true" tabindex="-1"></a>est_civil <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Solteiro&#39;</span>,<span class="st">&#39;Casado&#39;</span>, <span class="st">&#39;Casado&#39;</span>, <span class="st">&#39;Casado&#39;</span>)</span>
+<span id="cb23-3"><a href="medidas-descritivas.html#cb23-3" aria-hidden="true" tabindex="-1"></a>escolaridade <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;Pós-graduação&#39;</span>,</span>
+<span id="cb23-4"><a href="medidas-descritivas.html#cb23-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Ensino médio completo&#39;</span>,</span>
+<span id="cb23-5"><a href="medidas-descritivas.html#cb23-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Pós-graduação&#39;</span>,</span>
+<span id="cb23-6"><a href="medidas-descritivas.html#cb23-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Superior completo&#39;</span>)</span>
+<span id="cb23-7"><a href="medidas-descritivas.html#cb23-7" aria-hidden="true" tabindex="-1"></a>n_filhos <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb23-8"><a href="medidas-descritivas.html#cb23-8" aria-hidden="true" tabindex="-1"></a>salario <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">4500</span>, <span class="dv">3000</span>, <span class="dv">2000</span>, <span class="dv">5500</span>)</span>
+<span id="cb23-9"><a href="medidas-descritivas.html#cb23-9" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">29</span>, <span class="dv">33</span>, <span class="dv">39</span>, <span class="dv">32</span>)</span>
+<span id="cb23-10"><a href="medidas-descritivas.html#cb23-10" aria-hidden="true" tabindex="-1"></a>df_youtubers <span class="ot">=</span> <span class="fu">data.frame</span>(nome, est_civil, escolaridade, n_filhos, salario, idade)</span>
+<span id="cb23-11"><a href="medidas-descritivas.html#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df_youtubers, <span class="at">align =</span> <span class="st">&#39;c&#39;</span>,</span>
+<span id="cb23-12"><a href="medidas-descritivas.html#cb23-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&#39;Dados sobre Youtubers.&#39;</span>) <span class="co"># Melhor visualização dos dados para este PDF</span></span></code></pre></div>
+<table>
+<caption><span id="tab:youtubers">Table 4.1: </span>Dados sobre Youtubers.</caption>
+<colgroup>
+<col width="11%" />
+<col width="16%" />
+<col width="33%" />
+<col width="14%" />
+<col width="13%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">nome</th>
+<th align="center">est_civil</th>
+<th align="center">escolaridade</th>
+<th align="center">n_filhos</th>
+<th align="center">salario</th>
+<th align="center">idade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Djoko</td>
+<td align="center">Solteiro</td>
+<td align="center">Pós-graduação</td>
+<td align="center">0</td>
+<td align="center">4500</td>
+<td align="center">29</td>
+</tr>
+<tr class="even">
+<td align="center">Wilson</td>
+<td align="center">Casado</td>
+<td align="center">Ensino médio completo</td>
+<td align="center">0</td>
+<td align="center">3000</td>
+<td align="center">33</td>
+</tr>
+<tr class="odd">
+<td align="center">Leon</td>
+<td align="center">Casado</td>
+<td align="center">Pós-graduação</td>
+<td align="center">0</td>
+<td align="center">2000</td>
+<td align="center">39</td>
+</tr>
+<tr class="even">
+<td align="center">Nilce</td>
+<td align="center">Casado</td>
+<td align="center">Superior completo</td>
+<td align="center">0</td>
+<td align="center">5500</td>
+<td align="center">32</td>
+</tr>
+</tbody>
+</table>
+<p>Variáveis como sexo, escolaridade e estado civil apresentam realizações de uma qualidade ou atributo do indivíduo pesquisado, enquanto outras como número de filhos, salário e idade apresentam números como resultados de uma contagem ou mensuração. Chamamos as do primeiro tipo de <strong>qualitativas</strong> e as do segundo de <strong>quantitativas</strong></p>
+<p>Cada uma das duas ainda pode ser dividida em dois tipos:</p>
+<ul>
+<li><p><strong>Variável qualitativa nominal:</strong> atributos não apresentam uma ordem lógica;</p></li>
+<li><p><strong>Variável qualitativa ordinal:</strong> atributos apresentam uma ordem lógica bem estabelecida;</p></li>
+<li><p><strong>Variável quantitativa discreta:</strong> dados de contagem, assumem apenas valores inteiros;</p></li>
+<li><p><strong>Variável quantitativa contínua:</strong> dados que podem assumir qualquer tipo de valor.</p>
+<p><img src="figs/tipos_de_variaveis.png" /></p></li>
+</ul>
+<p>Muitas vezes queremos resumir estes dados, apresentando um ou mais valores que sejam representativos da série toda. Neste contexto entram às <strong>medidas de posição</strong> e <strong>dispersão</strong>.</p>
 </div>
+<div id="medidas-de-posição" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Medidas de Posição<a href="medidas-descritivas.html#medidas-de-posição" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Usualmente utilizamos uma das seguintes medidas de posição (ou localização): <strong>média, mediana ou moda</strong>. Vamos as suas definições:</p>
+<ul>
+<li>A uma variável atribuiremos a letra <span class="math inline">\(X\)</span> enquanto para seus elementos os valores <span class="math inline">\(x_1, \dots, x_n\)</span>, sendo <span class="math inline">\(n\)</span> o seu total de elementos.</li>
+<li><strong>Moda:</strong> valor mais frequente do conjunto de valores observados.</li>
+<li><strong>Mediana:</strong> valor que ocupa a posição central das observações quando estas estão ordenadas em ordem crescente.
+<ul>
+<li>Quando o número de observações for <strong>par</strong>, usa-se como mediana a média aritmética das duas observações centrais.</li>
+</ul></li>
+</ul>
+<p>Na tabela <a href="medidas-descritivas.html#tab:youtubers">4.1</a> temos a seguinte mediana para a coluna salário:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="medidas-descritivas.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(df_youtubers<span class="sc">$</span>salario)</span></code></pre></div>
+<pre><code>## [1] 3750</code></pre>
+<ul>
+<li>Matematicamente ordenamos os dados do menor para o maior: <span class="math inline">\(2000, 3000, 4500, 5500\)</span>, selecionamos as observações centrais <span class="math inline">\(3000\)</span> e <span class="math inline">\(4500\)</span>. Por fim, calculamos a média artimética de ambas, <span class="math inline">\(\frac{3000+4500}{2}\)</span>, para obtermos a mediana.</li>
+</ul>
+<p>Além disso, podemos calcular a mediana para todas as colunas:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="medidas-descritivas.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply: aplica uma função a um conjunto de dados</span></span>
+<span id="cb26-2"><a href="medidas-descritivas.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># MARGIN = 2: 1 para aplicar a função a todas as linhas e 2 a todas as colunas</span></span>
+<span id="cb26-3"><a href="medidas-descritivas.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># FUN: função a ser aplicada ao conjunto de dados</span></span>
+<span id="cb26-4"><a href="medidas-descritivas.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(df_youtubers[, <span class="fu">c</span>(<span class="st">&#39;n_filhos&#39;</span>,<span class="st">&#39;salario&#39;</span>,<span class="st">&#39;idade&#39;</span>)], <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> median)</span></code></pre></div>
+<pre><code>## n_filhos  salario    idade 
+##      0.0   3750.0     32.5</code></pre>
+<ul>
+<li><p><strong>Média:</strong> soma de todos os elementos do conjunto dividida pela quantidade de elementos do conjunto</p>
+<p><span class="math display">\[
+\overline{x} = \frac{x_1+x_2 + \dots + x_n}{n}
+\]</span></p></li>
+</ul>
+<p>Na tabela <a href="medidas-descritivas.html#tab:youtubers">4.1</a> temos a seguinte média para o salário:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="medidas-descritivas.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df_youtubers<span class="sc">$</span>salario)</span></code></pre></div>
+<pre><code>## [1] 3750</code></pre>
+<p>Podemos calcular para todas as colunas que possuam valores numéricos:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="medidas-descritivas.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colMeans</span>(df_youtubers[, <span class="fu">c</span>(<span class="st">&#39;idade&#39;</span>, <span class="st">&#39;salario&#39;</span>)])</span></code></pre></div>
+<pre><code>##   idade salario 
+##   33.25 3750.00</code></pre>
+</div>
+<div id="medidas-de-dispersão" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Medidas de Dispersão<a href="medidas-descritivas.html#medidas-de-dispersão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O <strong>resumo</strong> de um conjunto de dados por uma única medida representativa de posição esconde toda a informação sobre a variabilidade de um conjunto de observações. Consideremos que cinco alunos realizaram cinco provas, obtendo as seguintes notas:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="medidas-descritivas.html#cb32-1" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;alunoA&#39;</span>, <span class="st">&#39;alunoB&#39;</span>, <span class="st">&#39;alunoC&#39;</span>,</span>
+<span id="cb32-2"><a href="medidas-descritivas.html#cb32-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">&#39;alunoD&#39;</span>, <span class="st">&#39;alunoE&#39;</span>)</span>
+<span id="cb32-3"><a href="medidas-descritivas.html#cb32-3" aria-hidden="true" tabindex="-1"></a>notas <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,</span>
+<span id="cb32-4"><a href="medidas-descritivas.html#cb32-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,</span>
+<span id="cb32-5"><a href="medidas-descritivas.html#cb32-5" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">8</span>,</span>
+<span id="cb32-6"><a href="medidas-descritivas.html#cb32-6" aria-hidden="true" tabindex="-1"></a>               <span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">7</span>,</span>
+<span id="cb32-7"><a href="medidas-descritivas.html#cb32-7" aria-hidden="true" tabindex="-1"></a>               <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">byrow =</span> T)</span>
+<span id="cb32-8"><a href="medidas-descritivas.html#cb32-8" aria-hidden="true" tabindex="-1"></a>df_alunos <span class="ot">=</span> <span class="fu">data.frame</span>(notas, <span class="at">row.names =</span> nomes)</span>
+<span id="cb32-9"><a href="medidas-descritivas.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_alunos) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;P1&#39;</span>, <span class="st">&#39;P2&#39;</span>, <span class="st">&#39;P3&#39;</span>, <span class="st">&#39;P4&#39;</span>, <span class="st">&#39;P5&#39;</span>)</span>
+<span id="cb32-10"><a href="medidas-descritivas.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(df_alunos, <span class="at">align =</span> <span class="st">&#39;c&#39;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">P1</th>
+<th align="center">P2</th>
+<th align="center">P3</th>
+<th align="center">P4</th>
+<th align="center">P5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">alunoA</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+</tr>
+<tr class="even">
+<td align="left">alunoB</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">7</td>
+<td align="center">9</td>
+</tr>
+<tr class="odd">
+<td align="left">alunoC</td>
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">8</td>
+</tr>
+<tr class="even">
+<td align="left">alunoD</td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">7</td>
+</tr>
+<tr class="odd">
+<td align="left">alunoE</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">10</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+<p>Temos as seguintes médias para os alunos:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="medidas-descritivas.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Podemos ver a média de cada coluna utilizando colMeans(df_alunos)</span></span>
+<span id="cb33-2"><a href="medidas-descritivas.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rowMeans</span>(df_alunos)</span></code></pre></div>
+<pre><code>## alunoA alunoB alunoC alunoD alunoE 
+##      5      5      5      5      5</code></pre>
+<p>Cada aluno possui a mesma média de notas, porém, isto não informa nada sobre a diferença na <strong>variabilidade das notas.</strong> A partir disto, são criadas medidas que sumarizam a <strong>variabilidade</strong> de um conjunto de observações.</p>
+<p>Uma primeira ideia é considerar a soma das diferença dos dados em relação a média:</p>
+<p><span class="math display">\[
+x_1 - \overline{x} + x_2 - \overline{x} + \cdots + x_n - \overline{x}
+\]</span></p>
+<p>Porém, podemos mostrar que em qualquer conjunto a soma destes desvios é igual a zero. Uma alternativa é então adicionar o valor absoluto em cada diferença:</p>
+<p><span class="math display">\[
+|x_1 - \overline{x}| + |x_2 - \overline{x}| + \cdots + |x_n - \overline{x}|
+\]</span></p>
+<p>Apesar de possuir uma boa interpretabilidade, tal métrica não possui propriedades matemáticas interessantes. Assim, estatísticos trabalham com a diferença dos dados em relação a média ao quadrado:</p>
+<p><span class="math display">\[
+(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2
+\]</span></p>
+<p>Como muitas vezes queremos comparar conjuntos de dados de diferentes tamanhos, realizamos a divisão desta soma pelo total de elementos em uma amostra e a este número chamamos de <strong>variância</strong>:</p>
+<p><span class="math display">\[
+\text{var}(X) = \frac{(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \cdots + (x_n - \overline{x})^2}{n}
+\]</span></p>
+<p>E a partir disto, definimos <strong>desvio padrão</strong> como sendo a raiz da variância:</p>
+<p><span class="math display">\[
+\text{dp} = \sqrt{\text{var}(X)}
+\]</span></p>
+<p>Realizamos isto pois caso os dados estejam em uma certa unidade de medida, como <span class="math inline">\(cm\)</span> , ao calcularmos a variância passamos a trabalhar com <span class="math inline">\(cm^2\)</span>, o que dificulta a interpretabilidade dos resultados. Utilizando o valor na raiz quadrada, voltamos a trabalhar com a unidade de medida utilizada.</p>
+</div>
+<div id="quantis-empíricos" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Quantis Empíricos<a href="medidas-descritivas.html#quantis-empíricos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tanto a <strong>média</strong> como o <strong>desvio padrão</strong> podem não ser medidas adequadas para representar um conjunto de dados, uma vez que:</p>
+<ul>
+<li><p>São afetados por <strong>valores extremos;</strong></p></li>
+<li><p>Apenas os dois valores não dão informação sobre a <strong>simetria</strong> ou <strong>assimetria</strong> da distribuição dos dados</p></li>
+</ul>
+<p>Vimos que a <strong>mediana</strong> define uma divisão dos dados em duas metades. Além dela existem medidas chamadas de <strong>quantil de ordem p</strong> ou <strong>p-quantil</strong> indicado por <span class="math inline">\(q(p)\)</span> onde <span class="math inline">\(p\)</span> é uma proporção qualquer, <span class="math inline">\(0&lt;p&lt;1\)</span> tal que <span class="math inline">\(100\%\)</span> das observações sejam menores do que <span class="math inline">\(q(p)\)</span>.</p>
+<p>Abaixo temos alguns dos nomes dos quantis mais utilizados:</p>
+<ul>
+<li><p><span class="math inline">\(q(0.25) = q_1:\)</span> <strong>1° Quartil</strong> ou <strong>25° Percentil</strong></p></li>
+<li><p><span class="math inline">\(q(0.50) = q_2:\)</span> <strong>2° Quartil</strong>, <strong>Mediana</strong> ou <strong>50° Percentil</strong></p></li>
+<li><p><span class="math inline">\(q(0.75) = q_3:\)</span> <strong>3° Quartil</strong> ou <strong>75° Percentil</strong></p></li>
+<li><p><span class="math inline">\(q(0.40) 1:\)</span> <strong>4° Decil</strong></p></li>
+<li><p><span class="math inline">\(q(0.95):\)</span> <strong>95° Percentil</strong></p></li>
+</ul>
+<p>No <code>R</code> podemos visualizar os quartis da seguinte forma:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="medidas-descritivas.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(df_alunos<span class="sc">$</span>P1)</span></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+##    0    1    2    3    3</code></pre>
+<p>Em várias colunas:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="medidas-descritivas.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(df_alunos, <span class="dv">2</span>, quantile, <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,.<span class="dv">2</span>))</span></code></pre></div>
+<pre><code>##       P1  P2 P3   P4   P5
+## 0%   0.0 0.0  5  5.0  7.0
+## 20%  0.8 2.4  5  5.0  7.0
+## 40%  1.6 3.6  5  5.6  7.6
+## 60%  2.4 4.4  5  6.4  8.4
+## 80%  3.0 5.0  5  7.6  9.2
+## 100% 3.0 5.0  5 10.0 10.0</code></pre>
+</div>
+<div id="box-plot" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Box Plot<a href="medidas-descritivas.html#box-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A informação contida nos quantis pode ser confusa quando estamos observando vários conjuntos de dados. A partir disto a traduzimos em um diagrama, qual é chamado de <strong>box plot:</strong></p>
+<p>Para construção dessa gráfico definimos por <strong>intervalo interquartil</strong> o valor:</p>
+<p><span class="math display">\[
+\text{IQ}(X) = q_3 - q_1
+\]</span></p>
+<p>Desenhamos um retângulo que parte do primeiro quartil até o terceiro, com a mediana sendo representada por uma linha em seu interior. A partir do retângulo desenhamos uma linha até o maior ponto que não exceta o valor <span class="math inline">\(q_3+1.5 \cdot \text{IQ}(X)\)</span>, chamado de limite superior. De modo análogo fazemos o mesmo procedimento até a parte inferior do retângulo considerando o valor <span class="math inline">\(q_1 + 1.5 \cdot \text{IQ}(X)\)</span> chamado de limite interior. As observações que estiverem acima do limite superior ou abaixo do limite superior são chamados de pontos exteriores e representadas por asteriscos. Essas observações podem ser chamaas de outliers ou valores atípicos.</p>
+<p>Modo simples de como realizar um boxplot pelo R:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="medidas-descritivas.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_alunos, <span class="at">xlab =</span> <span class="st">&quot;Provas&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Notas&quot;</span>,</span>
+<span id="cb39-2"><a href="medidas-descritivas.html#cb39-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Boxplot dos alunos&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p>O aluno mais atento pode se perguntar: porque alguns dos boxplots não possuem a linha superior e/ou inferior? Isto ocorre quando temos muitos dados em uma mesma categoria, com o primeiro ou terceiro quartil tendo o mesmo valor que o mínimo ou máximo do conjunto de dados:</p>
+</blockquote>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="medidas-descritivas.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(df_alunos, <span class="dv">2</span>, quantile)</span></code></pre></div>
+<pre><code>##      P1 P2 P3 P4 P5
+## 0%    0  0  5  5  7
+## 25%   1  3  5  5  7
+## 50%   2  4  5  6  8
+## 75%   3  5  5  7  9
+## 100%  3  5  5 10 10</code></pre>
+<p>O <strong>box plot</strong> dá uma ideia de posição, dispersão, assimetria dos dados.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="medidas-descritivas.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df_alunos<span class="sc">$</span>P4, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="fl">0.5</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="transformações" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Transformações<a href="medidas-descritivas.html#transformações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vários procedimentos estatísticos são baseados na posição que os dados possuem uma distribuição em forma de sino (distribuição normal) ou que a distribuição seja mais ou menos simétrica:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="medidas-descritivas.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simula 500 dados de uma distribuição normal</span></span>
+<span id="cb43-2"><a href="medidas-descritivas.html#cb43-2" aria-hidden="true" tabindex="-1"></a>dados_normal <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10000</span>)</span>
+<span id="cb43-3"><a href="medidas-descritivas.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de suas frequências</span></span>
+<span id="cb43-4"><a href="medidas-descritivas.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dados_normal)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Se quisermos utilizar tais procedimentos podemos efetuar transformações nas observações, de modo a se obter uma distribuição mais simétrica e próxima da normal. As transformações mais frequentemente utilizadas são:</p>
+<p><span class="math display">\[
+x = \left\{\begin{matrix}&amp;\sqrt{x}\\ &amp;\ln(x) \\&amp;\frac{1}{x}\end{matrix}\right.
+\]</span></p>
+<p>para cada transformação obtemos gráficos apropriados para os dados originais e transformados, de modo a escolhermos o valor mais adequado de <span class="math inline">\(p\)</span>.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="medidas-descritivas.html#cb44-1" aria-hidden="true" tabindex="-1"></a>dados_gamma <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="at">n =</span> <span class="dv">300</span>, <span class="at">shape =</span> <span class="dv">1</span>)</span>
+<span id="cb44-2"><a href="medidas-descritivas.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># MultiFrame rowwise layout</span></span>
+<span id="cb44-3"><a href="medidas-descritivas.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dados_gamma)</span>
+<span id="cb44-4"><a href="medidas-descritivas.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">sqrt</span>(dados_gamma))</span>
+<span id="cb44-5"><a href="medidas-descritivas.html#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="dv">1</span><span class="sc">/</span>dados_gamma)</span>
+<span id="cb44-6"><a href="medidas-descritivas.html#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">log</span>(dados_gamma))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="lab-01---conjunto-de-dados-iris" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Lab 01 - Conjunto de dados Iris<a href="medidas-descritivas.html#lab-01---conjunto-de-dados-iris" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O conjunto de dados Iris é um dos mais utilizados quando introduzimos conceitos de ciência de dados. Este pode ser encontrado em <a href="http://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a>. Tal conjunto consiste de 150 amostras de 4 tipos de espécies de flores distintas contendo os atributos:</p>
+<ul>
+<li><p>SepalLengthCm</p></li>
+<li><p>SepalWidthCm</p></li>
+<li><p>PetalLengthCm</p></li>
+<li><p>PetalWidthCm</p></li>
+</ul>
+<p>Podemos acessá-lo no R sem nenhum carregamento prévio da seguinte forma:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="medidas-descritivas.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A função head() mostra os cinco primeiros itens de data.frame:</span></span>
+<span id="cb45-2"><a href="medidas-descritivas.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<p>Há certas boas práticas ao carregar um conjunto de dados, dentre elas temos:</p>
+<ul>
+<li><p>Visualização de sua dimensão:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="medidas-descritivas.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O primeiro valor é a quantidade de linhas do conjunto de dados</span></span>
+<span id="cb47-2"><a href="medidas-descritivas.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e o segundo a sua quantidade de atributos</span></span>
+<span id="cb47-3"><a href="medidas-descritivas.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code></pre></div>
+<pre><code>## [1] 150   5</code></pre></li>
+<li><p>Visualização do tipo de cada atributo:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="medidas-descritivas.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris) <span class="co"># Structure of an Arbitrary R Object</span></span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre></li>
+<li><p>Sumário de seus atributos:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="medidas-descritivas.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code></pre></div>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre></li>
+</ul>
+<p>Dessa maneira poderemos contatar valores errôneos no conjunto de dados, distribuições de variáveis categóricas e ter um melhor contato com o conjunto de dados.</p>
+<p>Há ainda diversas maneiras de realizarmos visualizações desse conjunto no <code>R</code>, observemos o boxplot da variável Sepa.Length:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="medidas-descritivas.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(iris<span class="sc">$</span>Sepal.Length)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Observamos que não há presença de outliers, além disso, como a parte debaixo do retângulo separado pela linha que representa a mediana é menor, isto indica que a distribuição dos dados é ligeiramente assimétrica, o qual é confirmado pelo histograma:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="medidas-descritivas.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(iris<span class="sc">$</span>Sepal.Length)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="medidas-descritivas.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">fill =</span> ..count..)) <span class="sc">+</span></span>
+<span id="cb55-2"><a href="medidas-descritivas.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.25</span>, <span class="at">boundary =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb55-3"><a href="medidas-descritivas.html#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.25</span>)) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="lab-02---xadrez-brasil" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Lab 02 - Xadrez Brasil<a href="medidas-descritivas.html#lab-02---xadrez-brasil" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Em 2022 houve uma polêmica no universo de xadrez entre o atual campeão mundial de xadrez Magnus Carlsen e o jovem grande mestre Hanns Niemann, qual possui um histórico de trapaças e foi acusado de repetir estes atos no torneio. Magnus chegou a abandonar o torneio motivado por acreditar que seu oponente utilizava de engines em sua partida.</p>
+<p>Baseado nisso vários estatísticos se debrulharam entre as partidas de Niemann com o objetivo de encontrar evidências de sua rápida ascensão no xadrez, qual bateu recordes como grande mestre mais rápido da história.</p>
+<p><a href="https://ratings.fide.com/profile/2093596/chart"><img src="figs/niemann_rating.png" alt="Rating FIDE de Hans Niemann." /></a></p>
+<p>Uma destas analises foi realizada pelo canal brasileiro de youtube Xadrez Brasil, e nela podemos observar como medidas de posição e dispersão podem ser utilizadas para fortalecer ou não a hipótese de que Niemann estava trapaçeando.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=60QPEGsOCyw" class="uri">https://www.youtube.com/watch?v=60QPEGsOCyw</a></li>
+</ul>
+
+</div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="trabalhando-com-datas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tipos-de-variáveis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introdução-ao-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introdução-ao-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
