@@ -1,13 +1,9 @@
-Welcome! 
+Bem vindo!
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+Estas são minhas anotações para a aula de Ciência de Dados com R.
 
-This template provides a skeleton file structure that you can edit to create your book. 
+Este repositório é tanto para aqueles que gostariam de aprender sobre R, vendo as anotações de aula tanto para os entusiastas de bookdown, aqui vocês encontrarão várias soluções que foram pesquisadas individualmente para alguns problemas do layout do projeto, sintam-se livres para seguir de exemplo ou sugerir alterações :)
 
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
+# Capítulos
 
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+- [ ] Introdução
