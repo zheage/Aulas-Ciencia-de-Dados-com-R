@@ -1,14 +1,21 @@
 # Introdução
 
-Bem vindo!
+::: {style="display: flex;"}
+::: {.column width="50%"}
+![](figs/rick.jpg){width="360"}
+:::
 
-Sou formado em Matemática pela UNESP e atualmente faço mestrado em estatística pelo programa PIPGEs. Já me perguntei diversas vezes em como toda a teoria de probabilidade, estatística, inferência e de aprendizado de máquina é utilizada na prática, para resolver problemas que me deixavam curioso ou até mesmo competições de programação. Este livro vem para resolver este tipo de problema que chamou tanto minha atenção no passado.
+::: {.column width="50%"}
+Richard é formado em Matemática pela Universidade Estadual Paulista (UNESP) e atualmente mestrando em estatística pelo programa PIPGEs, programa conjunto da USP e UFScar. Busca com este livro aprender a cada dia mais sobre a linguagem `R`, além de compartilhar, em português, seus conhecimentos com outras pessoas, tornando a aprendizagem mais acessível a todos. Ademais, é apaixonado por relacionar problemas reais, da cultura nerd e geek com aplicações da área de análise de dados e aprendizado de máquina, sendo este livro um compilado de teoria e aplicações em conjuntos de dados reais.
+:::
+:::
 
-Este livro tem como objetivo servir como guia para as aulas do curso Ciência de Dados com R. Nele apresentaremos os conceitos de:
+Neste livro os temas são separados pelos seguintes tópicos:
 
-1.  **Estatística Básica:** Nesta parte do curso abordaremos conceitos de estatística como variáveis, tipos de distribuições discretas e contínuas, medidas descritivas e distribuição normal.
-2.  **Manipulação de dados no R:** Neste tópico serão abordados as principais formas de manipulação de dados utilizando a linguagem R, com ênfase nas bibliotecas dplyr e tidyr. Além disso, abordaremos a criação de gráficos pelo pacote ggplot2.
-3.  **Modelos de Regressão Linear:** Parte final do curso, onde o aluno aprenderá sobre diagrama de dispersão, coeficiente de correlação linear, regressão linear simples, múltipla e regressão logística, ganhando a capacidade de começar a criar modelos utilizando a linguagem R.
+-   **Análise de Dados**
+-   **Tidyverse**
+-   **Machine Learning**
+-   **Projetos**
 
 ```{r, include = FALSE}
 library(dplyr) # Manipulação de dados

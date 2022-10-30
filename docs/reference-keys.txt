@@ -64,5 +64,6 @@ coeficiente-de-correlação-de-pearson
 normalidade-dos-erros
 boas-práticas-para-modelagem
 lidando-com-dados-categóricos
+regressão-linear-múltipla
 regressão-logística
 machine-learning-from-disaster

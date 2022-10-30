@@ -1,0 +1,67 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Regressão Linear Múltipla
+
+Apesar de da regressão simples ser o primeiro tópico abordado quando
+falamos do tema, este é sem dúvida uma ferramenta um tanto quanto
+utópica. Prever uma coluna com base em apenas \*/uma\*\* outra uma é um
+passo para simplificar demasiadamente o mundo real.
+
+Dessa forma surge o tema de regressão múltipla, onde múltiplas colunas
+do nosso banco de dados são fornecidas para o ajuste do modelo de
+regressão linear:
+
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n.
+$$
+
+Aqui não é interessante destrincharmos como os coeficientes são
+cálculados, mas apenas evidenciarmos que este modelo é uma generalização
+do processo anterior, tanto a forma de minimizar os erros e os resíduos
+são definidas de fórma análoga.
+
+Seja $\hat{Y}=(\hat{y_1}, \hat{y_2}, \dots, \hat{y_n})$ o vetor de
+previsão do modelo para os dados utilizandos em seu treinamento
+$X=(X_1, X_2, \dots, X_n)$, então chamamos de **i-ésimo resíduo** o
+valor:
+
+$$
+e_i = y_i - \widehat{y_i}
+$$
+
+Assim como no modelo simples estamos interessados em minimizar a **soma
+dos quadrados dos resíduos**:
+
+$$
+\text{RSS} = e_1^2+e_2^2+\dots + e_n^2
+$$
+
+A resolução deste problema é um tanto mais complexa que o modelo
+simples, o importante é que o **príncipio por trás de ambos o modelo é o
+mesmo**.
+
+Nosso foco será na criação de modelos utilizando Rmarkdown, uma
+linguagem que combina a linguagem `R` com a linguagem de textos
+`Markdown`, útil para criação de relatórios e sites na internet. Estas
+anotações por exemplo estão sendo criadas em Markdown utilizando um
+"pacote irmão", chamda de `bookdown`.
+
+Como normalmente elaboramos tanto arquivos em HTML quanto PDF utilizando
+o Rmarkdown, iremos agora para a parte prática, onde elaboraremos
+relatórios sobre regressão linear múltipla.
+
+> <center> <h4> <span style ="color:#3ACFF2" > EXERCÍCIOS
+> </span> </h4></center>
+>
+> 1.  Primeiro exercício
+> 2.  Segundo exercício
+
+> <center> <h4> <span style ="color:#DB54EB" > IMPORTANTE
+> </span> </h4></center>
+
+> <center> <h4> <span style ="color:#753AF2" > COMENTÁRIOS
+> </span> </h4></center>

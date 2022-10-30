@@ -1,4 +1,4 @@
-# (PART) Tidyverse {.unnumbered}
+# (PART) Tidyverse {-}
 
 # Introdução ao Tidyverse
 
@@ -53,11 +53,7 @@ Trabalharemos especialmente com [Data Munging](https://www.astera.com/pt/type/bl
 
 # Readr
 
-<center>
-
-![](figs/readr_logo.png)
-
-</center>
+<center>![](figs/readr_logo.png)</center>
 
 # Dplyr & Tidyr
 
@@ -131,11 +127,7 @@ distinct(alunos)
 
 ### Operador Pipe
 
-<center>
-
-![](figs/operador_pipe.png)
-
-</center>
+<center>![](figs/operador_pipe.png)</center>
 
 A ideia do operador pipe, `%>%` é bem simples, usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.
 
@@ -362,11 +354,7 @@ paged_table(pokemon_stats %>%
 
 ## Remodelando Dados
 
-<center>
-
-![](figs/tidy_logo.png)
-
-</center>
+<center>![](figs/tidy_logo.png)</center>
 
 Mudar o formato e configuração dos dados permite separar variáveis que estão em uma coluna em mais de uma ou unir várias colunas em uma. Além disso podemos mudar o nome de colunas ou até mesmo ordenar seus valores de forma crescente. A biblioteca `tidyr` é perfeita para para isto, imagine-se trabalhando com a variável mês e dia em um conjunto de dados. Em vários algoritmos é interessante considerarmos o mês e o dia como atributos separados, assim cada um é alocado a uma coluna do conjunto de dados para que possamos realizar o ajuste dos algoritmos.
 

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>19.4 Regressão Linear Múltipla | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
+  <title>Capítulo 8 Regressão Linear Múltipla | CIÊNCIA DE DADOS COM LINGUAGEM R</title>
   <meta name="description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
 #set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="19.4 Regressão Linear Múltipla | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta property="og:title" content="Capítulo 8 Regressão Linear Múltipla | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@
   <meta name="github-repo" content="https://zheage.github.io/Aulas-Ciencia-de-Dados-com-R" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="19.4 Regressão Linear Múltipla | CIÊNCIA DE DADOS COM LINGUAGEM R" />
+  <meta name="twitter:title" content="Capítulo 8 Regressão Linear Múltipla | CIÊNCIA DE DADOS COM LINGUAGEM R" />
   
   <meta name="twitter:description" content="<p>#This is a minimal example of using the bookdown package to write a book.
 #The HTML output format for this example is bookdown::gitbook,
@@ -35,8 +35,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="acurácia-da-estimativa-dos-coeficientes.html"/>
-<link rel="next" href="questões-importantes-sobre-o-modelo-linear.html"/>
+<link rel="prev" href="regressão-linear-simples.html"/>
+<link rel="next" href="regressão-logística.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -57,74 +57,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -143,116 +77,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a>Ciência de Dados com R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre o autor</a></li>
-<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introdução.html"><a href="introdução.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>1.1</b> Motor Trend Car Road Test (mtcars)</a></li>
+<li class="chapter" data-level="1.2" data-path="introdução.html"><a href="introdução.html#pokémons-dataset"><i class="fa fa-check"></i><b>1.2</b> Pokémons Dataset</a></li>
+<li class="chapter" data-level="1.3" data-path="introdução.html"><a href="introdução.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>1.3</b> Fifa 2022 Player Dataset</a></li>
+</ul></li>
 <li class="part"><span><b>I Análise de Dados</b></span></li>
 <li class="chapter" data-level="2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introdução-a-fatores.html"><a href="introdução-a-fatores.html"><i class="fa fa-check"></i><b>2.1</b> Introdução a Fatores</a></li>
-<li class="chapter" data-level="2.2" data-path="trabalhando-com-datas.html"><a href="trabalhando-com-datas.html"><i class="fa fa-check"></i><b>2.2</b> Trabalhando com Datas</a></li>
+<li class="chapter" data-level="2.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#introdução-a-fatores"><i class="fa fa-check"></i><b>2.1</b> Introdução a Fatores</a></li>
+<li class="chapter" data-level="2.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#trabalhando-com-datas"><i class="fa fa-check"></i><b>2.2</b> Trabalhando com Datas</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html"><i class="fa fa-check"></i><b>3</b> Medidas Descritivas</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tipos-de-variáveis.html"><a href="tipos-de-variáveis.html"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a></li>
-<li class="chapter" data-level="3.2" data-path="medidas-de-posição.html"><a href="medidas-de-posição.html"><i class="fa fa-check"></i><b>3.2</b> Medidas de Posição</a></li>
-<li class="chapter" data-level="3.3" data-path="medidas-de-dispersão.html"><a href="medidas-de-dispersão.html"><i class="fa fa-check"></i><b>3.3</b> Medidas de Dispersão</a></li>
-<li class="chapter" data-level="3.4" data-path="quantis-empíricos.html"><a href="quantis-empíricos.html"><i class="fa fa-check"></i><b>3.4</b> Quantis Empíricos</a></li>
-<li class="chapter" data-level="3.5" data-path="box-plot.html"><a href="box-plot.html"><i class="fa fa-check"></i><b>3.5</b> Box Plot</a></li>
-<li class="chapter" data-level="3.6" data-path="transformações.html"><a href="transformações.html"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
-<li class="chapter" data-level="3.7" data-path="lab-01---conjunto-de-dados-iris.html"><a href="lab-01---conjunto-de-dados-iris.html"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
-<li class="chapter" data-level="3.8" data-path="lab-02---xadrez-brasil.html"><a href="lab-02---xadrez-brasil.html"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
+<li class="chapter" data-level="3.1" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#tipos-de-variáveis"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a></li>
+<li class="chapter" data-level="3.2" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-posição"><i class="fa fa-check"></i><b>3.2</b> Medidas de Posição</a></li>
+<li class="chapter" data-level="3.3" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>3.3</b> Medidas de Dispersão</a></li>
+<li class="chapter" data-level="3.4" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#quantis-empíricos"><i class="fa fa-check"></i><b>3.4</b> Quantis Empíricos</a></li>
+<li class="chapter" data-level="3.5" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#box-plot"><i class="fa fa-check"></i><b>3.5</b> Box Plot</a></li>
+<li class="chapter" data-level="3.6" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#transformações"><i class="fa fa-check"></i><b>3.6</b> Transformações</a></li>
+<li class="chapter" data-level="3.7" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-01---conjunto-de-dados-iris"><i class="fa fa-check"></i><b>3.7</b> Lab 01 - Conjunto de dados Iris</a></li>
+<li class="chapter" data-level="3.8" data-path="medidas-descritivas.html"><a href="medidas-descritivas.html#lab-02---xadrez-brasil"><i class="fa fa-check"></i><b>3.8</b> Lab 02 - Xadrez Brasil</a></li>
 </ul></li>
 <li class="part"><span><b>II Tidyverse</b></span></li>
 <li class="chapter" data-level="4" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Introdução ao Tidyverse</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html"><i class="fa fa-check"></i><b>4.1</b> Dados utilizados</a>
+<li class="chapter" data-level="4.1" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#extração-de-observações-linhas"><i class="fa fa-check"></i><b>4.1</b> Extração de Observações (Linhas)</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="dados-utilizados.html"><a href="dados-utilizados.html#motor-trend-car-road-test-mtcars"><i class="fa fa-check"></i><b>4.1.1</b> Motor Trend Car Road Test (mtcars)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="dados-utilizados.html"><a href="dados-utilizados.html#pokémons-dataset"><i class="fa fa-check"></i><b>4.1.2</b> Pokémons Dataset</a></li>
-<li class="chapter" data-level="4.1.3" data-path="dados-utilizados.html"><a href="dados-utilizados.html#fifa-2022-player-dataset"><i class="fa fa-check"></i><b>4.1.3</b> Fifa 2022 Player Dataset</a></li>
+<li class="chapter" data-level="4.1.1" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#filter"><i class="fa fa-check"></i><b>4.1.1</b> filter</a></li>
+<li class="chapter" data-level="4.1.2" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#distinct"><i class="fa fa-check"></i><b>4.1.2</b> distinct</a></li>
+<li class="chapter" data-level="4.1.3" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#operador-pipe"><i class="fa fa-check"></i><b>4.1.3</b> Operador Pipe</a></li>
+<li class="chapter" data-level="4.1.4" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#sample_frac"><i class="fa fa-check"></i><b>4.1.4</b> sample_frac</a></li>
+<li class="chapter" data-level="4.1.5" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#slice"><i class="fa fa-check"></i><b>4.1.5</b> slice</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="introdução-a-fatores-1.html"><a href="introdução-a-fatores-1.html"><i class="fa fa-check"></i><b>4.2</b> Introdução a fatores</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="readr.html"><a href="readr.html"><i class="fa fa-check"></i><b>5</b> Readr</a></li>
-<li class="chapter" data-level="6" data-path="dplyr-tidyr.html"><a href="dplyr-tidyr.html"><i class="fa fa-check"></i><b>6</b> Dplyr &amp; Tidyr</a>
+<li class="chapter" data-level="4.2" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#extração-de-variáveis-colunas"><i class="fa fa-check"></i><b>4.2</b> Extração de Variáveis (Colunas)</a></li>
+<li class="chapter" data-level="4.3" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#resumir-dados"><i class="fa fa-check"></i><b>4.3</b> Resumir dados</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html"><i class="fa fa-check"></i><b>6.1</b> Extração de Observações (Linhas)</a>
+<li class="chapter" data-level="4.3.1" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#summarise"><i class="fa fa-check"></i><b>4.3.1</b> summarise</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#summarise_each"><i class="fa fa-check"></i><b>4.3.2</b> summarise_each</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#count"><i class="fa fa-check"></i><b>4.3.3</b> count</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#criação-de-novas-variáveis"><i class="fa fa-check"></i><b>4.4</b> Criação de Novas Variáveis</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#filter"><i class="fa fa-check"></i><b>6.1.1</b> filter</a></li>
-<li class="chapter" data-level="6.1.2" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#distinct"><i class="fa fa-check"></i><b>6.1.2</b> distinct</a></li>
-<li class="chapter" data-level="6.1.3" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#o-operador-pipe"><i class="fa fa-check"></i><b>6.1.3</b> O Operador Pipe</a></li>
-<li class="chapter" data-level="6.1.4" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#sample_frac"><i class="fa fa-check"></i><b>6.1.4</b> sample_frac</a></li>
-<li class="chapter" data-level="6.1.5" data-path="extração-de-observações-linhas.html"><a href="extração-de-observações-linhas.html#slice"><i class="fa fa-check"></i><b>6.1.5</b> slice</a></li>
+<li class="chapter" data-level="4.4.1" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#mutate"><i class="fa fa-check"></i><b>4.4.1</b> mutate</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#transmute"><i class="fa fa-check"></i><b>4.4.2</b> transmute</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="extração-de-variáveis-colunas.html"><a href="extração-de-variáveis-colunas.html"><i class="fa fa-check"></i><b>6.2</b> Extração de Variáveis (Colunas)</a></li>
-<li class="chapter" data-level="6.3" data-path="resumir-dados.html"><a href="resumir-dados.html"><i class="fa fa-check"></i><b>6.3</b> Resumir dados</a>
+<li class="chapter" data-level="4.5" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#combinar-conjuntos-de-dados"><i class="fa fa-check"></i><b>4.5</b> Combinar Conjuntos de Dados</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise"><i class="fa fa-check"></i><b>6.3.1</b> summarise</a></li>
-<li class="chapter" data-level="6.3.2" data-path="resumir-dados.html"><a href="resumir-dados.html#summarise_each"><i class="fa fa-check"></i><b>6.3.2</b> summarise_each</a></li>
-<li class="chapter" data-level="6.3.3" data-path="resumir-dados.html"><a href="resumir-dados.html#count"><i class="fa fa-check"></i><b>6.3.3</b> count</a></li>
+<li class="chapter" data-level="4.5.1" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#left_join"><i class="fa fa-check"></i><b>4.5.1</b> left_join</a></li>
+<li class="chapter" data-level="4.5.2" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#inner_join"><i class="fa fa-check"></i><b>4.5.2</b> inner_join</a></li>
+<li class="chapter" data-level="4.5.3" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#full_join"><i class="fa fa-check"></i><b>4.5.3</b> full_join</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html"><i class="fa fa-check"></i><b>6.4</b> Criação de Novas Variáveis</a>
+<li class="chapter" data-level="4.6" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#agrupar-dados-group_by"><i class="fa fa-check"></i><b>4.6</b> Agrupar Dados (group_by)</a></li>
+<li class="chapter" data-level="4.7" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#remodelando-dados"><i class="fa fa-check"></i><b>4.7</b> Remodelando Dados</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#mutate"><i class="fa fa-check"></i><b>6.4.1</b> mutate</a></li>
-<li class="chapter" data-level="6.4.2" data-path="criação-de-novas-variáveis.html"><a href="criação-de-novas-variáveis.html#transmute"><i class="fa fa-check"></i><b>6.4.2</b> transmute</a></li>
+<li class="chapter" data-level="4.7.1" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#arrange"><i class="fa fa-check"></i><b>4.7.1</b> arrange</a></li>
+<li class="chapter" data-level="4.7.2" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#rename"><i class="fa fa-check"></i><b>4.7.2</b> rename</a></li>
+<li class="chapter" data-level="4.7.3" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#separate"><i class="fa fa-check"></i><b>4.7.3</b> separate</a></li>
+<li class="chapter" data-level="4.7.4" data-path="introdução-ao-tidyverse.html"><a href="introdução-ao-tidyverse.html#unite"><i class="fa fa-check"></i><b>4.7.4</b> unite</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html"><i class="fa fa-check"></i><b>6.5</b> Combinar Conjuntos de Dados</a>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>5</b> GGPlot2</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#left_join"><i class="fa fa-check"></i><b>6.5.1</b> left_join</a></li>
-<li class="chapter" data-level="6.5.2" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#inner_join"><i class="fa fa-check"></i><b>6.5.2</b> inner_join</a></li>
-<li class="chapter" data-level="6.5.3" data-path="combinar-conjuntos-de-dados.html"><a href="combinar-conjuntos-de-dados.html#full_join"><i class="fa fa-check"></i><b>6.5.3</b> full_join</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="agrupar-dados-group_by.html"><a href="agrupar-dados-group_by.html"><i class="fa fa-check"></i><b>6.6</b> Agrupar Dados (group_by)</a></li>
-<li class="chapter" data-level="6.7" data-path="remodelando-dados.html"><a href="remodelando-dados.html"><i class="fa fa-check"></i><b>6.7</b> Remodelando Dados</a>
+<li class="chapter" data-level="5.1" data-path="ggplot2.html"><a href="ggplot2.html#diagrama-de-dispersão-geom_point"><i class="fa fa-check"></i><b>5.1</b> Diagrama de Dispersão (geom_point)</a></li>
+<li class="chapter" data-level="5.2" data-path="ggplot2.html"><a href="ggplot2.html#centralizando-o-título-de-gráficos"><i class="fa fa-check"></i><b>5.2</b> Centralizando o Título de Gráficos</a></li>
+<li class="chapter" data-level="5.3" data-path="ggplot2.html"><a href="ggplot2.html#gráficos-de-barras-geom_bar-e-geom_col"><i class="fa fa-check"></i><b>5.3</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
+<li class="chapter" data-level="5.4" data-path="ggplot2.html"><a href="ggplot2.html#gráficos-de-linhas-geom_line"><i class="fa fa-check"></i><b>5.4</b> Gráficos de Linhas (geom_line)</a></li>
+<li class="chapter" data-level="5.5" data-path="ggplot2.html"><a href="ggplot2.html#gráfico-de-funções-stat_function"><i class="fa fa-check"></i><b>5.5</b> Gráfico de Funções (stat_function)</a></li>
+<li class="chapter" data-level="5.6" data-path="ggplot2.html"><a href="ggplot2.html#histogramas-geom_histogram"><i class="fa fa-check"></i><b>5.6</b> Histogramas (geom_histogram)</a></li>
+<li class="chapter" data-level="5.7" data-path="ggplot2.html"><a href="ggplot2.html#boxplots-geom_boxplot"><i class="fa fa-check"></i><b>5.7</b> Boxplots (geom_boxplot)</a></li>
+<li class="chapter" data-level="5.8" data-path="ggplot2.html"><a href="ggplot2.html#facets-facet_grid"><i class="fa fa-check"></i><b>5.8</b> Facets (facet_grid)</a></li>
+<li class="chapter" data-level="5.9" data-path="ggplot2.html"><a href="ggplot2.html#bibliotecas-auxiliares"><i class="fa fa-check"></i><b>5.9</b> Bibliotecas Auxiliares</a>
 <ul>
-<li class="chapter" data-level="6.7.1" data-path="remodelando-dados.html"><a href="remodelando-dados.html#arrange"><i class="fa fa-check"></i><b>6.7.1</b> arrange</a></li>
-<li class="chapter" data-level="6.7.2" data-path="remodelando-dados.html"><a href="remodelando-dados.html#rename"><i class="fa fa-check"></i><b>6.7.2</b> rename</a></li>
-<li class="chapter" data-level="6.7.3" data-path="remodelando-dados.html"><a href="remodelando-dados.html#separate"><i class="fa fa-check"></i><b>6.7.3</b> separate</a></li>
-<li class="chapter" data-level="6.7.4" data-path="remodelando-dados.html"><a href="remodelando-dados.html#unite"><i class="fa fa-check"></i><b>6.7.4</b> unite</a></li>
+<li class="chapter" data-level="5.9.1" data-path="ggplot2.html"><a href="ggplot2.html#cowplot"><i class="fa fa-check"></i><b>5.9.1</b> cowplot</a></li>
+<li class="chapter" data-level="5.9.2" data-path="ggplot2.html"><a href="ggplot2.html#ggally"><i class="fa fa-check"></i><b>5.9.2</b> GGally</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>7</b> GGPlot2</a>
+<li class="part"><span><b>III Machine Learning</b></span></li>
+<li class="chapter" data-level="6" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>6</b> Introdução ao Machine Learning</a></li>
+<li class="chapter" data-level="7" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>7</b> Regressão Linear Simples</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="diagrama-de-dispersão-geom_point.html"><a href="diagrama-de-dispersão-geom_point.html"><i class="fa fa-check"></i><b>7.1</b> Diagrama de Dispersão (geom_point)</a></li>
-<li class="chapter" data-level="7.2" data-path="centralizando-o-título-de-gráficos.html"><a href="centralizando-o-título-de-gráficos.html"><i class="fa fa-check"></i><b>7.2</b> Centralizando o Título de Gráficos</a></li>
-<li class="chapter" data-level="7.3" data-path="gráficos-de-barras-geom_bar-e-geom_col.html"><a href="gráficos-de-barras-geom_bar-e-geom_col.html"><i class="fa fa-check"></i><b>7.3</b> Gráficos de Barras (geom_bar e geom_col)</a></li>
-<li class="chapter" data-level="7.4" data-path="gráficos-de-linhas-geom_line.html"><a href="gráficos-de-linhas-geom_line.html"><i class="fa fa-check"></i><b>7.4</b> Gráficos de Linhas (geom_line)</a></li>
-<li class="chapter" data-level="7.5" data-path="gráfico-de-funções-stat_function.html"><a href="gráfico-de-funções-stat_function.html"><i class="fa fa-check"></i><b>7.5</b> Gráfico de Funções (stat_function)</a></li>
-<li class="chapter" data-level="7.6" data-path="histogramas-geom_histogram.html"><a href="histogramas-geom_histogram.html"><i class="fa fa-check"></i><b>7.6</b> Histogramas (geom_histogram)</a></li>
-<li class="chapter" data-level="7.7" data-path="boxplots-geom_boxplot.html"><a href="boxplots-geom_boxplot.html"><i class="fa fa-check"></i><b>7.7</b> Boxplots (geom_boxplot)</a></li>
-<li class="chapter" data-level="7.8" data-path="facets-facet_grid.html"><a href="facets-facet_grid.html"><i class="fa fa-check"></i><b>7.8</b> Facets (facet_grid)</a></li>
-<li class="chapter" data-level="7.9" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html"><i class="fa fa-check"></i><b>7.9</b> Bibliotecas Auxiliares</a>
+<li class="chapter" data-level="7.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#criando-o-modelo-estimando-seus-coeficientes"><i class="fa fa-check"></i><b>7.1</b> Criando o Modelo &amp; Estimando Seus Coeficientes</a></li>
+<li class="chapter" data-level="7.2" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#a-poeira-debaixo-do-tapete"><i class="fa fa-check"></i><b>7.2</b> A Poeira Debaixo do Tapete</a>
 <ul>
-<li class="chapter" data-level="7.9.1" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#cowplot"><i class="fa fa-check"></i><b>7.9.1</b> cowplot</a></li>
-<li class="chapter" data-level="7.9.2" data-path="bibliotecas-auxiliares.html"><a href="bibliotecas-auxiliares.html#ggally"><i class="fa fa-check"></i><b>7.9.2</b> GGally</a></li>
+<li class="chapter" data-level="7.2.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#linearidade-nos-dados"><i class="fa fa-check"></i><b>7.2.1</b> Linearidade nos Dados</a></li>
+<li class="chapter" data-level="7.2.2" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#normalidade-dos-erros"><i class="fa fa-check"></i><b>7.2.2</b> Normalidade dos Erros</a></li>
 </ul></li>
+<li class="chapter" data-level="7.3" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#boas-práticas-para-modelagem"><i class="fa fa-check"></i><b>7.3</b> Boas Práticas Para Modelagem</a></li>
+<li class="chapter" data-level="7.4" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html#lidando-com-dados-categóricos"><i class="fa fa-check"></i><b>7.4</b> Lidando com Dados Categóricos</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="stringr.html"><a href="stringr.html"><i class="fa fa-check"></i><b>8</b> Stringr</a></li>
-<li class="chapter" data-level="9" data-path="forcats.html"><a href="forcats.html"><i class="fa fa-check"></i><b>9</b> Forcats</a></li>
-<li class="chapter" data-level="10" data-path="lubridate.html"><a href="lubridate.html"><i class="fa fa-check"></i><b>10</b> Lubridate</a></li>
-<li class="part"><span><b>III Probabilidade</b></span></li>
-<li class="chapter" data-level="11" data-path="introdução-à-probabilidade.html"><a href="introdução-à-probabilidade.html"><i class="fa fa-check"></i><b>11</b> Introdução à Probabilidade</a></li>
-<li class="chapter" data-level="12" data-path="tipos-de-distribuições-discretas.html"><a href="tipos-de-distribuições-discretas.html"><i class="fa fa-check"></i><b>12</b> Tipos de Distribuições Discretas</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="valor-médio-de-uma-variável-aleatória.html"><a href="valor-médio-de-uma-variável-aleatória.html"><i class="fa fa-check"></i><b>12.1</b> Valor Médio de uma Variável Aleatória</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="tipos-de-distribuições-contínuas.html"><a href="tipos-de-distribuições-contínuas.html"><i class="fa fa-check"></i><b>13</b> Tipos de Distribuições Contínuas</a></li>
-<li class="chapter" data-level="14" data-path="variáveis-aleatórias-multidimensionais.html"><a href="variáveis-aleatórias-multidimensionais.html"><i class="fa fa-check"></i><b>14</b> Variáveis Aleatórias Multidimensionais</a></li>
-<li class="chapter" data-level="15" data-path="introdução-à-inferência-estatística.html"><a href="introdução-à-inferência-estatística.html"><i class="fa fa-check"></i><b>15</b> Introdução à Inferência Estatística</a></li>
-<li class="chapter" data-level="16" data-path="estimação.html"><a href="estimação.html"><i class="fa fa-check"></i><b>16</b> Estimação</a></li>
-<li class="chapter" data-level="17" data-path="testes-de-hipóteses.html"><a href="testes-de-hipóteses.html"><i class="fa fa-check"></i><b>17</b> Testes de Hipóteses</a></li>
-<li class="part"><span><b>IV Machine Learning</b></span></li>
-<li class="chapter" data-level="18" data-path="introdução-ao-machine-learning.html"><a href="introdução-ao-machine-learning.html"><i class="fa fa-check"></i><b>18</b> Introdução ao Machine Learning</a></li>
-<li class="chapter" data-level="19" data-path="regressão-linear.html"><a href="regressão-linear.html"><i class="fa fa-check"></i><b>19</b> Regressão Linear</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="regressão-linear-simples.html"><a href="regressão-linear-simples.html"><i class="fa fa-check"></i><b>19.1</b> Regressão Linear Simples</a></li>
-<li class="chapter" data-level="19.2" data-path="estimando-os-coeficientes.html"><a href="estimando-os-coeficientes.html"><i class="fa fa-check"></i><b>19.2</b> Estimando os Coeficientes</a></li>
-<li class="chapter" data-level="19.3" data-path="acurácia-da-estimativa-dos-coeficientes.html"><a href="acurácia-da-estimativa-dos-coeficientes.html"><i class="fa fa-check"></i><b>19.3</b> Acurácia da Estimativa dos Coeficientes</a></li>
-<li class="chapter" data-level="19.4" data-path="regressão-linear-múltipla.html"><a href="regressão-linear-múltipla.html"><i class="fa fa-check"></i><b>19.4</b> Regressão Linear Múltipla</a></li>
-<li class="chapter" data-level="19.5" data-path="questões-importantes-sobre-o-modelo-linear.html"><a href="questões-importantes-sobre-o-modelo-linear.html"><i class="fa fa-check"></i><b>19.5</b> Questões Importantes Sobre o Modelo Linear</a></li>
-</ul></li>
-<li class="part"><span><b>V Projetos</b></span></li>
-<li class="chapter" data-level="20" data-path="projeto-01---machine-learning-from-disaster.html"><a href="projeto-01---machine-learning-from-disaster.html"><i class="fa fa-check"></i><b>20</b> Projeto 01 - Machine Learning from Disaster</a></li>
+<li class="chapter" data-level="8" data-path="regressão-linear-múltipla.html"><a href="regressão-linear-múltipla.html"><i class="fa fa-check"></i><b>8</b> Regressão Linear Múltipla</a></li>
+<li class="chapter" data-level="9" data-path="regressão-logística.html"><a href="regressão-logística.html"><i class="fa fa-check"></i><b>9</b> Regressão Logística</a></li>
+<li class="part"><span><b>IV Projetos</b></span></li>
 <li class="divider"></li>
 <li><a href="https://www.linkedin.com/in/richard-guilherme-da/" target="blank">Richard Guilherme</a></li>
 </ul>
@@ -272,16 +189,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="regressão-linear-múltipla" class="section level2 hasAnchor" number="19.4">
-<h2><span class="header-section-number">19.4</span> Regressão Linear Múltipla<a href="regressão-linear-múltipla.html#regressão-linear-múltipla" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="regressão-linear-múltipla" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Capítulo 8</span> Regressão Linear Múltipla<a href="regressão-linear-múltipla.html#regressão-linear-múltipla" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Apesar de da regressão simples ser o primeiro tópico abordado quando
+falamos do tema, este é sem dúvida uma ferramenta um tanto quanto
+utópica. Prever uma coluna com base em apenas */uma** outra uma é um
+passo para simplificar demasiadamente o mundo real.</p>
+<p>Dessa forma surge o tema de regressão múltipla, onde múltiplas colunas
+do nosso banco de dados são fornecidas para o ajuste do modelo de
+regressão linear:</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n.
+\]</span></p>
+<p>Aqui não é interessante destrincharmos como os coeficientes são
+cálculados, mas apenas evidenciarmos que este modelo é uma generalização
+do processo anterior, tanto a forma de minimizar os erros e os resíduos
+são definidas de fórma análoga.</p>
+<p>Seja <span class="math inline">\(\hat{Y}=(\hat{y_1}, \hat{y_2}, \dots, \hat{y_n})\)</span> o vetor de
+previsão do modelo para os dados utilizandos em seu treinamento
+<span class="math inline">\(X=(X_1, X_2, \dots, X_n)\)</span>, então chamamos de <strong>i-ésimo resíduo</strong> o
+valor:</p>
+<p><span class="math display">\[
+e_i = y_i - \widehat{y_i}
+\]</span></p>
+<p>Assim como no modelo simples estamos interessados em minimizar a <strong>soma
+dos quadrados dos resíduos</strong>:</p>
+<p><span class="math display">\[
+\text{RSS} = e_1^2+e_2^2+\dots + e_n^2
+\]</span></p>
+<p>A resolução deste problema é um tanto mais complexa que o modelo
+simples, o importante é que o <strong>príncipio por trás de ambos o modelo é o
+mesmo</strong>.</p>
+<p>Nosso foco será na criação de modelos utilizando Rmarkdown, uma
+linguagem que combina a linguagem <code>R</code> com a linguagem de textos
+<code>Markdown</code>, útil para criação de relatórios e sites na internet. Estas
+anotações por exemplo estão sendo criadas em Markdown utilizando um
+“pacote irmão”, chamda de <code>bookdown</code>.</p>
+<p>Como normalmente elaboramos tanto arquivos em HTML quanto PDF utilizando
+o Rmarkdown, iremos agora para a parte prática, onde elaboraremos
+relatórios sobre regressão linear múltipla.</p>
+<blockquote>
+<center>
+<h4>
+<span style="color:#3ACFF2"> EXERCÍCIOS
+</span>
+</h4>
+</center>
+<ol style="list-style-type: decimal">
+<li>Primeiro exercício</li>
+<li>Segundo exercício</li>
+</ol>
+</blockquote>
+<blockquote>
+<center>
+<h4>
+<span style="color:#DB54EB"> IMPORTANTE
+</span>
+</h4>
+</center>
+</blockquote>
+<blockquote>
+<center>
+<h4>
+<span style="color:#753AF2"> COMENTÁRIOS
+</span>
+</h4>
+</center>
+</blockquote>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="acurácia-da-estimativa-dos-coeficientes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="questões-importantes-sobre-o-modelo-linear.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="regressão-linear-simples.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regressão-logística.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
