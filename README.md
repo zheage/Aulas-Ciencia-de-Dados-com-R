@@ -1,4 +1,4 @@
-Bem Vindo!
+Bem vindo!
 
 Estas são minhas anotações para a aula de Ciência de Dados com R.
 
