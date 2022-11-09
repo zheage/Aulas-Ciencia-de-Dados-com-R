@@ -7,3 +7,16 @@ Este repositório é tanto para aqueles que gostariam de aprender sobre R, vendo
 # Capítulos
 
 - [ ] Introdução
+- [ ] Dados Utilizados
+- [ ] Introdução ao R
+- [ ] Medidas Descritivas
+- [ ] Introdução ao Tidyverse
+- [ ] Readr
+- [ ] Dplyr & Tidyr
+- [ ] GGPlot2
+- [ ] Introdução ao Machine Learning
+- [ ] Regressão Linear Simples
+- [ ] Regressão Linear Múltipla
+- [ ] Regressão Logística
+- [ ] Projetos
+  - [ ] Machine Learning from Disaster
